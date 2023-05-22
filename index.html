@@ -34,12 +34,16 @@
             <img src="src/x-circle-svgrepo-com.svg" />
           </div>
           <div id="titulo">
-            <h1>INICIAR</h1>
+            <h1>INICIAR SESION</h1>
           </div>
           <div id="login-inputs">
-            <input type="text" placeholder="user" id="nombre" />
-            <input type="text" placeholder="contraseña" id="contrasenia" />
-            <input type="submit" value="ingresar" id="boton" />
+            <label id="LblNombre-Contrasena">
+              <input type="text" placeholder="user" id="nombre" />
+              <input type="text" placeholder="contraseña" id="contrasenia" />
+            </label>
+            <label id="btnLoginLabel">
+              <input type="submit" value="ingresar" id="btnLogin" />
+            </label>
           </div>
         </article>
         <div id="login-modal-trigger"></div>
@@ -62,5 +66,6 @@
     <script src="scripts/jquery-3.6.4.min.js"></script>
     <script src="scripts/paralax.js"></script>
     <script src="scripts/modales.js"></script>
+    <script src="scripts/glows.js"></script>
   </body>
 </html>

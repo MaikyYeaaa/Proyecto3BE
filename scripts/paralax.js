@@ -39,12 +39,10 @@ function mostrarVinieta() {
     transition: "opacity 1s",
     opacity: 1,
   });
-  console.log("entras");
 }
 function ocultarVinieta() {
   $("#mouse-focus").css({
     transition: "opacity 0.4s",
     opacity: 0,
   });
-  console.log("salis");
 }
