@@ -3,69 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,700&family=Roboto&family=Roboto+Mono:wght@500&display=swap"
-      rel="stylesheet"
-    />
-
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+    </style>
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <nav id="nav-principal">
-      <img src="src/tuko.png" />
-      <section id="textos-nav-principal">
-        <a href="#header">Inicio</a>
-        <a href="#">Menus</a>
-        <a href="#">Promos</a>
-        <a href="#">Tus pedidos</a>
-        <a href="#" id="login-click">Iniciar Sesion</a>
-        <a href="#">Registrarse</a>
-      </section>
+    <nav>
+      <a href="#">INICIO</a>
+      <a href="#">COMO FUNCIONA</a>
+      <a href="#">PROMOS</a>
+      <a href="#" id="login-link">INICIAR SESION</a>
+      <a href="#">REGISTRARSE</a>
     </nav>
-    <modal>
-      <section id="login">
-        <article id="login-modal">
-          <div id="cerrar">
-            <img src="src/x-circle-svgrepo-com.svg" />
-          </div>
-          <div id="titulo">
-            <h1>INICIAR SESION</h1>
-          </div>
-          <div id="login-inputs">
-            <label id="LblNombre-Contrasena">
-              <input type="text" placeholder="user" id="nombre" />
-              <input type="text" placeholder="contraseña" id="contrasenia" />
-            </label>
-            <label id="btnLoginLabel">
-              <input type="submit" value="ingresar" id="btnLogin" />
-            </label>
+    <main>
+      <section id="ta-salada" class="container">
+        <article id="img-rotator">
+          <img src="src/ensalada.png" />
+        </article>
+        <article id="txt-rotator">
+          <div>
+            <p id="p1">ENSALADA</p>
+            <p id="p2">TA SALADA!!</p>
           </div>
         </article>
-        <div id="login-modal-trigger"></div>
+        <div id="fondosCambio" class="container">
+          <article id="circuloBlancoCont">
+            <div id="circuloBlanco"></div>
+          </article>
+          <article id="circuloVerdeCont">
+            <div id="circuloVerde"></div>
+          </article>
+        </div>
       </section>
-    </modal>
-
-    <header>
-      <section id="images">
-        <img src="src/hamburguesa.png" id="hamburguesa" />
-        <img src="src/salad.png" id="salad" />
-        <img src="src/sandwich.png" id="sandwich" />
-      </section>
-      <img src="src/chevron-down-svgrepo-com.svg" id="arrow-down" href="main" />
-      <div id="fondo-img"></div>
-
-      <div id="mouse-focus"></div>
-    </header>
-
-    <main></main>
-    <script src="scripts/jquery-3.6.4.min.js"></script>
-    <script src="scripts/paralax.js"></script>
-    <script src="scripts/modales.js"></script>
-    <script src="scripts/glows.js"></script>
+    </main>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/backgroundCambio.js"></script>
   </body>
 </html>
