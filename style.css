@@ -1,0 +1,70 @@
+
+:root{
+    --col1:#8BC34A;
+    --col2: #7DAC66;
+    --col3:#B9CFBA;
+
+    --col4:#D4CF69;
+    --col5:#676D17;
+    --col6:#384D0C;
+    --col7:#0C1C02;
+
+
+}
+
+
+body{
+    margin: 0px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color:whitesmoke;
+}
+
+#userIMG{
+    margin: 20px;
+    padding: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+
+#btns{
+align-self: center;
+justify-self: center;
+
+}
+
+#aux img{
+    width: 30px;
+}
+
+#aux{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+nav a{
+    font-family: 'Inter', sans-serif;
+    color: var(--col6);
+    text-decoration: none;
+    padding-inline: 20px;
+
+    
+
+
+}
+
+
+nav a:hover{
+    transform: scale(20px);
+    background-color: var(--col7);
+
+}
