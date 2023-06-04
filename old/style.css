@@ -30,7 +30,7 @@ nav {
   border-radius: 0 0 20px 20px;
   height: 8vh;
   z-index: 2;
-  background-color: var(--bg-200);
+  /* background-color: var(--bg-200); */
 }
 nav a {
   margin: 0 20px;
