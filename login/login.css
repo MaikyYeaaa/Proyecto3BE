@@ -1,0 +1,54 @@
+:root {
+  --col1: #8bc34a;
+  --col2: #7dac66;
+  --col3: #b9cfba;
+
+  --col4: #d4cf69;
+  --col5: #676d17;
+  --col6: #384d0c;
+  --col7: #0c1c02;
+}
+
+body {
+  margin: 0;
+  background-image: url(src/loginBackground.png);
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin-left: 5%;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#login {
+  width: 1500px;
+  height: 850px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+#login article {
+  width: 50%;
+  /* border: 1px solid black; */
+}
+
+#login #botonos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#botonos #botonIngresar {
+  padding: 20px;
+  border-radius: 40px;
+  height: 25%;
+  width: 50%;
+  border: none;
+  background-color: var(--col1);
+  box-shadow: inset 0 0 20px black;
+  font-size: 5rem;
+  font-family: "Imprima", sans-serif;
+}
