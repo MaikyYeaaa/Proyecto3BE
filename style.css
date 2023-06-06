@@ -29,11 +29,6 @@ nav {
   border-radius: 50%;
 }
 
-#btns {
-  align-self: center;
-  justify-self: center;
-}
-
 nav a {
   font-family: "Inter", sans-serif;
   color: var(--col6);
