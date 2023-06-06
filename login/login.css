@@ -19,13 +19,14 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  background-size: cover;
 }
 
 #login {
-  width: 1500px;
-  height: 850px;
+  width: 75%;
+  height: 90%;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 4vh;
   display: flex;
   flex-direction: row;
 }
@@ -43,12 +44,71 @@ body {
 
 #botonos #botonIngresar {
   padding: 20px;
-  border-radius: 40px;
+  border-radius: 4vh;
   height: 25%;
   width: 50%;
   border: none;
   background-color: var(--col1);
   box-shadow: inset 0 0 20px black;
-  font-size: 5rem;
+  font-size: 6vh;
   font-family: "Imprima", sans-serif;
+}
+
+#inputs{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 300px;
+}
+#MensajePrimario{
+  margin: 0;
+  font-size: 8vh;
+}
+#MensajeSecundario {
+  font-size: 4vh;
+  margin: 0;
+}
+#Bienvenida{
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+}
+fieldset input{
+border-style: none;
+width: 100%;
+}
+
+fieldset input:focus{
+  outline: none; 
+}
+
+#textosdosahoraespersonal{
+align-items: center;
+flex-direction: column;
+position: absolute;
+width: 50%;
+display: flex;
+justify-content: center;
+top: calc(50% / 2);
+
+}
+
+#textos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+fieldset{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 10vh;
+  width: 60px;
 }
