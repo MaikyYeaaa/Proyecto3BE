@@ -19,21 +19,13 @@ nav {
   justify-content: center;
   align-items: center;
   height: 80px;
-<<<<<<< Updated upstream
   background-color: white;
-=======
-  background-color: whitesmoke;
->>>>>>> Stashed changes
 }
 
 #userIMG {
   margin: 20px;
   padding: 20px;
-<<<<<<< Updated upstream
   background-color: var(--col1);
-=======
-  background-color: red;
->>>>>>> Stashed changes
   border-radius: 50%;
 }
 
@@ -42,7 +34,6 @@ nav {
   justify-self: center;
 }
 
-<<<<<<< Updated upstream
 nav a {
   font-family: "Inter", sans-serif;
   color: var(--col6);
@@ -100,27 +91,4 @@ nav a:hover {
 
 #userYbuscador img {
   width: 30px;
-=======
-#aux img {
-  width: 30px;
-}
-
-#aux {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-nav a {
-  display: inline-block;
-  font-family: "Inter", sans-serif;
-  color: var(--col6);
-  text-decoration: none;
-  padding-inline: 20px;
-}
-
-nav a:hover {
-  transform: scale(1.1);
-  background-color: var(--col7);
->>>>>>> Stashed changes
 }
