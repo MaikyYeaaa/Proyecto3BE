@@ -36,20 +36,14 @@ body {
   /* border: 1px solid black; */
 }
 
-#login #botonos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#botonos #botonIngresar {
+#botonIngresar {
   padding: 20px;
-  border-radius: 4vh;
-  height: 25%;
+  border-radius: 0.4vh;
   width: 50%;
+  height: 100%;
   border: none;
   background-color: var(--col1);
-  box-shadow: inset 0 0 20px black;
+  box-shadow: inset 0 0 10px black;
   font-size: 6vh;
   font-family: "Imprima", sans-serif;
 }
@@ -59,15 +53,22 @@ body {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  width: 300px;
+  padding-right: 20px;
 }
+
+#textosdosahoraespersonal p {
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.479));
+}
+
 #MensajePrimario {
   margin: 0;
-  font-size: 8vh;
+  font-size: 10vh;
+  font-family: "Inspiration", cursive;
 }
 #MensajeSecundario {
-  font-size: 4vh;
+  font-size: 5vh;
   margin: 0;
+  font-family: "Inder", sans-serif;
 }
 #Bienvenida {
   margin-top: 10vh;
@@ -75,6 +76,7 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  /* transform: scale(1.5); */
 }
 
 #textosdosahoraespersonal {
@@ -84,13 +86,23 @@ body {
   width: 50%;
   display: flex;
   justify-content: center;
-  top: calc(50% / 2);
+  padding-left: 20px;
+  /* top: calc(50% / 2); */
 }
 
 #textos {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#inputsYingresar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 15vh;
+  margin-top: 50px;
 }
 
 fieldset {
@@ -100,11 +112,12 @@ fieldset {
   display: flex;
   justify-content: center;
   border-radius: 10vh;
-  width: 60px;
+  width: 90%;
 }
 fieldset input {
   border-style: none;
   width: 300px;
+  height: 20px;
   padding-block: 5px;
 }
 
