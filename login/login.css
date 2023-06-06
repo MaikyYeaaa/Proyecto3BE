@@ -26,7 +26,7 @@ body {
   width: 75%;
   height: 90%;
   background-color: white;
-  border-radius: 4vh;
+  border-radius: 1vh;
   display: flex;
   flex-direction: row;
 }
@@ -54,14 +54,14 @@ body {
   font-family: "Imprima", sans-serif;
 }
 
-#inputs{
+#inputs {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   width: 300px;
 }
-#MensajePrimario{
+#MensajePrimario {
   margin: 0;
   font-size: 8vh;
 }
@@ -69,46 +69,49 @@ body {
   font-size: 4vh;
   margin: 0;
 }
-#Bienvenida{
+#Bienvenida {
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-
-}
-fieldset input{
-border-style: none;
-width: 100%;
 }
 
-fieldset input:focus{
-  outline: none; 
+#textosdosahoraespersonal {
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  top: calc(50% / 2);
 }
 
-#textosdosahoraespersonal{
-align-items: center;
-flex-direction: column;
-position: absolute;
-width: 50%;
-display: flex;
-justify-content: center;
-top: calc(50% / 2);
-
-}
-
-#textos{
+#textos {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-fieldset{
+fieldset {
+  margin-block: 5px;
   text-align: center;
   align-items: center;
   display: flex;
   justify-content: center;
   border-radius: 10vh;
   width: 60px;
+}
+fieldset input {
+  border-style: none;
+  width: 300px;
+  padding-block: 5px;
+}
+
+fieldset input:focus {
+  outline: none;
+}
+
+legend {
+  padding-inline: 5px;
 }
