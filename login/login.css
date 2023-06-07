@@ -28,7 +28,13 @@ body {
   background-color: white;
   border-radius: 1vh;
   display: flex;
-  flex-direction: row;
+  justify-content: start;
+  flex-direction: column-reverse;
+  overflow: hidden;
+  background-image: url("src/coso.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 #login article {
@@ -46,6 +52,13 @@ body {
   box-shadow: inset 0 0 10px black;
   font-size: 6vh;
   font-family: "Imprima", sans-serif;
+  transition: 0.2s;
+}
+#botonIngresar:hover {
+  transform: translateY(-10px);
+}
+#botonIngresar:active {
+  transform: translateY(0);
 }
 
 #inputs {
@@ -84,6 +97,7 @@ body {
   flex-direction: column;
   position: absolute;
   width: 50%;
+  height: 75%;
   display: flex;
   justify-content: center;
   padding-left: 20px;
@@ -127,4 +141,27 @@ fieldset input:focus {
 
 legend {
   padding-inline: 5px;
+  font-family: "Inria Serif", serif;
+  font-style: italic;
+}
+
+#recordarSection {
+  align-self: flex-start;
+  display: flex;
+}
+#recordarSection p {
+  width: max-content;
+  font-size: 40px;
+  font-family: "Inria Serif", serif;
+}
+#recordar {
+  width: 50px;
+}
+
+#linkAregistrarse {
+  display: flex;
+  align-items: center;
+  font-size: large;
+  margin: auto;
+  margin-bottom: 0;
 }
