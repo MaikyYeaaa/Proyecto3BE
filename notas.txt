@@ -1,0 +1,2 @@
+este comando hay que ejecutarlo en la raiz del proyecto
+sass --watch ./src/styles/styles.scss ./src/styles/styles.css
