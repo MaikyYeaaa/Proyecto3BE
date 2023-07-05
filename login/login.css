@@ -14,8 +14,8 @@ body {
   background-image: url(src/loginBackground.png);
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  margin-left: 5%;
+  justify-content: flex-start;
+  /* margin-left: 5%; */
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -36,6 +36,15 @@ body {
   background-position: right;
 }
 
+#contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* align-items: ; */
+  width: 100%;
+  height: 100%;
+}
+
 #botonIngresar {
   padding: 20px;
   border-radius: 0.4vh;
@@ -44,7 +53,7 @@ body {
   border: none;
   background-color: var(--col1);
   background-image: linear-gradient(-90deg, var(--col1), var(--col2));
-  font-size: 6vh;
+  font-size: 200%;
   font-family: "Imprima", sans-serif;
 
   transition: transform 0.2s;
@@ -68,13 +77,13 @@ body {
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.479));
 }
 
-#MensajePrimario {
+#mensajePrimario {
   margin: 0;
   font-size: 10vh;
   font-family: "Inspiration", cursive;
 }
-#MensajeSecundario {
-  font-size: 5vh;
+#mensajeSecundario {
+  font-size: 30px;
   margin: 0;
   font-family: "Inder", sans-serif;
 }
@@ -120,4 +129,24 @@ body {
   font-size: large;
   margin: auto;
   margin-bottom: 0;
+}
+
+@media (max-width: 1199px) {
+  /* #botonIngresar {
+    font-size: 40px;
+  } */
+}
+@media (max-width: 990px) {
+  #login {
+    background-image: none;
+  }
+  #contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #mensajeSecundario {
+    display: none;
+  }
 }
