@@ -6,14 +6,14 @@ formulario.addEventListener("submit", function (e) {
 
   let datos = new FormData(formulario);
 
-  fetch("../php/registro.php", {
+  fetch("../logica/registro.php", {
     method: "POST",
     body: datos,
   })
     .then((r) => r.json())
     .then((r) => {
       console.log(r);
-      globalR = r;
+
       if (r.toString().length == 5) {
         $("#verificar-codigo").css({ display: "block" });
       }
@@ -23,9 +23,19 @@ formulario.addEventListener("submit", function (e) {
 verificador.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  if (globalR == Number($("#codigo-ingresado").val())) {
-    console.log("verificado");
-  } else {
-    console.log("no verifica");
-  }
+  let codigoIngresado = Number($("#codigo-ingresado").val());
+
+  fetch("../persistencia/usuarios.json")
+    .then((r) => r.json())
+    .then((data) => {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i]["codigo de verificacion"] == codigoIngresado) {
+          data[i]["mail-verificado"] = true;
+          console.log("mail verificado!!");
+        }
+      }
+      let jsonNuevo = JSON.stringify(data);
+      console.log(jsonNuevo);
+    })
+    .catch((error) => console.error(error));
 });
