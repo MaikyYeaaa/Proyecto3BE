@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form-registrar">
+      <input type="text" name="nombre" placeholder="nombre" />
+      <input type="text" name="mail" placeholder="mail" />
+      <input type="text" name="contrasena" placeholder="contra" />
+      <input type="text" name="contrasenaRepit" placeholder="repetir contra" />
+
+      <input type="submit" value="enviar" />
+    </form>
+    <p></p>
+    <section id="verificar-codigo" style="display: none">
+      <form id="form-verificacion">
+        <input
+          type="number"
+          id="codigo-ingresado"
+          placeholder="codigo de verif"
+        />
+        <input type="submit" value="enviar" />
+      </form>
+    </section>
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
