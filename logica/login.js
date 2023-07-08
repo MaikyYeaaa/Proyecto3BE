@@ -17,10 +17,7 @@ formulario.addEventListener("submit", function (e) {
       .then((r) => {
         if (r) {
           $("#resp").html(
-            "Correcto!, ingresado con el correo:" +
-              mail +
-              " y la contrasenia : " +
-              contra
+            `Correcto! ingresado el correo: ${mail} <br> y la contrasenia: ${contra}`
           );
         } else {
           $("#resp").html("Error, ingrese los datos nuevamente");
