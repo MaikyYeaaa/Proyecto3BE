@@ -7,13 +7,20 @@
   </head>
   <body>
     <form id="form-registrar">
-      <input type="text" name="nombre" placeholder="nombre" />
-      <input type="text" name="mail" placeholder="mail" />
-      <input type="text" name="contrasena" placeholder="contrasena" />
+      <input type="text" name="nombre" placeholder="nombre" required />
+      <input type="text" name="mail" placeholder="mail" required />
+      <input
+        type="text"
+        name="contrasena"
+        placeholder="contrasena"
+        minlength="8"
+        required
+      />
       <input
         type="text"
         name="contrasenaRepit"
         placeholder="repetir contrasena"
+        required
       />
 
       <input type="submit" value="enviar" />
@@ -30,7 +37,7 @@
       </form>
     </section>
 
-    <script src="../scripts/jquery-3.6.4.min.js"></script>
-    <script src="../scripts/registro.js"></script>
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script src="../logica/registro.js"></script>
   </body>
 </html>
