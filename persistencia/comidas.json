@@ -1,32 +1,20 @@
 [
-    [
-        "a",
-        "b",
-        "c",
-        "d"
-    ],
-    [
-        "awd",
-        "daw",
-        "daw",
-        "daw"
-    ],
-    [
-        "daw",
-        "daw",
-        "dwa",
-        "daw"
-    ],
-    [
-        "dawdawdaw",
-        "dawdaw",
-        "dawdaw",
-        "dawdaw"
-    ],
-    [
-        "",
-        "",
-        "",
-        ""
-    ]
+    {
+        "id_comida": "4040404",
+        "nombre_comida": "ensalada",
+        "descripcion": "ta salada",
+        "imgURL": "https:\/\/www.comedera.com\/wp-content\/uploads\/2021\/12\/ensalada-de-lechuga1-500x500.jpg"
+    },
+    {
+        "id_comida": "222",
+        "nombre_comida": "milanesa",
+        "descripcion": "tremenda milanga brother",
+        "imgURL": "https:\/\/img-global.cpcdn.com\/recipes\/4ceea74e946533eb\/400x400cq70\/photo.jpg"
+    },
+    {
+        "id_comida": "dawd",
+        "nombre_comida": "j",
+        "descripcion": "dawdaw",
+        "imgURL": "dawdaw"
+    }
 ]

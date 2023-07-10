@@ -6,7 +6,12 @@ $nombre_comida = $_POST["nombre"];
 $descripcion = $_POST["desc"];
 $imagenURL = $_POST["imgURL"];
 
-$newComida = array($id_comida, $nombre_comida, $descripcion, $imagenURL);
+$newComida = [
+"id_comida" => $id_comida,
+"nombre_comida" => $nombre_comida,
+"descripcion" => $descripcion,
+"imgURL" => $imagenURL,
+];
 
 $jsonURL = '../persistencia/comidas.json';
 
