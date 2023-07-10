@@ -1,0 +1,47 @@
+[
+    {
+        "Id": 0,
+        "Nombre": "Pure con papas",
+        "Creador": "User1",
+        "Estado": "Aceptar",
+        "Coste": 18000,
+        "FechaInicio": "23\/8\/2019",
+        "FechaFin": "8\/9\/2019"
+    },
+    {
+        "Id": 1,
+        "Nombre": "Manzana super op",
+        "Creador": "User2",
+        "Estado": "Rechazar",
+        "Coste": 18000,
+        "FechaInicio": "23\/8\/2019",
+        "FechaFin": "8\/9\/2019"
+    },
+    {
+        "Id": 2,
+        "Nombre": "Estofado",
+        "Creador": "User3",
+        "Estado": "Aceptar",
+        "Coste": 18000,
+        "FechaInicio": "23\/8\/2019",
+        "FechaFin": "8\/9\/2019"
+    },
+    {
+        "Id": 3,
+        "Nombre": "Fideos con tuco",
+        "Creador": "User4",
+        "Estado": "Rechazar",
+        "Coste": 18000,
+        "FechaInicio": "23\/8\/2019",
+        "FechaFin": "8\/9\/2019"
+    },
+    {
+        "Id": 4,
+        "Nombre": "Ravioles op",
+        "Creador": "User5",
+        "Estado": "Aceptar",
+        "Coste": 18000,
+        "FechaInicio": "23\/8\/2019",
+        "FechaFin": "8\/9\/2019"
+    }
+]
