@@ -1,11 +1,11 @@
 <?php
 //en este array ingresamos todos los clientes con verificado = false;
 $clientesArray = [
-    "juan carlos",
     "carlos juan",
     "pepe maria",
     "jose pedro varela",
-    "caac pepe"
+    "caac pepe",
+    "german pene"
 ];
 
 echo json_encode($clientesArray);
