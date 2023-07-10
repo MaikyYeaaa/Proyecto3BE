@@ -3,45 +3,45 @@
         "Id": 0,
         "Nombre": "Pure con papas",
         "Creador": "User1",
-        "Estado": "Aceptar",
+        "Estado": "Envasado",
         "Coste": 18000,
-        "FechaInicio": "23\/8\/2019",
+        "FechaInicio": "2\/7\/2023",
         "FechaFin": "8\/9\/2019"
     },
     {
         "Id": 1,
         "Nombre": "Manzana super op",
         "Creador": "User2",
-        "Estado": "Rechazar",
+        "Estado": "Confirmado",
         "Coste": 18000,
-        "FechaInicio": "23\/8\/2019",
+        "FechaInicio": "2\/7\/2023",
         "FechaFin": "8\/9\/2019"
     },
     {
         "Id": 2,
-        "Nombre": "Estofado",
+        "Nombre": "Roberto",
         "Creador": "User3",
-        "Estado": "Aceptar",
+        "Estado": "Rechazado",
         "Coste": 18000,
-        "FechaInicio": "23\/8\/2019",
+        "FechaInicio": "2\/7\/2023",
         "FechaFin": "8\/9\/2019"
     },
     {
         "Id": 3,
         "Nombre": "Fideos con tuco",
         "Creador": "User4",
-        "Estado": "Rechazar",
+        "Estado": "Entregado",
         "Coste": 18000,
-        "FechaInicio": "23\/8\/2019",
+        "FechaInicio": "2\/7\/2023",
         "FechaFin": "8\/9\/2019"
     },
     {
         "Id": 4,
         "Nombre": "Ravioles op",
         "Creador": "User5",
-        "Estado": "Aceptar",
+        "Estado": "Entregado",
         "Coste": 18000,
-        "FechaInicio": "23\/8\/2019",
+        "FechaInicio": "2\/7\/2023",
         "FechaFin": "8\/9\/2019"
     }
 ]

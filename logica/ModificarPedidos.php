@@ -8,7 +8,9 @@ $data = json_decode($jsonData, true);
 
 $pos = $_POST["posicion"];
 $accion = $_POST["accion"];
+$date = $_POST["date"];
 $data[$pos]["Estado"] = $accion;
+$data[$pos]["FechaInicio"] = $date;
 
 $modifiedJsonData = json_encode($data, JSON_PRETTY_PRINT);
 
