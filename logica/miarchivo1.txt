@@ -1,8 +1,0 @@
-
- -Cocina: 
- -Tiempo de cocinado: 
- -Stock Colchon: 
- -Stock Minimo: 
- -Tiempo del turno: 
- -Zonas: 
- -Costo menus: 
