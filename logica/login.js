@@ -20,7 +20,7 @@ formulario.addEventListener("submit", function (e) {
             `Correcto! ingresado el correo: ${mail} <br> y la contrasenia: ${contra}`
           );
         } else {
-          $("#resp").html("Error, ingrese los datos nuevamente");
+          $("#resp").html(`Error, ingrese los datos nuevamente`);
         }
       });
   }

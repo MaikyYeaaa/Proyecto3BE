@@ -33,16 +33,13 @@ for($i= 0;$i<count($correos);$i++){
 if($posCorreo === null){
     echo "false";
 }elseif($contras[$posCorreo] == $contra){
-    $file = '../persistencia/login.txt';
-    // Abrir el archivo o crearlo si no existe
-    $handle = fopen($file, 'w');
+
+    $txt = '../persistencia/login.txt';
+    $handle = fopen($txt, 'w');
     
     $texto = 'login iniciado = true';
     
-    // Escribir el contenido en el archivo
     fwrite($handle, $texto);
-    
-    // Cerrar el archivo
     fclose($handle);
 
     echo "true";

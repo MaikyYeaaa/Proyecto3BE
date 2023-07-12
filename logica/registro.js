@@ -57,7 +57,7 @@ formulario.addEventListener("submit", function (e) {
       method: "POST",
       body: datos,
     })
-      .then((r) => r.json())
+      .then((r) => r.text())
       .then((r) => {
         codigo = r;
         console.log(codigo);

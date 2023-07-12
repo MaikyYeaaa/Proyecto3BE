@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  display: flex;
+}
+section {
+  height: fit-content;
+}
+
+nav {
+  height: 100vh;
+  width: 10vw;
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  margin-inline-end: 10px;
+}
+nav a {
+  padding-block: 10px;
+}
