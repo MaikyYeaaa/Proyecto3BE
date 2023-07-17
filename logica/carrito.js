@@ -6,27 +6,33 @@ fetch("../persistencia/menus.json")
       let nombre_menu = r[i].nombre_menu;
       let descripcion = r[i].descripcion;
       let imgURL = r[i].imgURL;
-      let comidas = r[i].comidas;
-      mostrar = `
+      fetch("../persistencia/carrito.json")
+        .then((r2) => r2.json())
+        .then((r2) => {
+          r2.forEach((r2) => {
+            if (r2.id == id_menu) {
+              mostrar = `
           <article>
           <h1>${nombre_menu}</h1>
           <p>Descripcion: ${descripcion}</p>
           <image src="${imgURL}" width="100px">
           <br>
-          <p>Incluye: ${comidas}</p>
-          <button id="${id_menu}" onclick="agregarAlCarrito(this)"> Agregar al carrito</button>
+          <button id="${id_menu}" onclick="eliminarDelCarrito(this)"> Eliminar</button>
         </article>
             `;
-      $("#mostrar").append(mostrar);
+              $("#mostrar").append(mostrar);
+            }
+          });
+        });
     }
   });
 
-function agregarAlCarrito(button) {
+function eliminarDelCarrito(button) {
   const id = button.getAttribute("id");
   var data = new FormData();
   data.append("id", id);
 
-  fetch("../logica/addCarrito.php", {
+  fetch("../logica/eliminarCarrito.php", {
     method: "POST",
     body: data,
   })

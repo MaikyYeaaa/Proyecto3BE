@@ -1,7 +1,12 @@
 <?php
 require './helperFunctions.php';
 $id = $_POST["id"];
-$arrayData[] = $id; 
+
+$newItem = [
+    "id" => $id
+];
+
+$arrayData = $newItem;
 $jsonURL = '../persistencia/carrito.json';
 
 $resultado = writeToJSON($jsonURL, $arrayData);
