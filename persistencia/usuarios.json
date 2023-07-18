@@ -6,14 +6,34 @@
         "contrasena": "Holanda12",
         "admin-verificado": false
     },
-    "1": {
-        "id": 1,
-        "nombre": "Manolito",
-        "mail": "Manolitoop@gmail.com",
-        "contrasena": "12",
+    {
+        "nombre": "Bruno",
+        "mail": "bruno@gmail.com",
+        "contrasena": "Bruno123",
         "admin-verificado": false
     },
-    "": {
-        "id": "12"
+    {
+        "nombre": "awwdawd",
+        "mail": "kn.maiky@gmail.com",
+        "contrasena": "Aa1234567",
+        "admin-verificado": false
+    },
+    {
+        "nombre": "mateo",
+        "mail": "kn.maiky@gmail.com",
+        "contrasena": "Aaab1",
+        "admin-verificado": false
+    },
+    {
+        "nombre": "mateo",
+        "mail": "kn.maiky@gmail.com",
+        "contrasena": "Aaab1",
+        "admin-verificado": false
+    },
+    {
+        "nombre": "mateo",
+        "mail": "kn.maiky@gmail.com",
+        "contrasena": "PenePepe1",
+        "admin-verificado": false
     }
 }
