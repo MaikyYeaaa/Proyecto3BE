@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Agregar Menu a homepage
+    </h1>
+
+    <section id="info">
+      <label>Nombre:</label>
+      <input id="nombre"><br>
+      <label>Descripción</label>
+      <input id="descripción"><br>
+      <label>Imagen:</label>
+      <input id="img">
+
+      <h2>Que tipo de menú es?</h2>
+      <select id="pedido">
+          <option value="Semanal">Semanal</option>
+          <option value="Quincenal">Quincenal</option>
+          <option value="Mensual">Mensual</option>
+        </select>
+    </section>
+
+
+    
+
+
+      <p id="menu-editor"></p>
+
+      <p id="comida-editor"></p>
+
+      <select id="tipo-dieta">
+        <option value="Default" id="default">Elige una dieta</option>
+        <option value="Normal">Normal</option>
+        <option value="Vegano">Vegano</option>
+        <option value="Celiaco">Celiaco</option>
+      </select>
+
+      <input type="submit" id="btnAbm" value="Confirmar menú">
+      <p id="feedback" style="color: red;"></p>
+
+
+
+
+      <script src="../../jquery-3.6.4.min.js"></script>
+      <script src="../../logica/custommenu.js"></script>
+
+</body>
+</html>

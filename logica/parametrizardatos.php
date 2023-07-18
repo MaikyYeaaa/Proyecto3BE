@@ -1,26 +1,29 @@
 <?php
 
-$datosCocina =$_POST["datosCocina"];
-$datosTiempo =$_POST["datosTiempo"];
-$datosStockcolchon =$_POST["datosStockcolchon"];
-$datosStockmaximo =$_POST["datosStockmaximo"];
-$datosTiempoturno =$_POST["datosTiempoturno"];
-$datosZonas =$_POST["datosZonas"];
-$datosCostoMenus =$_POST["datosCostoMenus"];
+require "helperFunctions.php";
 
+$jsonFileName = "../persistencia/datos.json";
+$jsonArray = json_decode(file_get_contents($jsonFileName), true);
 
-$file = "miarchivo1.txt";
-$texto = "\n -Cocina: ".$datosCocina.
-         "\n -Tiempo de cocinado: ".$datosTiempo. 
-         "\n -Stock Colchon: ".$datosStockcolchon.
-         "\n -Stock Minimo: ".$datosStockmaximo.
-         "\n -Tiempo del turno: ".$datosTiempoturno.
-         "\n -Zonas: ".$datosZonas.
-         "\n -Costo menus: ".$datosCostoMenus;
-$fp = fopen($file, "wr");
-fwrite($fp, $texto,1000 );
-fclose($fp);
+$lastElement = end($jsonArray); // Obtén el último elemento del array.
 
+$datosCocina = empty($_POST["datosCocina"]) ? $lastElement["datosCocina"] : $_POST["datosCocina"];
+$datosTiempo = empty($_POST["datosTiempo"]) ? $lastElement["datosTiempo"] : $_POST["datosTiempo"];
+$datosStockcolchon = empty($_POST["datosStockcolchon"]) ? $lastElement["datosStockcolchon"] : $_POST["datosStockcolchon"];
+$datosStockmaximo = empty($_POST["datosStockmaximo"]) ? $lastElement["datosStockmaximo"] : $_POST["datosStockmaximo"];
+$datosTiempoturno = empty($_POST["datosTiempoturno"]) ? $lastElement["datosTiempoturno"] : $_POST["datosTiempoturno"];
+$datosZonas = empty($_POST["datosZonas"]) ? $lastElement["datosZonas"] : $_POST["datosZonas"];
+$datosCostoMenus = empty($_POST["datosCostoMenus"]) ? $lastElement["datosCostoMenus"] : $_POST["datosCostoMenus"];
+
+$texto = [
+  "datosCocina" => $datosCocina,
+  "datosTiempo" => $datosTiempo,
+  "datosStockcolchon" => $datosStockcolchon,
+  "datosStockmaximo" => $datosStockmaximo,
+  "datosTiempoturno" => $datosTiempoturno,
+  "datosZonas" => $datosZonas,
+  "datosCostoMenus" => $datosCostoMenus,
+];
+
+writeToJSON($jsonFileName, $texto);
 ?>
-
-
