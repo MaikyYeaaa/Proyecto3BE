@@ -1,5 +1,5 @@
 
- -Cocina: 
+ -Cocina: 1
  -Tiempo de cocinado: 
  -Stock Colchon: 
  -Stock Minimo: 

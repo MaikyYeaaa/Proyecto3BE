@@ -1,20 +1,38 @@
 [
     {
-        "id_comida": "4040404",
-        "nombre_comida": "ensalada",
+        "id_comida": "0",
+        "nombre_comida": "Ensalada",
         "descripcion": "ta salada",
         "imgURL": "https:\/\/www.comedera.com\/wp-content\/uploads\/2021\/12\/ensalada-de-lechuga1-500x500.jpg"
     },
     {
-        "id_comida": "222",
-        "nombre_comida": "milanesa",
+        "id_comida": "1",
+        "nombre_comida": "Papas al horno con milanesa",
         "descripcion": "tremenda milanga brother",
         "imgURL": "https:\/\/img-global.cpcdn.com\/recipes\/4ceea74e946533eb\/400x400cq70\/photo.jpg"
     },
     {
-        "id_comida": "dawd",
-        "nombre_comida": "j",
-        "descripcion": "dawdaw",
+        "id_comida": "2",
+        "nombre_comida": "Arroz con churrasco",
+        "descripcion": "Un arroz, pero con churrasco",
+        "imgURL": "dawdaw"
+    },
+    {
+        "id_comida": "3",
+        "nombre_comida": "Fideos con tuco",
+        "descripcion": "altos fideos, el tuco tambien, creo",
+        "imgURL": "dawdaw"
+    },
+    {
+        "id_comida": "4",
+        "nombre_comida": "Pure de papa con pollo",
+        "descripcion": "papas con pollo muerto",
+        "imgURL": "dawdaw"
+    },
+    {
+        "id_comida": "5",
+        "nombre_comida": "ese te erre ogonoff",
+        "descripcion": "jajas",
         "imgURL": "dawdaw"
     }
 ]

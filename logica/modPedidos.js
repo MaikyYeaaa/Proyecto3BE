@@ -20,12 +20,12 @@ $(document).on("change", "#pedido", function() {
     let nombre = $(this).attr("name");
     let accion = $(this).val();
     let  fechaActual = new Date();
-    let diaActual = fechaActual.getDay()+1;
+    let diaActual = fechaActual.getDate()+1;
     let mesActual = fechaActual.getMonth() + 1;
     let añoActual = fechaActual.getFullYear();
   let dateOutput = diaActual + "/" + mesActual + "/" + añoActual;
     $.ajax({
-        url: "../../logica/ModificarPedidos.php", // Update the URL to the correct PHP file
+        url: "../../logica/ModificarPedidos.php",
         type: "POST",
         data: { posicion: nombre, accion: accion,date: dateOutput},
     });

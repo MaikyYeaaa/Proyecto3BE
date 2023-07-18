@@ -1,10 +1,18 @@
 var comidas = [];
 var comidasTope = 0;
-$("#btnCompra").prop("disabled", "disabled");
+var type;
 
+$("#btnCompra").prop("disabled", "disabled");
+$("#btnAbm").click(ABMMenu);
+console.log("hola");
 $("#pedido").on('change', function() {
     var valor = $(this).val();
     dibujarTabla(getNumero(valor));
+});
+
+$("#tipo-dieta").on('change', function() {
+    type = $(this).val();
+    $("#default").remove();
 });
 
 $("#btnCompra").click(getPagoDatos);
@@ -93,6 +101,7 @@ function getPagoDatos(){
     let metodoPago = $("#Tipo").val();
     let tarjeta = Number($("#tarjeta").val());
     let pin = Number($("#pin").val());
+    let fecha = getDateOp();
 
     if(validarCompra(tarjeta,pin)){
         $("#compra-feedback").html("Compra realizada!");
@@ -101,6 +110,7 @@ function getPagoDatos(){
         console.log(comidas);
         data.append("platos",comidas); 
         data.append("multi",multiplicador); 
+        data.append("fecha",fecha);
           fetch("../../logica/crearPedido.php", {
             method: "POST",
             body:data,
@@ -124,3 +134,63 @@ function validarCompra(tarjeta,pin){
         return true;
     }
 }
+
+
+
+function getDateOp(){
+    let  fechaActual = new Date();
+    let diaActual = fechaActual.getDate();
+    let mesActual = fechaActual.getMonth() + 1;
+    let añoActual = fechaActual.getFullYear();
+  return  diaActual + "/" + mesActual + "/" + añoActual;
+}
+
+
+
+function ABMMenu(){
+    console.log(type);
+    if (esPosibleABM()) {
+        console.log("EsPosibleWachooooo");
+        var nombre = $("#nombre").val();
+        var descripción = $("#descripción").val();
+        var img = $("#img").val();
+        var data = new FormData();
+        console.log(comidas);
+        data.append("comidasop",JSON.stringify(comidas)); 
+        data.append("titulo",nombre); 
+        data.append("desc",descripción); 
+        data.append("img",img); 
+        data.append("tipo",type);
+          fetch("../../logica/agregarMenuHomepage.php", {
+            method: "POST",
+            body:data,
+          })
+            .then((r) => r.text())
+            .then((response) => {
+              const pedidos = Object.values(response);
+              $("h1").html("Menu agregada exitosamente!");
+            });
+
+
+
+
+
+    } else {
+       $("#feedback").html("Rellena todos los campos antes de mandar el menú");
+    }
+  
+
+}
+
+function esPosibleABM() {
+    if(comidas.length<=1 || (nombre == null) || (descripción == null) || (img == null) || (type == null)){
+        return false;
+    }
+    for (var i = 0; i < comidasTope; i++) {
+        if (comidas[i] == null) {
+            return false;
+        }
+    }
+    return true;
+}
+
