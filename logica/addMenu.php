@@ -3,6 +3,7 @@
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["desc"];
 $img = $_POST["imgURL"];
+$stock = $_POST["stock"];
 
 $comida1 = $_POST["comida1"];
 $comida2 = $_POST["comida2"];
@@ -16,6 +17,7 @@ $newMenu = [
     "id_menu" => rand(1, 2020200),
     "nombre_menu" => $nombre,
     "descripcion" => $descripcion,
+    "stock" => $stock,
     "comidas" => $comidas,
     "imgURl" => $img,
 ];

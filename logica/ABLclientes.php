@@ -5,7 +5,7 @@ $clientesArray = [
     "pepe maria",
     "jose pedro varela",
     "caac pepe",
-    "german pene"
+    "german crack"
 ];
 
 echo json_encode($clientesArray);
