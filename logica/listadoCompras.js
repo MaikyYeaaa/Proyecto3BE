@@ -2,14 +2,22 @@ fetch("../persistencia/compras.json")
   .then((r) => r.json())
   .then((r) => {
     r.forEach((r) => {
+      let fechaCompra = r.FechaCompra;
+      let comprador = r.Comprador;
+      let idComidas = r.IDcompra;
+      let producto = r.Producto;
+
       $("body").append(`
       <section>
-      Fecha Compra: 23/07/2022
+      Fecha Compra: ${fechaCompra}
       <br />
-      Comprador: Mateo <br />
-      ID compra: 1234 <br />
-      Producto: Menu1, Menu 2
+      Comprador: ${comprador}
+       <br />
+      ID compra: ${idComidas} 
+      <br />
+      Producto: ${producto}
     </section>
+    <br />
       `);
     });
   });
