@@ -1,6 +1,6 @@
 <?php
 
-public class Comida {
+class Comida {
     private $id_comida;
     private $nombre_comida;
     private $descripcion;

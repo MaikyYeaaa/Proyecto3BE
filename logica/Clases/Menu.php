@@ -1,5 +1,5 @@
 <?php
-require: "Comida.php";
+require "Comida.php";
 
 class Menu {
 
@@ -10,12 +10,15 @@ class Menu {
     private $stockReal;
     private $fechaVencimiento;
     private $comidas;
+    private $descripción;
+    private $img;
 
-    public function __construct($ID_menu, $nombre_menu, $stockMaximo, $stockColchon, $stockReal, $fechaVencimiento, $comidas) {
+    public function __construct($ID_menu, $nombre_menu, $stockMaximo, $stockColchon, $stockReal, $fechaVencimiento, $comidas,$descripción,$img) {
         $this->ID_menu = $ID_menu;
         $this->nombre_menu = $nombre_menu;
         $this->stockMaximo = $stockMaximo;
-        
+        $this-> descripción = $descripción;
+        $this-> img = $img;
     }
 
     public function getIDMenu() {

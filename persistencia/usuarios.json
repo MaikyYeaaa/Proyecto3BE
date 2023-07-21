@@ -1,8 +1,9 @@
-[
-    {
+{
+    "0": {
+        "id": 0,
         "nombre": "etchegoimberrymateoblasco",
         "mail": "kn.maiky@gmail.com",
-        "contrasena": "Aa1234567",
+        "contrasena": "Holanda12",
         "admin-verificado": false
     },
     {
@@ -35,4 +36,4 @@
         "contrasena": "PenePepe1",
         "admin-verificado": false
     }
-]
+}
