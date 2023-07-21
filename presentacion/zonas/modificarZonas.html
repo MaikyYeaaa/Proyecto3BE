@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="submit" value="Zonas">
-<form action="modificarZonas"></form>
-    <script src="../jquery-3.6.4.min.js"></script>
-    <script src="../logica/modificarZonas.js"></script>
-</body> 
+  </head>
+  <body>
+    <form action="../../logica/agregarZonas.php" method="post">
+      <input type="text" name="zona" required />
+      <input type="submit" value="Agregar" />
+    </form>
+
+    <form action="../../logica/eliminarZonas.php" method="post">
+      <input type="text" name="zona" required />
+      <input type="submit" value="Eliminar" />
+    </form>
+    <script src="../../jquery-3.6.4.min.js"></script>
+    <script src="../../logica/modificarZonas.js"></script>
+  </body>
 </html>

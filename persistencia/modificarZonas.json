@@ -1,14 +1,5 @@
-[ 
-    {
-        "Nombre" : "Montevideo"
-    },
-
-    {
-        "Nombre" : "Maldonado"
-
-    },
-
-    {
-        "Nombre" : "Canelones"
-    }
+[
+    "parque rodo",
+    "pocitos",
+    "centro"
 ]
