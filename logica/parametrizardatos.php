@@ -1,5 +1,4 @@
 <?php
-
 require "helperFunctions.php";
 
 $jsonFileName = "../persistencia/datos.json";
