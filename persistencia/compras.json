@@ -1,0 +1,20 @@
+[
+  {
+    "FechaCompra": "23/07/2022",
+    "Comprador": "Mateo",
+    "IDcompra": "1234",
+    "Producto": ["menu1", "menu2"]
+  },
+  {
+    "FechaCompra": "23/07/232332",
+    "Comprador": "Lucia",
+    "IDcompra": "4444",
+    "Producto": ["menu4", "menu2"]
+  },
+  {
+    "FechaCompra": "23/07/1002",
+    "Comprador": "German",
+    "IDcompra": "6666",
+    "Producto": ["menu1", "menu4"]
+  }
+]

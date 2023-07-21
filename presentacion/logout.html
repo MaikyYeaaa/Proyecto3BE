@@ -5,20 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/nav.css" />
     <script src="../jquery-3.6.4.min.js"></script>
+
     <title>Document</title>
   </head>
   <body>
     <script src="../nav.js"></script>
-    <section id="login">
-      <form id="form-login">
-        <label>Correo:</label>
-        <input name="mail" type="text" />
-        <label>Contraseña</label>
-        <input name="cont" type="text" />
-        <input type="submit" value="Ingresar" />
-        <p id="resp"></p>
-      </form>
-    </section>
-    <script src="../logica/login.js"></script>
+
+    <form action="../logica/logout.php">
+      <input type="submit" value="Cerrar sesion" />
+    </form>
   </body>
 </html>

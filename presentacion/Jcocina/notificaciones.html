@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Notificaciones de stock:</h1>
+    <button id="btnNotif">Ver notificaciones:</button>
+    <p id="feedback"></p>
+    <form id="form-tabla">
+        <section id="tabla-notificaciones">
+            <table>
+                <tr>
+                  <td>Notificación</td>
+                  <td>Fecha</td>
+                </tr>
+                <tbody id="Notif"></tbody>
+              </table>
+    
+        </section>
+    </form>
+
+
+
+    <script src="../../jquery-3.6.4.min.js"></script>
+    <script src="../../logica/verNotificaciones.js"></script>
+
+</body>
+</html>
