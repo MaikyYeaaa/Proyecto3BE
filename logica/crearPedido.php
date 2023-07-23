@@ -2,7 +2,11 @@
 require "../logica/Clases/Pedido.php";
 
 $nombre = $_POST["Menu custom"];
+<<<<<<< Updated upstream
 $fechaInicio = $_POST["fecha"];
+=======
+$fechaInicio = "0"; //A CAMBIAR CON LA FECHA ACTUAL!!!!
+>>>>>>> Stashed changes
 $fechaFin = "0"; //La fecha fin se ajusta cuando un administrador modifique el estado
 $jsonURL = '../persistencia/pedidos.json';
 $creador = "User"; //CAMBIAR A NOMBRE ACTUAL
@@ -12,7 +16,7 @@ $coste = 2000 * $multiplicador;
 for ($i = 1; $i < $multiplicador; $i++) {
     $comidas[$i] = $_POST["platos"];
 }
-
+$coste = 2000 * $multiplicador; //A CAMBIAR CON EL VALOR PARAMETRIZABLE!!!!
 var_dump($comidas);
 
 $jsonInfo = file_get_contents($jsonURL);
