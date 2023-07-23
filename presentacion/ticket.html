@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../jquery-3.6.4.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="ticket">
+      <label>Razon:</label>
+      <select name="razon" required>
+        <!-- <option value="valor1">Seleccione la razon</option> -->
+        <option value="pedido">Problemas con un pedido</option>
+        <option value="cuenta">Problemas con la cuenta</option>
+        <option value="otro">Otra</option>
+      </select>
+      <p></p>
+      <label>Describe el problema:</label>
+      <input type="text" name="descripcion" placeholder="..." required />
+      <p></p>
+      <input type="submit" value="Crear Ticket" />
+    </form>
+    <script src="../logica/ticket.js"></script>
+  </body>
+</html>

@@ -3,12 +3,14 @@
 
 $nombre_comida = $_POST["nombre"];
 $descripcion = $_POST["desc"];
+$dieta = $_POST["dieta"];
 $imagenURL = $_POST["imgURL"];
 
 $newComida = [
 "id_comida" => rand(1,349289432),
 "nombre_comida" => $nombre_comida,
 "descripcion" => $descripcion,
+"dieta" => $dieta,
 "imgURL" => $imagenURL,
 ];
 

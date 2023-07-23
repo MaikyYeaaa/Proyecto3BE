@@ -7,7 +7,7 @@ function writeToJSON($jsonURL, $arrayData) {
     } else {
         // si existe decodea el contenido
         $array = json_decode(file_get_contents($jsonURL), true);
-        // se fija si el contenido de $comida no es un array
+        // se fija si el contenido de $array no es un array
         if (!is_array($array)) {
             // si no es, hace un array vacio
             $array = array();

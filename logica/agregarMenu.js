@@ -32,7 +32,7 @@ menuFrom.addEventListener("submit", function (e) {
         }
       }
       if (cont < 5) {
-        console.log(`${cont}/5`);
+        alert(`NO LLEGA: ${cont}/5`);
       } else {
         addMenu();
       }
@@ -47,7 +47,7 @@ function addMenu() {
   })
     .then((r) => r.json())
     .then((r) => {
-      const nombre = r[r.length - 1].nombre_menu; //ACCEDER AL NOMBRE DE EL JSON
+      const nombre = r[r.length - 1].nombre_menu; //ACCEDER AL NOMBRE DEL MENU EN EL JSON
       $("#pMensaje").html(`Menu ${nombre} agregado correctamente!`);
     });
 }
