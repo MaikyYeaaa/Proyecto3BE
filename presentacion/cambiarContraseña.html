@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Cambiar contraseña:</h1>
 
     <form id="form-contra">
-        <label >contraseña actual</label>
-        <input type="password" id="cont" required><br>
-        <label>contraseña nueva</label>
-        <input type="password" id="newCont" required><br>
-        <label>contraseña nueva</label>
-        <input type="password" id="newCont2" required><br>
-        <input type="submit" value="aceptar" id="btn">
+      <label>contraseña actual</label>
+      <input type="password" id="cont" required /><br />
+      <label>contraseña nueva</label>
+      <input type="password" id="newCont" minlength="8" required /><br />
+      <label>contraseña nueva</label>
+      <input type="password" id="newCont2" required /><br />
+      <input type="submit" value="aceptar" id="btn" />
     </form>
     <p id="feedback"></p>
     <script src="../jquery-3.6.4.min.js"></script>
     <script src="../logica/cambioContra.js"></script>
-    
-</body>
+  </body>
 </html>

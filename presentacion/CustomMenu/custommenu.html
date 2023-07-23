@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        table, th, td {
-          border:1px solid black;
-        }
-        </style>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Crear menú</h1>
 
     <h2>Que tipo de menú es?</h2>
     <select id="pedido">
-        <option value="Semanal">Semanal</option>
-        <option value="Quincenal">Quincenal</option>
-        <option value="Mensual">Mensual</option>
-      </select>
-      <label>Numero de menus:</label>
-      <input type="number" id="multi" name="pin" maxlength="1" size="1" value="1">
+      <option value="Semanal">Semanal</option>
+      <option value="Quincenal">Quincenal</option>
+      <option value="Mensual">Mensual</option>
+    </select>
+    <label>Numero de menus:</label>
+    <input type="number" id="multi" name="pin" max="9" size="1" value="1" />
 
+    <p id="menu-editor"></p>
 
-      <p id="menu-editor"></p>
+    <p id="comida-editor"></p>
+    <input type="submit" id="confirmar" value="Confirmar menú" />
+    <p id="feedback" style="color: red"></p>
 
-      <p id="comida-editor"></p>
-      <input type="submit" id="confirmar" value="Confirmar menú">
-      <p id="feedback" style="color: red;"></p>
+    <section id="confirmar-pedido">
+      <h1>Confirmar pago:</h1>
+      <label>Ingrese metodo de pago:</label>
+      <select id="Tipo" aria-placeholder="Ola">
+        <option value="Metodo1">Metodo1</option>
+        <option value="Metodo2">Metodo2</option>
+        <option value="Metodo3">Metodo3</option></select
+      ><br />
+      <label>Ingrese su tarjeta</label>
+      <input id="tarjeta" type="number" required /><br />
+      <label>Ingrese su pin</label>
+      <input id="pin" maxlength="3" type="number" required /><br />
+      <input type="submit" value="Confirmar pedido" id="btnCompra" />
+      <p id="compra-feedback" style="color: red"></p>
+    </section>
 
-
-
-        <section id="confirmar-pedido">
-          <h1>Confirmar pago:</h1>
-          <label>Ingrese metodo de pago:</label>
-          <select id="Tipo" aria-placeholder="Ola">
-            <option value="Metodo1">Metodo1</option>
-            <option value="Metodo2">Metodo2</option>
-            <option value="Metodo3">Metodo3</option>
-          </select><br>
-          <label>Ingrese su tarjeta</label>
-          <input id="tarjeta" type="number" required><br>
-          <label>Ingrese su pin</label>
-          <input id="pin" maxlength="3" type="number" required><br>
-          <input type="submit" value="Confirmar pedido" id="btnCompra">
-          <p id="compra-feedback" style="color: red;"></p>
-        </section>
-
-
-      <script src="../../jquery-3.6.4.min.js"></script>
-      <script src="../../logica/custommenu.js"></script>
-
-</body>
+    <script src="../../jquery-3.6.4.min.js"></script>
+    <script src="../../logica/custommenu.js"></script>
+  </body>
 </html>
