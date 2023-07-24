@@ -16,7 +16,7 @@ $coste = 2000 * $multiplicador;
 for ($i = 1; $i < $multiplicador; $i++) {
     $comidas[$i] = $_POST["platos"];
 }
-$coste = 2000 * $multiplicador; //A CAMBIAR CON EL VALOR PARAMETRIZABLE!!!!
+$coste = 2000 * $multiplicador; 
 var_dump($comidas);
 
 $jsonInfo = file_get_contents($jsonURL);
@@ -26,7 +26,7 @@ $Pedido = new Pedido($index,"Menu custom",$creador,"Solicitado",$coste,$fechaIni
 $infoArray[] = $Pedido;
 $jsonData = json_encode($infoArray, JSON_PRETTY_PRINT);
 
-// Save the updated JSON back to the file
+
 file_put_contents($jsonURL, $jsonData);
 
 echo json_encode($Pedido);

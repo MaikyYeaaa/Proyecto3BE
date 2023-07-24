@@ -12,8 +12,7 @@ Class pedido{
     private $fechaInicio = "---";
     private $fechaFin = "---";
     private $comidas = [];
-    //Aqui va la variable Menu, recordar agregarla en setters, getters
-    //y en el constructor!
+
 
     //Getters
 
@@ -43,6 +42,9 @@ Class pedido{
         return $this -> fechaFin;
     }
 
+    function getComidas(){
+        return $this-> comidas;
+    }
 
     //Setters
 
@@ -74,6 +76,9 @@ Class pedido{
         $this -> fechaFin = $nuevaFechaFin;
     }
 
+    function setComidas($comidas){
+        $this -> comidas = $comidas;
+    }
 
     //Constructor
 
