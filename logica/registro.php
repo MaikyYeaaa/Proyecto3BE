@@ -7,11 +7,13 @@ $nombre = $_POST["nombre"];
 $mail = $_POST["mail"];
 $contra = $_POST["contrasena"];
 $numVerif = rand(10000, 99999);
+$tipo = $_POST["cliente"];
 
     $usuario = [
         "nombre" => $nombre,
         "mail" => $mail,
         "contrasena" => $contra,
+        "tipo de cuenta" => $tipo,
         "admin-verificado" => false,
     ];
     
