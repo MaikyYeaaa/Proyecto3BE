@@ -22,7 +22,8 @@ function writeToJSON($jsonURL, $arrayData) {
     return file_put_contents($jsonURL, $jsonData);
 }
 
-function sendToBDD($sql) {
+function conectarBDD() {
+    
 $host = "localhost";
 $UsuarioBDD = "root";
 $ContraBDD = "";
@@ -33,10 +34,27 @@ $con = new mysqli($host, $UsuarioBDD, $ContraBDD, $bdd);
 if($con->connect_error) {
     die ("la conexion ha fallado: " . $con->connect_error);
 }
+return $con;
+}
 
+function sendToBDD($sql, $con) {
+    $resultado = $con->query($sql);
+    return $resultado;
+}
+
+function getFromBDD($sql, $con) {
 $resultado = $con->query($sql);
-$con->close();
-return true;
+
+if(!$resultado) {
+    die ("error al ejecutar la consulta: " . $con->error);
+}
+
+$data = array();
+while ($fila = $resultado->fetch_assoc()) {
+    $data[] = $fila;
+}
+
+return $data;
 }
 
 ?>
