@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../../styles/clases.css" />
+    <link rel="stylesheet" href="../../styles/empleados.css">
+    
+    <script src="../../jquery-3.6.4.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="modal">
+      <article id="modal-content"></article>
+    </section>
+    <section class="bar" id="gerente-bar">
+      <a href="#">Stock</a>
+      <a href="#">Pedidos</a>
+      <a href="#">Productos</a>
+    </section>
+    <section class="empleado-main-section" id="productos-section">
+      <article id="productos">
+        <p id="p">Productos</p>
+        <section>
+          <article id="menus-art" class="listado">
+            <section id="head">
+              <h2>Menus</h2>
+              <article class="textfield">
+                <input type="text" placeholder="Buscar" />
+                <img src="../../src/ic-search.svg" alt="" />
+              </article>
+            </section>
+            <section id="listado-menus">
+
+            </section>
+          </article>
+          <article id="platos-art" class="listado">
+            <section id="head">
+                <h2>Platos</h2>
+                <article class="textfield">
+                  <input type="text" placeholder="Buscar" />
+                  <img src="../../src/ic-search.svg" alt="" id="btnFiltroComida"/>
+                </article>
+              </section>
+              <section id="listado-platos">
+
+              </section>
+            </article>
+          </article>
+        </section>
+      </article>
+    </section>
+    <script src="../../logica/Comida.js"></script>
+    <script src="../../scripts/Modal.js"></script>
+  </body>
+</html>

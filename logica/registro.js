@@ -46,32 +46,33 @@ var valida = (datos) => {
   }
 };
 
-var codigo = null;
+// var codigo = null;
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
 
   let datos = new FormData(formulario);
 
   if (valida(datos)) {
-    fetch("../logica/registro.php", {
+    fetch("../persistencia/registro.php", {
       method: "POST",
       body: datos,
     })
       .then((r) => r.text())
-      .then((r) => {
-        codigo = r;
-        console.log(codigo);
-        $("#verificar-codigo").css({ display: "block" });
-      });
+      .then((r) => console.log(r));
+    // .then((r) => {
+    // codigo = r;
+    // console.log(codigo);
+    // $("#verificar-codigo").css({ display: "block" });
+    // });
   }
 });
 
-verificador.addEventListener("submit", function (e) {
-  e.preventDefault();
+// verificador.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  let codigoIngresado = Number($("#codigo-ingresado").val());
+//   let codigoIngresado = Number($("#codigo-ingresado").val());
 
-  if (codigoIngresado == codigo) {
-    console.log("verificado!");
-  }
-});
+//   if (codigoIngresado == codigo) {
+//     console.log("verificado!");
+//   }
+// });

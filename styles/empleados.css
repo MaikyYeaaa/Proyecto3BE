@@ -1,0 +1,122 @@
+body {
+  display: flex;
+  margin: 0;
+}
+
+#productos-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  min-height: 100vh;
+}
+
+#productos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  background: #d9d9d9;
+}
+#productos #p {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  color: #000;
+  font-family: Roboto;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+#listado-platos {
+  background-color: white;
+  /* width: 100px; */
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  /* overflow: hidden; */
+  min-width: 100%;
+}
+#listado-platos h1 {
+  font-size: large;
+}
+
+#modal {
+  visibility: hidden;
+  position: fixed;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(8, 8, 8, 0.7);
+  backdrop-filter: blur(3px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modal #modal-content {
+  width: 400px;
+  min-height: 600px;
+
+  border: 2px white solid;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
+}
+#modal #modal-content #cerrar {
+  position: absolute;
+  z-index: 5;
+  width: 10%;
+  background-color: gray;
+  margin: 2px;
+  border-radius: 50px;
+}
+#modal #modal-content h1 {
+  text-align: center;
+  font-size: xx-large;
+}
+#modal #modal-content #productoImg {
+  width: 100%;
+}
+#modal #modal-content #btnContenedor {
+  width: 100%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* #modal #modal-content #btnContenedor button {
+  position: absolute;
+  z-index: 20;
+} */
+.producto #fondo {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.producto #fondo:hover {
+  opacity: 0.2;
+}
+.producto #fondo img {
+  height: 100%;
+}
+
+.producto {
+  width: 200px;
+  height: 150px;
+  border: 1px solid black;
+  margin: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

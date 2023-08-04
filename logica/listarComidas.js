@@ -8,12 +8,12 @@ fetch("../../persistencia/listarComidas.php")
       let descripcion = r[i].Descripcion;
       let imgURL = r[i].ImagenURL;
       mostrar = `
-          <article>
-          <h1>${nombre_comida}</h1>
-          <p>Descripcion: ${descripcion}</p>
-          <image src="${imgURL}" width="100px">
-        </article>
+      <article class="comida-list">
+      <h1>${nombre_comida}</h1>
+      <p>${descripcion}</p>
+      <image src="${imgURL}">
+    </article>
             `;
-      $("#mostrar").append(mostrar);
+      $("#listado-platos").append(mostrar);
     }
   });
