@@ -1,39 +1,9 @@
-{
-    "0": {
-        "id": 0,
-        "nombre": "etchegoimberrymateoblasco",
-        "mail": "kn.maiky@gmail.com",
-        "contrasena": "Holanda12",
-        "admin-verificado": false
-    },
+[
     {
-        "nombre": "Bruno",
-        "mail": "bruno@gmail.com",
-        "contrasena": "Bruno123",
-        "admin-verificado": false
-    },
-    {
-        "nombre": "awwdawd",
-        "mail": "kn.maiky@gmail.com",
-        "contrasena": "Aa1234567",
-        "admin-verificado": false
-    },
-    {
-        "nombre": "mateo",
-        "mail": "kn.maiky@gmail.com",
-        "contrasena": "Aaab1",
-        "admin-verificado": false
-    },
-    {
-        "nombre": "mateo",
-        "mail": "kn.maiky@gmail.com",
-        "contrasena": "Aaab1",
-        "admin-verificado": false
-    },
-    {
-        "nombre": "mateo",
-        "mail": "kn.maiky@gmail.com",
-        "contrasena": "PenePepe1",
+        "nombre": "Pedro",
+        "mail": "pedro@gmail.com",
+        "contrasena": "Pedrocontra123",
+        "tipo de cuenta": "empresa",
         "admin-verificado": false
     }
-}
+]

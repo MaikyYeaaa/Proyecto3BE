@@ -3,21 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/nav.css" />
     <script src="../jquery-3.6.4.min.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <script src="../nav.js"></script>
-
     <form id="form-registrar">
-      <input type="text" name="nombre" placeholder="nombre" required />
+      <select name="cliente">
+        <option value="normal">normal</option>
+        <option value="empresa">empresa</option>
+      </select>
+      <p></p>
       <input type="text" name="mail" placeholder="mail" required />
+      <input type="text" name="dir" placeholder="direccion" required />
+      <input type="number" name="cedula" placeholder="cedula/rut" required />
+      <input
+        type="text"
+        name="nombre"
+        placeholder="nombre"
+        maxlength="20"
+        required
+      />
+      <input
+        type="text"
+        name="apellido"
+        placeholder="apellido"
+        maxlength="40"
+      />
+      <p></p>
       <input
         type="text"
         name="contrasena"
         placeholder="contrasena"
         minlength="8"
+        maxlength="20"
         required
       />
       <input
@@ -29,8 +47,7 @@
 
       <input type="submit" value="enviar" />
     </form>
-    <p></p>
-    <section id="verificar-codigo" style="display: none">
+    <!-- <section id="verificar-codigo" style="display: none">
       <form id="form-verificacion">
         <input
           type="number"
@@ -39,7 +56,7 @@
         />
         <input type="submit" value="enviar" />
       </form>
-    </section>
+    </section> -->
 
     <script src="../logica/registro.js"></script>
   </body>

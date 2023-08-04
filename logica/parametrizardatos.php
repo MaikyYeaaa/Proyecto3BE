@@ -1,5 +1,4 @@
 <?php
-
 require "helperFunctions.php";
 
 $jsonFileName = "../persistencia/datos.json";
@@ -14,6 +13,8 @@ $datosStockmaximo = empty($_POST["datosStockmaximo"]) ? $lastElement["datosStock
 $datosTiempoturno = empty($_POST["datosTiempoturno"]) ? $lastElement["datosTiempoturno"] : $_POST["datosTiempoturno"];
 $datosZonas = empty($_POST["datosZonas"]) ? $lastElement["datosZonas"] : $_POST["datosZonas"];
 $datosCostoMenus = empty($_POST["datosCostoMenus"]) ? $lastElement["datosCostoMenus"] : $_POST["datosCostoMenus"];
+$datosFechaVencimiento = empty($_POST["datosFechaVencimiento"]) ? $lastElement["datosFechaVencimiento"] : $_POST["datosFechaVencimiento"];
+
 
 $texto = [
   "datosCocina" => $datosCocina,
@@ -23,6 +24,8 @@ $texto = [
   "datosTiempoturno" => $datosTiempoturno,
   "datosZonas" => $datosZonas,
   "datosCostoMenus" => $datosCostoMenus,
+  "datosFechaVencimiento" => $datosFechaVencimiento,
+
 ];
 
 writeToJSON($jsonFileName, $texto);

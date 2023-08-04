@@ -17,6 +17,10 @@ class Menu {
         $this->ID_menu = $ID_menu;
         $this->nombre_menu = $nombre_menu;
         $this->stockMaximo = $stockMaximo;
+        $this->stockColchon = $stockColchon;
+        $this->stockReal = $stockReal;
+        $this->fechaVencimiento = $fechaVencimiento;
+        $this->comidas = $comidas;
         $this-> descripción = $descripción;
         $this-> img = $img;
     }
@@ -39,6 +43,14 @@ class Menu {
     public function getFechaVencimiento() {
         return $this->fechaVencimiento;
     }
+    public function getDescripcion(){
+    return $this->descripción;
+    }
+
+    public function getImg(){
+        return $this->img;
+    }
+
     public function getComidas() {
         return $this->comidas;
     }
@@ -63,6 +75,14 @@ class Menu {
     }
     public function setComidas($comidas) {
         $this->comidas = $comidas;
+    }
+
+    public function setDescripcion($Descripcion){
+        $this->descripción = $descripcion;
+    }
+
+    public function setImg($img){
+        $this->img = $img;
     }
 }
 

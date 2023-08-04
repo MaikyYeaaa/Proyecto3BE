@@ -23,5 +23,7 @@ formulario.addEventListener("submit", function (e) {
           $("#resp").html(`Error, ingrese los datos nuevamente`);
         }
       });
+  } else {
+    $("#resp").html(`Error, ingrese los datos nuevamente!!`);
   }
 });

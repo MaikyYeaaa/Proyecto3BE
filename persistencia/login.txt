@@ -1,1 +1,1 @@
-login iniciado = false
+login iniciado = true

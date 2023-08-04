@@ -1,26 +1,14 @@
 [
     {
-      "Id": 0,
-      "Nombre": "Falta de Pure de Papas",
-      "Estado": "Solicitado",
-      "FechaInicio": "2/7/2023"
+        "Id": 1,
+        "Nombre": "Falta de Fideos con tuco",
+        "Estado": "Solicitado",
+        "FechaInicio": "2\/7\/2023"
     },
     {
-      "Id": 1,
-      "Nombre": "Falta de Fideos con tuco",
-      "Estado": "Solicitado",
-      "FechaInicio": "2/7/2023"
-    },
-    {
-      "Id": 2,
-      "Nombre": "Falta de Strogonoff",
-      "Estado": "Solicitado",
-      "FechaInicio": "2/7/2023"
-    },
-    {
-      "Id": 3,
-      "Nombre": "Falta de Ganas",
-      "Estado": "Solicitado",
-      "FechaInicio": "2/7/2023"
+        "Id": 3,
+        "Nombre": "Falta de Ganas",
+        "Estado": "Solicitado",
+        "FechaInicio": "2\/7\/2023"
     }
 ]

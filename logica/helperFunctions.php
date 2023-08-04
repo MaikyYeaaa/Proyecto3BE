@@ -22,4 +22,21 @@ function writeToJSON($jsonURL, $arrayData) {
     return file_put_contents($jsonURL, $jsonData);
 }
 
+function sendToBDD($sql) {
+$host = "localhost";
+$UsuarioBDD = "root";
+$ContraBDD = "";
+$bdd = "tukotech";
+
+$con = new mysqli($host, $UsuarioBDD, $ContraBDD, $bdd);
+
+if($con->connect_error) {
+    die ("la conexion ha fallado: " . $con->connect_error);
+}
+
+$resultado = $con->query($sql);
+$con->close();
+return true;
+}
+
 ?>

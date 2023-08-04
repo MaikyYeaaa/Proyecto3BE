@@ -1,0 +1,158 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.bar {
+  position: fixed;
+  display: flex;
+  width: 15vw;
+  height: 100%;
+  padding: 0 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 38px;
+  flex-shrink: 0;
+  align-self: stretch;
+  background: #666;
+  margin-right: 15vw;
+}
+.bar a {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.empleado-main-section {
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  /* width: 100vw; */
+  /* align-self: stretch; */
+  background: #acacac;
+}
+
+.textfield {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 8px;
+  gap: 4px;
+  background-color: white;
+}
+.textfield input {
+  border: none;
+}
+.textfield input:focus-visible {
+  outline: none;
+}
+
+.btnPrimario {
+  display: flex;
+  width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  background: none;
+}
+.btnSecundario {
+  display: flex;
+  width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 8px;
+  background: #000;
+}
+.btnTerciario {
+  display: flex;
+  width: 7.5rem;
+  padding: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+
+  border: none;
+  border-radius: 6px;
+  background: rgba(217, 217, 217, 0.5);
+}
+.btnPrimario,
+.btnSecundario,
+.btnTerciario {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+}
+
+.listado {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.listado #head {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  padding: 0 100px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.comida-list {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: calc(100% / 4);
+  height: fit-content;
+  overflow: hidden;
+}
+.comida-list p,
+.comida-list img {
+  width: 100%;
+}
+.comida-list h1 {
+  margin: 0;
+  font-size: large;
+}
+.comida-list p {
+  font-size: small;
+}
+.btnPrimario {
+  display: flex;
+  width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  background: none;
+}
+.btnSecundario {
+  display: flex;
+  width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+}

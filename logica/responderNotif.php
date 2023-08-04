@@ -1,19 +1,11 @@
 <?php
+$data = file_get_contents('../persistencia/JefeCocinaNotif.json');
+$notifications = json_decode($data, true);
+$indexToRemove = isset($_POST['index']) ? intval($_POST['index']) : -1;
 
-
-$jsonFilePath = '../persistencia/JefeCocinaNotif.json'; 
-$jsonData = file_get_contents($jsonFilePath);
-$data = json_decode($jsonData, true);
-
-
-$pos = $_POST["posicion"];
-$accion = $_POST["accion"];
-$date = $_POST["date"];
-$data[$pos]["Estado"] = $accion;
-$data[$pos]["FechaInicio"] = $date;
-
-$modifiedJsonData = json_encode($data, JSON_PRETTY_PRINT);
-
-file_put_contents($jsonFilePath, $modifiedJsonData);
-
+if ($indexToRemove >= 0 && $indexToRemove < count($notifications)) {
+    array_splice($notifications, $indexToRemove, 1);
+}
+$jsonData = json_encode($notifications, JSON_PRETTY_PRINT);
+file_put_contents('../persistencia/JefeCocinaNotif.json', $jsonData);
 ?>
