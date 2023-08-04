@@ -21,18 +21,21 @@
     <section id="modal">
       <article id="modal-content"></article>
     </section>
-    <section class="bar" id="gerente-bar">
+    <!-- <section class="bar" id="gerente-bar">
       <a href="#">Stock</a>
       <a href="#">Pedidos</a>
       <a href="#">Productos</a>
-    </section>
+    </section> -->
     <section class="empleado-main-section" id="productos-section">
       <article id="productos">
         <p id="p">Productos</p>
         <section>
           <article id="menus-art" class="listado">
             <section id="head">
-              <h2>Menus</h2>
+              <article class="titulos">
+                <h2>Menus</h2>
+                <a id="plato-nuevo" href="../ABLmenus/addMenu.html">registrar menu nuevo</a>
+              </article>
               <article class="textfield">
                 <input type="text" placeholder="Buscar" />
                 <img src="../../src/ic-search.svg" alt="" />
@@ -44,9 +47,12 @@
           </article>
           <article id="platos-art" class="listado">
             <section id="head">
-                <h2>Platos</h2>
+                <article class="titulos">
+                  <h2>Platos</h2>
+                  <a id="plato-nuevo" href="../ABLproductos/addComida.html">registrar plato nuevo</a>
+                </article>
                 <article class="textfield">
-                  <input type="text" placeholder="Buscar" />
+                  <input type="text" placeholder="Buscar" id="txtFiltroComida"/>
                   <img src="../../src/ic-search.svg" alt="" id="btnFiltroComida"/>
                 </article>
               </section>
