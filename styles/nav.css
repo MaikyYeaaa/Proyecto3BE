@@ -1,21 +1,39 @@
 body {
   margin: 0;
-  display: flex;
-}
-section {
-  height: fit-content;
+  font-family: "Roboto", sans-serif;
 }
 
-nav {
-  height: 100vh;
-  width: 10vw;
-  background-color: blanchedalmond;
+#navbar {
+  position: absolute;
+  top: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: start;
-  margin-inline-end: 10px;
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
-nav a {
-  padding-block: 10px;
+
+#nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#nav a {
+  padding-inline: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
