@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="registro-form">
+      <input type="text" name="nombre" placeholder="nombre" />
+      <input type="text" name="apellido" placeholder="apellido" />
+      <input type="text" name="contra" placeholder="contra" />
+      <input type="text" name="contra2" placeholder="repetir contra" />
+      <input type="text" name="mail" placeholder="mail" />
+      <input type="number" name="tel" placeholder="tel" />
+      <input type="text" name="direccion" placeholder="direccion" />
+      <select name="tipo" id="tipo">
+        <option value="web">persona</option>
+        <option value="empresa">empresa</option>
+      </select>
+      <input type="number" name="ci-rut" id="ident" placeholder="ci" /><!-- ci o rut -->
+      <p></p>
+      <input type="submit" value="registrarse" />
+    </form>
+
+    <!-- nombre contra mail (rol) telefono direccion web:ci empresa:rut 
+    datos web lo mando a web, empresa a empresa
+    usuario es una version simplificada que debe tener: nombre contra rol y mail -->
+
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script src="../logica/registroReal.js"></script>
+  </body>
+</html>

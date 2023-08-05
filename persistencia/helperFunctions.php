@@ -43,9 +43,12 @@ return $con;
 }
 
 function sendToBDD($sql, $con) {
-    $resultado = $con->query($sql);
-    return $resultado;
+    if (!$con->query($sql)) {
+        echo "Error executing query: (" . $con->errno . ") " . $con->error;
+    }
+    return $con->affected_rows;
 }
+
 
 function getFromBDD($sql, $con) {
 $resultado = $con->query($sql);
