@@ -1,24 +1,7 @@
 fetch("../../persistencia/listarComidas.php")
   .then((r) => r.json())
   .then((r) => {
-    for (let i = 0; i < r.length; i++) {
-      let nombre_comida = r[i].Nombre;
-      let imgURL = r[i].ImagenURL;
-      let idComida = r[i].IDComida;
-
-      mostrar = `
-      <article class="producto" id="#comida" data-idComida="${idComida}">
-      <section id="fondo">
-        <img
-          src="${imgURL}"
-          alt=""
-        />
-      </section>
-      <h1>${nombre_comida}</h1>
-    </article>
-            `;
-      $("#listado-platos").append(mostrar);
-    }
+    r.forEach((r) => mostrarProducto(r.Nombre, r.ImagenURL, r.IDComida));
 
     let productos = Array.from($(".producto")); //los hago array para trabajar con todos ellos
     productos.forEach((producto) => {
@@ -31,28 +14,7 @@ fetch("../../persistencia/listarComidas.php")
             r.forEach((r) => {
               if (idcomida == r.IDComida) {
                 console.log(r.IDComida);
-                let nombre = r.Nombre;
-                let desc = r.Descripcion;
-                let img = r.ImagenURL;
-
-                mostrar = `
-                <img id="cerrar" src="../../src/cross.svg" alt="" />
-                <h1>${nombre} </h1>
-                <img
-                id="productoImg"
-                src="${img}"
-                />
-                <p>
-                ${desc}
-                </p>
-                <section id="btnContenedor">
-                <form id="eliminar">
-                <input class="btnSecundario" type="submit" value="Eliminar" name="${idcomida}" data-nombre="${nombre}"/>
-              </form>
-                </section>
-                `;
-                $("#modal #modal-content").html(mostrar);
-                $("#modal").css({ visibility: "visible" });
+                mostrarModal(r.Nombre, r.Descripcion, r.ImagenURL, r.IDComida);
               }
             });
           });
@@ -70,25 +32,10 @@ function filtrar() {
     .then((r) => r.json())
     .then((r) => {
       r.forEach((r) => {
-        let id_comida = r.IDComida;
-        let nombre_comida = r.Nombre;
-        let imgURL = r.ImagenURL;
-
-        if (filtro == id_comida || filtro == nombre_comida) {
+        if (filtro == r.IDComida || filtro == r.Nombre) {
           $("#listado-platos").html("");
           filtroCorrecto = true;
-          mostrar = `
-          <article class="producto" id="#comida" data-idComida="${id_comida}">
-          <section id="fondo">
-            <img
-              src="${imgURL}"
-              alt=""
-            />
-          </section>
-          <h1>${nombre_comida}</h1>
-        </article>
-                `;
-          $("#listado-platos").append(mostrar);
+          mostrarProducto(r.Nombre, r.ImagenURL, r.IDComida);
         }
       });
       if (!filtroCorrecto) {
@@ -106,28 +53,7 @@ function filtrar() {
                 r.forEach((r) => {
                   if (idcomida == r.IDComida) {
                     console.log(r.IDComida);
-                    let nombre = r.Nombre;
-                    let desc = r.Descripcion;
-                    let img = r.ImagenURL;
-
-                    mostrar = `
-                    <img id="cerrar" src="../../src/cross.svg" alt="" />
-                    <h1>${nombre}</h1>
-                    <img
-                    id="productoImg"
-                    src="${img}"
-                    />
-                    <p>
-                    ${desc}
-                    </p>
-                    <section id="btnContenedor">
-                    <form id="eliminar">
-                    <input class="btnSecundario" type="submit" value="Eliminar" name="${idcomida}" data-nombre="${nombre}"/>
-                  </form>
-                    </section>
-                    `;
-                    $("#modal #modal-content").html(mostrar);
-                    $("#modal").css({ visibility: "visible" });
+                    mostrarModal(r.Nombre, r.Descripcion, r.ImagenURL, r.IDComida);
                   }
                 });
               });
@@ -158,3 +84,40 @@ $(document).on("click", "#eliminar input[type='submit']", function (e) {
       .then((r) => location.reload());
   }
 });
+
+function mostrarProducto(nombre, img, id) {
+  mostrar = `
+  <article class="producto" id="#comida" data-idComida="${id}">
+  <section id="fondo">
+    <img
+      src="${img}"
+      alt=""
+    />
+  </section>
+  <h1>${nombre.toUpperCase()}</h1>
+</article>
+        `;
+  $("#listado-platos").append(mostrar);
+}
+
+function mostrarModal(nombre, desc, img, id) {
+  console.log("entra a mostrar modal");
+  mostrar = `
+  <img id="cerrar" src="../../src/cross.svg" alt="" />
+  <h1>${nombre} </h1>
+  <img
+  id="productoImg"
+  src="${img}"
+  />
+  <p>
+  ${desc}
+  </p>
+  <section id="btnContenedor">
+  <form id="eliminar">
+  <input class="btnSecundario" type="submit" value="Eliminar" name="${id}" data-nombre="${nombre}"/>
+</form>
+  </section>
+  `;
+  $("#modal #modal-content").html(mostrar);
+  $("#modal").css({ visibility: "visible" });
+}
