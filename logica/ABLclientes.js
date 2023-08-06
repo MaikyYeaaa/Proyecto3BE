@@ -1,19 +1,24 @@
 const obtenerDatos = () => {
-  fetch("../logica/ABLclientes.php")
+  fetch("../persistencia/Lclientes.php")
     .then((r) => r.json())
     .then((r) => crearTabla(r));
 };
 
 const crearTabla = (r) => {
-  let tabla = "<table> <th>CLIENTE</th> <th>CONFIRMAR</th>";
+  if (r.length != 0) {
+    let tabla = "<table> <th>CLIENTE</th> <th>CONFIRMAR</th>";
 
-  r.forEach((r) => {
-    tabla += `<tr> <td> ${r} </td> <td> <input type="submit" value="confirmar" name="${r}" /> <input type="submit" value="denegar" name="${r}" /> </td> </tr>`;
-  });
+    r.forEach((r) => {
+      let mail = r.Mail;
+      tabla += `<tr> <td> ${mail} </td> <td> <input type="submit" value="confirmar" name="${mail}" /> <input type="submit" value="denegar" name="${mail}" /> </td> </tr>`;
+    });
 
-  tabla += "</table>";
+    tabla += "</table>";
 
-  $("#solicitudes").html(tabla);
+    $("#solicitudes").html(tabla);
+  } else {
+    $("#solicitudes").html("No hay ninguna solicitud en el momento");
+  }
 };
 
 obtenerDatos();
@@ -21,18 +26,31 @@ obtenerDatos();
 $(document).on("click", "#solicitudes input[type='submit']", function (e) {
   e.preventDefault();
 
-  var nombre = $(this).attr("name");
+  var id = $(this).attr("name");
   var valor = $(this).attr("value");
 
-  fetch("../logica/confirmarClientes.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": `application/x-www-form-urlencoded`,
-    },
-    body: `nombre=${encodeURIComponent(nombre)}&valor=${encodeURIComponent(
-      valor
-    )}`,
-  })
-    .then((r) => r.text())
-    .then((r) => console.log(r));
+  if (valor === "denegar") {
+    let confirmacion = confirm(`seguro que quiere  a ${id}`);
+    if (confirmacion) {
+      fetch("../persistencia/confirmarClientes.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": `application/x-www-form-urlencoded`,
+        },
+        body: `id=${encodeURIComponent(id)}&valor=${encodeURIComponent(valor)}`,
+      })
+        .then((r) => r.text())
+        .then(location.reload());
+    }
+  } else {
+    fetch("../persistencia/confirmarClientes.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": `application/x-www-form-urlencoded`,
+      },
+      body: `id=${encodeURIComponent(id)}&valor=${encodeURIComponent(valor)}`,
+    })
+      .then((r) => r.text())
+      .then(location.reload());
+  }
 });
