@@ -39,7 +39,7 @@ async function valida(datos) {
   let contra = datos.get("contra");
   let contraRepit = datos.get("contra2");
 
-  let mailRepetido = r.some((record) => record.Mail === mail);
+  let mailRepetido = r.some((record) => record.Mail === mail); //NO ANDA
 
   let contrasenaVerif = contra === contraRepit;
 

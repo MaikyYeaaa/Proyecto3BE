@@ -17,5 +17,8 @@ if($userData = getFromBDD($sql, $con)) { // $userData = [{"Contrasena":"jernacio
     echo "mailError";
 }
 
+$con->close();
+
+
 // echo json_encode($userData);
 ?>
