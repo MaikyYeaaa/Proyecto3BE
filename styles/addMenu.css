@@ -1,0 +1,17 @@
+#comidas-container #comidas {
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 680px;
+  height: 600px;
+}
+#comidas-container #comidas #upper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.producto #fondo:hover {
+  transform: none;
+}
+#comidas-container {
+  margin-block: 10px;
+}

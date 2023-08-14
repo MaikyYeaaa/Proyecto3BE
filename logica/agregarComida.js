@@ -7,13 +7,10 @@ fetch("../../persistencia/getDietas.php")
       let tipo = r.Tipodieta;
       mostrar += `
       <option value="${tipo}">${tipo}</option>
-      `
-    })
+      `;
+    });
     $("#dietaSelect").html(mostrar);
   });
-
-
-
 
 var formulario = document.getElementById("agregarComida");
 
@@ -28,6 +25,7 @@ formulario.addEventListener("submit", function (e) {
     .then((r) => r.text())
     .then((r) => {
       console.log(r);
+      alert("comida agregada exitosamente!");
       // const comidas = Object.values(r);
       // $("h1").html("comida agregada exitosamente!");
     });

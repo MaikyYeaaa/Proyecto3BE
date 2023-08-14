@@ -1,5 +1,5 @@
 fetch("../persistencia/getTickets.php")
-  .then((r) => r.text())
+  .then((r) => r.json())
   .then((r) => {
     console.log(r);
     r.forEach((r) => {
