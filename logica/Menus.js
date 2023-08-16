@@ -51,9 +51,7 @@ function mostrarMenus() {
         platos.forEach((plato) => {
           platosMostrar += `${plato.Nombre}, `;
         });
-        console.log(platos);
         let num = Math.floor(Math.random() * 3);
-        console.log(num);
         let mostrar = `
         <article class="menu" id="#menu" data-id="${id}" data-nombre="${nombre}" data-platos="${platosMostrar}" data-precio="${precio}" data-stock="${stock}" onclick="modalMenu(this)">
         <section id="fondo">
@@ -111,3 +109,25 @@ function eliminarMenu(boton) {
       });
   }
 }
+
+// function modificarMenu(boton) {
+//   let id = $(boton).attr("data-id");
+//   let nombre = $(boton).attr("data-nombre");
+//   let platos = $(boton).attr("data-platos");
+//   let precio = $(boton).attr("data-precio");
+//   let stock = $(boton).attr("data-stock");
+
+//   mostrar = `
+//   <img id="cerrar" src="../../src/cross.svg" alt="" />
+//   <form id="modificarMenuForm" data-id="${id}">
+//   <h1> <input type="text" placeholder="${nombre}" name="nombreNuevo" /> </h1>
+//   <p> Platos: ${platos} </p>
+//   <p> Stock: ${stock} </p>
+//   <p> $${precio}</p>
+//   <section id="btnContenedor">
+//   <input class="btnSecundario" type="submit" value="Eliminar" data-nombre="${nombre}" data-id="${id}" onclick="eliminarMenu(this)"/>
+//   <input class="btnSecundario" type="submit" value="Modificar" name="${id}" data-platos="${platos}" data-stock="${stock}" data-precio="${precio}" data-id="${id}" data-nombre="${nombre}" onclick="modificarMenu(this)"/>
+//   </section>
+//   `;
+//   $("#modal #modal-content").html(mostrar);
+// }

@@ -45,7 +45,8 @@
 .menu {
   background-color: whitesmoke;
 }
-.menu, .producto {
+.menu,
+.producto {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,10 +99,9 @@
   justify-content: center;
   align-items: center;
 }
-/* #modal #modal-content #btnContenedor button {
-  position: absolute;
-  z-index: 20;
-} */
+#modal #modal-content #btnContenedor input {
+  margin-inline: 6px;
+}
 .producto #fondo,
 .menu #fondo {
   position: absolute;
@@ -137,7 +137,6 @@
   margin: 10px;
   text-align: center;
   border-radius: 6px;
-w
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,4 +153,8 @@ w
 }
 .titulos a {
   margin: 0;
+}
+
+#cerrar:hover {
+  transform: scale(1.33);
 }
