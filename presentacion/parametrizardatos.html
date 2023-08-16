@@ -39,45 +39,32 @@
     
             </article>
             <article id="parametrizarInputs">
-                <form action="../logica/parametrizardatos.php" method="POST">
+                <form action="../persistencia/parametrizardatos.php" method="POST">
     
                     <label>Cocinas: </label>
-                    <input type="text" name="datosCocina" placeholder="Ingrese datos" class="textfield">
+                    <input id="cocinasinput" type="text" name="datosCocina" placeholder="Ingrese datos" class="textfield">
                 
                     
                     <br>
                     <br>
                     <label>Tiempo de cocinado: </label>
-                    <input type="text" name="datosTiempo" placeholder="Ingrese datos" class="textfield">
+                    <input id="tiempoinput" type="text" name="datosTiempo" placeholder="Ingrese datos" class="textfield">
                 
                     <br>
                     <br>
                     <label>Stock colchon: </label>
-                    <input type="text" name="datosStockcolchon" placeholder="Ingrese datos" class="textfield">
+                    <input id="stockminimoinput" type="text" name="datosStockcolchon" placeholder="Ingrese datos" class="textfield">
                 
                     <br>
                     <br>
                     <label>Stock maximo: </label>
-                    <input type="text" name="datosStockmaximo" placeholder="Ingrese datos" class="textfield">
+                    <input id="stockmaximoinput" type="text" name="datosStockmaximo" placeholder="Ingrese datos" class="textfield">
                 
                     <br>
                     <br>
                     <label>Tiempo de turno: </label>
-                    <input type="text" name="datosTiempoturno" placeholder="Ingrese datos" class="textfield">
-                
+                    <input id="tiempoturnoinput" type="text" name="datosTiempoturno" placeholder="Ingrese datos" class="textfield">
                     <br>
-                    <br>
-                    <label>Zonas: </label>
-                    <input type="text" name="datosZonas" placeholder="Ingrese datos" class="textfield">
-                
-                    <br>
-                    <br>
-                    <label>Costo menus: </label>
-                    <input type="text" name="datosCostoMenus" placeholder="Ingrese datos" class="textfield">
-                    <br>
-                    <br>
-                    <label>Fecha de Vencimiento: </label>
-                    <input type="text" name="datosFechaVencimiento" placeholder="Ingrese datos" class="textfield">
                     <input type="submit" value="Agregar" class="btnSecundario" id="btn">
             </article>
             
@@ -92,8 +79,8 @@
 
 
     
-
-
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script src="../logica/getParametros.js"></script>
 
 
 

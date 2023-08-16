@@ -1,15 +1,101 @@
-fetch("../persistencia/menus.json")
-.then((r) => r.json())
-.then((r) => {
-    r.forEach((r) => {
-        let mostrar = `
-        ${r.nombre_menu} => stock: ${r.stock} 
-        <input type="submit" value="modificar" onclick="modificar(this)" data-nombre="${r.nombre_menu}" data-id="${r.id_menu}">
-        <br>
-        `;
-        $("#mostrar").append(mostrar);
-    })
-})
+var NombreOP;
+var Stock;
+$(document).ready(function() {
+    var modal = $("#myModal");
+    var btn = $(".MenuStock"); // Select elements with class MenuStock
+    var span = $(".btnSecundario");
+    console.log("first");
+
+     $("#stockInputs").on("click", ".MenuStock", function() {
+        NombreOP = $(this).attr("value");
+        var Stock = $(this).text().replace("Stock: ", "");
+        modal.css("display", "block");
+        $("#ModalTitle").html("Ajustar el Stock de " + NombreOP);
+        
+        $("#stocknumber").val(Stock);
+    });
+
+
+    span.click(function() {
+        modal.css("display", "none");
+        $("#stocknumber").val(0);
+    });
+
+    $(window).click(function(event) {
+        if (event.target === modal[0]) {
+            modal.css("display", "none");
+        }
+    });
+
+    $("#enviarStock").click(function() {
+        GetStockValues(NombreOP,3);
+    });
+});
+
+
+
+
+
+$("#enviarStock").click(console.log("holanda"));
+
+
+getMenus();
+function clearMenu(){
+    location.reload();
+
+}
+function getMenus(){
+    
+    fetch("../persistencia/getMenus.php")
+        .then((r) => r.json())
+        .then((response) => {
+            const MenuArray = Object.values(response);
+            let stockcolchon = MenuArray[0].StockColchón;
+            let stockmaximo = MenuArray[0].StockMaximo;
+            $("#stocknumber").attr("min", stockcolchon);
+            $("#stocknumber").attr("max", stockmaximo);
+
+            console.log(stockcolchon);
+            console.log(stockmaximo);
+
+            MenuArray.forEach((menu, pos) => {
+                let nombre = menu.Nombre;
+                $("#stockInputs").append(`<section class="Menuclass">
+                <article class="MenuFoto">Fotito</article>
+                <article class="MenuInfo">
+                    <p class="MenuName" value="${nombre}">${nombre}</p>
+                    <section class="MenuFeedback">
+                        <p class="MenuDesc">${menu.Descripcion}</p>
+                        <button class="MenuStock" value="${nombre}">${menu.StockReal}</button>
+                        
+                    </section>
+                    
+                </article>
+             </section>`);
+    
+            }
+            
+            
+            );
+            
+        })
+
+    
+}
+
+
+function GetStockValues(){
+    Stock = $("#stocknumber").val();
+    console.log(Stock);
+    setStock(NombreOP,Stock);
+    clearMenu();
+}
+
+
+
+
+
+
 
 function modificar(boton) {
     let id = $(boton).attr("data-id");
@@ -31,3 +117,31 @@ modiForm.addEventListener("submit", function(e) {
     console.log(data.get("stockNew"));
     console.log("aca se manda a la base de datos q lo cambie :D");
 })
+
+
+
+function setStock(nombre,stock){
+    var data = new FormData();
+    console.log("ejecutando");
+    data.append("menuName",nombre); 
+    data.append("stock",stock); 
+      fetch("../persistencia/SetMenusStock.php", {
+        method: "POST",
+        body:data,
+      })
+        .then((r) => r.text())
+        .then((response) => {
+          console.log(response);  
+    });
+
+
+
+
+
+}
+
+
+
+
+
+
