@@ -8,4 +8,7 @@ $dietas = getFromBDD($sql, $con);
 
 echo json_encode($dietas);
 
+$con->close();
+
+
 ?>

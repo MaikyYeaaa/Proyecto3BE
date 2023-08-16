@@ -1,121 +1,115 @@
 .textfield input {
-    border: none;
-  }
-  .textfield input:focus-visible {
-    outline: none;
-  }
-  
-
-
-
-body{
-    align-items: center; /*Centrar verticalmente */
-    justify-content: center; /*Centrar horizontalmente */
-    display: flex;
+  border: none;
+}
+.textfield input:focus-visible {
+  outline: none;
 }
 
-#login{
-    margin-top: 80px;
-    width: 90vw;
-    height: 80vh;
-    background-color: rgb(105, 105, 105);
-    justify-content: center;
-    display: flex;
-    padding-inline: 120px;
-    gap: 70px;
+body {
+  align-items: center; /*Centrar verticalmente */
+  justify-content: center; /*Centrar horizontalmente */
+  display: flex;
 }
 
-#Login-Title{
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-
+#login {
+  margin-top: 80px;
+  width: 90vw;
+  height: 80vh;
+  background-color: rgb(105, 105, 105);
+  justify-content: center;
+  display: flex;
+  padding-inline: 120px;
+  gap: 70px;
 }
 
-#login-contenido{
-display: flex;
-width: 370px;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-flex-shrink: 0;
-align-self: stretch;
+#Login-Title {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
 }
 
-#form-login{
-    width: 100%;
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
+#login-contenido {
+  display: flex;
+  width: 370px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  align-self: stretch;
 }
 
-#btnIngresar{
-    height: 45px;
-    padding: 0;
+#form-login {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-#inputMail{
-    width: 100%;
+#btnIngresar {
+  height: 45px;
+  padding: 0;
 }
 
-#login-image{
-    width: 350px;
-    align-items: center;
-    display: flex;
-
-}
-#login-image img{
-    width:100%;
+#inputMail {
+  width: 100%;
 }
 
-
-#inputPass{
-    width: 60%;
+#login-image {
+  width: 35%;
+  align-items: center;
+  display: flex;
+}
+#login-image img {
+  width: 100%;
 }
 
-
-#botones{
-    gap: 6px;
-    font-size: small;
-    color: white;
-    display: flex;
-    align-items: end;
+#inputPass {
+  width: 60%;
 }
 
-#botones a{
-    color: white;
-}
-#mail-section{
-    display: flex;
-    position: relative;
-}
-
-#pass-section{
-    display: flex;
-    position: relative;
-}
-#pass-section .error{
-    right: 148px;
-}
-#inputMail{
-    z-index: 1;
+#botones {
+  gap: 6px;
+  font-size: small;
+  color: white;
+  display: flex;
+  align-items: end;
 }
 
-#inputPass{
-    z-index: 1;
+#botones a {
+  color: white;
 }
-.error{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color:#FF7777;
-    position: absolute;
-    width: 50px;
-    height: 100%;
-    transform:translate(45px);
-    right: 0;
-    align-items: center;
-    background-image: url(../src/cross.svg);
-    background-position: center;
-    background-size: contain;
-    border-radius: 0 6px 6px 0;
+#mail-section {
+  display: flex;
+  position: relative;
+}
+
+#pass-section {
+  display: flex;
+  position: relative;
+}
+#pass-section .error {
+  right: 148px;
+}
+#inputMail {
+  z-index: 1;
+}
+
+#inputPass {
+  z-index: 1;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #ff7777;
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  /* transform: translate(45px); */
+  transition: 0.3s cubic-bezier(0.44, 0.5, 0.55, 1.22);
+  right: 0;
+  align-items: center;
+  background-image: url(../src/cross.svg);
+  background-position: center;
+  background-size: contain;
+  border-radius: 0 6px 6px 0;
 }
