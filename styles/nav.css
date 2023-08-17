@@ -4,7 +4,8 @@ body {
 }
 
 #navbar {
-  position: absolute;
+  background-color: white;
+  position: relative;
   top: 0;
   display: flex;
   width: 100%;

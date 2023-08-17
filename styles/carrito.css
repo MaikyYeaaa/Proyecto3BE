@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.carritoItem {
+  display: flex;
+  width: 674px;
+  height: fit-content;
+  padding: 15px;
+  align-items: center;
+  gap: 30px;
+  border-radius: 6px;
+  background: #d9d9d9;
+}
+.carritoItem #imgCont {
+  width: 150px;
+  height: 200px;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.carritoItem #imgCont img {
+  height: 100%;
+}
+.carritoItem #textop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  align-self: stretch;
+}
+.carritoItem #textop #titulo {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-block-end: 20px;
+}
+.carritoItem #textop #comidas {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0;
+}
+.carritoItem #textop #footer {
+  display: flex;
+  width: 464px;
+  height: 50px;
+  padding: 0px 15px;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f5f5;
+}
+.carritoItem #textop #footer #counter-and-trash {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.carritoItem #textop #footer #contador {
+  display: flex;
+  width: 90px;
+  height: 31px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15.5px;
+  border: 1px solid #d9d9d9;
+}
+.carritoItem #textop #footer #contador p {
+  cursor: default;
+}
+.carritoItem #textop #footer #precio {
+  color: #000;
+  font-size: 30px;
+  line-height: normal;
+}
+#platos {
+  display: flex;
+  width: fit-content;
+  height: 100%;
+  padding: 20px 25px;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-radius: 6px;
+  background: #ececec;
+}
+
+.icono {
+  transition: 0.4s;
+  cursor: pointer;
+}
+.icono:hover {
+  filter: brightness(0) saturate(90%);
+}
+
+#trash:hover {
+  transform: scale(1.3);
+}
+#carro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 85px;
+  align-self: stretch;
+  background: #666;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  padding: 40px;
+}
+#carro #extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+#carro #extra h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 100% */
+}
+#carro #extra #ticket {
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+  min-height: 70%;
+  height: fit-content;
+  padding: 0 5px 20px 5px;
+  width: 100%;
+  background: #d9d9d9;
+  justify-content: space-between;
+}
+#carro #extra #ticket #holes {
+  width: 100%;
+  padding: 5px 20px;
+}
+#carro #extra #ticket #holes img {
+  width: 100%;
+}
+#carro #extra #ticket h1 {
+  color: #000;
+  text-align: center;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 275;
+  line-height: 48px; /* 150% */
+  letter-spacing: -1.6px;
+  margin: 0;
+}
+#carro #extra #ticket h2 {
+  color: #000;
+  text-align: center;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 275;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+#carro #extra #ticket #boton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
