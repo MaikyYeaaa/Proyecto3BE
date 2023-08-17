@@ -14,6 +14,7 @@ async function inicio() {
     let nombreMenu = menu.Nombre;
     let precioMenu = menu.Precio;
     let stock = menu.StockReal;
+    let img = menu.ImgURL;
     var platosMenu = [];
 
     integra.forEach((comida) => {
@@ -27,6 +28,7 @@ async function inicio() {
       precioMenu,
       stock,
       platosMenu,
+      img,
     });
   });
   mostrarMenus();
@@ -39,6 +41,7 @@ function mostrarMenus() {
     let precio = dato.precioMenu;
     let stock = dato.stock;
     let platosID = dato.platosMenu;
+    let img = dato.img;
     let datos = new FormData();
     datos.append("platosIDs", platosID);
     fetch("../../persistencia/getComidasFromID.php", {
@@ -51,11 +54,10 @@ function mostrarMenus() {
         platos.forEach((plato) => {
           platosMostrar += `${plato.Nombre}, `;
         });
-        let num = Math.floor(Math.random() * 3);
         let mostrar = `
         <article class="menu" id="#menu" data-id="${id}" data-nombre="${nombre}" data-platos="${platosMostrar}" data-precio="${precio}" data-stock="${stock}" onclick="modalMenu(this)">
         <section id="fondo">
-        <img src="../../src/3dvianda${num}.png" />
+        <img src="${img}" />
         </section>
         <h1>${nombre.toUpperCase()}</h1>
         </article>
@@ -81,6 +83,7 @@ function modalMenu(menu) {
   <p> $${precio}</p>
   <section id="btnContenedor">
   <input class="btnSecundario" type="submit" value="Eliminar" data-nombre="${nombre}" data-id="${id}" onclick="eliminarMenu(this)"/>
+  <input class="btnSecundario" type="submit" value="Modificar" data-precio="${precio}" data-stock="${stock}" data-platos="${platos}" data-nombre="${nombre}" data-id="${id}" onclick="modificarMenu(this)"/>
   </section>
   `;
   $("#modal #modal-content").html(mostrar);
@@ -110,24 +113,46 @@ function eliminarMenu(boton) {
   }
 }
 
-// function modificarMenu(boton) {
-//   let id = $(boton).attr("data-id");
-//   let nombre = $(boton).attr("data-nombre");
-//   let platos = $(boton).attr("data-platos");
-//   let precio = $(boton).attr("data-precio");
-//   let stock = $(boton).attr("data-stock");
+function modificarMenu(boton) {
+  let id = $(boton).attr("data-id");
+  let nombre = $(boton).attr("data-nombre");
+  let platos = $(boton).attr("data-platos");
+  let precio = $(boton).attr("data-precio");
+  let stock = $(boton).attr("data-stock");
 
-//   mostrar = `
-//   <img id="cerrar" src="../../src/cross.svg" alt="" />
-//   <form id="modificarMenuForm" data-id="${id}">
-//   <h1> <input type="text" placeholder="${nombre}" name="nombreNuevo" /> </h1>
-//   <p> Platos: ${platos} </p>
-//   <p> Stock: ${stock} </p>
-//   <p> $${precio}</p>
-//   <section id="btnContenedor">
-//   <input class="btnSecundario" type="submit" value="Eliminar" data-nombre="${nombre}" data-id="${id}" onclick="eliminarMenu(this)"/>
-//   <input class="btnSecundario" type="submit" value="Modificar" name="${id}" data-platos="${platos}" data-stock="${stock}" data-precio="${precio}" data-id="${id}" data-nombre="${nombre}" onclick="modificarMenu(this)"/>
-//   </section>
-//   `;
-//   $("#modal #modal-content").html(mostrar);
-// }
+  mostrar = `
+  <img id="cerrar" src="../../src/cross.svg" alt="" />
+  <form id="modificarMenuForm" data-id="${id}">
+  <h1> <input type="text" value="${nombre}" name="nombreNuevo" /> </h1>
+  <p> Platos: ${platos} </p>
+  <p> Stock: <input type="number" value="${stock}" name="stockNuevo" /> </p>
+  <p> $<input type="number" value="${precio}" name="precioNuevo" /></p>
+  <section id="btnContenedor">
+  <input type="submit" class="btnSecundario" value="Modificar" />
+  </section>
+  `;
+  $("#modal #modal-content").html(mostrar);
+  escucharFormulario();
+}
+
+function escucharFormulario() {
+  let formulario = document.getElementById("modificarMenuForm");
+  formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let confirmar = confirm(`seguro que quieres modificar este menu?`);
+    if (confirmar) {
+      let id = $(formulario).attr("data-id");
+      let datos = new FormData(formulario);
+      datos.append("id", id);
+
+      fetch("../../persistencia/updateMenu.php", {
+        method: "post",
+        body: datos,
+      })
+        .then((r) => r.text())
+        .then((r) => {
+          location.reload();
+        });
+    }
+  });
+}
