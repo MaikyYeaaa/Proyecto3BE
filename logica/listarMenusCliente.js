@@ -1,37 +1,99 @@
-fetch("../persistencia/menus.json")
+fetch("../persistencia/listarMenus.php")
   .then((r) => r.json())
   .then((r) => {
-    for (let i = 0; i < r.length; i++) {
-      let id_menu = r[i].id_menu;
-      let nombre_menu = r[i].nombre_menu;
-      let descripcion = r[i].descripcion;
-      let imgURL = r[i].imgURL;
-      let comidas = r[i].comidas;
-      mostrar = `
-          <article>
-          <h1>${nombre_menu}</h1>
-          <p>Descripcion: ${descripcion}</p>
-          <image src="${imgURL}" width="100px">
-          <br>
-          <p>Incluye: ${comidas}</p>
-          <button id="${id_menu}" onclick="agregarAlCarrito(this)"> Agregar al carrito</button>
-        </article>
-            `;
+    r.forEach((r) => {
+      let estrellas = Math.floor(Math.random() * 5) + 1;
+
+      const calcularEstrellas = (estrellas) => {
+        let mostrarEstrellas = "";
+        for (let i = estrellas; i > 0; i--) {
+          mostrarEstrellas += `<img src="../src/star_.svg" alt="" />`;
+        }
+        for (let a = estrellas; a < 5; a++) {
+          mostrarEstrellas += `<img src="../src/blackStar_.svg" alt="" />`;
+        }
+        return mostrarEstrellas;
+      };
+      let img = r.MenuIMG;
+      let titulo = r.Nombre;
+      let precio = r.Precio;
+      let id = r.IDMenu;
+      let mostrar = `
+      <article class="menu">
+      <section id="imgContainer">
+      <img src="${img}" alt="" />
+        </section>
+        <section id="footer">
+          <article id="textop">
+          <h3>${titulo}</h3>
+          <p>$${precio}</p>
+          <section id="estrellitas">
+          ${calcularEstrellas(estrellas)}
+          </section>
+          </article>
+          <button class="btnPrimario" data-img="${img}" data-precio="${precio}" data-id="${id}" data-nombre="${titulo}" onclick="agregarAlCarrito(this)">Agregar a carrito</button>
+          </section>
+          </article>
+      `;
       $("#mostrar").append(mostrar);
+    });
+  });
+
+console.log(obtenerCarrito());
+
+async function agregarAlCarrito(button) {
+  const id = $(button).attr("data-id");
+  const nombre = $(button).attr("data-nombre");
+  const img = $(button).attr("data-img");
+  const precio = $(button).attr("data-precio");
+
+  let platosMenu = [];
+  const integra = await obtenerDatos("../persistencia/getIntegra.php");
+
+  integra.forEach((comida) => {
+    if (id == comida.IDMenu) {
+      platosMenu.push(comida.IDComida);
     }
   });
 
-function agregarAlCarrito(button) {
-  const id = button.getAttribute("id");
-  var data = new FormData();
-  data.append("id", id);
+  console.log(platosMenu);
 
-  fetch("../logica/addCarrito.php", {
-    method: "POST",
-    body: data,
-  })
-    .then((r) => r.text())
-    .then((r) => {
-      console.log(r);
-    });
+  let carritoPrevio = obtenerCarrito();
+
+  if (!revisarRepeticion(id, carritoPrevio)) {
+    let item = { id: id, nombre: nombre, img: img, precio: precio, cant: 1, comidas: platosMenu };
+    carritoPrevio.push(item);
+  } else {
+    let itemExistente = carritoPrevio.find((item) => item.id == id);
+    if (itemExistente) {
+      itemExistente.cant++;
+    }
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carritoPrevio));
+  alert(nombre + " añadido correctamente");
+}
+
+function obtenerCarrito() {
+  return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+
+function revisarRepeticion(id, carritoPrevio) {
+  let repete = false;
+  carritoPrevio.forEach((item) => {
+    let itemID = item.id;
+    console.log(`itemID: ${itemID}`);
+    console.log(`id: ${id}`);
+
+    if (itemID == id) {
+      repete = true;
+    }
+  });
+  return repete;
+}
+
+async function obtenerDatos(url) {
+  const respuesta = await fetch(url);
+  const json = await respuesta.json();
+  return json;
 }

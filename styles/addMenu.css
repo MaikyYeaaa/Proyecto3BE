@@ -1,0 +1,22 @@
+#comidas-container {
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 90vw;
+  min-height: 20px;
+  background-color: rgba(128, 128, 128, 0.477);
+  margin-block: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 690px;
+}
+#comidas-container #upper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  height: 10%;
+}
+.producto #fondo:hover {
+  transform: none;
+}

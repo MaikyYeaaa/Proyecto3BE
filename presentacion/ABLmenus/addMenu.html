@@ -4,50 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../../jquery-3.6.4.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="../../styles/clases.css" />
+    <link rel="stylesheet" href="../../styles/empleados.css" />
+    <link rel="stylesheet" href="../../styles/addMenu.css" />
+
+    <title>añadir menu</title>
   </head>
   <body>
+      
+    </section>
     <form id="agregarMenu">
       <input type="text" name="nombre" placeholder="Nombre del menu" required />
-      <input type="text" name="desc" placeholder="Descripcion" required />
-      <input type="url" name="imgURL" placeholder="URL de foto" />
-      <input type="number" name="stock" placeholder="stock" min="0" />
-      <p></p>
-      <label>Comidas: </label>
-      <input
-        type="text"
-        name="comida1"
-        placeholder="Ingrese una comida..."
-        required
-      />
-      <input
-        type="text"
-        name="comida2"
-        placeholder="Ingrese una comida..."
-        required
-      />
-      <input
-        type="text"
-        name="comida3"
-        placeholder="Ingrese una comida..."
-        required
-      />
-      <input
-        type="text"
-        name="comida4"
-        placeholder="Ingrese una comida..."
-        required
-      />
-      <input
-        type="text"
-        name="comida5"
-        placeholder="Ingrese una comida..."
-        required
-      />
-      <p></p>
+      <input type="number" name="precio" placeholder="precio" min="0" required />
+      <input type="number" name="stock" placeholder="stock" min="0" required/>
+      <input type="url" name="imgURL" placeholder="img" required/>
+      <select name="tipo" id="tipoSelect" required>
+        
+      </select>
+      <section id="comidas-container">
+          <section id="upper">
+            <h1>Comidas 0/<comidasCant>20</comidasCant></h1>
+            <article class="textfield">
+              <input type="text" placeholder="Buscar" />
+              <img src="../../src/ic-search.svg" alt="" />
+            </article>
+          </section>
+          <article id="platos-art" class="listado">
+            <section id="listado-platos">
+            </section>
+          </article>
+
+          </section>
+      </section>
       <input type="submit" value="Agregar Menu" />
     </form>
-    <p id="pMensaje"></p>
     <script src="../../logica/agregarMenu.js"></script>
   </body>
 </html>
