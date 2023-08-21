@@ -1,49 +1,18 @@
-body {
-  padding-top: 80px;
-}
-
 #main-bienvenido {
-  display: flex;
-  padding: 60px 170px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  gap: 3.75rem;
-  align-self: stretch;
-  flex-wrap: nowrap;
+  padding: 60px 0;
   background: rgba(0, 0, 0, 0.6);
+}
 
-  width: 100vw;
-  height: min-content;
-}
-#main-bienvenido #contenido {
-  display: flex;
-  min-width: 450px;
-  width: fit-content;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1.5rem;
-  flex: 1 0 0;
-}
 #main-bienvenido #contenido h1 {
-  color: #fff;
-  font-family: "Roboto", sans-serif;
   font-size: 2.5rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: 3rem; /* 120% */
-  align-self: stretch;
+  line-height: 3rem;
 }
 #main-bienvenido #contenido h2 {
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  height: 1.5rem;
-  align-self: stretch;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 400;
-  line-height: 1.5rem; /* 150% */
+  line-height: 1.5rem;
+  height: 1.5rem;
 }
 #main-bienvenido #contenido #botones {
   display: flex;
@@ -54,15 +23,4 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-}
-#main-bienvenido #imagen img {
-  min-width: 32.5rem;
-  flex: 1 0 0;
-  align-self: stretch;
-}
-
-@media screen and (max-width: 1329px) {
-  #main-bienvenido #imagen {
-    display: none;
-  }
 }
