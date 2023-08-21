@@ -14,7 +14,7 @@ async function inicio() {
     let nombreMenu = menu.Nombre;
     let precioMenu = menu.Precio;
     let stock = menu.StockReal;
-    let img = menu.ImgURL;
+    let img = menu.MenuIMG;
     var platosMenu = [];
 
     integra.forEach((comida) => {
@@ -50,12 +50,23 @@ function mostrarMenus() {
     })
       .then((r) => r.json())
       .then((platos) => {
-        let platosMostrar = "";
-        platos.forEach((plato) => {
-          platosMostrar += `${plato.Nombre}, `;
+        // let platosMostrar = "";
+        // platos.forEach((plato) => {
+        //   platosMostrar += `${plato.Nombre}, `;
+        // });
+        let comidasNombres = "";
+        platos.forEach((nombre, pos) => {
+          let separator;
+          if (pos == platos.length - 1) {
+            separator = "";
+          } else {
+            separator = ", ";
+          }
+          comidasNombres += `${nombre.Nombre}${separator}`;
         });
+
         let mostrar = `
-        <article class="menu" id="#menu" data-id="${id}" data-nombre="${nombre}" data-platos="${platosMostrar}" data-precio="${precio}" data-stock="${stock}" onclick="modalMenu(this)">
+        <article class="menu" id="#menu" data-id="${id}" data-nombre="${nombre}" data-platos="${comidasNombres}" data-precio="${precio}" data-stock="${stock}" onclick="modalMenu(this)">
         <section id="fondo">
         <img src="${img}" />
         </section>

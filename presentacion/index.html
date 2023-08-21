@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/clases.css" />
     <link rel="stylesheet" href="../styles/main.css" />
-    <title>Document</title>
+    <title>Pagina Principal</title>
   </head>
   <body>
     <section id="navbar">
@@ -28,22 +28,25 @@
         </article>
       </article>
     </section>
-    <section id="main-bienvenido">
-      <article id="contenido">
-        <h1>Bienvenido a Sisviansa</h1>
-        <h2>Ordena su menu favorito desde casa!</h2>
-        <article id="botones">
-          <button class="btnPrimario">Ver mas</button>
-          <button class="btnSecundario">Buscar menus</button>
-        </article>
-        <article id="botonesExtra">
-          <button class="btnTerciario">Populares</button>
-          <button class="btnTerciario">Vegetarianos</button>
-          <button class="btnTerciario">Celiacos</button>
-        </article>
-      </article>
-      <article id="imagen">
-        <img src="../src/salad.svg" alt="" />
+
+    <section class="container-fluid" id="main-bienvenido">
+      <article class="row justify-content-md-center">
+        <section class="col-lg-5 col-md-8 d-flex flex-column justify-content-center align-items-center align-items-lg-baseline text-center gap-4" id="contenido">
+          <h1 class="text-white">Bienvenido a Sisviansa</h1>
+          <h2 class="text-white">Ordena su menu favorito desde casa!</h2>
+          <article class="d-flex align-items-start gap-3" id="botones">
+            <button class="btnPrimario">Ver Mas</button>
+            <a href="listado-menus.html" class="btnSecundario">Buscar menus</a>
+          </article>
+          <article class="d-flex align-items-start gap-3" id="botonesExtra">
+            <button class="btnTerciario">Populares</button>
+            <button class="btnTerciario">Vegetarianos</button>
+            <button class="btnTerciario">Celiacos</button>
+          </article>
+        </section>
+        <section class="col-lg-4 d-none d-lg-block" id="imagen">
+          <img src="../src/salad.svg" alt="" />
+        </section>
       </article>
     </section>
     <!-- <section></section>

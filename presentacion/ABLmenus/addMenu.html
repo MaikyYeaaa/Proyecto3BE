@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../styles/empleados.css" />
     <link rel="stylesheet" href="../../styles/addMenu.css" />
 
-    <title>Document</title>
+    <title>añadir menu</title>
   </head>
   <body>
       
@@ -17,17 +17,24 @@
       <input type="text" name="nombre" placeholder="Nombre del menu" required />
       <input type="number" name="precio" placeholder="precio" min="0" required />
       <input type="number" name="stock" placeholder="stock" min="0" required/>
+      <input type="url" name="imgURL" placeholder="img" required/>
+      <select name="tipo" id="tipoSelect" required>
+        
+      </select>
       <section id="comidas-container">
-        <article id="comidas">
           <section id="upper">
-            <h1>Comidas 0/5</h1>
+            <h1>Comidas 0/<comidasCant>20</comidasCant></h1>
             <article class="textfield">
               <input type="text" placeholder="Buscar" />
               <img src="../../src/ic-search.svg" alt="" />
             </article>
           </section>
-          <section id="listado-platos"></section>
-        </article>
+          <article id="platos-art" class="listado">
+            <section id="listado-platos">
+            </section>
+          </article>
+
+          </section>
       </section>
       <input type="submit" value="Agregar Menu" />
     </form>

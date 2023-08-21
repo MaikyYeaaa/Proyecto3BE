@@ -1,21 +1,29 @@
 async function listarCarrito() {
   let carrito = obtenerCarrito();
-  // const comidasArray = await getComidas();
-  // let comidaTxt = "";
-  // comidasArray.forEach((comida) => {
-  //   comida.forEach((com) => {
-  //     comidaTxt += `${com.Nombre}, `;
-  //   });
-  // });
 
-  carrito.forEach((item) => {
-    let id = item.id;
-    let nombre = item.nombre;
-    let img = item.img;
-    let precio = item.precio;
-    let cantidad = item.cant;
+  let menus = await getMenus();
 
-    let mostrar = `
+  for (let i = 0; i < carrito.length; i++) {
+    const id = carrito[i].id;
+    const nombre = carrito[i].nombre;
+    const img = carrito[i].img;
+    const precio = carrito[i].precio;
+    const cantidad = carrito[i].cant;
+    const comidasID = carrito[i].comidas;
+    const comidasNombre = await getComidasNombre(comidasID);
+
+    let comidasNombres = "";
+    comidasNombre.forEach((nombre, pos) => {
+      let separator;
+      if (pos == comidasNombre.length - 1) {
+        separator = "";
+      } else {
+        separator = ", ";
+      }
+      comidasNombres += `${nombre.Nombre}${separator}`;
+    });
+
+    const article = `
             <article class="carritoItem">
         <section id="imgCont">
           <img src="${img}" alt="" />
@@ -23,7 +31,7 @@ async function listarCarrito() {
         <section id="textop">
           <article id="textosupop">
             <p id="titulo">${nombre}</p>
-            <p id="comidas">comidas</p>
+            <p id="comidas">${comidasNombres}</p>
           </article>
           <article id="footer">
             <section id="counter-and-trash">
@@ -39,8 +47,8 @@ async function listarCarrito() {
         </section>
       </article>
             `;
-    $("#platos").append(mostrar);
-  });
+    $("#platos").append(article);
+  }
 }
 
 function obtenerCarrito() {
@@ -60,6 +68,15 @@ function eliminarItem(id, nombre) {
     location.reload();
   }
 }
+function eliminarItemNoConfirm(id) {
+  let carrito = obtenerCarrito();
+  let index = carrito.findIndex((item) => item.id == id);
+  if (index !== -1) {
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+  location.reload();
+}
 
 function sumarItem(id, cant) {
   let newCant = cant + 1;
@@ -78,32 +95,51 @@ function restarItem(id, cant) {
   let carrito = obtenerCarrito();
   let item = carrito.find((item) => item.id == id);
 
-  if (item) {
+  if (newCant == 0) {
+    eliminarItemNoConfirm(id);
+  } else if (item) {
     item.cant = newCant;
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }
   location.reload();
 }
 
+let precioTotal = 0;
 async function ticket() {
   let numRand = Math.floor(Math.random() * 500);
   $("#ticket h1").html(`>>Carrito #: ${numRand}<<`);
   $("#ticket h2").html(getDateOp());
   let carrito = obtenerCarrito();
   let mostrar = "";
-  let precioTotal = 0;
 
-  carrito.forEach((item) => {
+  for (let i = 0; i < carrito.length; i++) {
     mostrar += `
-      -${item.nombre} <br>
-    `;
-    precioTotal += parseInt(item.precio * item.cant);
-  });
+      -${carrito[i].nombre}: (x${carrito[i].cant}) <br>
+      `;
+    precioTotal += parseInt(carrito[i].precio * carrito[i].cant);
+
+    const comidasID = carrito[i].comidas;
+    const comidasNombre = await getComidasNombre(comidasID);
+
+    let comidasNombres = "";
+    comidasNombre.forEach((nombre) => {
+      comidasNombres += `<li>${nombre.Nombre} </li>`;
+    });
+    mostrar += `${comidasNombres} <br>`;
+  }
 
   $("#ticket #pMostrar").html(mostrar);
   $("#ticket #precio").html(`TOTAL: $${precioTotal}`);
 }
 
+function getVencimientoOp() {
+  let fechaActual = new Date();
+  fechaActual.setDate(fechaActual.getDate() + 40); // para la fecha de vencimiento
+  let diaActual = fechaActual.getDate();
+  let mesActual = fechaActual.getMonth() + 1;
+  let anoActual = fechaActual.getFullYear();
+  return `${diaActual}/${mesActual}/${anoActual}`;
+}
 function getDateOp() {
   let fechaActual = new Date();
   let diaActual = fechaActual.getDate();
@@ -121,7 +157,7 @@ async function obtenerDatos(url) {
   return json;
 }
 
-async function getComidas() {
+async function getMenus() {
   let comidas = [];
   const menus = obtenerCarrito();
   const integra = await obtenerDatos("../persistencia/getIntegra.php");
@@ -145,6 +181,7 @@ async function getComidas() {
     });
     const r = await response.json();
     comidas.push(r);
+    return comidas.reverse();
   });
 
   await Promise.all(promises);
@@ -153,3 +190,92 @@ async function getComidas() {
 
 ticket();
 listarCarrito();
+
+async function getComidasNombre(arrayIDs) {
+  let datos = new FormData();
+  datos.append("ids", arrayIDs);
+  let comidasNombres = await fetch("../persistencia/getComidasNombreFromIDs.php", {
+    method: "post",
+    body: datos,
+  })
+    .then((r) => r.json())
+    .then((r) => {
+      return r;
+    });
+  return comidasNombres;
+}
+
+async function crearPedido() {
+  console.log("pedidos");
+  const carrito = await obtenerCarrito();
+  let pedidoIDs = [];
+
+  carrito.forEach((menu) => {
+    let cant = menu.cant;
+    let id = menu.id;
+
+    for (let i = 0; i < cant; i++) {
+      pedidoIDs.push(id);
+    }
+  });
+
+  console.log(pedidoIDs);
+
+  $("#modal-pedido").css({ display: "flex" });
+
+  let formulario = document.getElementById("pedido-form");
+  formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let datos = new FormData(formulario);
+    let fecha = getDateOp();
+    let vencimiento = getVencimientoOp();
+    datos.append("vencimiento", vencimiento);
+    datos.append("fecha", fecha);
+    datos.append("monto", precioTotal);
+    datos.append("menuIDs", pedidoIDs);
+
+    let idUser = localStorage.getItem("id");
+    datos.append("idUser", idUser);
+
+    fetch("../persistencia/crearPedido.php", {
+      method: "post",
+      body: datos,
+    })
+      .then((r) => r.text())
+      .then((r) => {
+        console.log(r);
+        if (r == "Good") {
+          let confirmar = confirm("pedido registrado!");
+          if (confirmar) {
+            window.open("pedidos.html");
+          }
+        }
+      });
+  });
+
+  // let mostrar = "";
+
+  // for (let i = 0; i < carrito.length; i++) {
+  //   mostrar += `
+  //     -${carrito[i].nombre}: (x${carrito[i].cant}) <br>
+  //     `;
+  //   precioTotal += parseInt(carrito[i].precio * carrito[i].cant);
+
+  //   const comidasID = carrito[i].comidas;
+  //   const comidasNombre = await getComidasNombre(comidasID);
+
+  //   let comidasNombres = "";
+  //   comidasNombre.forEach((nombre) => {
+  //     comidasNombres += `<li>${nombre.Nombre} </li>`;
+  //   });
+  //   mostrar += `${comidasNombres} <br>`;
+  // }
+
+  // $("#modal-pedido #content #pMostrar").html(mostrar);
+  // $("#modal-pedido #content #precio").html(`TOTAL: $${precioTotal}`);
+}
+
+$("#modal-pedido #content #cerrar-img").click(() => {
+  $("#modal-pedido").css({ display: "none" });
+});

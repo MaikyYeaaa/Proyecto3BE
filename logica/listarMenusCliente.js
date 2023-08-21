@@ -14,7 +14,7 @@ fetch("../persistencia/listarMenus.php")
         }
         return mostrarEstrellas;
       };
-      let img = r.ImgURL;
+      let img = r.MenuIMG;
       let titulo = r.Nombre;
       let precio = r.Precio;
       let id = r.IDMenu;
@@ -41,16 +41,27 @@ fetch("../persistencia/listarMenus.php")
 
 console.log(obtenerCarrito());
 
-function agregarAlCarrito(button) {
+async function agregarAlCarrito(button) {
   const id = $(button).attr("data-id");
   const nombre = $(button).attr("data-nombre");
   const img = $(button).attr("data-img");
   const precio = $(button).attr("data-precio");
 
+  let platosMenu = [];
+  const integra = await obtenerDatos("../persistencia/getIntegra.php");
+
+  integra.forEach((comida) => {
+    if (id == comida.IDMenu) {
+      platosMenu.push(comida.IDComida);
+    }
+  });
+
+  console.log(platosMenu);
+
   let carritoPrevio = obtenerCarrito();
 
   if (!revisarRepeticion(id, carritoPrevio)) {
-    let item = { id: id, nombre: nombre, img: img, precio: precio, cant: 1 };
+    let item = { id: id, nombre: nombre, img: img, precio: precio, cant: 1, comidas: platosMenu };
     carritoPrevio.push(item);
   } else {
     let itemExistente = carritoPrevio.find((item) => item.id == id);
@@ -67,9 +78,6 @@ function obtenerCarrito() {
   return JSON.parse(localStorage.getItem("carrito")) || [];
 }
 
-// localStorage.clear();
-// sessionStorage.clear();
-
 function revisarRepeticion(id, carritoPrevio) {
   let repete = false;
   carritoPrevio.forEach((item) => {
@@ -82,4 +90,10 @@ function revisarRepeticion(id, carritoPrevio) {
     }
   });
   return repete;
+}
+
+async function obtenerDatos(url) {
+  const respuesta = await fetch(url);
+  const json = await respuesta.json();
+  return json;
 }

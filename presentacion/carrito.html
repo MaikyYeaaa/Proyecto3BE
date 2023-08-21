@@ -34,6 +34,33 @@
       </article>
     </section>
 
+    <section id="modal-pedido">
+      <article id="content">
+        <section id="cerrar-img">
+          <img src="../src/cross.svg" alt="" />
+        </section>
+        <form id="pedido-form">
+          <label for="nombre">Nombre en la tarjeta:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Mateo Etchegoimberry Blasco" required />
+          <br />
+
+          <label for="numero">Número de la tarjeta:</label>
+          <input type="number" id="numero" name="numero" placeholder="1111 2222 3333 4444" required />
+          <br />
+
+          <label for="fecha">Fecha de expiración (MM/AA):</label>
+          <input type="text" id="fecha" name="fecha" placeholder="01/34" required />
+          <br />
+
+          <label for="cvv">CVV:</label>
+          <input type="number" id="cvv" name="cvv" placeholder="123" required />
+          <br />
+
+          <input type="submit" value="Enviar" />
+        </form>
+      </article>
+    </section>
+
     <article id="carro">
       <section id="extra">
         <h1>Carro de Compras</h1>
@@ -53,7 +80,7 @@
             <p id="precio">TOTAL: $3999</p>
           </article>
           <section id="boton">
-            <button class="btnSecundario">COMPRAR</button>
+            <button class="btnSecundario" onclick="crearPedido()">COMPRAR</button>
           </section>
         </article>
       </section>

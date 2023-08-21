@@ -1,18 +1,36 @@
 let comidasArray = [];
+let cantComidas = 20;
+let tipoMenu = "";
+
+fetch("../../persistencia/getTipoMenu.php")
+  .then((r) => r.json())
+  .then((r) => {
+    let mostrar = "";
+    console.log(r);
+    r.forEach((r) => {
+      let tipo = r.NombreTipoMenu;
+      mostrar += `
+      <option value="${tipo}">${tipo}</option>
+      `;
+    });
+    $("#tipoSelect").html(mostrar);
+  });
 
 var menuFrom = document.getElementById("agregarMenu");
 
 menuFrom.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  if (comidasArray.length == 5) {
-    var datos = new FormData(menuFrom);
+  const datos = new FormData(menuFrom);
+
+  if (comidasArray.length == cantComidas) {
     datos.append("comidas", comidasArray);
     fetch("../../persistencia/addMenu.php", {
       method: "post",
       body: datos,
     });
     alert(`Menu agregado correctamente!`);
+    location.reload();
   } else {
     alert("faltan comidas");
   }
@@ -42,21 +60,21 @@ fetch("../../persistencia/listarComidas.php")
         let idcomida = $(prod).attr("data-idComida");
         if (comidasArray.includes(idcomida)) {
           //lo elimino
-          $(prod).css({ transition: "filter .5s", filter: "none" });
+          $(prod).css({ outline: "none" });
           let index = comidasArray.indexOf(idcomida);
           if (index > -1) {
             comidasArray.splice(index, 1);
           }
         } else {
-          if (comidasArray.length < 5) {
+          if (comidasArray.length < cantComidas) {
             //lo agrego
-            $(prod).css({ transition: "filter .5s", filter: "drop-shadow(0 4px 16px rgba(0, 255, 0, 1))" });
+            $(prod).css({ outline: "3px solid #45c936" });
             comidasArray.push(idcomida);
           } else {
             alert("te pasaste bro");
           }
         }
-        $("#upper h1").html(`Comidas ${comidasArray.length}/5`);
+        $("#upper h1").html(`Comidas ${comidasArray.length}/<comidasCant>${cantComidas}</comidasCant>`);
         console.log(comidasArray);
       });
     });
@@ -76,3 +94,17 @@ function mostrarProducto(nombre, img, id) {
           `;
   $("#listado-platos").append(mostrar);
 }
+
+$("#tipoSelect").change(() => {
+  tipoMenu = $("#tipoSelect").val();
+
+  if (tipoMenu == "Mensual") {
+    cantComidas = 20;
+  } else if (tipoMenu == "Semanal") {
+    cantComidas = 5;
+  } else if (tipoMenu == "Quincenal") {
+    cantComidas = 15;
+  }
+
+  $("comidasCant").html(cantComidas);
+});

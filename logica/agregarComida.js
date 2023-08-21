@@ -26,6 +26,7 @@ formulario.addEventListener("submit", function (e) {
     .then((r) => {
       console.log(r);
       alert("comida agregada exitosamente!");
+      location.reload();
       // const comidas = Object.values(r);
       // $("h1").html("comida agregada exitosamente!");
     });
