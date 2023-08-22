@@ -1,0 +1,44 @@
+
+
+#Promo{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(206, 201, 201);
+    width: 55%;
+    height: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px;
+    transition: 0.4s;
+}
+
+#Promo:Hover{
+   transform: scale(1.02,1.02);
+}
+
+#Info{
+    padding: 8px;
+    width: 90%;
+}
+
+#Titulo{
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#Descripcion{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#Img{
+    transform: translate(10px,-100px);
+    height: 300px;
+    width: 500px;
+    border-radius: 100%;
+    background-color: rgb(166, 154, 154);
+    transition: 0.5s;
+    border: 5px solid;
+    border-color: aliceblue;
+}
