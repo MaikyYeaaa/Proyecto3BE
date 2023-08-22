@@ -141,5 +141,25 @@
         "datosZonas": "asdasdasdasd",
         "datosCostoMenus": "123",
         "datosFechaVencimiento": "hola"
+    },
+    {
+        "datosCocina": "cocinaopasd",
+        "datosTiempo": "12",
+        "datosStockcolchon": "3",
+        "datosStockmaximo": "7",
+        "datosTiempoturno": "2",
+        "datosZonas": "asdasdasdasd",
+        "datosCostoMenus": "123",
+        "datosFechaVencimiento": "hola"
+    },
+    {
+        "datosCocina": "cocinaopasd",
+        "datosTiempo": "12",
+        "datosStockcolchon": "3",
+        "datosStockmaximo": "7",
+        "datosTiempoturno": "2",
+        "datosZonas": "asdasdasdasd",
+        "datosCostoMenus": "123",
+        "datosFechaVencimiento": "hola"
     }
 ]
