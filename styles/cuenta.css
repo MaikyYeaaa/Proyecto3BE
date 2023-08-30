@@ -1,0 +1,120 @@
+#Cuenta{
+    display:flex;
+    flex-direction: column;
+    color: #FFF;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 100% */
+}
+#fondo{
+    display: flex;
+    padding: 85px 170px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 85px;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: #666;
+    margin-top: 160px;
+    margin-block-end: 160px;
+    margin-right: 85px;
+    margin-left: 85px;
+}
+#btnCambiarNombre{
+    display: flex;
+    width: 160px;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #FFF; 
+    height: 50px;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+}
+#btnCambiarContra{
+    display: flex;
+    width: 160px;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #FFF; 
+    height: 50px;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    
+}
+#btnCambiarDireccion{
+    display: flex;
+    width: 160px;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #FFF; 
+    height: 50px;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+}
+
+#Nombre{
+    width: 550px;
+    display: flex;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px; /* 240% */
+    justify-content: space-between;
+
+}
+#Contraseña{
+    width: 550px;
+    display: flex;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px; /* 240% */
+    justify-content: space-between;
+
+}
+#Direccion{
+    width: 550px;
+    display: flex;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px; /* 240% */
+    justify-content: space-between;
+
+}
