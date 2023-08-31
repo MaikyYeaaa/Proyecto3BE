@@ -12,7 +12,7 @@ formulario.addEventListener("submit", async function (e) {
         body: datos,
       })
         .then((r) => r.text())
-        .then((r) => console.log(r));
+        .then((r) => alert("Ticket creado correctamente"));
     } else {
       alert("Mail incorrecto");
     }

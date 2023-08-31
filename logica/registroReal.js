@@ -10,7 +10,7 @@ formulario.addEventListener("submit", async (e) => {
     })
       .then((r) => r.text())
       .then((r) => {
-        alert("Usuario registrado correctamente!");
+        window.open("login.html");
       });
   } else {
     // alert("error");

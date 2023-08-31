@@ -1,42 +1,39 @@
+let comidasArray = [];
+let cantComidas = 20;
+let tipoMenu = "";
+
+fetch("../../persistencia/getTipoMenu.php")
+  .then((r) => r.json())
+  .then((r) => {
+    let mostrar = "";
+    console.log(r);
+    r.forEach((r) => {
+      let tipo = r.NombreTipoMenu;
+      mostrar += `
+      <option value="${tipo}">${tipo}</option>
+      `;
+    });
+    $("#tipoSelect").html(mostrar);
+  });
+
 var menuFrom = document.getElementById("agregarMenu");
 
 menuFrom.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  //enviar datos a php
-  var datos = new FormData(menuFrom);
+  const datos = new FormData(menuFrom);
 
-  let comida1 = datos.get("comida1");
-  let comida2 = datos.get("comida2");
-  let comida3 = datos.get("comida3");
-  let comida4 = datos.get("comida4");
-  let comida5 = datos.get("comida5");
-
-  let comidasGuardadas = [comida1, comida2, comida3, comida4, comida5];
-
-  fetch("../../persistencia/comidas.json")
-    .then((r) => r.json())
-    .then((r) => {
-      //GUARDO TODOS LOS NOMBRES DE LAS COMIDAS EN UN ARRAY
-      let comidasTotal = [];
-      for (let i = 0; i < r.length; i++) {
-        comidasTotal.push(r[i].nombre_comida);
-      }
-      console.log(comidasTotal);
-      let cont = 0;
-      for (let o = 0; o < comidasGuardadas.length; o++) {
-        for (let a = 0; a < comidasTotal.length; a++) {
-          if (comidasGuardadas[o] == comidasTotal[a]) {
-            cont++;
-          }
-        }
-      }
-      if (cont < 5) {
-        alert(`NO LLEGA: ${cont}/5`);
-      } else {
-        addMenu();
-      }
+  if (comidasArray.length == cantComidas) {
+    datos.append("comidas", comidasArray);
+    fetch("../../persistencia/addMenu.php", {
+      method: "post",
+      body: datos,
     });
+    alert(`Menu agregado correctamente!`);
+    location.reload();
+  } else {
+    alert("faltan comidas");
+  }
 });
 function addMenu() {
   var datos = new FormData(menuFrom);
@@ -51,3 +48,63 @@ function addMenu() {
       $("#pMensaje").html(`Menu ${nombre} agregado correctamente!`);
     });
 }
+
+fetch("../../persistencia/listarComidas.php")
+  .then((r) => r.json())
+  .then((r) => {
+    r.forEach((r) => mostrarProducto(r.Nombre, r.ImagenURL, r.IDComida));
+
+    let productos = Array.from($(".producto"));
+    productos.forEach((prod) => {
+      prod.addEventListener("click", () => {
+        let idcomida = $(prod).attr("data-idComida");
+        if (comidasArray.includes(idcomida)) {
+          //lo elimino
+          $(prod).css({ outline: "none" });
+          let index = comidasArray.indexOf(idcomida);
+          if (index > -1) {
+            comidasArray.splice(index, 1);
+          }
+        } else {
+          if (comidasArray.length < cantComidas) {
+            //lo agrego
+            $(prod).css({ outline: "3px solid #45c936" });
+            comidasArray.push(idcomida);
+          } else {
+            alert("te pasaste bro");
+          }
+        }
+        $("#upper h1").html(`Comidas ${comidasArray.length}/<comidasCant>${cantComidas}</comidasCant>`);
+        console.log(comidasArray);
+      });
+    });
+  });
+
+function mostrarProducto(nombre, img, id) {
+  mostrar = `
+    <article class="producto" id="#comida" data-idComida="${id}">
+    <section id="fondo">
+      <img
+        src="${img}"
+        alt=""
+      />
+    </section>
+    <h1>${nombre.toUpperCase()}</h1>
+  </article>
+          `;
+  $("#listado-platos").append(mostrar);
+}
+
+$("#tipoSelect").change(() => {
+  tipoMenu = $("#tipoSelect").val();
+
+  if (tipoMenu == "Mensual") {
+    cantComidas = 20;
+  } else if (tipoMenu == "Semanal") {
+    cantComidas = 5;
+  } else if (tipoMenu == "Quincenal") {
+    cantComidas = 15;
+  }
+
+  $("comidasCant").html(cantComidas);
+});

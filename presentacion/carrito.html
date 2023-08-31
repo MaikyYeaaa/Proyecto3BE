@@ -3,14 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/stockJefeDeCocina.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Roboto&display=swap");
+    </style>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" /> -->
+
+    <!-- <link rel="stylesheet" href="../styles/stockJefeDeCocina.css" /> -->
+    <link rel="stylesheet" href="../styles/carrito.css" />
     <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/clases.css" />
+    <script src="../jquery-3.6.4.min.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <section id="mostrar"></section>
+    <section id="navbar">
+      <article id="logo">
+        <img src="../src/logo.png" alt="" width="200px" />
+      </article>
+      <article id="nav">
+        <a href="index.html">Home</a>
+        <a href="#">Menus</a>
+        <a href="login.html">Iniciar Sesion</a>
+        <article class="textfield">
+          <input type="text" placeholder="Buscar" />
+          <img src="../src/ic-search.svg" alt="" />
+        </article>
+      </article>
+    </section>
 
-    <script src="../jquery-3.6.4.min.js"></script>
+    <section id="modal-pedido">
+      <article id="content">
+        <section id="cerrar-img">
+          <img src="../src/cross.svg" alt="" />
+        </section>
+        <form id="pedido-form">
+          <label for="nombre">Nombre en la tarjeta:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Mateo Etchegoimberry Blasco" required />
+          <br />
+
+          <label for="numero">Número de la tarjeta:</label>
+          <input type="number" id="numero" name="numero" placeholder="1111 2222 3333 4444" required />
+          <br />
+
+          <label for="fecha">Fecha de expiración (MM/AA):</label>
+          <input type="text" id="fecha" name="fecha" placeholder="01/34" required />
+          <br />
+
+          <label for="cvv">CVV:</label>
+          <input type="number" id="cvv" name="cvv" placeholder="123" required />
+          <br />
+
+          <input type="submit" value="Enviar" />
+        </form>
+      </article>
+    </section>
+
+    <article id="carro">
+      <section id="extra">
+        <h1>Carro de Compras</h1>
+        <article id="ticket">
+          <article id="noBoton">
+            <section id="holes">
+              <img src="../src/ticket_holes.svg" alt="" />
+            </section>
+            <h1></h1>
+            <h2>6/22/2023 1:01:06 PM</h2>
+            <p id="pMostrar">
+              Menu saludable x3: <br />Ensalada <br />Almendras <br />Vagre <br />Milanesa <br />Papas <br /><br />
+              Menu Gustazo: <br />
+              Empanada <br />
+              Asado <br />Papas fritas <br />Pollo frito <br />Alfajor
+            </p>
+            <p id="precio">TOTAL: $3999</p>
+          </article>
+          <section id="boton">
+            <button class="btnSecundario" onclick="crearPedido()">COMPRAR</button>
+          </section>
+        </article>
+      </section>
+      <section id="platos"></section>
+    </article>
+
     <script src="../logica/carrito.js"></script>
   </body>
 </html>
