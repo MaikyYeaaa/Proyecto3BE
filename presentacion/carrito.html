@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="../styles/carrito.css" />
     <link rel="stylesheet" href="../styles/nav.css" />
     <link rel="stylesheet" href="../styles/clases.css" />
+    <link rel="stylesheet" href="../styles/card.css" />
     <script src="../jquery-3.6.4.min.js"></script>
-    <title>Document</title>
+    <title>Tu Carrito</title>
   </head>
   <body>
     <section id="navbar">
@@ -31,6 +32,31 @@
           <input type="text" placeholder="Buscar" />
           <img src="../src/ic-search.svg" alt="" />
         </article>
+      </article>
+    </section>
+
+    <section id="modal-listo">
+      <article id="cardDeConfirmacion">
+        <section class="card">
+          <button class="dismiss" type="button" onclick="cerrarCoso()">×</button>
+          <article class="header">
+            <section class="image">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier"><path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g>
+              </svg>
+            </section>
+            <section class="content">
+              <span class="title">Pedido registrado</span>
+              <p class="message">Muchas gracias por comprar con nosotros, gil de mierda.</p>
+            </section>
+            <section class="actions">
+              <a class="history" type="button" href="./historial-pedidos.html">Historial</a>
+              <a class="track" type="button" href="./cuenta.html">Ver mi pedido</a>
+            </section>
+          </article>
+        </section>
       </article>
     </section>
 

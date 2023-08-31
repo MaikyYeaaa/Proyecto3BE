@@ -55,22 +55,18 @@ $IDMenus = mysqli_real_escape_string($con, $_POST["menuIDs"]);
 // //pide
 $sqlPide = "INSERT INTO `pide`(`ID`, `Nro`, `Fecha`) VALUES ('{$ID}','{$Nro}','{$fecha}')";
 if(sendToBDD($sqlPide, $con)) {
-    echo "pide good ";
 }
 //contiene
 $sqlContiene = "INSERT INTO `contiene`(`ID`, `IDPago`) VALUES ('{$ID}','{$IDPago}')";
 if(sendToBDD($sqlContiene, $con)) {
-    echo "contiene good ";
 }
 //llega
 $sqlLlega = "INSERT INTO `llega`(`ID`, `IDSucursal`) VALUES ('{$ID}','{$idSucursal}')";
 if(sendToBDD($sqlLlega, $con)) {
-    echo "llega good ";
 }
 //tiene
 $sqlTiene = "INSERT INTO `tiene`(`ID`, `NombreEstado`) VALUES ('{$ID}','{$nombreEstado}')"; 
 if(sendToBDD($sqlTiene, $con)) {
-    echo "tiene good ";
 }
 //conforma //implica
 $IDMenusArray = explode(',', $IDMenus);
@@ -87,18 +83,15 @@ foreach ($IDMenusArray as $singleIDMenu) {
 
     $sqlImplica = "INSERT INTO `implica`(`NroVianda`, `IDMenu`) VALUES ('{$nroVianda}','{$singleIDMenu}')";
     if(sendToBDD($sqlImplica, $con)) {
-        echo "implica good ";
     }
 
     $sqlConforma = "INSERT INTO `conforma`(`ID`, `NroVianda`) VALUES ('{$ID}', '{$nroVianda}')";
     if(sendToBDD($sqlConforma, $con)) {
-    echo "conforma good ";
     }
 }
 //posee
 $sqlPosee = "INSERT INTO `posee`(`NroVianda`, `IDCondicion`) VALUES ('{$nroVianda}','{$idCondicion}')";
 if(sendToBDD($sqlPosee, $con)) {
-    echo "posee good ";
 }
 
 }
