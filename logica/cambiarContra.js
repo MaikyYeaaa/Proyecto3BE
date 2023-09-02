@@ -4,6 +4,8 @@ cambiarContraForm.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
   let datos = new FormData(cambiarContraForm);
+  let id = localStorage.getItem("id");
+  datos.append("id", id);
   let contraNueva = datos.get("contraNueva");
   let contraNueva2 = datos.get("contraNueva2");
 
@@ -14,7 +16,9 @@ cambiarContraForm.addEventListener("submit", (evento) => {
     })
       .then((respuesta) => respuesta.text())
       .then((r) => {
-        if (r) {
+  console.log(r);
+
+        if (r == "anda") {
           actualizarContra(datos);
         } else {
           alert("la contra no es correcta");
@@ -23,6 +27,7 @@ cambiarContraForm.addEventListener("submit", (evento) => {
   } else {
     console.log("no verifica");
   }
+
 });
 
 function verificador(contraNueva, contraNueva2) {
@@ -44,4 +49,5 @@ function actualizarContra(datos) {
         alert("no funco");
       }
     });
+
 }
