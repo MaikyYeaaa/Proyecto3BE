@@ -58,9 +58,10 @@ fetch("../persistencia/getComprasFromUser.php",{
             </article>
             <article id="listContent">Estado: ${pedido.estado} Fecha: ${pedido.fecha}</article>
             <article id="listExtraContent">Numero de seguimiento #${pedido.id} </article>
+            <p class="Feedback${pedido.id}" id="feedback"></p>
           </section>
-        <button id="cancelarcompra" class="cancelarcompra" value="${pedido.id}" ${disabled}>Cancelar compra</button>
-        <p class="Feedback${pedido.id}"></p>
+        <button id="cancelarcompra" class="cancelarcompra" value="${pedido.id}" ${disabled} >Cancelar compra</button>
+        
       </article>`
     
     );
@@ -70,23 +71,27 @@ fetch("../persistencia/getComprasFromUser.php",{
 
 
 $("#mostrar").on("click", ".cancelarcompra", function() {
-  const pedidoId = $(this).val();
-  let data = new FormData();
-  data.append("ID", pedidoId);
-  fetch("../persistencia/cancelarCompra.php", {
-    method: "POST",
-    body: data
-  })
-  .then((r) => r.text())
-  .then((respuesta) => {
-    const feedbackSelector = `.Feedback${pedidoId}`; // Construct the correct selector
-    console.log(`${respuesta} === "Si"`);
-    if (respuesta === `"Si"`) {
-      $(feedbackSelector).text("Pudiste");
-    } else {
-      $(feedbackSelector).text("No pudiste");
-    }
-  });
+  if (confirm('¿Estás seguro que quieres cancelar el pedido?')) {
+    const pedidoId = $(this).val();
+    let data = new FormData();
+    data.append("ID", pedidoId);
+    fetch("../persistencia/cancelarCompra.php", {
+      method: "POST",
+      body: data
+    })
+    .then((r) => r.text())
+    .then((respuesta) => {
+      const feedbackSelector = `.Feedback${pedidoId}`; // Construct the correct selector
+      console.log(`${respuesta} === "Si"`);
+      if (respuesta === `"Si"`) {
+        location.reload();
+        console.log("SSSSSSSIIIIIIIIIIII");
+      } else {
+        $(feedbackSelector).text("No es posible cancelar el pedido ya que fue realizado hace más de 24 horas");
+      }
+    });
+  } 
+ 
 });
 
 
