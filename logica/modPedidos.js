@@ -3,14 +3,41 @@
 
 function mostrarTabla() {
     $("#Pedidos").html("");
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
     fetch("../../persistencia/getPedidos.php")
         .then((r) => r.json())
         .then((r) => {
           console.log(r);
             const pedidos = Object.values(r);
+<<<<<<< Updated upstream
             pedidos.forEach((pedido) => {
                     $("#Pedidos").append(`<tr> <br> <td> ${pedido.Nombre}</td> <td> ${pedido.FechaInicio} <td> ` + getBoxValues(pedido.NombreEstado,pedido) +`
                    <br> </tr> <br>`);
+=======
+
+         
+            
+            pedidos.forEach((pedido,index) => {
+              let pedidoData = new FormData();
+              pedidoData.append("ID",index);
+              fetch("../../persistencia/getNombrePedidos.php", {
+                method: "POST",
+                body: pedidoData,
+              })
+              .then((q) => q.json())
+              .then((q) =>{
+                console.log(q);
+                $("#Pedidos").append(`<tr> <br> <td>Pedido de:  ${q[0].Nombre} </td> <td> ${pedido.FechaInicio} <td> ` + getBoxValues(pedido.NombreEstado,pedido) +`
+                <br> </tr> <br>`);
+              })
+
+                   
+>>>>>>> Stashed changes
             });
         });
 }
