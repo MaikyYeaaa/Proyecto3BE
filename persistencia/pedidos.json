@@ -3,9 +3,9 @@
         "Id": 0,
         "Nombre": "Menu custom",
         "Creador": "User",
-        "Estado": "Entregado",
+        "Estado": "Desechado",
         "Coste": 2000,
-        "FechaInicio": "3\/7\/2023",
+        "FechaInicio": "5\/9\/2023",
         "FechaFin": "0",
         "Comidas": [
             "Ensalada,Papas al horno con milanesa,Pure de papa con pollo,Ensalada,Ensalada"
