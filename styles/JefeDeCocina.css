@@ -2,7 +2,7 @@
     background: rgb(112,112,112);
     background: linear-gradient(180deg, rgb(77, 76, 76) 0%, rgba(178,180,180,1) 100%);
 width: 20%;
-height: 1130px;
+height: fit;
 display: flex;
 margin-right: 20px;
 text-align: center;

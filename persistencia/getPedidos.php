@@ -3,7 +3,7 @@ require "helperFunctions.php";
 $con = conectarBDD();
 
 
-$sql = "SELECT * FROM `tiene` WHERE NombreEstado = 'Solicitado'";
+$sql = "SELECT * FROM `tiene` WHERE NombreEstado = 'Solicitado' ORDER BY ID ASC;";
 
 
 $pedidos = getFromBDD($sql, $con);

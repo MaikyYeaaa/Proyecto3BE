@@ -13,7 +13,7 @@ foreach ($viandas as $vianda) {
 
     foreach ($MenuID as $Menu) {
         $menuID = $Menu['IDMenu']; // Store the IDMenu value in a variable
-        $sqlGetMenuName = "SELECT `Nombre` FROM `menu` WHERE IDMenu = $menuID";
+        $sqlGetMenuName = "SELECT `Nombre`, `MenuIMG` FROM `menu` WHERE IDMenu = $menuID";
         $MenuNames = getFromBDD($sqlGetMenuName, $con);
 
         // Process $MenuNames here if needed

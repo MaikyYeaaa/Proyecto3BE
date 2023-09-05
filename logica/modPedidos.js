@@ -1,30 +1,19 @@
 
 
-
+console.log("holanda");
 function mostrarTabla() {
-    $("#Pedidos").html("");
-<<<<<<< Updated upstream
-=======
+$("#pedidos").html("");
 
 
 
->>>>>>> Stashed changes
     fetch("../../persistencia/getPedidos.php")
         .then((r) => r.json())
         .then((r) => {
           console.log(r);
             const pedidos = Object.values(r);
-<<<<<<< Updated upstream
-            pedidos.forEach((pedido) => {
-                    $("#Pedidos").append(`<tr> <br> <td> ${pedido.Nombre}</td> <td> ${pedido.FechaInicio} <td> ` + getBoxValues(pedido.NombreEstado,pedido) +`
-                   <br> </tr> <br>`);
-=======
-
-         
-            
             pedidos.forEach((pedido,index) => {
               let pedidoData = new FormData();
-              pedidoData.append("ID",index);
+              pedidoData.append("ID",pedido.ID);
               fetch("../../persistencia/getNombrePedidos.php", {
                 method: "POST",
                 body: pedidoData,
@@ -32,20 +21,48 @@ function mostrarTabla() {
               .then((q) => q.json())
               .then((q) =>{
                 console.log(q);
-                $("#Pedidos").append(`<tr> <br> <td>Pedido de:  ${q[0].Nombre} </td> <td> ${pedido.FechaInicio} <td> ` + getBoxValues(pedido.NombreEstado,pedido) +`
-                <br> </tr> <br>`);
+                $("#pedidos").append(`
+            
+                <section id="pedidoBody">
+            <article id="pedidoImg"><img id="imgico" src="${q[0].MenuIMG}"></article>
+            <article id="pedidoInfo">
+                <section id="nroPedido">Pedido#${pedidos[index].ID}</section>
+                <section id="menusPedido">${q[0].Nombre}</section>
+                <section id="menuFecha">${pedido.FechaInicio}</section>
+            </article>
+            <article id="pedidoInputs">
+              <button class="aceptar" id="aceptar" value="${pedido.ID}"><img class="svgbutton" src="../../src/checkmark.svg" alt="aceptar" srcset=""></button>
+              <button class="rechazar" id="rechazar" value="${pedido.ID}"> <img class="svgbutton" src="../../src/remove.svg" alt="" srcset=""> </button>
+            </article>
+          </section>
+             `);
               })
 
                    
->>>>>>> Stashed changes
             });
         });
 }
 
+
+$("#stockcontainer").on("click", ".aceptar", function() {
+  const pedidoId = $(this).val();
+  console.log("Aceptar el pedido #" + pedidoId);
+  modificarEstado("Confirmado",pedidoId);
+
+});
+
+$("#stockcontainer").on("click", ".rechazar", function() {
+  const pedidoId = $(this).val();
+  console.log("Rechazar el pedido #" + pedidoId);
+  modificarEstado("Rechazado",pedidoId);
+});
+
+
+
 mostrarTabla();
 
 $(document).on("change", "#pedido", function() {
-  let pos = $(this).attr("name"); // Assuming you're getting the position from the element's name attribute
+  let pos = $(this).attr("name");
   let accion = $(this).val();
   let condicionID;
   switch(accion){
@@ -57,33 +74,7 @@ $(document).on("change", "#pedido", function() {
 
   console.log(condicionID);
 
-  var data = new FormData(); 
-  data.append("posicion",pos); 
-  data.append("accion",accion);
-
-  
-
-
-  fetch("../../persistencia/ModPedidos.php", {
-      method: "POST",
-      body: data,
-  })
-  .then((r) => r.text())
-  .then((data) => {
-      console.log(data);
-      var dataVianda = new FormData();
-      dataVianda.append("posicion",pos);
-      dataVianda.append("conID",condicionID);
-        fetch("../../persistencia/ModVianda.php", {
-          method: "POST",
-          body: dataVianda,
-      })
-      .then((r) => r.text())
-      .then((data) => {
-        console.log(data);
-      mostrarTabla();
-      });
-  });
+ 
 
   
 
@@ -237,4 +228,32 @@ function getBoxValues(value,pedido){
 
 }*/
 
+}
+
+function modificarEstado(estado,pos){
+  var data = new FormData(); 
+  data.append("posicion",pos); 
+  data.append("accion",estado);
+
+
+  fetch("../../persistencia/ModPedidos.php", {
+      method: "POST",
+      body: data,
+  })
+  .then((r) => r.text())
+  .then((data) => {
+      console.log(data);
+      var dataVianda = new FormData();
+      dataVianda.append("posicion",pos);
+      dataVianda.append("conID",estado);
+        fetch("../../persistencia/ModVianda.php", {
+          method: "POST",
+          body: dataVianda,
+      })
+      .then((r) => r.text())
+      .then((data) => {
+        console.log(data);
+      mostrarTabla();
+      });
+  });
 }
