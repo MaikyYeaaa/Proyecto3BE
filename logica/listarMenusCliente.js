@@ -37,6 +37,7 @@ fetch("../persistencia/listarMenus.php")
       `;
       $("#mostrar").append(mostrar);
     });
+
     $(".callToAction").hover(
       function () {
         var numRandom = Math.random() * 10 - 5;

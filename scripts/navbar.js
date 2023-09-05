@@ -23,10 +23,15 @@ const navbar = `
   ${perfil}
   ${carrito}
   <article class="textfield">
-    <input type="text" placeholder="Buscar" />
+    <input id="filtro" type="text" placeholder="Buscar" />
     <img src="../src/ic-search.svg" alt="" />
   </article>
 </article>
 </section>
 `;
 $("body").append(navbar);
+
+$("#filtro").on("input", function (e) {
+  let texto = $("#filtro").val();
+  console.log(texto);
+});

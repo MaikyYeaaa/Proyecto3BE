@@ -1,4 +1,3 @@
-const userID = localStorage.getItem("id");
 if (userID) {
   $("#modalLogin").css("display", "flex");
 }

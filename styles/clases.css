@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: Roboto;
 }
 
 body {
@@ -95,7 +96,6 @@ body {
   text-decoration: none;
 
   text-align: center;
-  font-family: Roboto;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;

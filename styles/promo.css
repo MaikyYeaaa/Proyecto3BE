@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgb(206, 201, 201);
-  height: 150px;
+  height: 250px;
   border-radius: 20px;
   overflow: hidden;
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25));
   margin: 10px;
   transition: 0.4s;
   padding: 15px;
@@ -13,7 +14,7 @@
 }
 
 .Promo:hover {
-  transform: scale(1.005);
+  /* transform: scale(1.005); */
 }
 
 #Info {
@@ -115,4 +116,12 @@
 }
 .Promo #precios {
   display: flex;
+}
+
+.Promo button {
+  height: max-content;
+  transition: 0.3s;
+}
+.Promo button:hover {
+  background-color: green;
 }

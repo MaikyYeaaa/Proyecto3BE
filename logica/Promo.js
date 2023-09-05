@@ -31,7 +31,7 @@ fetch("../persistencia/getPublicaciones.php")
       <p>$${precioDescuento}</p>
       </article>
       <article>
-        <button data-descuento="${descuento}" data-img="${img}" data-precio="${precioDescuento}" data-id="${idMenu}" data-nombre="${nombre}" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+        <button class="btnSecundario" data-descuento="${descuento}" data-img="${img}" data-precio="${precioDescuento}" data-id="${idMenu}" data-nombre="${nombre}" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
       </article>
       </section>
       <section class="promo-container">
