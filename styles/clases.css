@@ -32,12 +32,10 @@ body {
 
 .empleado-main-section {
   display: flex;
-  padding: 0 50px;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
-  /* align-self: stretch; */
-  background: #acacac;
+  /* background: #acacac; */
+  margin-right: 50px;
 }
 
 .textfield {
