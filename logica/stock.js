@@ -1,5 +1,6 @@
 var NombreOP;
 var Stock;
+console.log(localStorage.getItem("id"));
 $(document).ready(function() {
     var modal = $("#myModal");
     var btn = $(".MenuStock"); // Select elements with class MenuStock

@@ -39,7 +39,7 @@ $sqlTiempoTurno="UPDATE `Sucursal` SET  `TiempoTurno`= ".$datosTiempoTurno.";";
 
 $sqlTiempoCocinado="UPDATE `comida` SET  `TiempoCocinado`= ".$datosTiempo.";";
 $sqlStockmaximo="UPDATE `menu` SET  `StockMaximo`= ".$datosStockmaximo.";";
-$sqlStockColchón="UPDATE `menu` SET  `StockColchón`= ".$datosStockcolchon.";";
+$sqlStockColchón="UPDATE `menu` SET  `StockColchon`= ".$datosStockcolchon.";";
 
 
 //ACTUALIZAR CODIGO CUANDO ACTUALICEMOS EL DER!!!!!
