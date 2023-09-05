@@ -9,7 +9,7 @@ fetch("../persistencia/getTickets.php")
       let mail = r.Mail;
 
       mostrar = `
-      <article>
+      <article class="ticket-interno">
       <p>#${id}</p>
       <p>Mail: ${mail}</p>
       <p>Descripcion: ${desc}</p>

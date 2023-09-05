@@ -6,8 +6,8 @@ async function obtenerDatos(url) {
 
 let datos = [];
 async function inicio() {
-  const menus = await obtenerDatos("../../persistencia/listarMenus.php");
-  const integra = await obtenerDatos("../../persistencia/getIntegra.php");
+  const menus = await obtenerDatos("../persistencia/listarMenus.php");
+  const integra = await obtenerDatos("../persistencia/getIntegra.php");
   //   console.log(menus, integra);
   menus.forEach((menu) => {
     let id = menu.IDMenu;
@@ -15,6 +15,7 @@ async function inicio() {
     let precioMenu = menu.Precio;
     let stock = menu.StockReal;
     let img = menu.MenuIMG;
+    let descuento = menu.Descuento;
     var platosMenu = [];
 
     integra.forEach((comida) => {
@@ -44,7 +45,7 @@ function mostrarMenus() {
     let img = dato.img;
     let datos = new FormData();
     datos.append("platosIDs", platosID);
-    fetch("../../persistencia/getComidasFromID.php", {
+    fetch("../persistencia/getComidasFromID.php", {
       method: "post",
       body: datos,
     })
@@ -86,7 +87,7 @@ function modalMenu(menu) {
   let precio = $(menu).attr("data-precio");
 
   mostrar = `
-  <img id="cerrar" src="../../src/cross.svg" alt="" />
+  <img id="cerrar" src="../src/cross.svg" alt="" />
   <h1>${nombre} </h1>
   
   <p> Platos: ${platos} </p>
@@ -109,7 +110,7 @@ function eliminarMenu(boton) {
 
   let confirmar = confirm(`seguro que desea elminar ${nombre}?`);
   if (confirmar) {
-    fetch("../../persistencia/eliminarMenu.php", {
+    fetch("../persistencia/eliminarMenu.php", {
       method: "post",
       body: datos,
     })
@@ -132,7 +133,7 @@ function modificarMenu(boton) {
   let stock = $(boton).attr("data-stock");
 
   mostrar = `
-  <img id="cerrar" src="../../src/cross.svg" alt="" />
+  <img id="cerrar" src="../src/cross.svg" alt="" />
   <form id="modificarMenuForm" data-id="${id}">
   <h1> <input type="text" value="${nombre}" name="nombreNuevo" /> </h1>
   <p> Platos: ${platos} </p>
@@ -156,7 +157,7 @@ function escucharFormulario() {
       let datos = new FormData(formulario);
       datos.append("id", id);
 
-      fetch("../../persistencia/updateMenu.php", {
+      fetch("../persistencia/updateMenu.php", {
         method: "post",
         body: datos,
       })

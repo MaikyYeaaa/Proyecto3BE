@@ -6,7 +6,7 @@ h1 {
   padding: 0;
   margin: 0;
 }
-article {
+#ticket-interno {
   /* width: fit-content; */
   min-width: 200px;
   padding: 10px;
@@ -16,7 +16,7 @@ article {
   max-width: 30%;
   background-image: linear-gradient(153deg, rgba(238, 174, 202, 1) 0%, rgba(174, 255, 147, 1) 0%, rgba(156, 156, 255, 1) 85%);
 }
-article input {
+#ticket-interno input {
   padding: 10px;
   border: none;
   box-shadow: 1px 2px 5px black;

@@ -31,69 +31,24 @@ fetch("../persistencia/listarMenus.php")
           ${calcularEstrellas(estrellas)}
           </section>
           </article>
-          <button class="btnPrimario" data-img="${img}" data-precio="${precio}" data-id="${id}" data-nombre="${titulo}" onclick="agregarAlCarrito(this)">Agregar a carrito</button>
+          <button class="callToAction" data-img="${img}" data-precio="${precio}" data-id="${id}" data-nombre="${titulo}" onclick="agregarAlCarrito(this)">Agregar a carrito</button>
           </section>
           </article>
       `;
       $("#mostrar").append(mostrar);
     });
+
+    $(".callToAction").hover(
+      function () {
+        var numRandom = Math.random() * 10 - 5;
+        console.log(numRandom);
+        $(this).css({ transform: `translateY(-5px) rotate(${numRandom}deg) scale(1.05)` });
+      },
+      function () {
+        $(this).css({ transform: "", "box-shadow": "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" });
+      }
+    );
+    $(".callToAction").click(function () {
+      $(this).css({ transform: "", "box-shadow": "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" });
+    });
   });
-
-console.log(obtenerCarrito());
-
-async function agregarAlCarrito(button) {
-  const id = $(button).attr("data-id");
-  const nombre = $(button).attr("data-nombre");
-  const img = $(button).attr("data-img");
-  const precio = $(button).attr("data-precio");
-
-  let platosMenu = [];
-  const integra = await obtenerDatos("../persistencia/getIntegra.php");
-
-  integra.forEach((comida) => {
-    if (id == comida.IDMenu) {
-      platosMenu.push(comida.IDComida);
-    }
-  });
-
-  console.log(platosMenu);
-
-  let carritoPrevio = obtenerCarrito();
-
-  if (!revisarRepeticion(id, carritoPrevio)) {
-    let item = { id: id, nombre: nombre, img: img, precio: precio, cant: 1, comidas: platosMenu };
-    carritoPrevio.push(item);
-  } else {
-    let itemExistente = carritoPrevio.find((item) => item.id == id);
-    if (itemExistente) {
-      itemExistente.cant++;
-    }
-  }
-
-  localStorage.setItem("carrito", JSON.stringify(carritoPrevio));
-  alert(nombre + " añadido correctamente");
-}
-
-function obtenerCarrito() {
-  return JSON.parse(localStorage.getItem("carrito")) || [];
-}
-
-function revisarRepeticion(id, carritoPrevio) {
-  let repete = false;
-  carritoPrevio.forEach((item) => {
-    let itemID = item.id;
-    console.log(`itemID: ${itemID}`);
-    console.log(`id: ${id}`);
-
-    if (itemID == id) {
-      repete = true;
-    }
-  });
-  return repete;
-}
-
-async function obtenerDatos(url) {
-  const respuesta = await fetch(url);
-  const json = await respuesta.json();
-  return json;
-}

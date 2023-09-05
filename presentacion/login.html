@@ -4,32 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../jquery-3.6.4.min.js"></script>
-    <title>Document</title>
+    <title>Sysviansa - Login</title>
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
     </style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../styles/nav.css" />
+
     <link rel="stylesheet" href="../styles/clases.css" />
+    <link rel="stylesheet" href="../styles/cardBad.css" />
     <link rel="stylesheet" href="../styles/login.css" />
   </head>
   <body>
-    <section id="navbar">
-      <article id="logo">
-        <img src="../src/logo.png" alt="" width="200px" />
-      </article>
-      <article id="nav">
-        <a href="index.html">Home</a>
-        <a href="#">Menus</a>
-        <a href="login.html">Iniciar Sesion</a>
-        <article class="textfield">
-          <input type="text" placeholder="Buscar" />
-          <img src="../src/ic-search.svg" alt="" />
-        </article>
+    <section id="modalLogin">
+      <article id="content">
+        <section class="card">
+          <article class="header">
+            <section class="image">
+              <img src="../src/cross.svg" alt="" />
+            </section>
+            <section class="content">
+              <span class="title">Ya estas ingresado</span>
+              <p class="message">Si deseas ingresar con otra cuenta tendras que cerrar sesion.</p>
+            </section>
+            <section class="actions">
+              <a class="history" type="button" href="./index.html">Volver</a>
+              <a class="track" type="button" onclick="cerrarSesion()">Cerrar Sesion</a>
+            </section>
+          </article>
+        </section>
       </article>
     </section>
+
+    <script src="../scripts/navbar.js"></script>
 
     <section id="login">
       <article id="login-contenido">
@@ -42,6 +50,7 @@
 
           <section id="pass-section">
             <input name="cont" type="password" placeholder="Ingrese su contraseña" id="inputPass" class="textfield" />
+            <button id="togglePassword" type="button">Mostrar</button>
             <article class="error" id="psswrdError"></article>
           </section>
 

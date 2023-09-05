@@ -1,3 +1,5 @@
+import { mostrarNotif } from "../scripts/notificacion.js";
+
 let formulario = document.getElementById("registro-form");
 
 formulario.addEventListener("submit", async (e) => {
@@ -10,7 +12,12 @@ formulario.addEventListener("submit", async (e) => {
     })
       .then((r) => r.text())
       .then((r) => {
-        window.open("login.html");
+        if (r == "correcto") {
+          window.open("login.html");
+          window.close();
+        } else {
+          mostrarNotif("error", `${r}`);
+        }
       });
   } else {
     // alert("error");
@@ -49,10 +56,10 @@ async function valida(datos) {
   let mailVerif = mailV.test(mail);
 
   if (!contrasenaVerif || !contrasenaSecure || !mailVerif || mailRepetido) {
-    if (!contrasenaVerif) alert("Contraseñas no coinciden");
-    if (!contrasenaSecure) alert("La contraseña no es segura (debe tener al menos 1 Mayuscula y 1 numero)");
-    if (!mailVerif) alert("El mail es incorrecto");
-    if (mailRepetido) alert("El mail ya existe en nuestro sistema");
+    if (!contrasenaVerif) mostrarNotif("error", "Contraseñas no coinciden");
+    if (!contrasenaSecure) mostrarNotif("error", "La contraseña no es segura (debe tener al menos 1 Mayuscula y 1 numero)", 4000);
+    if (!mailVerif) mostrarNotif("error", "El mail es incorrecto");
+    if (mailRepetido) mostrarNotif("error", "El mail ya existe en nuestro sistema");
     return false;
   } else {
     return true;
