@@ -12,7 +12,6 @@ body {
 }
 
 #login {
-  margin-top: 80px;
   width: 90vw;
   height: 80vh;
   background-color: rgb(105, 105, 105);
@@ -112,16 +111,4 @@ body {
   background-position: center;
   background-size: contain;
   border-radius: 0 6px 6px 0;
-}
-
-#modalLogin {
-  display: none;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.822);
-  backdrop-filter: blur(5px);
 }

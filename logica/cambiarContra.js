@@ -1,3 +1,5 @@
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
 const formulario = document.getElementById("cambiarContra-form");
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -14,15 +16,16 @@ formulario.addEventListener("submit", async (e) => {
       .then((r) => {
         console.log(r);
         if (r == "true") {
-          alert("Contraseña actualizada correctamente");
-          window.open("perfil.html");
-          window.close();
+          mostrarNotif("correcto", "Contraseña actualizada correctamente", 500);
+          setTimeout(() => {
+            window.open("perfil.html");
+            window.close();
+          }, 500);
         } else {
-          alert(`${r}`);
+          mostrarNotif("error", `${r}`);
         }
       });
   } else {
-    alert(`to mal`);
   }
 });
 
@@ -35,14 +38,18 @@ async function verifica(datos) {
       if (r[0].Contrasena == datos.get("contraVieja")) {
         return true;
       } else {
+        mostrarNotif("error", "La contraseña actual es incorrecta", 1500);
         return false;
       }
     });
 
   if (datos.get("contraNueva") == datos.get("contraNuevaConfirm")) {
     if (validaContra(datos)) {
+      // mostrarNotif("error", "La contraseña no es segura (debe tener al menos 1 Mayuscula y 1 numero)", 4000);
       contraNuevaIgual = true;
     }
+  } else {
+    mostrarNotif("error", "Las contraseñas no coinciden.", 1500);
   }
 
   console.log(`contraVieja: ${contraViejaVerificada}, contraNueva: ${contraNuevaIgual}`);
@@ -59,5 +66,7 @@ function validaContra(datos) {
 
   if (contrasenaSecure) {
     return true;
+  } else {
+    mostrarNotif("error", "La contraseña no es segura (debe tener al menos 1 Mayuscula y 1 numero)", 4000);
   }
 }

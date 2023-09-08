@@ -1,3 +1,5 @@
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
 const formulario = document.getElementById("cambiarDir-form");
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -13,11 +15,13 @@ formulario.addEventListener("submit", async (e) => {
     .then((r) => {
       console.log(r);
       if (r == "true") {
-        alert("Direccion actualizado correctamente");
-        window.open("perfil.html");
-        window.close();
+        mostrarNotif("correcto", "Direccion actualizada correctamente", 500);
+        setTimeout(() => {
+          window.open("perfil.html");
+          window.close();
+        }, 500);
       } else {
-        alert(`error!! -> ${r}`);
+        mostrarNotif("error", r, 3000);
       }
     });
 });

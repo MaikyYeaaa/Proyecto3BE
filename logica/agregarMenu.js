@@ -1,8 +1,10 @@
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
 let comidasArray = [];
 let cantComidas = 20;
 let tipoMenu = "";
 
-fetch("../../persistencia/getTipoMenu.php")
+fetch("../persistencia/getTipoMenu.php")
   .then((r) => r.json())
   .then((r) => {
     let mostrar = "";
@@ -25,31 +27,26 @@ menuFrom.addEventListener("submit", function (e) {
 
   if (comidasArray.length == cantComidas) {
     datos.append("comidas", comidasArray);
-    fetch("../../persistencia/addMenu.php", {
+    fetch("../persistencia/addMenu.php", {
       method: "post",
       body: datos,
-    });
-    alert(`Menu agregado correctamente!`);
-    location.reload();
+    })
+      .then((r) => r.text())
+      .then((r) => {
+        console.log(r);
+        if (!r) {
+          mostrarNotif("correcto", `Menu agregado correctamente!`, 1000);
+          setTimeout(() => {
+            location.reload();
+          }, 1000);
+        }
+      });
   } else {
-    alert("faltan comidas");
+    mostrarNotif("aviso", `¡Faltan comidas!`, 1500);
   }
 });
-function addMenu() {
-  var datos = new FormData(menuFrom);
 
-  fetch("../../logica/addMenu.php", {
-    method: "POST",
-    body: datos,
-  })
-    .then((r) => r.json())
-    .then((r) => {
-      const nombre = r[r.length - 1].nombre_menu; //ACCEDER AL NOMBRE DEL MENU EN EL JSON
-      $("#pMensaje").html(`Menu ${nombre} agregado correctamente!`);
-    });
-}
-
-fetch("../../persistencia/listarComidas.php")
+fetch("../persistencia/listarComidas.php")
   .then((r) => r.json())
   .then((r) => {
     r.forEach((r) => mostrarProducto(r.Nombre, r.ImagenURL, r.IDComida));
@@ -71,7 +68,7 @@ fetch("../../persistencia/listarComidas.php")
             $(prod).css({ outline: "3px solid #45c936" });
             comidasArray.push(idcomida);
           } else {
-            alert("te pasaste bro");
+            mostrarNotif("aviso", "No puedes agregar mas comidas a este menu.", 1500);
           }
         }
         $("#upper h1").html(`Comidas ${comidasArray.length}/<comidasCant>${cantComidas}</comidasCant>`);
@@ -81,7 +78,7 @@ fetch("../../persistencia/listarComidas.php")
   });
 
 function mostrarProducto(nombre, img, id) {
-  mostrar = `
+  let productoHTML = `
     <article class="producto" id="#comida" data-idComida="${id}">
     <section id="fondo">
       <img
@@ -92,7 +89,7 @@ function mostrarProducto(nombre, img, id) {
     <h1>${nombre.toUpperCase()}</h1>
   </article>
           `;
-  $("#listado-platos").append(mostrar);
+  $("#listado-platos").append(productoHTML);
 }
 
 $("#tipoSelect").change(() => {

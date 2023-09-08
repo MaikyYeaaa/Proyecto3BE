@@ -10,21 +10,13 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
 
+    <script src="../jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="../styles/parametrizar.css" />
     <link rel="stylesheet" href="../styles/clases.css" />
-    <title>Sysviansa - Parametrizar</title>
+    <title>Sisviansa - Parametrizar</title>
   </head>
   <body>
-    <section id="adminMenu">
-      <article id="containerArticle">
-        <h1>Menu Gerente</h1>
-        <section id="MenuButtons">
-          <button>STOCK</button>
-          <button>PEDIDOS</button>
-          <button>PRODUCTOS</button>
-        </section>
-      </article>
-    </section>
+    <script src="../scripts/navInterno.js" type="module"></script>
 
     <section id="parametrizar">
       <article id="paracontainer">
@@ -32,7 +24,7 @@
           <h1>PARAMETRIZAR DATOS</h1>
         </article>
         <article id="parametrizarInputs">
-          <form action="../persistencia/parametrizardatos.php" method="POST">
+          <form id="parametrizarForm">
             <label>Cocinas: </label>
             <input id="cocinasinput" type="text" name="datosCocina" placeholder="Ingrese datos" class="textfield" />
 
@@ -83,7 +75,6 @@
       </article>
     </section>
 
-    <script src="../jquery-3.6.4.min.js"></script>
     <script src="../logica/getParametros.js"></script>
     <script src="../logica/parametrizarZonas.js"></script>
   </body>

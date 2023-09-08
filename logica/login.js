@@ -1,5 +1,18 @@
+import { modalBlock, getRol } from "../scripts/functionsVarias.js";
+
 if (userID) {
-  $("#modalLogin").css("display", "flex");
+  const rol = await getRol(userID);
+  let aDondeVamos = "";
+  switch (rol) {
+    case "gerente":
+      aDondeVamos = "Menu Gerente";
+      break;
+    default:
+      aDondeVamos = "Pagina Principal";
+      break;
+  }
+
+  modalBlock("Ya estas ingresado", "Si deseas ingresar con otra cuenta tendras que cerrar sesion.", aDondeVamos, "Cerrar Sesion");
 }
 
 var formulario = document.getElementById("form-login");
@@ -37,11 +50,21 @@ function getID(datos) {
     body: datos,
   })
     .then((r) => r.json())
-    .then((r) => {
+    .then(async (r) => {
       r = r[0].Nro; // hago q r sea solo el numero
       console.log(r);
       localStorage.setItem("id", r);
-      window.location.href = "index.html";
+      const rol = await getRol(r);
+      switch (rol) {
+        case "gerente":
+          window.location.href = "parametrizardatos.html";
+          break;
+
+        default:
+          window.location.href = "index.html";
+          console.log(rol);
+          break;
+      }
       // localStorage.getItem("id"); TE MUESTRA LA ID DEL LOCO
     });
 }
@@ -49,15 +72,6 @@ function getID(datos) {
 // localStorage.clear();
 // sessionStorage.clear();
 console.log(localStorage.getItem("id"));
-
-function cerrarSesion() {
-  const confirmar = confirm("Estas seguro que quieres cerrar sesion?");
-  if (confirmar) {
-    localStorage.clear();
-    sessionStorage.clear();
-    location.reload();
-  }
-}
 
 $("#togglePassword").click(function () {
   let inputType = $("#inputPass").attr("type");
