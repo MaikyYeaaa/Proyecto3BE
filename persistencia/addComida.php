@@ -21,9 +21,13 @@ $comidaData = getFromBDD($sqlComida, $con);
 $idComida = $comidaData[0]["IDComida"];
 
 $sqlRelacion = "INSERT INTO `pertenece` (`IDComida`, `IDDieta`) VALUES ('".$idComida."','".$idDieta."')";
-sendToBDD($sqlRelacion, $con);
-echo "relacion creada correctamente";
+if (sendToBDD($sqlRelacion, $con)) {
+    echo "correcto";
+}
 
+if ($con->error) {
+    echo $con->error;
+}
 
 $con->close();
 

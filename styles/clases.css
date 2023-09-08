@@ -216,4 +216,5 @@ body {
 #mostrar {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 50px;
 }

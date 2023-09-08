@@ -1,3 +1,5 @@
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
 fetch("../persistencia/listarComidas.php")
   .then((r) => r.json())
   .then((r) => {
@@ -36,7 +38,7 @@ function filtrar() {
         }
       });
       if (!filtroCorrecto) {
-        alert(`no hay nada registrado como ${filtro}`);
+        mostrarNotif("aviso", `no hay nada registrado como ${filtro}`);
       } else {
         let productos = Array.from($(".producto"));
 
@@ -122,7 +124,7 @@ $(document).on("click", "#modificarMandar input[type='submit']", function (e) {
       if (r) {
         location.reload();
       } else {
-        alert("error al modificar datos");
+        mostrarNotif("error", "error al modificar datos");
       }
     });
 });

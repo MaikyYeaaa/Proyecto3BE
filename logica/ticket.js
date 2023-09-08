@@ -1,3 +1,5 @@
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
 let formulario = document.getElementById("ticket");
 
 formulario.addEventListener("submit", async function (e) {
@@ -12,9 +14,9 @@ formulario.addEventListener("submit", async function (e) {
         body: datos,
       })
         .then((r) => r.text())
-        .then((r) => alert("Ticket creado correctamente"));
+        .then((r) => mostrarNotif("correcto", "Ticket creado correctamente"));
     } else {
-      alert("Mail incorrecto");
+      mostrarNotif("error", "Mail incorrecto");
     }
   });
 });

@@ -13,10 +13,10 @@
     <script src="../jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="../styles/parametrizar.css" />
     <link rel="stylesheet" href="../styles/clases.css" />
-    <title>Sysviansa - Parametrizar</title>
+    <title>Sisviansa - Parametrizar</title>
   </head>
   <body>
-    <script src="../scripts/navGerente.js"></script>
+    <script src="../scripts/navInterno.js" type="module"></script>
 
     <section id="parametrizar">
       <article id="paracontainer">
@@ -24,7 +24,7 @@
           <h1>PARAMETRIZAR DATOS</h1>
         </article>
         <article id="parametrizarInputs">
-          <form action="../persistencia/parametrizardatos.php" method="POST">
+          <form id="parametrizarForm">
             <label>Cocinas: </label>
             <input id="cocinasinput" type="text" name="datosCocina" placeholder="Ingrese datos" class="textfield" />
 

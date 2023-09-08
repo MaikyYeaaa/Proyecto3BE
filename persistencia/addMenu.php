@@ -15,8 +15,13 @@ if (sendToBDD($sqlMenu, $con)) {
     $comidasArray = explode(',', $comidas);
     foreach($comidasArray as $comida) {
         $sqlIntegra = "INSERT INTO `integra` (`IDComida`, `IDMenu`) VALUES ('${comida}','${id}')";
-        sendToBDD($sqlIntegra, $con);
+        if (!sendToBDD($sqlIntegra, $con)) {
+            echo "Error en integra query: " . mysqli_error($con);
+            break;
+        }
     }
+} else {
+    echo "Error en menu query: " . mysqli_error($con);
 }
 
 
