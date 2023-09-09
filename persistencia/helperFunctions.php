@@ -24,18 +24,17 @@ function writeToJSON($jsonURL, $arrayData) {
 
 function conectarBDD() {
     
-    // $host = "192.168.2.209";
-    // $UsuarioBDD = "tukotech";
-    // $ContraBDD = "12345";
-    // $bdd = "tukotech";
-    
-    $host = "localhost";
+    $host = "192.168.1.18";
     $UsuarioBDD = "root";
-    $ContraBDD = "";
+    $ContraBDD = "12345";
     $bdd = "tukotech";
+    
+    // $host = "localhost";
+    // $UsuarioBDD = "root";
+    // $ContraBDD = "";
+    // $bdd = "tukotech";
 
     $con = new mysqli($host, $UsuarioBDD, $ContraBDD, $bdd);
-
 if($con->connect_error) {
     die ("la conexion ha fallado: " . $con->connect_error);
 }
