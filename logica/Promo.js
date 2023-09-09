@@ -1,7 +1,7 @@
 let promos = [];
 
 fetch("../persistencia/getPublicaciones.php")
-  .then((r) => r.json())
+  .then((r) => r.text())
   .then(async (r) => {
     console.log(r);
 
