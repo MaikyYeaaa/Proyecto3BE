@@ -24,7 +24,7 @@ function writeToJSON($jsonURL, $arrayData) {
 
 function conectarBDD() {
     
-    $host = "192.168.1.18";
+    $host = "mysql";
     $UsuarioBDD = "root";
     $ContraBDD = "12345";
     $bdd = "tukotech";
