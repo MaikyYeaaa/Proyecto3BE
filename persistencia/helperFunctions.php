@@ -24,15 +24,15 @@ function writeToJSON($jsonURL, $arrayData) {
 
 function conectarBDD() {
     
-    $host = "mysql";
-    $UsuarioBDD = "root";
-    $ContraBDD = "12345";
-    $bdd = "tukotech";
-    
-    // $host = "localhost";
+    // $host = "mysql";
     // $UsuarioBDD = "root";
-    // $ContraBDD = "";
+    // $ContraBDD = "12345";
     // $bdd = "tukotech";
+    
+    $host = "localhost";
+    $UsuarioBDD = "root";
+    $ContraBDD = "";
+    $bdd = "tukotech";
 
     $con = new mysqli($host, $UsuarioBDD, $ContraBDD, $bdd);
 if($con->connect_error) {

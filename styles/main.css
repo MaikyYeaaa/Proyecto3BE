@@ -86,3 +86,39 @@
   font-weight: 400;
   line-height: 1.5rem; /* 150% */
 }
+
+@keyframes mostrarIzq {
+  from {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes mostrarDer {
+  from {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+body > section {
+  view-timeline-name: --revealing-image;
+  animation-fill-mode: both;
+  animation-timeline: --revealing-image;
+
+  animation-range: entry 25% cover 50%;
+}
+
+body > section:nth-child(odd) {
+  animation-name: mostrarIzq;
+}
+body > section:nth-child(even) {
+  animation-name: mostrarDer;
+}
