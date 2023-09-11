@@ -130,7 +130,7 @@ $(document).on("click", "#modificarMandar input[type='submit']", function (e) {
 });
 
 function mostrarProducto(nombre, img, id) {
-  mostrar = `
+  let mostrar = `
   <article class="producto" id="#comida" data-idComida="${id}">
   <section id="fondo">
     <img
@@ -145,7 +145,7 @@ function mostrarProducto(nombre, img, id) {
 }
 
 function mostrarModal(nombre, desc, img, tiempo, id) {
-  mostrar = `
+  let mostrar = `
   <img id="cerrar" src="../src/cross.svg" alt="" />
   <h1>${nombre} </h1>
   <img

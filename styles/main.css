@@ -43,7 +43,7 @@
   gap: 25px;
   border-radius: 6px;
   background: rgba(217, 217, 217, 0.5);
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.541);
+  /* box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.541); */
 }
 #main-zonas #zonas-container .zona {
   display: flex;
@@ -113,7 +113,7 @@ body > section {
   animation-fill-mode: both;
   animation-timeline: --revealing-image;
 
-  animation-range: entry 25% cover 50%;
+  animation-range: entry 50% cover 50%;
 }
 
 body > section:nth-child(odd) {

@@ -46,7 +46,7 @@ async function mostrarSegunRol() {
       break;
 
     default:
-      modalBlock("Error", "Ocurrio un error al verificar su rol, porfavor pruebe iniciando nuevamente.", "Cerrar Sesion", "Intentar Nuevamente");
+      modalBlock("Error", "Ocurrio un error al verificar su rol, porfavor pruebe iniciando nuevamente.", "Cerrar Sesion", "Pagina Principal");
       break;
   }
 }
