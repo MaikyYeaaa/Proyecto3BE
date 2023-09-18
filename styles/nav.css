@@ -7,11 +7,14 @@ body {
   align-items: center;
   overflow-x: hidden;
 }
+html {
+  overflow-x: hidden;
+}
 
 #navbar {
   background-color: white;
   position: fixed;
-  z-index: 100;
+  z-index: 3;
   top: 0;
   display: flex;
   width: 100vw;
@@ -45,11 +48,38 @@ body {
   gap: 20px;
 }
 
+#smallbar {
+  display: none;
+  height: 80px;
+  width: 100vw;
+  background-color: white;
+}
+#smallbar #buttonWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#smallbar #buttonWrapper img {
+  height: 100%;
+  width: 100%;
+}
 @media screen and (max-width: 805px) {
   #logo {
     display: none;
   }
   #navbar {
     justify-content: center;
+  }
+}
+@media screen and (max-width: 1005px) {
+  #navbar {
+    display: none;
+  }
+  #smallbar {
+    /* display: flex; */
   }
 }

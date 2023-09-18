@@ -80,7 +80,11 @@ export async function getRol(id) {
   const respuesta = await fetch("../persistencia/getRol.php", { method: "post", body: datos });
   const retorno = await respuesta.json();
   console.log(retorno);
-  return retorno[0].Rol;
+  if (!retorno.length) {
+    return "no rol";
+  } else {
+    return retorno[0].Rol;
+  }
 }
 export function mostrarNotif(tipo, mensaje, tiempo) {
   if (tiempo == undefined) {
