@@ -19,7 +19,7 @@ const navbar = `
 </article>
 <article id="nav">
   <a href="index.html">Home</a>
-  <a href="#">Menus</a>
+  <a href="listado-menus.html">Menus</a>
   ${perfil}
   ${carrito}
   <article class="textfield">
@@ -27,6 +27,11 @@ const navbar = `
     <img src="../src/ic-search.svg" alt="" />
   </article>
 </article>
+</section>
+<section id="smallbar">
+  <article id="buttonWrapper">
+    <img src="../src/img-test.png">
+  </article>
 </section>
 `;
 $("body").append(navbar);

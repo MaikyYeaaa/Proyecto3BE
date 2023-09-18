@@ -21,7 +21,9 @@ async function navbarEmpleado() {
 // navGerenteFunction();
 
 async function mostrarSegunRol() {
-  switch (await getRol()) {
+  let rol = await getRol();
+  console.log(rol);
+  switch (rol) {
     case "gerente":
       return `<article id="containerArticle">
     <h1>Menu Gerente</h1>

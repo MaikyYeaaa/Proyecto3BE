@@ -169,12 +169,16 @@ body {
   width: 335px;
 
   background-color: white;
-  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25));
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   border-radius: 6px;
   overflow: hidden;
 
   margin: 10px;
+  transition: 0.2s;
+}
+.menu:hover {
+  transform: scale(1.02);
 }
 .menu #imgContainer {
   width: 100%;
@@ -201,7 +205,8 @@ body {
   height: 50px;
   border: none;
   background-image: linear-gradient(11deg, rgba(34, 193, 195, 1) 0%, rgb(45, 253, 62) 100%);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
   border-radius: 6px;
   font-size: 1.2rem;
   font-style: normal;
