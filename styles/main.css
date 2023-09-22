@@ -113,7 +113,7 @@ body > section {
   animation-fill-mode: both;
   animation-timeline: --revealing-image;
 
-  animation-range: entry 50% cover 50%;
+  animation-range: entry 25% cover 25%;
 }
 
 body > section:nth-child(odd) {

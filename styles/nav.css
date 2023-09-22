@@ -26,6 +26,8 @@ html {
   row-gap: 20px;
   flex-wrap: wrap;
   box-sizing: border-box;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12));
+  overflow: hidden;
 }
 
 #nav {
@@ -40,6 +42,9 @@ html {
   text-decoration: none;
   color: black;
 }
+#nav a:hover {
+  transform: scale(1.2);
+}
 
 #logo {
   display: flex;
@@ -50,18 +55,28 @@ html {
 
 #smallbar {
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
   height: 80px;
   width: 100vw;
   background-color: white;
+  padding: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 3;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12));
 }
 #smallbar #buttonWrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
   height: 100%;
   margin: 5px;
   overflow: hidden;
   border-radius: 10px;
+
+  transition: 0.2s;
+}
+#smallbar #buttonWrapper:hover {
+  transform: scale(1.2);
 }
 #smallbar #buttonWrapper img {
   height: 100%;
@@ -77,9 +92,19 @@ html {
 }
 @media screen and (max-width: 1005px) {
   #navbar {
+    /* display: none; */
+    justify-content: center;
+  }
+  #navbar #logo {
     display: none;
   }
+  #nav {
+    flex-direction: column;
+  }
   #smallbar {
-    /* display: flex; */
+    display: flex;
+  }
+  body {
+    /* margin-top: 0; */
   }
 }

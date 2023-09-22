@@ -30,7 +30,6 @@ body {
   background: rgb(112, 112, 112);
   background: linear-gradient(180deg, rgb(77, 76, 76) 0%, rgba(178, 180, 180, 1) 100%);
   width: 20%;
-  margin-right: 20px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -56,4 +55,10 @@ body {
 }
 #MenuButtons a:hover {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 1012px) {
+  #adminMenu {
+    display: none;
+  }
 }
