@@ -22,7 +22,7 @@ fetch("../persistencia/getPublicaciones.php")
       let img = r[i].FotoURL;
       let descripcion = r[i].Descripcion;
       const mostrar = `
-      <article class="Promo col-12">
+      <article class="Promo ">
       <section id="Info">
       <article id="texto-info">
 
@@ -34,13 +34,13 @@ fetch("../persistencia/getPublicaciones.php")
       </section>
       </article>
       </section>
-      <button class="callToAction" data-descuento="${descuento}" data-img="${img}" data-precio="${precioDescuento}" data-id="${idMenu}" data-nombre="${nombre}" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+      <button class="callToAction" data-descuento="${descuento}" data-img="${img}" data-precio="${precioDescuento}" data-id="${idMenu}" data-nombre="${nombre}" onclick="agregarAlCarrito(this)">¡Lo quiero!</button>
       <section class="promo-container">
       <article class="img-cont">
       <img src="${img}" alt="" />
       </article>
       <article class="promo-green-cont">
-      <h1>${descuento}%</h1>
+      <h1 id="descuento">${descuento}%</h1>
       </article>
       </section>
       </article>`;

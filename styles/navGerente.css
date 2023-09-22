@@ -57,3 +57,8 @@ body {
 #MenuButtons a:hover {
   transform: scale(1.2);
 }
+@media screen and (max-width: 693px){
+#adminMenu{
+  width: 0;
+}
+}
