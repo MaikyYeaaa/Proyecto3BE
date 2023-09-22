@@ -3,17 +3,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../jquery-3.6.4.min.js"></script>
-    <title>Sisviansa - Document</title>
+    <link rel="stylesheet" href="../styles/clases.css">
+    <link rel="stylesheet" href="../styles/cambiarContra.css">
+    <title>Sisviansa - cambiarContra</title>
   </head>
   <body>
+
+    <script src="../scripts/navbar.js"></script>
     <form id="cambiarContra-form">
-      <input type="text" name="contraVieja" placeholder="contra vieja" />
+      <input class="textfield" type="text" name="contraVieja" placeholder="contra vieja" />
       <br />
-      <input type="text" name="contraNueva" placeholder="contra nueva" />
+      <input class="textfield" type="text" name="contraNueva" placeholder="contra nueva" />
       <br />
-      <input type="text" name="contraNuevaConfirm" placeholder="repetir contra nueva" />
+      <input class="textfield" type="text" name="contraNuevaConfirm" placeholder="repetir contra nueva" />
       <br />
-      <input type="submit" value="Cambiar" />
+      <input class="btnPrimario" type="submit" value="Cambiar" />
     </form>
     <script src="../logica/cambiarContra.js" type="module"></script>
   </body>
