@@ -14,7 +14,7 @@ body {
 #login {
   width: 90vw;
   height: 80vh;
-  background-color: rgb(105, 105, 105);
+  background-color: #b9cfba;
   justify-content: center;
   display: flex;
   padding-inline: 120px;

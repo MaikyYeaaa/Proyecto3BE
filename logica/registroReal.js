@@ -81,7 +81,7 @@ function mostrarSlide() {
       $("#first").css({ display: "flex" });
       $("#botonContinue").css({ "justify-content": "end" });
       $("#follower > :nth-child(1)").css({ background: "black" });
-
+      $("#follower").css({ background: "black" });
       break;
 
     case 2:
@@ -90,6 +90,7 @@ function mostrarSlide() {
       $("#botonContinue").css({ "justify-content": "space-between" });
       $("#follower > :nth-child(1)").css({ background: "radial-gradient(circle, rgba(34,195,96,1) 0%, rgba(45,253,72,1) 100%)" });
       $("#follower > :nth-child(2)").css({ background: "black" });
+      $("#follower").css({ background: "black" });
 
       break;
 
@@ -98,6 +99,7 @@ function mostrarSlide() {
       $("#third").css({ display: "flex" });
       $("#follower > :nth-child(2)").css({ background: "radial-gradient(circle, rgba(34,195,96,1) 0%, rgba(45,253,72,1) 100%)" });
       $("#follower > :nth-child(3)").css({ background: "black" });
+      $("#follower").css({ background: "linear-gradient(90deg, rgb(6, 186, 6) 35%, black 35%)" });
 
       break;
 
@@ -107,12 +109,14 @@ function mostrarSlide() {
       $("#follower > :nth-child(3)").css({ background: "radial-gradient(circle, rgba(34,195,96,1) 0%, rgba(45,253,72,1) 100%)" });
       $("#follower > :nth-child(4)").css({ background: "black" });
       $("#continuar").html("Registrarse");
+      $("#follower").css({ background: "linear-gradient(90deg, rgb(6, 186, 6) 67%, black 67%)" });
 
       break;
 
     case 5:
       $("#first, #second, #third, #forth").css({ display: "none" });
       $("#follower > :nth-child(4)").css({ background: "radial-gradient(circle, rgba(34,195,96,1) 0%, rgba(45,253,72,1) 100%)" });
+      $("#follower").css({ background: "rgb(6, 186, 6)" });
       registrarUsuario();
       break;
   }
