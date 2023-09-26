@@ -29,8 +29,8 @@ const navbar = `
 </article>
 </section>
 <section id="smallbar">
-  <article id="buttonWrapper">
-    <img src="../src/img-test.png">
+  <article id="buttonWrapper" onclick="showNav()">
+    <img src="../src/ep_menu.svg">
   </article>
 </section>
 `;
@@ -40,3 +40,14 @@ $("#filtro").on("input", function (e) {
   let texto = $("#filtro").val();
   console.log(texto);
 });
+
+var navClickeada = false;
+function showNav() {
+  if (!navClickeada) {
+    $("#navbar").css({ height: "100vh" });
+    navClickeada = true;
+  } else {
+    $("#navbar").css({ height: "90px" });
+    navClickeada = false;
+  }
+}
