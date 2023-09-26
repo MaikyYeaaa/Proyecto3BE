@@ -57,8 +57,16 @@ body {
   transform: scale(1.2);
 }
 
+
 @media screen and (max-width: 1012px) {
   #adminMenu {
     display: none;
   }
 }
+
+@media screen and (max-width: 693px){
+#adminMenu{
+  width: 0;
+}
+}
+
