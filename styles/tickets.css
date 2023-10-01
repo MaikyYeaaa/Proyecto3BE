@@ -32,9 +32,6 @@ body {
   margin: 0;
   height: 100vh;
   background-image: linear-gradient(153deg, rgba(238, 174, 202, 1) 0%, rgba(202, 224, 195, 1) 0%, rgba(194, 194, 195, 1) 68%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #ticket {
@@ -47,4 +44,77 @@ body {
 #ticket input,
 textarea {
   border-radius: 6px;
+}
+
+/* Ni idea que es lo que está arriba, de ultima se borra si no se usa */
+
+#ticketBody{
+  border-radius: 10px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, #5c8f5e 0%, #667548 100%);
+  width:60vw;
+  filter: drop-shadow(1px 1px 2px black);
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  margin: 9px;
+  overflow: hidden;
+}
+
+#bottom{
+  display: flex;
+  flex-direction: row;
+}
+
+#col1{
+  width: 80%;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+#Motivo{
+  padding-left: 10px;
+}
+
+#Correo{
+  padding-left: 10px;
+  color: rgb(211, 211, 211);
+}
+
+#Mensaje{
+  padding-left: 10px;
+}
+
+#ticketBody:hover{
+  transform: scale(1.03);
+}
+
+#nro{
+  font-size: 25px;
+  color: rgb(54, 54, 54);
+  font-weight: 900;
+  background-color:#5c8f5e;
+  width: 100%;
+}
+#col2{
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  margin-left: 5px;
+}
+
+#ticketSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+@media screen and (max-width: 693px){
+  #ticketBody{
+    background-color: red;
+    opacity: 1;
+    width: 90vw;
+  }
 }
