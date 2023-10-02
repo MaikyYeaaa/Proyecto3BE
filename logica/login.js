@@ -31,7 +31,7 @@ formulario.addEventListener("submit", function (e) {
         FeedBack("mailError", "45px");
         console.log("mail");
       } else if (r == "contraError") {
-        FeedBack("psswrdError", "45px");
+        FeedBack("psswrdError", "80px");
         console.log("contra");
       } else {
         FeedBack("mailError #psswrdError", "0");
@@ -77,9 +77,9 @@ $("#togglePassword").click(function () {
   let inputType = $("#inputPass").attr("type");
   if (inputType === "password") {
     $("#inputPass").attr("type", "text");
-    $(this).text("Esconder");
+    $(this).attr("src", "../src/eye.svg");
   } else {
     $("#inputPass").attr("type", "password");
-    $(this).text("Mostrar");
+    $(this).attr("src", "../src/eye-slash.svg");
   }
 });
