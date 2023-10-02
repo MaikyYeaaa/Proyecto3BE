@@ -140,3 +140,18 @@ body > section:nth-child(even) {
   gap: 24px;
   align-self: stretch;
 }
+
+#listado-favs {
+  display: flex;
+  max-width: 1263px;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 40px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+a {
+  text-decoration: none;
+}

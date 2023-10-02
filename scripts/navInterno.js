@@ -31,7 +31,7 @@ async function mostrarSegunRol() {
       <a href="stock.html">
         <button>STOCK</button>
       </a>
-      <a href="">
+      <a href="mod-pedidos.html">
         <button>PEDIDOS</button>
       </a>
       <a href="productos.html">
@@ -42,6 +42,10 @@ async function mostrarSegunRol() {
       </a>
       <a href="parametrizarFAQ.html">
       <button>PARAMETRIZAR FAQ</button>
+      </a>
+      </a>
+      <a href="parametrizar-index.html">
+      <button>PARAMETRIZAR INICIO</button>
       </a>
     </section>
   </article>`;
