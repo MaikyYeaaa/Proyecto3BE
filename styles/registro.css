@@ -85,8 +85,8 @@
   margin-top: 50px;
   width: 70%;
   height: 10px;
-  background-color: rgb(0, 0, 0);
-  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+  background-color: rgba(0, 0, 0, 0.511);
+  filter: drop-shadow(0 0 0.75rem rgb(35, 82, 32));
   border-radius: 100px;
   display: flex;
   justify-content: space-between;
