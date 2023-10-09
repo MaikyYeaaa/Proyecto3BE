@@ -1,4 +1,15 @@
+
 const userID = localStorage.getItem("id");
+
+function showNav() {
+  if (!navClickeada) {
+    $("#navbarAuth").css({ height: "100vh" });
+    navClickeada = true;
+  } else {
+    $("#navbarAuth").css({ height: "90px" });
+    navClickeada = false;
+  }
+}
 
 let perfil = "";
 let carrito = "";
@@ -9,9 +20,11 @@ if (!userID) {
   perfil = `<a href="perfil.html">Perfil</a>`;
 }
 
-const navbar = `
+const navbarAuth = `
+<script src="../scripts/checkUser.js" type="module"></script>
+
 <link rel="stylesheet" href="../styles/nav.css" />
-<section id="navbar">
+<nav id="navbar">
 <article id="logo">
   <a href="index.html">
     <img src="../src/logo.png" alt="" width="200px" />
@@ -27,14 +40,14 @@ const navbar = `
     <img src="../src/ic-search.svg" alt="" />
   </article>
 </article>
-</section>
-<section id="smallbar">
+</nav>
+<nav id="smallbar">
   <article id="buttonWrapper" onclick="showNav()">
     <img src="../src/ep_menu.svg">
   </article>
-</section>
+</nav>
 `;
-$("body").append(navbar);
+$("body").append(navbarAuth);
 
 $("#filtro").on("input", function (e) {
   let texto = $("#filtro").val();
@@ -42,12 +55,3 @@ $("#filtro").on("input", function (e) {
 });
 
 var navClickeada = false;
-function showNav() {
-  if (!navClickeada) {
-    $("#navbar").css({ height: "100vh" });
-    navClickeada = true;
-  } else {
-    $("#navbar").css({ height: "90px" });
-    navClickeada = false;
-  }
-}
