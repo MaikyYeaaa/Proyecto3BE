@@ -83,3 +83,11 @@ $("#togglePassword").click(function () {
     $(this).attr("src", "../src/eye-slash.svg");
   }
 });
+
+let numeroInicial = 7;
+let calculo = numeroInicial;
+for (let i = numeroInicial - 1; i > 0; i--) {
+  calculo = calculo * i;
+  console.log(i);
+}
+console.log(calculo);
