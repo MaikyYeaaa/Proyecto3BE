@@ -21,6 +21,39 @@ function writeToJSON($jsonURL, $arrayData) {
     // Manda el contenido previo + el nuevo al json
     return file_put_contents($jsonURL, $jsonData);
 }
+function removeFromJSON($jsonURL, $index) {
+    if (!file_exists($jsonURL)) {
+                // si no existe, hace un array vacio
+        return false;
+    } else {
+                // si existe decodea el contenido
+        $array = json_decode(file_get_contents($jsonURL), true);
+                // se fija si el contenido de $array no es un array
+        if (!is_array($array)) {
+                        // si no es, hace un array vacio
+            return false;
+        }
+    }
+    
+    // saca el elemento q le pedi
+    unset($array[$index]);
+    
+    $jsonData = json_encode($array, JSON_PRETTY_PRINT);
+    
+    // devuelve el json
+    return file_put_contents($jsonURL, $jsonData);
+}
+function getArrayFromJSON($jsonURL) {
+    if (!file_exists($jsonURL)) {
+        return false;
+    } else {
+        $array = json_decode(file_get_contents($jsonURL), true);
+        if (!is_array($array)) {
+            return false;
+        }
+        return $array;
+    }
+}
 
 function conectarBDD() {
     
