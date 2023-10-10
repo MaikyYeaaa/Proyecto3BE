@@ -40,7 +40,13 @@ function denegarCliente(mail) {
   }
 }
 
-fetch("../persistencia/Lclientes.php")
+const sql = "WHERE Autorizado = 'NULL'";
+const formuListado = new FormData();
+formuListado.append("param", sql);
+fetch("../persistencia/Lclientes.php", {
+  method: "post",
+  body: formuListado,
+})
   .then((r) => r.json())
   .then((resp) => {
     console.log(resp);

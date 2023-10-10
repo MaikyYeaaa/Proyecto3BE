@@ -9,30 +9,16 @@ formulario.addEventListener("submit", async function (e) {
   const id = localStorage.getItem("id");
   datos.append("id", id);
 
-  verificarMail(datos).then((resultado) => {
-    if (resultado) {
-      fetch("../persistencia/ticket.php", {
-        method: "POST",
-        body: datos,
-      })
-        .then((r) => r.text())
-        .then((r) => mostrarNotif("correcto", "Ticket creado correctamente"));
-    } else {
-      mostrarNotif("error", "Mail incorrecto");
-    }
-  });
-});
-function verificarMail(datos) {
-  return fetch("../persistencia/verifMail.php", {
-    method: "post",
+  fetch("../persistencia/ticket.php", {
+    method: "POST",
     body: datos,
   })
-    .then((r) => r.json())
+    .then((r) => r.text())
     .then((r) => {
       console.log(r);
-      return r.length > 0;
+      mostrarNotif("correcto", "Ticket creado correctamente");
     });
-}
+});
 
 async function agarrarOPT() {
   const respuesta = await fetch("../persistencia/getTicketOPT.php");

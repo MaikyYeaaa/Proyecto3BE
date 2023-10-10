@@ -1,8 +1,7 @@
 <?php
-
 require "../logica/Clases/Cliente.php";
-
-$clientes = Cliente::listar("NULL");
+$param = $_POST["param"];
+$clientes = Cliente::listarAll($param);
 echo json_encode($clientes);
 
 ?>

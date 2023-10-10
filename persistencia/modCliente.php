@@ -1,7 +1,4 @@
 <?php
-
-
-
 require "../logica/Clases/Cliente.php";
 
 $mail = $_POST["mail"];

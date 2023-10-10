@@ -1,11 +1,15 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Reclamo.php";
 
-$con = conectarBDD();
 
-$razon = mysqli_real_escape_string($con, $_POST["razon"]);
-$descripcion = mysqli_real_escape_string($con, $_POST["descripcion"]);
-$id = mysqli_real_escape_string($con, $_POST["id"]);
+
+
+$razon = $_POST["razon"];
+$descripcion = $_POST["descripcion"];
+$idUser = $_POST["id"];
+
+$reclamo = new Reclamo(NULL, $descripcion, false);
+var_dump(json_encode($reclamo));
 
 $sqlReclamo = "INSERT INTO `reclamo`(`DescripcionReclamo`) VALUES ('${descripcion}')";
 if (sendToBDD($sqlReclamo, $con)) {

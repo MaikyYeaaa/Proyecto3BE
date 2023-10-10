@@ -9,7 +9,7 @@ class Cliente {
     public $Telefono;
     public $Dir;
 
-    public function __construct($Nro, $Mail, $Autoriado, $Telefono, $Dir) {
+    public function __construct($Nro = null, $Mail = null, $Autoriado = null, $Telefono = null, $Dir = null) {
         $this->Nro = $Nro;
         $this->Mail = $Mail;
         $this->Autoriado = $Autoriado;
@@ -90,37 +90,34 @@ class Cliente {
     public static function getById($id) {
         $con = conectarBDD();  
         $idEscapado = mysqli_real_escape_string($con, $id);
-        $sql = "SELECT * FROM `cliente` WHERE IDUser = '${idEscapado}'";
+        $sql = "SELECT * FROM `cliente` WHERE Nro = '${idEscapado}'";
         $result = $con->query($sql);
     
         if ($result && $result->num_rows > 0) {
             $data = $result->fetch_assoc();
             $cliente = new Cliente($data['Nro'], $data['Mail'], $data['Autorizado'], $data['Telefono'], $data['Dir']);
-            return $cliente;
+            return json_encode($cliente);
         } else {
             return null;  
         }
     }
     
-    public static function listar($autoriz) {
-        $con = conectarBDD(); 
-        if(!empty($autoriz)) {
-            $sql = "SELECT * FROM `cliente` WHERE Autorizado = '{$autoriz}'";
-        } else {
-            $sql = "SELECT * FROM `cliente`";
-        }
-        $result = $con->query($sql);
+    public static function listarAll($param) {
+        $con = conectarBDD();
+        
+            $sql = "SELECT * FROM `cliente`" . $param;
+        
+        $data = getFromBDD($sql, $con);
+        $con->close();
     
         $clientes = array();
-    
-        while ($data = $result->fetch_assoc()) {
-            $cliente = new Cliente($data['Nro'], $data['Mail'], $data['Autorizado'], $data['Dir'], $data['Telefono']);
+        
+        foreach ($data as $row) {
+            $cliente = new Cliente($row['Nro'], $row['Mail'], $row['Autorizado'], $row['Dir'], $row['Telefono']);
             $clientes[] = $cliente;
         }
     
-        $con->close();
         return json_encode($clientes);
-
     }
 }
 
