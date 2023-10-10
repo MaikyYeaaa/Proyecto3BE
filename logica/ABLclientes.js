@@ -10,6 +10,7 @@ function confirmarCliente(mail) {
   })
     .then((r) => r.text())
     .then((r) => {
+      console.log(r);
       if (r == "success") {
         location.reload();
       } else {
@@ -41,9 +42,14 @@ function denegarCliente(mail) {
 
 fetch("../persistencia/Lclientes.php")
   .then((r) => r.json())
-  .then((r) => crearCliente(r));
+  .then((resp) => {
+    console.log(resp);
+    mostrarClientes(resp);
+  });
 
-function crearCliente(r) {
+function mostrarClientes(resp) {
+  let r = JSON.parse(resp);
+  console.log(r);
   r.forEach((cliente) => {
     console.log(cliente);
     const elementoHTML = `

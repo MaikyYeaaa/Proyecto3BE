@@ -6,6 +6,8 @@ formulario.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   let datos = new FormData(formulario);
+  const id = localStorage.getItem("id");
+  datos.append("id", id);
 
   verificarMail(datos).then((resultado) => {
     if (resultado) {
