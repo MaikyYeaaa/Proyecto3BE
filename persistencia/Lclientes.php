@@ -1,7 +1,11 @@
 <?php
 require "../logica/Clases/Cliente.php";
-$param = $_POST["param"];
+if(!empty($_POST["param"])) {
+    $param = $_POST["param"];
+} else {
+    $param = "";
+}
 $clientes = Cliente::listarAll($param);
-echo json_encode($clientes);
+echo $clientes;
 
 ?>

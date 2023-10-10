@@ -3,9 +3,9 @@
 require_once 'Cliente.php';
 
 class Web extends Cliente {
-    private $CI;
-    private $Nombre;
-    private $Apellido;
+    public $CI;
+    public $Nombre;
+    public $Apellido;
 
     public function __construct($Nro, $Mail, $Autoriado, $tel, $dir, $CI, $Nombre, $Apellido) {
         parent::__construct($Nro, $Mail, $Autoriado, $tel, $dir);
@@ -39,6 +39,14 @@ class Web extends Cliente {
 
     public function setApellido($Apellido) {
         $this->Apellido = $Apellido;
+    }
+
+    public function sendBDD() {
+        $con = conectarBDD();
+        $sql = "INSERT INTO `web`(`Nro`, `CI`, `Nombre`, `Apellido`) VALUES ('{$this->getNro()}','{$this->getCI()}','{$this->getNombre()}','{$this->getApellido()}')";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
     }
 }
 

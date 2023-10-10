@@ -29,6 +29,14 @@ class Empresa extends Cliente {
     public function setRut($Rut) {
         $this->Rut = $Rut;
     }
+
+    public function sendBDD() {
+        $con = conectarBDD();
+        $sql = "INSERT INTO `empresa`(`Nro`, `Rut`, `Nombre`) VALUES ('{$this->getNro()}','{$this->getRut()}','{$this->getNombre()}')";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
+    }
 }
 
 ?>

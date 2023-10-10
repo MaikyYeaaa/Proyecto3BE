@@ -34,7 +34,7 @@ tipo.addEventListener("change", (e) => {
 async function valida(datos) {
   let response = await fetch("../persistencia/Lclientes.php");
   let r = await response.json();
-
+  console.log(r);
   let mail = datos.get("mail");
   let contra = datos.get("contra");
   let contraRepit = datos.get("contra2");
@@ -131,6 +131,7 @@ async function registrarUsuario() {
     })
       .then((r) => r.text())
       .then((r) => {
+        console.log(r);
         if (r == "correcto") {
           window.open("login.html");
           window.close();
