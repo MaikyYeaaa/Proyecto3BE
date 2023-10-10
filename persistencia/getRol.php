@@ -1,12 +1,9 @@
 <?php
-require "helperFunctions.php";
-$con = conectarBDD();
+require "../logica/Clases/Usuario.php";
 
-$id = mysqli_real_escape_string($con, $_POST["id"]);
+$id = $_POST["id"];
+$usuario = Usuario::getById($id);
 
-$publicaciones = getFromBDD("SELECT `Rol` FROM `usuario` WHERE `IDUser` =  '{$id}'", $con);
+echo json_encode($usuario);
 
-echo json_encode($publicaciones);
-
-$con->close();
 ?>

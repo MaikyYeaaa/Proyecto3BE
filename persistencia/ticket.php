@@ -1,11 +1,15 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Reclamo.php";
 
-$con = conectarBDD();
 
-$razon = mysqli_real_escape_string($con, $_POST["razon"]);
-$descripcion = mysqli_real_escape_string($con, $_POST["descripcion"]);
-$mail = mysqli_real_escape_string($con, $_POST["mail"]);
+
+
+$razon = $_POST["razon"];
+$descripcion = $_POST["descripcion"];
+$idUser = $_POST["id"];
+
+$reclamo = new Reclamo(NULL, $descripcion, false);
+var_dump(json_encode($reclamo));
 
 $sqlReclamo = "INSERT INTO `reclamo`(`DescripcionReclamo`) VALUES ('${descripcion}')";
 if (sendToBDD($sqlReclamo, $con)) {
@@ -19,7 +23,7 @@ if (sendToBDD($sqlReclamo, $con)) {
         echo "error al ingresar relacion en `incorpora` <br>";
     }
 
-    $sqlNro = "SELECT `Nro` FROM `cliente` WHERE `Mail` = '${mail}'"; //agarro el id del cliente con ese mail
+    $sqlNro = "SELECT `Nro` FROM `cliente` WHERE `Nro` = '${id}'"; //agarro el id del cliente con ese id
     $NroArray = getFromBDD($sqlNro, $con);
     $Nro = $NroArray[0]['Nro'];
 

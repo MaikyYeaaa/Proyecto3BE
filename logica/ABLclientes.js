@@ -10,6 +10,7 @@ function confirmarCliente(mail) {
   })
     .then((r) => r.text())
     .then((r) => {
+      console.log(r);
       if (r == "success") {
         location.reload();
       } else {
@@ -39,11 +40,22 @@ function denegarCliente(mail) {
   }
 }
 
-fetch("../persistencia/Lclientes.php")
+const sql = "WHERE Autorizado = 'NULL'";
+const formuListado = new FormData();
+formuListado.append("param", sql);
+fetch("../persistencia/Lclientes.php", {
+  method: "post",
+  body: formuListado,
+})
   .then((r) => r.json())
-  .then((r) => crearCliente(r));
+  .then((resp) => {
+    console.log(resp);
+    mostrarClientes(resp);
+  });
 
-function crearCliente(r) {
+function mostrarClientes(resp) {
+  let r = JSON.parse(resp);
+  console.log(r);
   r.forEach((cliente) => {
     console.log(cliente);
     const elementoHTML = `

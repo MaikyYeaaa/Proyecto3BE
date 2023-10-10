@@ -1,24 +1,20 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Cliente.php";
 
-$con = conectarBDD();
+$mail = $_POST["mail"];
+$cliente = Cliente::getByMail($mail);  // Suponiendo que tienes un método estático que devuelve un objeto Cliente basado en el mail
 
-$mail = mysqli_real_escape_string($con, $_POST["mail"]);
-$valor = mysqli_real_escape_string($con, $_POST["valor"]);
-
-if($valor === "confirmar") {
-    $sql = "UPDATE `cliente` SET `Autorizado`='SI' WHERE Mail = '${mail}'";
-} else{
-    $sql = "UPDATE `cliente` SET `Autorizado`='NO' WHERE Mail = '${mail}'";
+if ($cliente) {
+    if($_POST["valor"] === "confirmar") {
+        $cliente->actualizarAutorizado('SI');
+        echo "success";
+    } else {
+        $cliente->actualizarAutorizado('NO');
+        echo "success";
+    }
+} else {
+    echo "Cliente no encontrado";
 }
 
-if (sendToBDD($sql, $con)) {
-    echo "success";
-}
 
-if ($con->error) {
-    die($con->error);
-}
-
-$con->close();
 ?>

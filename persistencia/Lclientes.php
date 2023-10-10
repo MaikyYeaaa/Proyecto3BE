@@ -1,14 +1,7 @@
-
-
 <?php
-require "helperFunctions.php";
-
-$con = conectarBDD();
-
-$sql = "SELECT `Mail` FROM `cliente` WHERE `Autorizado` = 'NULL'";
-$clientes = getFromBDD($sql, $con);
-    echo json_encode($clientes);
-
-$con->close();
+require "../logica/Clases/Cliente.php";
+$param = $_POST["param"];
+$clientes = Cliente::listarAll($param);
+echo json_encode($clientes);
 
 ?>

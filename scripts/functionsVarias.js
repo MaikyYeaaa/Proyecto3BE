@@ -79,12 +79,8 @@ export async function getRol(id) {
   datos.append("id", id);
   const respuesta = await fetch("../persistencia/getRol.php", { method: "post", body: datos });
   const retorno = await respuesta.json();
-  console.log(retorno);
-  if (!retorno.length) {
-    return "no rol";
-  } else {
-    return retorno[0].Rol;
-  }
+
+  return retorno.Rol;
 }
 export function mostrarNotif(tipo, mensaje, tiempo) {
   if (tiempo == undefined) {
