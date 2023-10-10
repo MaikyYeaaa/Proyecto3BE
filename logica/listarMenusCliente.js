@@ -1,6 +1,7 @@
 fetch("../persistencia/listarMenus.php")
   .then((r) => r.json())
   .then((r) => {
+    console.log(r);
     r.forEach((r) => {
       let estrellas = Math.floor(Math.random() * 5) + 1;
 

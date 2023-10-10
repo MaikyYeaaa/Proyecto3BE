@@ -57,6 +57,14 @@ class Usuario {
         $this->Mail = $Mail;
     }
 
+    public function sendBDD() {
+        $con = conectarBDD();
+        $sql = "INSERT INTO `usuario`(`IDUser`, `Nombre`, `Contrasena`, `Rol`, `Mail`) VALUES ('NULL','{$this->getNombre()}','{$this->getContrasena()}','NULL','{$this->getMail()}')";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
+    }
+
     public function actualizarRol($nuevoRol) {
         $con = conectarBDD();
         $mailEscapado = mysqli_real_escape_string($con, $this->Mail);
@@ -117,5 +125,20 @@ class Usuario {
         $con->close();
         return json_encode($usuarios);
     }
+
+    public static function getLastId() {
+        $con = conectarBDD();
+        $sql = "SELECT MAX(IDUser) as ultimaID FROM `usuario`";
+        $result = $con->query($sql);
+    
+        if ($result && $data = $result->fetch_assoc()) {
+            $con->close();
+            return $data['ultimaID'];
+        }
+    
+        $con->close();
+        return null;  // or return some error code or message
+    }
+    
 }
 ?>

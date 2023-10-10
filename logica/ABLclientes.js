@@ -53,9 +53,7 @@ fetch("../persistencia/Lclientes.php", {
     mostrarClientes(resp);
   });
 
-function mostrarClientes(resp) {
-  let r = JSON.parse(resp);
-  console.log(r);
+function mostrarClientes(r) {
   r.forEach((cliente) => {
     console.log(cliente);
     const elementoHTML = `

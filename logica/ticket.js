@@ -16,7 +16,14 @@ formulario.addEventListener("submit", async function (e) {
     .then((r) => r.text())
     .then((r) => {
       console.log(r);
-      mostrarNotif("correcto", "Ticket creado correctamente");
+      if (r) {
+        mostrarNotif("correcto", "Ticket creado correctamente");
+        setTimeout(() => {
+          location.reload();
+        }, 3000);
+      } else {
+        mostrarNotif("error", `${r}`);
+      }
     });
 });
 

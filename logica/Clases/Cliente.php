@@ -1,18 +1,18 @@
 <?php
-require "../persistencia/helperFunctions.php";
+require_once "../persistencia/helperFunctions.php";
 
 class Cliente {
     
     public $Nro;
     public $Mail;
-    public $Autoriado;
+    public $Autorizado;
     public $Telefono;
     public $Dir;
 
-    public function __construct($Nro = null, $Mail = null, $Autoriado = null, $Telefono = null, $Dir = null) {
+    public function __construct($Nro = null, $Mail = null, $Autorizado = null, $Telefono = null, $Dir = null) {
         $this->Nro = $Nro;
         $this->Mail = $Mail;
-        $this->Autoriado = $Autoriado;
+        $this->Autorizado = $Autorizado;
         $this->Telefono = $Telefono;
         $this->Dir = $Dir;
     }
@@ -33,12 +33,12 @@ class Cliente {
         $this->Mail = $Mail;
     }
 
-    public function getAutoriado() {
-        return $this->Autoriado;
+    public function getAutorizado() {
+        return $this->Autorizado;
     }
 
-    public function setAutoriado($Autoriado) {
-        $this->Autoriado = $Autoriado;
+    public function setAutorizado($Autorizado) {
+        $this->Autorizado = $Autorizado;
     }
 
     public function getTelefono() {
@@ -55,6 +55,14 @@ class Cliente {
 
     public function setDir($Dir) {
         $this->Dir = $Dir;
+    }
+
+    public function sendBDD() {
+        $con = conectarBDD();
+        $sql = "INSERT INTO `cliente`(`Nro`, `Mail`, `Autorizado`, `Dir`, `Telefono`) VALUES ('{$this->getNro()}','{$this->getMail()}','{$this->getAutorizado()}','{$this->getDir()}','{$this->getTelefono()}')";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
     }
 
     public function actualizarAutorizado($valor) {
@@ -105,7 +113,7 @@ class Cliente {
     public static function listarAll($param) {
         $con = conectarBDD();
         
-            $sql = "SELECT * FROM `cliente`" . $param;
+            $sql = "SELECT * FROM `cliente` " . $param;
         
         $data = getFromBDD($sql, $con);
         $con->close();
