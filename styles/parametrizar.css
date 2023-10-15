@@ -201,6 +201,8 @@ body {
   height: fit-content;
   padding: 5px;
   border-radius: 8px;
+  filter: drop-shadow(2px 2px 3px black);
+  border: solid 9px white;
 }
 @media screen and (max-width: 693px){
   .modal-content {
@@ -209,6 +211,38 @@ body {
 
     width: 90%;
     text-align: center;
+
+}
+.zona {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+
+
+#listado-zonas{
+  background-color: #888;
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.zona {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 8px;
 }
 
 #modalTitle{
@@ -250,3 +284,4 @@ body {
 }
 
 }
+
