@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/clases.css">
     <link rel="stylesheet" href="../../styles/navGerente.css" />
     <link rel="stylesheet" href="../../styles/parametrizar.css">
-    <link rel="stylesheet" href="../../styles/clases.css">
+
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
       </style>
@@ -16,12 +17,12 @@
 </head>
 <body>
     <article id="mobile-nav">
-        <section id="settings"><img src="../../src/ep_menu.svg" alt="" srcset="" id="img"></section>
+        <section id="settings">
+          <button id="intBtn" style="background-color: rgba(0,0,0,0); border:none;"><img src="../../src/int_menu.svg" alt="" srcset="" id="imgBtn"></button>
+          </section>
     </article>
+
     <section id="adminMenu">
-       
-
-
         <article id="containerArticle">
             <h1 id="title">Menu Gerente</h1>
             <section id="MenuButtons">
@@ -47,7 +48,7 @@
             </section>
           </article>
     </section>
-    
+    <main>
     <section id="parametrizar">
         <article id="paracontainer">
           <article id="parametrizarTitle">
@@ -104,6 +105,9 @@
           </article>
         </article>
       </section>
+    </main>
+    <script src="../../jquery-3.6.4.min.js"></script>
+    <script src="../../scripts/navIntBtn.js"></script>
     
 </body>
 </html>
