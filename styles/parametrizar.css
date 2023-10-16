@@ -198,6 +198,8 @@ body {
   height: fit-content;
   padding: 5px;
   border-radius: 8px;
+  filter: drop-shadow(2px 2px 3px black);
+  border: solid 9px white;
 }
 @media screen and (max-width: 693px) {
   .modal-content {
@@ -246,4 +248,78 @@ body {
   .callToAction {
     width: 30vw;
   }
+}
+
+
+}
+.zona {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+
+
+#listado-zonas{
+  background-color: #888;
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.zona {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+#modalTitle{
+  font-size: 60;
+  font-weight: 900;
+  filter: drop-shadow(0 4px  1px rgb(139, 139, 139));
+  color: rgb(0, 0, 0);
+}
+.close{
+  color: rgb(255, 0, 0);
+  font-size: 70px;
+  margin: 0;
+  filter: drop-shadow(0 4px  2px black);
+}
+
+/*ARREGLAR PARA CUANDO SE HAGA EL CSS DEL ADMIN MENU!!!!*/
+
+
+
+.modal-content button, input, optgroup, select, label {
+
+  margin: 5px;
+  text-align: center;
+  justify-content: center;
+  font-weight: 900;
+  width: 100%;
+}
+#parametrizar{
+  width: 95%;
+}
+
+#modalForm{
+  padding: 0;
+  margin-top:0;
+}
+
+.callToAction{
+  width: 30vw;
+}
+
 }
