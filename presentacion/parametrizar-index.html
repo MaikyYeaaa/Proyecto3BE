@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/listadoPubliInterno.css" />
+    <link rel="stylesheet" href="../styles/clases.css" />
+    <link rel="stylesheet" href="../styles/empleados.css" />
+
+    <script src="../jquery-3.6.4.min.js"></script>
+    <title>Sisviansa - Parametrizar Index</title>
+  </head>
+  <body>
+    <script src="../scripts/navInterno.js" type="module"></script>
+
+    <section id="modal-promos" class="modal">
+      <article id="content">
+        <img src="../src/cross.svg" width="10%" onclick="modModalPromos('none')" alt="" />
+        <form id="formulario">
+          <select name="id" id="nombre-select"></select>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" required />
+          <input type="text" name="desc" id="desc" placeholder="Descripcion" required />
+          <input type="url" name="imgURL" id="imgURL" placeholder="Imagen URL" required />
+          <input type="number" name="precioDescuento" id="precio" data-precioViejo="" placeholder="100%" id="precio" required />
+          <input type="submit" value="enviar" />
+        </form>
+      </article>
+    </section>
+    <main>
+      <article id="publicaciones">
+        <label for="publicaciones">Promos:</label>
+        <section id="listado">
+          <article id="addPubli">
+            <img src="../src/Add.svg" alt="" onclick="modModalPromos('flex')" />
+          </article>
+        </section>
+      </article>
+
+      <article id="menus">
+        <label for="menus"> Menus: </label>
+        <section id="listado-menus"></section>
+      </article>
+    </main>
+
+    <script src="../logica/Menus.js"></script>
+    <script src="../logica/addMenuIndex.js"></script>
+    <script src="../logica/addPublicacion.js"></script>
+    <script src="../logica/mostrarPublicacion.js"></script>
+  </body>
+</html>

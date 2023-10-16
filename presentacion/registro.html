@@ -7,14 +7,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="../jquery-3.6.4.min.js"></script>
-        <title>Registro</title>
+        <title>Sisviansa - Registro</title>
     
         <style>
           @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
         </style>
     
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-        <link rel="stylesheet" href="../styles/nav.css" />
         <link rel="stylesheet" href="../styles/clases.css" />
         <link rel="stylesheet" href="../styles/login.css" />
         <link rel="stylesheet" href="../styles/registro.css">
@@ -22,77 +21,54 @@
       <body>
   </head>
   <body>
-    <section id="navbar">
-      <article id="logo">
-        <img src="../src/logo.png" alt="" width="200px" />
-      </article>
-      <article id="nav">
-        <a href="index.html">Home</a>
-        <a href="#">Menus</a>
-        <a href="login.html">Iniciar Sesion</a>
-        <article class="textfield">
-          <input type="text" placeholder="Buscar" />
-          <img src="../src/ic-search.svg" alt="" />
-        </article>
-      </article>
-    </section>
+
+    <script src="../scripts/navbarAuth.js"></script>
+
 
 
     <section id="login" class="container align-items-center justify-content-center">
       <form id="registro-form" class="col-6">
-          
-          <!-- Nombre y Apellido -->
-          <article class="row">
-              <section class="col-6">
-                  <input class="col-12" type="text" name="nombre" id="nombre" placeholder="Nombre" />
-              </section>
-              <section class="col-6">
-                  <input class="col-12" type="text" name="apellido" id="apellido" placeholder="Apellido" />
-              </section>
+          <article id="follower">
+            <section id="1"></section>
+            <section id="2"></section>
+            <section id="3"></section>
+            <section id="4"></section>
           </article>
+          <article id="textop">
+
+          <section id="first">
+            <select name="tipo" id="tipo">
+              <option value="web">Persona</option>
+              <option value="empresa">Empresa</option>
+          </select>
+          <input type="number" name="ci-rut" id="ident" placeholder="CI" minlength="8" maxlenminlength="8"/>
+          </section>
+            <section id="second">
+              <article id="nombre-apellido-art">
+
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
+              </article>
+                <input type="text" name="mail" id="mail" maxlength="30" placeholder="Mail" />
   
-          <!-- Contraseña y repetirla -->
-          <article class="row">
-              <section class="col-6">
+            </section>
+            <section id="third">
                   <input class="col-12" type="password" name="contra" id="contra" placeholder="Contraseña" />
-              </section>
-              <section class="col-6">
                   <input class="col-12" type="password" name="contra2" id="contra2" placeholder="Repetir Contraseña" />
-              </section>
-          </article>
+          </section>
+          <section id="forth">
+            <input type="text" name="direccion" maxlength="30" id="direccion" placeholder="Dirección"  />
+            <input type="text" name="tel" maxlength="30" id="telefono" placeholder="Telefono"  />
+
+          </section>
   
-          <!-- Otras cosas idk -->
-          <article class="row">
-              <section class="col-4">
-                  <input type="text" name="mail" id="mail" maxlength="30" placeholder="Mail" />
-              </section>
-              <section class="col-4">
-                  <input type="number" name="tel" maxlength="10" id="tel" placeholder="Tel" />
-              </section>
-              <section class="col-4">
-                  <input type="text" name="direccion" maxlength="30" id="direccion" placeholder="Dirección"  />
-              </section>
-          </article>
-  
-          <!-- Tipo de usuario y ID -->
-          <article class="row">
-              <section class="col-2">
-                  <select name="tipo" id="tipo">
-                      <option value="persona">Persona</option>
-                      <option value="empresa">Empresa</option>
-                  </select>
-              </section>
-              <section class="col-6 offset-1">
-                  <input type="number" name="ci-rut" id="ident" placeholder="CI" />
-              </section>
-          </article>
-  
-          <article class="row">
-              <section class="col-2">
-                  <input type="submit" value="Registrarse" />
-              </section>
-          </article>
-  
+
+        </article>
+        <section id="botonContinue">
+          <!-- <input type="submit" value="Registrarse" /> -->
+          <button class="btnSecundario" id="atras">Atras</button>
+          <button class="btnSecundario" id="continuar">Continuar</button>
+  </section>
       </form>
   </section>
   
@@ -102,6 +78,6 @@
 
 
     <script src="../jquery-3.6.4.min.js"></script>
-    <script src="../logica/registroReal.js"></script>
+    <script src="../logica/registroReal.js" type="module"></script>
   </body>
 </html>

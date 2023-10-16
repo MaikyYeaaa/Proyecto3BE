@@ -1,4 +1,6 @@
-fetch("../../persistencia/listarComidas.php")
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
+fetch("../persistencia/listarComidas.php")
   .then((r) => r.json())
   .then((r) => {
     r.forEach((r) => mostrarProducto(r.Nombre, r.ImagenURL, r.IDComida));
@@ -7,7 +9,7 @@ fetch("../../persistencia/listarComidas.php")
     productos.forEach((producto) => {
       producto.addEventListener("click", function () {
         let idcomida = $(producto).attr("data-idComida");
-        fetch("../../persistencia/listarComidas.php")
+        fetch("../persistencia/listarComidas.php")
           .then((r) => r.json())
           .then((r) => {
             r.forEach((r) => {
@@ -25,7 +27,7 @@ $("#btnFiltroComida").click(filtrar);
 function filtrar() {
   let filtro = $("#txtFiltroComida").val();
   let filtroCorrecto = false;
-  fetch("../../persistencia/listarComidas.php")
+  fetch("../persistencia/listarComidas.php")
     .then((r) => r.json())
     .then((r) => {
       r.forEach((r) => {
@@ -36,14 +38,14 @@ function filtrar() {
         }
       });
       if (!filtroCorrecto) {
-        alert(`no hay nada registrado como ${filtro}`);
+        mostrarNotif("aviso", `no hay nada registrado como ${filtro}`);
       } else {
         let productos = Array.from($(".producto"));
 
         productos.forEach((producto) => {
           producto.addEventListener("click", function () {
             let idcomida = $(producto).attr("data-idComida");
-            fetch("../../persistencia/listarComidas.php")
+            fetch("../persistencia/listarComidas.php")
               .then((r) => r.json())
               .then((r) => {
                 r.forEach((r) => {
@@ -71,7 +73,7 @@ $(document).on("click", "#eliminar input[type='submit']", function (e) {
     console.log(id);
 
     //eliminar de BDD;
-    fetch("../../persistencia/eliminarComida.php", {
+    fetch("../persistencia/eliminarComida.php", {
       method: "POST",
       body: datos,
     })
@@ -89,7 +91,7 @@ $(document).on("click", "#modificar input[type='submit']", function (e) {
   let id = $("#modificar input").attr("data-id");
 
   let mostrar = `
-  <img id="cerrar" src="../../src/cross.svg" alt="" />
+  <img id="cerrar" src="../src/cross.svg" alt="" />
   <form id="modificarMandar" data-id="${id}">
   <h1> <input type="text" placeholder="${nombreInput}" name="nombreNuevo" /> </h1>
   <img
@@ -113,7 +115,7 @@ $(document).on("click", "#modificarMandar input[type='submit']", function (e) {
   let datos = new FormData($("#modificarMandar")[0]);
   let id = $("#modificarMandar").attr("data-id");
   datos.append("id", id);
-  fetch("../../persistencia/modificarComida.php", {
+  fetch("../persistencia/modificarComida.php", {
     method: "post",
     body: datos,
   })
@@ -122,13 +124,13 @@ $(document).on("click", "#modificarMandar input[type='submit']", function (e) {
       if (r) {
         location.reload();
       } else {
-        alert("error al modificar datos");
+        mostrarNotif("error", "error al modificar datos");
       }
     });
 });
 
 function mostrarProducto(nombre, img, id) {
-  mostrar = `
+  let mostrar = `
   <article class="producto" id="#comida" data-idComida="${id}">
   <section id="fondo">
     <img
@@ -143,8 +145,8 @@ function mostrarProducto(nombre, img, id) {
 }
 
 function mostrarModal(nombre, desc, img, tiempo, id) {
-  mostrar = `
-  <img id="cerrar" src="../../src/cross.svg" alt="" />
+  let mostrar = `
+  <img id="cerrar" src="../src/cross.svg" alt="" />
   <h1>${nombre} </h1>
   <img
   id="productoImg"

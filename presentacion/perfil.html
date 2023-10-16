@@ -3,52 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuenta</title>
+    <title>Sisviansa - Perfil</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+      * {
+        font-family: Roboto;
+      }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../styles/clases.css" />
-    <link rel="stylesheet" href="../styles/nav.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />    <link rel="stylesheet" href="../styles/clases.css" />
     <link rel="stylesheet" href="../styles/cuenta.css" />
+    <link rel="stylesheet" href="../styles/mis-pedidos.css" />
 
     <script src="../jquery-3.6.4.min.js"></script>
   </head>
   <body>
-    <section id="navbar">
-      <article id="logo">
-        <img src="../src/logo.png" alt="" width="200px" />
-      </article>
-      <article id="nav">
-        <a href="index.html">Home</a>
-        <a href="#">Menus</a>
-        <a href="login.html">Iniciar Sesion</a>
-        <article class="textfield">
-          <input type="text" placeholder="Buscar" />
-          <img src="../src/ic-search.svg" alt="" />
-        </article>
-      </article>
-    </section>
+
+    <script src="../scripts/navbar.js"></script>
 
     <section id="fondo">
       <article id="Cuenta">
-        <h1 id="cuenta">Cuenta</h1>
-        <article id="Nombre">
-          <p>Nombre: Mateo Etchegoimberry Blasco</p>
-          <button id="btnCambiarNombre">Cambiar</button>
-        </article>
+        <h1>Cuenta:</h1>
 
-        <article id="Contraseña">
-          <p>Contraseña:**********</p>
-          <a href="cambiarContrase.html"> <button id="btnCambiarContra">Cambiar</button></a>
-        </article>
+        <section>
+          <p id="txtMail">Mail:</p>
+          <a href="cambiarMail.html">
+            <button id="btnCambiarNombre" class="callToAction">Cambiar</button>
+          </a>
+        </section>
 
-        <article id="Direccion">
-          <p>Direccion: Yi 180</p>
-          <button id="btnCambiarDireccion">Cambiar</button>
-        </article>
+        <section>
+          <p>Contraseña: *********</p>
+          <a href="cambiarContra.html">
+            <button id="btnCambiarContra" class="callToAction">Cambiar</button>
+          </a>
+        </section>
+
+        <section>
+          <p id="txtDir">Direccion:</p>
+          <a href="cambiarDir.html">
+            <button id="btnCambiarDireccion" class="callToAction">Cambiar</button>
+          </a>
+        </section>
+        
       </article>
+
+      
+      <section>
+          <button class="btnSecundario" onclick="cerrarSesion()">Cerrar Sesion</button>
+
+      </section>
     </section>
-    <script src="../logica/cambioContra.js"></script>
+
+    <section id="historial"></section>
+
+    <script src="../logica/historialPedidos.js"></script>
+
+    <script src="../logica/perfil.js"></script>
   </body>
 </html>

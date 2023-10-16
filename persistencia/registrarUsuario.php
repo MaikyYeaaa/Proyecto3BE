@@ -1,46 +1,61 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Usuario.php";
+require "../logica/Clases/Cliente.php";
+require "../logica/Clases/Web.php";
+require "../logica/Clases/Empresa.php";
 
-$con = conectarBDD();
+$nombre = $_POST["nombre"];
+$apellido = $_POST["apellido"];
+$contra = $_POST["contra"];
+$mail = $_POST["mail"];
+$tel = $_POST["tel"];
+$direccion = $_POST["direccion"];
 
-$nombre = mysqli_real_escape_string($con, $_POST["nombre"]);
-$apellido = mysqli_real_escape_string($con, $_POST["apellido"]);
-$contra = mysqli_real_escape_string($con, $_POST["contra"]);
-$mail = mysqli_real_escape_string($con, $_POST["mail"]);
-$tel = mysqli_real_escape_string($con, $_POST["tel"]);
-$direccion = mysqli_real_escape_string($con, $_POST["direccion"]);
+$usuarioVerif = false;
+$clienteVerif = false;
+$tipoClienteVerif = false;
 
-$sqlUsuario = "INSERT INTO `usuario`(`IDUser`, `Nombre`, `Contrasena`, `Rol`, `Mail`) VALUES ('NULL','${nombre}','${contra}','NULL','${mail}')";
-if(sendToBDD($sqlUsuario, $con)) {
-    echo "user registrado";
-    $id = $con->insert_id; //agarra la ultima id
+$usuario = new Usuario('NULL', $nombre, $contra, 'NULL', $mail);
+if($usuario->sendBDD()) {
+    $usuarioVerif = true;
+    $id = Usuario::getLastId();
 }
 
-
-$sqlCliente = "INSERT INTO `cliente` (`Nro`, `Mail`, `Autorizado`, `Dir`) VALUES ('${id}', '${mail}', 'NULL', '${direccion}')";
-if(sendToBDD($sqlCliente, $con)) {
-    echo "cliente registrado";
+$cliente = new Cliente($id, $mail, 'NULL', $tel, $direccion);
+if($cliente->sendBDD()) {
+    $clienteVerif = true;
 }
 
-$tipo = mysqli_real_escape_string($con, $_POST["tipo"]);
+$tipo = $_POST["tipo"];
 if($tipo == "web") {
-    $ci = mysqli_real_escape_string($con, $_POST["ci-rut"]);
-    $sqlWeb = "INSERT INTO `web`(`Nro`, `CI`, `Nombre`, `Apellido`) VALUES ('${id}','${ci}','${nombre}','${apellido}')";
-    if(sendToBDD($sqlWeb, $con)) {
-        echo "web registrado";
+    $ci = $_POST["ci-rut"];
+    $web = new Web($cliente->getNro(), $cliente->getMail(), $cliente->getAutorizado(), $cliente->getTelefono(), $cliente->getDir(), $ci, $nombre, $apellido);
+    if($web->sendBDD()) {
+        $tipoClienteVerif = true;
     }
 } else {
-    $rut = mysqli_real_escape_string($con, $_POST["ci-rut"]);
-    $sqlEmpresa = "INSERT INTO `empresa`(`Nro`, `Rut`, `Nombre`) VALUES ('${id}','${rut}','${nombre}')";
-    if(sendToBDD($sqlEmpresa, $con)) {
-        echo "emp registrado";
+    $rut = $_POST["ci-rut"];
+    $empresa = new Empresa($cliente->getNro(), $cliente->getMail(), $cliente->getAutorizado(), $cliente->getTelefono(), $cliente->getDir(), $rut, $nombre);
+    if($empresa->sendBDD()) {
+        $tipoClienteVerif = true;
     }
-} // DEPENDIENDO DEL TIPO, LE PIDO UNA O LA OTRA
+} 
+
+if($clienteVerif && $usuarioVerif && $tipoClienteVerif) {
+    echo "correcto";
+} else {
+    if(!$clienteVerif) {
+        echo "error al registrar cliente";
+    }
+    if(!$usuarioVerif) {
+        echo "error al registrar usuario";
+    }
+    if(!$tipoClienteVerif) {
+        echo "error al ingresar el tipo de cliente";
+    }
+}
 
 
-
-
-$con->close();
 
 
 ?>

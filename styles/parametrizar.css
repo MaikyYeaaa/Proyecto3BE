@@ -1,235 +1,325 @@
-#adminMenu{
-    background: rgb(112,112,112);
-    background: linear-gradient(180deg, rgb(77, 76, 76) 0%, rgba(178,180,180,1) 100%);
-width: 20%;
-height: 1130px;
-display: flex;
-margin-right: 20px;
-text-align: center;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-
+body {
+  display: flex;
+  flex-direction: row;
+  background-color: #e6e6e6;
 }
 
-#MenuButtons{
-height: 50%;
-display: flex;
-margin: 20px;
-text-align: center;
-flex-direction: column;
-}
-#MenuButtons button{
-    height: 10%;
-    background-color: rgb(0,0,0,0);
-    color: white;
-    border: none;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-
+#sectionTitle {
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  background-color: #e6e6e6;
 }
 
-#containerArticle{
-height: 100%;
-display: flex;
-flex-direction: column;
-gap: 30px;
+#parametrizarInputs {
+  background-color: #ffffff;
+  padding: 20px;
+  height: 100%;
+}
+#parametrizar {
+  padding: 10px;
+  margin-top: 80px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 70%;
+  background-color: rgb(211, 211, 211);
+}
+#btn {
+  margin-top: 35px;
 }
 
-
-body{
-    display: flex;
-    flex-direction: row;
-    background-color: #e6e6e6;
-    
+.remove {
+  background-color: #e6e6e600;
+  border: none;
+  outline: hidden;
+  transition: 0.4s;
 }
-#adminMenu h1{
-    margin-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: white;
-    font-size: 25px;
-    width: 100%;
-    text-align: center;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-
+.remove:hover {
+  transform: scale(1.1, 1.1);
 }
 
-
-#sectionTitle{
-    text-align: center;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    background-color: #e6e6e6;
-
-
+.modify {
+  background-color: #e6e6e600;
+  border: none;
+  outline: hidden;
+  transition: 0.4s;
 }
 
-#parametrizarInputs{
-    background-color: #ffffff;
-    padding: 20px;
-    height: 100%;
-}
-#parametrizar{
-    padding: 10px;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 160%;
-    background-color: rgb(211, 211, 211);
-}
-#btn{
-    margin-top: 35px;
+.modify:hover {
+  transform: scale(1.1, 1.1);
 }
 
-.remove{
-    background-color: #e6e6e600;
-border: none;
-outline: hidden;
-transition: 0.4s;
-}
-.remove:hover{
-    transform: scale(1.1,1.1);
+#Add {
+  background-color: #e6e6e600;
+  border: none;
+  outline: hidden;
+  transition: 0.4s;
 }
 
-.modify{
-background-color: #e6e6e600;
-border: none;
-outline: hidden;
-transition: 0.4s;
+#Add:hover {
+  transform: rotate(-20deg) translate(0px, -5px) scale(1.07, 1.07);
 }
 
-.modify:hover{
-    transform: scale(1.1,1.1);
+#svgimage {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  fill: rgb(234, 255, 212);
+  transition: 0.4s;
+}
+#svgimage:hover {
+  filter: drop-shadow(0px 0px 4px rgba(145, 255, 128, 0.871));
 }
 
-#Add{
-    background-color: #e6e6e600;
-border: none;
-outline: hidden;
-transition: 0.4s;
+#paraeditor {
+  display: flex;
 }
 
-#Add:hover{
-    transform: rotate(-20deg) translate(0px,-5px) scale(1.07,1.07);
-   
+#Pregunta {
+  padding: 4px;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 29px;
+  margin: 10px;
 }
 
-#svgimage{
-    height: 40px;
-    width: 40px;
-    object-fit: cover;
-    fill: rgb(234, 255, 212);
-    transition: 0.4s;
- 
-}
-#svgimage:hover{
-    filter: drop-shadow(0px 0px 4px rgba(145, 255, 128, 0.871));
+#Respuesta {
+  padding: 4px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 10px;
+  padding-bottom: 10px;
 }
 
-#paraeditor{
-    display: flex;
+#edit-body {
+  padding: 10px;
 }
 
-
-#Pregunta{
-    padding: 4px;
-    font-size: 25px;
-    font-weight: 800;
-    line-height: 29px;
-    margin: 10px;
+.preguntaBody {
+  background: rgb(145, 145, 145);
+  background: linear-gradient(0deg, rgb(157, 157, 157) 0%, rgb(210, 210, 210) 100%);
+  width: 100%;
+  border-radius: 20px;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 4, 0.2));
 }
-
-#Respuesta{
-    padding: 4px;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 20px;
-    margin: 10px;
-    padding-bottom: 10px;
-}
-
-#edit-body{
-    padding: 10px;
-}
-
-.preguntaBody{
-    background: rgb(145,145,145);
-    background: linear-gradient(0deg, rgb(157, 157, 157) 0%, rgb(210, 210, 210) 100%);
-    width: 100%;
-    border-radius: 20px;
-    filter: drop-shadow(0px 0px 4px rgba(0, 0, 4, 0.2));
-}
-
-
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    filter: drop-shadow(0px 0px 40px rgba(27, 27, 27, 0.672));
-    background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  filter: drop-shadow(0px 0px 40px rgba(27, 27, 27, 0.672));
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    border: 1px solid #888;
-    width: 60%;
-    height: 70%;
-
+  background-color: #fefefe;
+  margin: 5% auto;
+  border: 1px solid #888;
+  width: 60%;
+  height: 70%;
 }
-#modalBody{
-    font-size: 10px;
-    gap: 10px;
-}
-
-#modalForm{
-    padding: 20px;
-    margin:30px;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: 900px;
-    width: 200px;
-    height: 20px;
+#modalBody {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box; /* or content-box; adjust as needed */
+  line-height: normal; /* or a specific value */
+  vertical-align: middle; /* or top, bottom, etc. */
 }
 
-
-
-#modificarFAQ:hover {
-    background-color: white;
-    outline: auto;
-    color: #008CBA;
+#modalForm {
+  padding: 20px;
+  margin: 30px;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 900px;
+  width: 200px;
+  height: 20px;
 }
 
 .close {
-    margin: 20px;
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  margin: 20px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalTitle {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#zonas-form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+#listado-zonas {
+  background-color: #888;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: fit-content;
+}
+.zona #botones {
+  display: flex;
+  width: 20%;
+  height: 20%;
+  gap: 10px;
+}
+.zona {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 8px;
+  filter: drop-shadow(2px 2px 3px black);
+  border: solid 9px white;
+}
+@media screen and (max-width: 693px) {
+  .modal-content {
+    background: rgb(108, 214, 205);
+    background: linear-gradient(117deg, rgb(255, 255, 255) 0%, rgb(173, 175, 175) 100%);
+
+    width: 90%;
+    text-align: center;
+  }
+
+  #modalTitle {
+    font-size: 60;
+    font-weight: 900;
+    filter: drop-shadow(0 4px 1px rgb(139, 139, 139));
+    color: rgb(0, 0, 0);
+  }
+  .close {
+    color: rgb(255, 0, 0);
+    font-size: 70px;
+    margin: 0;
+    filter: drop-shadow(0 4px 2px black);
+  }
+
+  /*ARREGLAR PARA CUANDO SE HAGA EL CSS DEL ADMIN MENU!!!!*/
+
+  .modal-content button,
+  input,
+  optgroup,
+  select,
+  label {
+    margin: 5px;
+    text-align: center;
+    justify-content: center;
+    font-weight: 900;
+    width: 100%;
+  }
+  #parametrizar {
+    width: 95%;
+  }
+
+  #modalForm {
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .callToAction {
+    width: 30vw;
+  }
+}
+
+
+}
+.zona {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+
+
+#listado-zonas{
+  background-color: #888;
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.zona {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 8px;
 }
 
 #modalTitle{
-    font-size: 50px;
-    font-weight: 800;
-    margin-bottom: 30px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 60;
+  font-weight: 900;
+  filter: drop-shadow(0 4px  1px rgb(139, 139, 139));
+  color: rgb(0, 0, 0);
+}
+.close{
+  color: rgb(255, 0, 0);
+  font-size: 70px;
+  margin: 0;
+  filter: drop-shadow(0 4px  2px black);
+}
+
+/*ARREGLAR PARA CUANDO SE HAGA EL CSS DEL ADMIN MENU!!!!*/
+
+
+
+.modal-content button, input, optgroup, select, label {
+
+  margin: 5px;
+  text-align: center;
+  justify-content: center;
+  font-weight: 900;
+  width: 100%;
+}
+#parametrizar{
+  width: 95%;
+}
+
+#modalForm{
+  padding: 0;
+  margin-top:0;
+}
+
+.callToAction{
+  width: 30vw;
+}
+
 }

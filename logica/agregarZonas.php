@@ -1,5 +1,6 @@
 <?php
 require "helperFunctions.php";
+require "/Clases/Sucursal.php"
 
 $zona= $_POST["zona"];
 $jsonURL= '../persistencia/modificarZonas.json';

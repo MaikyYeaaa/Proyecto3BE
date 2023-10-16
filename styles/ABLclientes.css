@@ -1,10 +1,94 @@
-body {
-  background-image: linear-gradient(153deg, rgba(238, 174, 202, 1) 0%, rgba(202, 224, 195, 1) 0%, rgba(194, 194, 195, 1) 68%);
-  height: 100vh;
-  margin: 0;
+html {
+  min-height: 100vh;
 }
 
-th,
-td {
-  border: 1px solid black;
+main {
+  background-image: url(../src/interno-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* padding: 50px; */
+}
+#main > article {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-color: #b9cfba;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+#titulo {
+  width: 100%;
+  height: min-content;
+  text-align: center;
+}
+#titulo p {
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+#listado-wrapper {
+  width: 100%;
+  height: 70vh;
+  background-color: #8bc34a;
+  padding: 10px;
+  border-radius: 30px;
+}
+#listado {
+  margin: 0 auto;
+  width: fit-content;
+  height: 100%;
+  background-color: #0c1c02;
+  border-radius: 30px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: scroll;
+}
+.cliente {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10px;
+  border-radius: 30px;
+  width: 530px;
+  height: 104px;
+  background: linear-gradient(70deg, #d9d9d9 33.95%, rgba(217, 217, 217, 0) 100.09%);
+  transition: 0.3s;
+}
+.cliente:hover {
+  /* transform: scale(1.01); */
+}
+.cliente #mail {
+  font-family: Roboto;
+  font-size: 1.5625rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+}
+.cliente #botones img {
+  transition: 0.2s;
+}
+.cliente #botones img:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 1012px) {
+  #listado {
+    width: 289px;
+  }
+  .cliente {
+    width: 100%;
+    flex-direction: column;
+    height: fit-content;
+    padding-block: 10px;
+  }
 }

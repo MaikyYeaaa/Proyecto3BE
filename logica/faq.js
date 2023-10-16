@@ -65,8 +65,29 @@ function removerJson(){
 
 }
 
+function editModal(){
+  $("#add").append(` <article class="modal-content">
+  <span class="close">&times;</span>
+  <section id="modalBody">
+    <article id="modalTitle">
+        <label>Modificar FAQ</label>
+    </article>
+    <article id="modalForm">
+        <label>Pregunta:</label>
+        <input type="text" id="preguntaP"><br>
+        <label>Respuesta:</label>
+        <input type="text" id="respuestaP"><br>
+        <button id="addFAQ">Modificar</button>
+        </form>
+    </article>
+  </section>
+  
+</article>`);
+}
+
 function showModal() {
   getValuesFromDBB();
+  editModal();
   var modal = document.getElementById("myModal");
   var span = document.querySelector("#myModal .close"); 
   modal.style.display = "block";
