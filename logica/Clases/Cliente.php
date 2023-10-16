@@ -65,6 +65,18 @@ class Cliente {
         }
     }
 
+    public function Update($sql) {
+        $con = conectarBDD();
+        $sql = $sql . " WHERE Nro = '{$this->getNro()}'";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
+        if($con->error) {
+            die($con->error);
+        }
+        $con->close();
+    }
+
     public function actualizarAutorizado($valor) {
         $con = conectarBDD();
         $mailEnviado = mysqli_real_escape_string($con, $this->Mail);
@@ -104,7 +116,7 @@ class Cliente {
         if ($result && $result->num_rows > 0) {
             $data = $result->fetch_assoc();
             $cliente = new Cliente($data['Nro'], $data['Mail'], $data['Autorizado'], $data['Telefono'], $data['Dir']);
-            return json_encode($cliente);
+            return $cliente;
         } else {
             return null;  
         }

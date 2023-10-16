@@ -27,16 +27,13 @@ formulario.addEventListener("submit", function (e) {
     .then((r) => r.text())
     .then((r) => {
       console.log(r);
-      if (r == "correcto") {
+      if (r == "true") {
         mostrarNotif("correcto", `comida agregada exitosamente!`);
         setInterval(() => {
           location.reload();
         }, 1500);
       } else {
-        mostrarNotif("error", `${r}, Intente nuevamente`);
-        setInterval(() => {
-          location.reload();
-        }, 3000);
+        mostrarNotif("error", `${r}`);
       }
       // const comidas = Object.values(r);
       // $("h1").html("comida agregada exitosamente!");

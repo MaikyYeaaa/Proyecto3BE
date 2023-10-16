@@ -21,9 +21,9 @@ body {
   padding: 10px;
   margin-top: 80px;
   display: flex;
+  gap: 20px;
   flex-direction: column;
   width: 70%;
-  height: 160%;
   background-color: rgb(211, 211, 211);
 }
 #btn {
@@ -104,7 +104,6 @@ body {
   width: 100%;
   border-radius: 20px;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 4, 0.2));
-  
 }
 
 .modal {
@@ -148,8 +147,6 @@ body {
   width: 200px;
   height: 20px;
 }
-
-
 
 .close {
   margin: 20px;
@@ -202,51 +199,51 @@ body {
   padding: 5px;
   border-radius: 8px;
 }
-@media screen and (max-width: 693px){
+@media screen and (max-width: 693px) {
   .modal-content {
-    background: rgb(108,214,205);
+    background: rgb(108, 214, 205);
     background: linear-gradient(117deg, rgb(255, 255, 255) 0%, rgb(173, 175, 175) 100%);
 
     width: 90%;
     text-align: center;
-}
+  }
 
-#modalTitle{
-  font-size: 60;
-  font-weight: 900;
-  filter: drop-shadow(0 4px  1px rgb(139, 139, 139));
-  color: rgb(0, 0, 0);
-}
-.close{
-  color: rgb(255, 0, 0);
-  font-size: 70px;
-  margin: 0;
-  filter: drop-shadow(0 4px  2px black);
-}
+  #modalTitle {
+    font-size: 60;
+    font-weight: 900;
+    filter: drop-shadow(0 4px 1px rgb(139, 139, 139));
+    color: rgb(0, 0, 0);
+  }
+  .close {
+    color: rgb(255, 0, 0);
+    font-size: 70px;
+    margin: 0;
+    filter: drop-shadow(0 4px 2px black);
+  }
 
-/*ARREGLAR PARA CUANDO SE HAGA EL CSS DEL ADMIN MENU!!!!*/
+  /*ARREGLAR PARA CUANDO SE HAGA EL CSS DEL ADMIN MENU!!!!*/
 
+  .modal-content button,
+  input,
+  optgroup,
+  select,
+  label {
+    margin: 5px;
+    text-align: center;
+    justify-content: center;
+    font-weight: 900;
+    width: 100%;
+  }
+  #parametrizar {
+    width: 95%;
+  }
 
+  #modalForm {
+    padding: 0;
+    margin-top: 0;
+  }
 
-.modal-content button, input, optgroup, select, label {
-
-  margin: 5px;
-  text-align: center;
-  justify-content: center;
-  font-weight: 900;
-  width: 100%;
-}
-#parametrizar{
-  width: 95%;
-}
-
-#modalForm{
-  padding: 0;
-  margin-top:0;
-}
-
-.callToAction{
-  width: 30vw;
-}
-
+  .callToAction {
+    width: 30vw;
+  }
 }

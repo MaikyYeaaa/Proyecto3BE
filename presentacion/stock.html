@@ -19,38 +19,39 @@
   </head>
   <body>
     <script src="../scripts/navInterno.js" type="module"></script>
-
-    <section id="stock">
-      <article id="stockcontainer">
-        <article id="stockTitle">
-          <h1>GESTIONAR STOCK</h1>
-        </article>
-        <article id="stockInputs"></article>
-      </article>
-    </section>
-
-    <!-- Modal -->
-    <section id="myModal" class="modal">
-      <article class="modal-content">
-        <section id="ModalOP">
-          <label id="ModalTitle">Cambiar Stock de MenuOP</label>
-        </section>
-        <section id="StockInfo">
-          <label>Ajustar:</label>
-          <input id="stocknumber" type="number" max="10" min="0" required />
-          <article id="modal-bottom">
-            <article id="close-modal">
-              <button class="btnPrimario" id="enviarStock">Aceptar</button>
-              <button class="btnSecundario">Cerrar</button>
-            </article>
+    <main>
+      <section id="stock">
+        <article id="stockcontainer">
+          <article id="stockTitle">
+            <h1>GESTIONAR STOCK</h1>
           </article>
-        </section>
-      </article>
-    </section>
+          <article id="stockInputs"></article>
+        </article>
+      </section>
 
-    <section id="mostrar"></section>
-    <br />
-    <form id="modificar"></form>
+      <!-- Modal -->
+      <section id="myModal" class="modal">
+        <article class="modal-content">
+          <section id="ModalOP">
+            <label id="ModalTitle">Cambiar Stock de MenuOP</label>
+          </section>
+          <section id="StockInfo">
+            <label>Ajustar:</label>
+            <input id="stocknumber" type="number" max="10" min="0" required />
+            <article id="modal-bottom">
+              <article id="close-modal">
+                <button class="btnPrimario" id="enviarStock">Aceptar</button>
+                <button class="btnSecundario">Cerrar</button>
+              </article>
+            </article>
+          </section>
+        </article>
+      </section>
+
+      <section id="mostrar"></section>
+      <br />
+      <form id="modificar"></form>
+    </main>
 
     <script src="../logica/stock.js"></script>
   </body>

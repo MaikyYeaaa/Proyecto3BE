@@ -1,14 +1,13 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Usuario.php";
 
-$con = conectarBDD();
-$id = mysqli_real_escape_string($con, $_POST["id"]);
-$contrasena = mysqli_real_escape_string($con, $_POST["contraNueva"]);
-$sql = "UPDATE `usuario` SET `Contrasena`= '{$contrasena}' WHERE IDUser = '{$id}'";
-if(sendToBDD($sql,$con)) {
-    echo "true";
-} else {
-    echo $con->error;
+$id = $_POST["id"];
+$contrasena = $_POST["contraNueva"];
+
+$usuario = Usuario::getById($id);
+
+$sql = "UPDATE `usuario` SET `Contrasena`= '{$contrasena}'";
+if($usuario->actualizarUsuario($sql)) {
+    echo json_encode(true);
 }
-$con->close();
 ?>

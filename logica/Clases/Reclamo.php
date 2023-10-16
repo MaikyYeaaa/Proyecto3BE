@@ -49,7 +49,6 @@ class Reclamo {
         $con = conectarBDD();
         
             $sql = "SELECT reclamo.*, cliente.Mail FROM reclamo JOIN realiza ON reclamo.NReclamo = realiza.NReclamo JOIN cliente ON realiza.Nro = cliente.Nro " . $param;
-        
         $data = getFromBDD($sql, $con);
         $con->close();
 

@@ -12,10 +12,10 @@ formulario.addEventListener("submit", async (e) => {
       method: "post",
       body: datos,
     })
-      .then((r) => r.text())
+      .then((r) => r.json())
       .then((r) => {
         console.log(r);
-        if (r == "true") {
+        if (r == true) {
           mostrarNotif("correcto", "Mail actualizado correctamente", 500);
           setTimeout(() => {
             window.open("perfil.html");
