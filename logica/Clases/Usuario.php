@@ -65,6 +65,18 @@ class Usuario {
         }
     }
 
+    public function actualizarUsuario($sql){
+        $con = conectarBDD();
+        $sql = $sql . " WHERE IDUser = '{$this->getIDUser()}'";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
+        if($con->error) {
+            die($con->error);
+        }
+        $con->close();
+    }
+
     public function actualizarRol($nuevoRol) {
         $con = conectarBDD();
         $mailEscapado = mysqli_real_escape_string($con, $this->Mail);
@@ -137,7 +149,7 @@ class Usuario {
         }
     
         $con->close();
-        return null;  // or return some error code or message
+        return null;  
     }
     
 }

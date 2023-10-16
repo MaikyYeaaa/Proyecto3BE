@@ -117,7 +117,29 @@ class Menu {
         return json_encode($menus);
     }
     
+    public function Update($sql) {
+        $con = conectarBDD();
+        $sql = $sql . " WHERE IDMenu = '{$this->getIDMenu()}'";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
+        if($con->error) {
+            die($con->error);
+        }
+        $con->close();
+    }
     
+    public static function updateFromId($sql, $id) {
+        $con = conectarBDD();
+        $sql = $sql . " WHERE IDMenu = '{$id}'";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
+        if($con->error) {
+            die($con->error);
+        }
+        $con->close();
+    }
     
     
 

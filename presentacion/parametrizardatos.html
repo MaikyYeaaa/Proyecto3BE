@@ -17,63 +17,64 @@
   </head>
   <body>
     <script src="../scripts/navInterno.js" type="module"></script>
+    <main>
+      <section id="parametrizar">
+        <article id="paracontainer">
+          <article id="parametrizarTitle">
+            <h1>PARAMETRIZAR DATOS</h1>
+          </article>
+          <article id="parametrizarInputs">
+            <form id="parametrizarForm">
+              <label>Cocinas: </label>
+              <input id="cocinasinput" type="text" name="datosCocina" placeholder="Ingrese datos" class="textfield" />
 
-    <section id="parametrizar">
-      <article id="paracontainer">
-        <article id="parametrizarTitle">
-          <h1>PARAMETRIZAR DATOS</h1>
+              <br />
+              <br />
+              <label>Tiempo de cocinado: </label>
+              <input id="tiempoinput" type="text" name="datosTiempo" placeholder="Ingrese datos" class="textfield" />
+
+              <br />
+              <br />
+              <label>Stock colchon: </label>
+              <input id="stockminimoinput" type="text" name="datosStockcolchon" placeholder="Ingrese datos" class="textfield" />
+
+              <br />
+              <br />
+              <label>Stock maximo: </label>
+              <input id="stockmaximoinput" type="text" name="datosStockmaximo" placeholder="Ingrese datos" class="textfield" />
+
+              <br />
+              <br />
+              <label>Tiempo de turno: </label>
+              <input id="tiempoturnoinput" type="text" name="datosTiempoturno" placeholder="Ingrese datos" class="textfield" />
+              <br />
+              <input type="submit" value="Agregar" class="btnSecundario" id="btn" />
+            </form>
+          </article>
         </article>
-        <article id="parametrizarInputs">
-          <form id="parametrizarForm">
-            <label>Cocinas: </label>
-            <input id="cocinasinput" type="text" name="datosCocina" placeholder="Ingrese datos" class="textfield" />
+        <br />
+        <article id="paracontainer">
+          <article id="parametrizarTitle">
+            <h1>PARAMETRIZAR ZONAS</h1>
+          </article>
+          <article id="parametrizarInputs">
+            <form id="zonas-form">
+              <p>Agregar zona:</p>
+              <input type="text" name="barrioZona" placeholder="Barrio" class="textfield" />
 
-            <br />
-            <br />
-            <label>Tiempo de cocinado: </label>
-            <input id="tiempoinput" type="text" name="datosTiempo" placeholder="Ingrese datos" class="textfield" />
+              <br />
+              <input type="text" name="dirZona" placeholder="Direccion" class="textfield" />
 
-            <br />
-            <br />
-            <label>Stock colchon: </label>
-            <input id="stockminimoinput" type="text" name="datosStockcolchon" placeholder="Ingrese datos" class="textfield" />
+              <br />
 
+              <input type="submit" value="Agregar" class="btnSecundario" />
+            </form>
             <br />
-            <br />
-            <label>Stock maximo: </label>
-            <input id="stockmaximoinput" type="text" name="datosStockmaximo" placeholder="Ingrese datos" class="textfield" />
-
-            <br />
-            <br />
-            <label>Tiempo de turno: </label>
-            <input id="tiempoturnoinput" type="text" name="datosTiempoturno" placeholder="Ingrese datos" class="textfield" />
-            <br />
-            <input type="submit" value="Agregar" class="btnSecundario" id="btn" />
-          </form>
+            <section id="listado-zonas"></section>
+          </article>
         </article>
-      </article>
-      <br />
-      <article id="paracontainer">
-        <article id="parametrizarTitle">
-          <h1>PARAMETRIZAR ZONAS</h1>
-        </article>
-        <article id="parametrizarInputs">
-          <form id="zonas-form">
-            <p>Agregar zona:</p>
-            <input type="text" name="barrioZona" placeholder="Barrio" class="textfield" />
-
-            <br />
-            <input type="text" name="dirZona" placeholder="Direccion" class="textfield" />
-
-            <br />
-
-            <input type="submit" value="Agregar" class="btnSecundario" />
-          </form>
-          <br />
-          <section id="listado-zonas"></section>
-        </article>
-      </article>
-    </section>
+      </section>
+    </main>
 
     <script src="../logica/getParametros.js"></script>
     <script src="../logica/parametrizarZonas.js"></script>

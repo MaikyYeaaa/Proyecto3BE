@@ -1,35 +1,41 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Comida.php";
 
-$con = conectarBDD();
+$nombre_comida = $_POST["nombre"];
+$descripcion = $_POST["desc"];
+$dieta = $_POST["dieta"];
+$imagenURL = $_POST["imgURL"];
+$tiempoCocinado = $_POST["tiempoCocinado"];
+// $nombre_comida = "test";
+// $descripcion = "testdesc";
+// $dieta = "Celiaca";
+// $imagenURL = "https://img.pixers.pics/pho(s3:700/PI/62/8/700_PI628_0a52c36a534004114ce074067697190e_5b7abc84a0477_.,700,653,jpg)/fotomurales-minion-kevin.jpg.jpg";
+// $tiempoCocinado = "22";
 
-$nombre_comida = mysqli_real_escape_string($con, $_POST["nombre"]);
-$descripcion = mysqli_real_escape_string($con, $_POST["desc"]);
-$dieta = mysqli_real_escape_string($con, $_POST["dieta"]);
-$imagenURL = mysqli_real_escape_string($con, $_POST["imgURL"]);
-$tiempoCocinado = mysqli_real_escape_string($con, $_POST["tiempoCocinado"]);
+$comidaId = Comida::getLastId()+1;
+$comida = new Comida($comidaId, $nombre_comida, $descripcion, $imagenURL, $tiempoCocinado, $dieta);
 
-$sqlDieta = "SELECT * FROM `dieta` WHERE Tipodieta = '" . $dieta . "'";
-$dietaData = getFromBDD($sqlDieta, $con);
-$idDieta = $dietaData[0]["IDDieta"]; //  output: la id de la dieta que ingreso el usuario (ej: 1)
+$dietaId = $comida->getIDDietaBDD($dieta);
 
-$sqlCrearComida = "INSERT INTO `comida` (`IDComida`, `Nombre`, `Descripcion`, `ImagenURL`, `TiempoCocinado`) VALUES (NULL, '" . $nombre_comida . "', '" . $descripcion . "', '" . $imagenURL . "', '" . $tiempoCocinado . "')";
-sendToBDD($sqlCrearComida, $con);
-
-$sqlComida = "SELECT * FROM `comida` WHERE Nombre = '".$nombre_comida."'";
-$comidaData = getFromBDD($sqlComida, $con);
-$idComida = $comidaData[0]["IDComida"];
-
-$sqlRelacion = "INSERT INTO `pertenece` (`IDComida`, `IDDieta`) VALUES ('".$idComida."','".$idDieta."')";
-if (sendToBDD($sqlRelacion, $con)) {
-    echo "correcto";
+if($comida->sendBDD()) {
+    echo json_encode(true);
 }
 
-if ($con->error) {
-    echo $con->error;
-}
 
-$con->close();
+// $sqlComida = "SELECT * FROM `comida` WHERE Nombre = '".$nombre_comida."'";
+// $comidaData = getFromBDD($sqlComida, $con);
+// $idComida = $comidaData[0]["IDComida"];
+
+// $sqlRelacion = "INSERT INTO `pertenece` (`IDComida`, `IDDieta`) VALUES ('".$idComida."','".$idDieta."')";
+// if (sendToBDD($sqlRelacion, $con)) {
+//     echo "correcto";
+// }
+
+// if ($con->error) {
+//     echo $con->error;
+// }
+
+// $con->close();
 
 
 ?>

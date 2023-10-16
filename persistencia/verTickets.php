@@ -1,5 +1,4 @@
 <?php
-
 require "../logica/Clases/Reclamo.php";
 require "../logica/Clases/Realiza.php";
 require "../logica/Clases/Cliente.php";

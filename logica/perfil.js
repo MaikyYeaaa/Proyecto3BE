@@ -19,10 +19,9 @@ fetch("../persistencia/getCuentaFromId.php", { method: "post", body: data })
       });
   });
 
-
-function cerrarSesion(){
+function cerrarSesion() {
   const confirmar = confirm("Seguro quiere cerrar sesion?");
-  if(confirmar) {
+  if (confirmar) {
     localStorage.clear();
     window.open("index.html");
   }

@@ -71,8 +71,10 @@ body {
   flex-direction: column;
 }
 #adminMenu {
+  position: fixed;
   background: rgb(112, 112, 112);
   background: linear-gradient(180deg, rgb(77, 76, 76) 0%, rgba(178, 180, 180, 1) 100%);
+  height: 100vh;
   width: 230px;
   text-align: center;
   justify-content: center;
@@ -107,7 +109,6 @@ body {
   transform: scale(1.2);
   color: rgb(255, 255, 255);
 }
-
 
 #mobile-nav{
   display: none;
@@ -160,6 +161,20 @@ body {
  
   }
   
+@media screen and (max-width: 1012px) {
+  #adminMenu {
+    display: none;
+  }
+  main {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 693px) {
+  #adminMenu {
+    width: 0;
+  }
+}
 
 
 

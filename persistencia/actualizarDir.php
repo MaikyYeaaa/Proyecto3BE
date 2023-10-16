@@ -1,20 +1,13 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Cliente.php";
 
-$con = conectarBDD();
-$id = mysqli_real_escape_string($con, $_POST["id"]);
-$dir = mysqli_real_escape_string($con, $_POST["dir"]);
-$sqlCliente = "UPDATE `cliente` SET `Dir`= '{$dir}' WHERE Nro = '{$id}'";
+$id = $_POST["id"];
+$dir = $_POST["dir"];
 
-if(empty($dir)) {
-    die("Error: direccion vacia");
+$cliente = Cliente::getById($id);
+
+$sql = "UPDATE `cliente` SET `Dir`= '{$dir}'";
+if($cliente->Update($sql)) {
+    echo json_encode(true);
 }
-
-
-if(sendToBDD($sqlCliente,$con)) {
-    echo "true";
-} else {
-    echo $con->error;
-}
-$con->close();
 ?>

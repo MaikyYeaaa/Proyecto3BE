@@ -28,34 +28,36 @@
       <a href="#">Pedidos</a>
       <a href="#">Productos</a>
     </section> -->
-    <section class="empleado-main-section" id="productos-section">
-      <article id="productos">
-        <p id="p">Productos</p>
-        <section>
-          <article id="menus-art" class="listado">
-            <section id="head">
-              <article class="titulos">
-                <h2>Menus</h2>
-                <a id="plato-nuevo" href="../ABLmenus/addMenu.html">registrar menu nuevo</a>
-              </article>
+    <main>
+
+      <section class="empleado-main-section" id="productos-section">
+        <article id="productos">
+          <p id="p">Productos</p>
+          <section>
+            <article id="menus-art" class="listado">
+              <section id="head">
+                <article class="titulos">
+                  <h2>Menus</h2>
+                  <a id="plato-nuevo" href="../ABLmenus/addMenu.html">registrar menu nuevo</a>
+                </article>
               <article class="textfield">
                 <input type="text" placeholder="Buscar" />
                 <img src="../src/ic-search.svg" alt="" />
               </article>
             </section>
             <section id="listado-menus">
-
+              
             </section>
           </article>
           <article id="platos-art" class="listado">
             <section id="head">
-                <article class="titulos">
-                  <h2>Platos</h2>
-                  <a id="plato-nuevo" href="../ABLproductos/addComida.html">registrar plato nuevo</a>
-                </article>
-                <article class="textfield">
-                  <input type="text" placeholder="Buscar" id="txtFiltroComida"/>
-                  <img src="../src/ic-search.svg" alt="" id="btnFiltroComida"/>
+              <article class="titulos">
+                <h2>Platos</h2>
+                <a id="plato-nuevo" href="../ABLproductos/addComida.html">registrar plato nuevo</a>
+              </article>
+              <article class="textfield">
+                <input type="text" placeholder="Buscar" id="txtFiltroComida"/>
+                <img src="../src/ic-search.svg" alt="" id="btnFiltroComida"/>
                 </article>
               </section>
               <section id="listado-platos">
@@ -66,6 +68,8 @@
         </section>
       </article>
     </section>
+  </main>
+
     <script src="../logica/Menus.js"></script>
     <script src="../logica/Comida.js" type="module"></script>
   </body>

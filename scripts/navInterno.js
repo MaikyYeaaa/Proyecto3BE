@@ -50,7 +50,31 @@ async function mostrarSegunRol() {
     </section>
   </article>`;
       break;
-
+    case "admin":
+      return `<article id="containerArticle">
+      <h1>Menu Administrador</h1>
+      <section id="MenuButtons">
+        <a href="stock.html">
+          <button>STOCK</button>
+        </a>
+        <a href="mod-pedidos.html">
+          <button>PEDIDOS</button>
+        </a>
+        <a href="productos.html">
+          <button>PRODUCTOS</button>
+        </a>
+        <a href="parametrizardatos.html">
+        <button>PARAMETRIZAR DATOS</button>
+        </a>
+        <a href="parametrizarFAQ.html">
+        <button>PARAMETRIZAR FAQ</button>
+        </a>
+        </a>
+        <a href="ABLclientes.html">
+        <button>ACEPTAR CLIENTES</button>
+        </a>
+      </section>
+    </article>`;
     default:
       modalBlock("Error", "Ocurrio un error al verificar su rol, porfavor pruebe iniciando nuevamente.", "Cerrar Sesion", "Pagina Principal");
       break;
