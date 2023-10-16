@@ -41,6 +41,13 @@ height: 100%;
     transition: 0.4s;
 }
 
+#Pedidooptions{
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    transition: 0.4s;
+}
+
 #aceptar{
     background-color: rgba(240, 248, 255, 0);
     outline: none;
@@ -72,3 +79,27 @@ height: 100%;
 #pedidoBody:hover #pedidoInputs{
     opacity: 1;
 }
+
+@media screen and (max-width: 693px){
+    #pedidoBody:hover{
+        transform: scale(1,1);
+        background-color: rgb(233, 233, 233);
+    }
+
+    #pedidoBody{
+        margin: 0;
+      width: 100%;
+    }
+    #pedidoImg{
+        width: 55px;
+        height: 55px;
+    }
+
+    #pedidoInfo{
+        font-size: 14px;
+    }
+
+    #stock{
+        width: 100%;
+    }
+  }

@@ -20,40 +20,35 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="../../styles/JefeDeCocina.css">
     <link rel="stylesheet" href="../../styles/pedidos.css">
     <link rel="stylesheet" href="../../styles/clases.css">
-    <link rel="stylesheet" href="../../styles/JefeDeCocina.css">
+    
 
     <title>Document</title>
 </head>
 <body>
-    <section id="adminMenu">
-      <article id="containerArticle"> 
-          <h1>Menu Jefe de cocina</h1>
-          <section id="MenuButtons">
-              <button>STOCK</button>
-              <button>PEDIDOS</button>
-          </section>
-      </article>
-  </section>
+    
 
   <section id="stock">
       <article id="stockcontainer">
           <article id="stockTitle">
-              <h1>ACEPTAR PEDIDOS</h1>
+              <h1>ACTUALIZAR ESTADOS DE PEDIDOS</h1>
           </article>
           <article id="pedidos">
             <section id="pedidoBody">
               <article id="pedidoImg"><img id="imgico" src="${q[0].MenuIMG}"></article>
               <article id="pedidoInfo">
-                  <section id="nroPedido">Pedido#${pedidos[index].ID}</section>
-                  <section id="menusPedido">${q[0].Nombre}</section>
-                  <section id="menuFecha">${pedido.FechaInicio}</section>
+                  <section id="nroPedido">Pedido#23</section>
+                  <section id="menusPedido">Tremendas comidas se pidió el pibe este</section>
+                  <section id="menuFecha">3/5/2023</section>
               </article>
-              <article id="pedidoInputs">
-                <button class="aceptar" id="aceptar" value="${pedido.ID}"><img class="svgbutton" src="../../src/checkmark.svg" alt="aceptar" srcset=""></button>
-                <button class="rechazar" id="rechazar" value="${pedido.ID}"> <img class="svgbutton" src="../../src/remove.svg" alt="" srcset=""> </button>
+              <article id="Pedidooptions">
+                <select name="options" id="opciones">
+                  <option value="Solicitada">Solicitada</option>
+                  <option value="En stock">En stock</option>
+                  <option value="En produccion">En producción</option>
+                </select>
               </article>
             </section>
 
@@ -72,7 +67,7 @@
 
 
 
-  <section id="mostrar"></section>
+
   <br>
 
 
@@ -84,7 +79,7 @@
    
 
 <script src="../../jquery-3.6.4.min.js"></script>
-<script src="../../logica/modPedidos.js"></script>
+<!--<script src="../../logica/modPedidos.js"></script> -->
 
 </body>
 </html>
