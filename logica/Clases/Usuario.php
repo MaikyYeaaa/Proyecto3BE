@@ -152,5 +152,27 @@ class Usuario {
         return null;  
     }
     
+
+
+    public static function login($mail, $contra) {
+        $con = conectarBDD();
+        $sql = "SELECT `Contrasena`, `Mail` FROM `usuario` WHERE Mail = '${mail}'";
+        if($userData = getFromBDD($sql, $con)) { 
+            $con->close();
+    if($userData[0]["Contrasena"] == $contra) {
+        return "ningunError";
+    } else {
+        return "contraError";
+    }
+    } else {
+        return "mailError";
+    }
+
+ 
+
+
+    
+
+    }
 }
 ?>

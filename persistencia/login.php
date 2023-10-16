@@ -3,8 +3,8 @@
 
 // $con = conectarBDD();
 
-// $mail = mysqli_real_escape_string($con, $_POST["mail"]); 
-// $contra = mysqli_real_escape_string($con, $_POST["cont"]);
+// $mail = $_POST["mail"]); 
+// $contra = $_POST["cont"]);
 
 // $sql = "SELECT `Contrasena`, `Mail` FROM `usuario` WHERE Mail = '${mail}'";
 // if($userData = getFromBDD($sql, $con)) { // $userData = [{"Contrasena":"jernacioContra336969","Mail":"jernaaaa@gmail.com"}]
@@ -21,4 +21,18 @@
 
 
 // // echo json_encode($userData);
+
+
+require "../logica/Clases/Usuario.php";
+
+$mail = $_POST["mail"]; 
+$contra = $_POST["cont"];
+
+
+$usuarioVerificado = Usuario::login($mail, $contra);
+
+echo $usuarioVerificado;
+
+
+
 ?>
