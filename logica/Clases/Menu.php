@@ -3,28 +3,28 @@
 require_once "../persistencia/helperFunctions.php";
 
 class Menu {
-    public $IDMenu;
-    public $Nombre;
-    public $Precio; 
-    public $StockMaximo;
-    public $StockColchon;
-    public $StockReal;
-    public $FechaVencimiento;
-    public $MenuIMG;
-    public $Descuento;  
-    // public $comidas;
+    private $IDMenu;
+    private $Nombre;
+    private $Precio; 
+    private $StockMaximo;
+    private $StockColchon;
+    private $StockReal;
+    private $FechaVencimiento;
+    private $MenuIMG;
+    private $Descuento;  
+    private $comidas = [];
 
-    public function __construct($IDMenu, $Nombre, $Precio, $StockMaximo, $StockColchon, $StockReal, $FechaVencimiento, $MenuIMG, $Descuento) {
+    public function __construct($IDMenu, $Nombre, $Precio, $StockMaximo, $StockColchon, $StockReal, $FechaVencimiento, $MenuIMG, $Descuento, $comidas) {
         $this->IDMenu = $IDMenu;
         $this->Nombre = $Nombre;
-        $this->Precio = $Precio;         
+        $this->Precio = $Precio;
         $this->StockMaximo = $StockMaximo;
         $this->StockColchon = $StockColchon;
         $this->StockReal = $StockReal;
         $this->FechaVencimiento = $FechaVencimiento;
         $this->MenuIMG = $MenuIMG;
-        $this->Descuento = $Descuento;   
-        // $this->comidas = $comidas;
+        $this->Descuento = $Descuento;
+        $this->comidas = $comidas;
     }
 
     public function getIDMenu() {
@@ -110,13 +110,28 @@ class Menu {
         $menus = array();
         
         foreach ($data as $row) {
-            $menu = new Menu($row['IDMenu'], $row['Nombre'], $row['Precio'], $row['StockMaximo'], $row['StockColchon'], $row['StockReal'], $row['FechaVencimiento'], $row['MenuIMG'], $row['Descuento']);
+            $menu = new Menu($row['IDMenu'], $row['Nombre'], $row['Precio'], $row['StockMaximo'], $row['StockColchon'], $row['StockReal'], $row['FechaVencimiento'], $row['MenuIMG'], $row['Descuento'], $row['comidas']);
             $menus[] = $menu;
         }
     
-        return json_encode($menus);
+        return $menus;
     }
     
+    public function toArray() {
+        return array(
+            'IDMenu' => $this->IDMenu,
+            'Nombre' => $this->Nombre,
+            'Precio' => $this->Precio,
+            'StockMaximo' => $this->StockMaximo,
+            'StockColchon' => $this->StockColchon,
+            'StockReal' => $this->StockReal,
+            'FechaVencimiento' => $this->FechaVencimiento,
+            'MenuIMG' => $this->MenuIMG,
+            'Descuento' => $this->Descuento,
+            'comidas' => $this->comida 
+        );
+    }
+
     public function Update($sql) {
         $con = conectarBDD();
         $sql = $sql . " WHERE IDMenu = '{$this->getIDMenu()}'";

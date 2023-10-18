@@ -36,14 +36,17 @@ body {
 
 #ticket {
   border-radius: 8px;
-  background-color: gray;
+  background-color: rgb(167, 167, 167);
+  border: 4px solid white;
   width: fit-content;
   padding: 20px;
-  box-shadow: -5px 5px 15px black;
+  box-shadow: -5px 5px 4px #7b7a7a;
+  margin-top: 90px;
 }
 #ticket input,
 textarea {
   border-radius: 6px;
+ 
 }
 
 /* Ni idea que es lo que está arriba, de ultima se borra si no se usa */
@@ -117,4 +120,21 @@ textarea {
     opacity: 1;
     width: 90vw;
   }
+ 
+}
+
+
+
+
+@media screen and (max-width: 562px){
+  #ticket{
+    width: 90vw;
+    margin-top: 94px;
+   }
+
+  textarea{
+    width: 100%;
+   }
+
+
 }

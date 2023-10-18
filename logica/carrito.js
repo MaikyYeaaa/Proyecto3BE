@@ -149,7 +149,20 @@ function getDateOp() {
   let horaActual = fechaActual.getHours();
   let minutosActual = fechaActual.getMinutes();
   let segundosActual = fechaActual.getSeconds();
-  return `${diaActual}/${mesActual}/${anoActual} ${horaActual}/${minutosActual}/${segundosActual}`;
+  console.log(typeof minutosActual);
+  if (horaActual <= 9) {
+    horaActual = "0" + horaActual.toString();
+    console.log(horaActual);
+  }
+  if (minutosActual <= 9) {
+    minutosActual = "0" + minutosActual.toString();
+    console.log(minutosActual);
+  }
+  if (segundosActual <= 9) {
+    segundosActual = "0" + segundosActual.toString();
+    console.log(segundosActual);
+  }
+  return `${diaActual}/${mesActual}/${anoActual} ${horaActual}:${minutosActual}:${segundosActual}`;
 }
 
 async function obtenerDatos(url) {

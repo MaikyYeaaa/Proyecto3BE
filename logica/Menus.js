@@ -1,6 +1,7 @@
 async function obtenerDatos(url) {
   const respuesta = await fetch(url);
-  const json = await respuesta.json();
+  const json = await respuesta.text();
+  console.log(json);
   return json;
 }
 

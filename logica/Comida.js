@@ -3,17 +3,20 @@ import { mostrarNotif } from "../scripts/functionsVarias.js";
 fetch("../persistencia/listarComidas.php")
   .then((r) => r.json())
   .then((r) => {
+    console.log(r);
     r.forEach((r) => mostrarProducto(r.Nombre, r.ImagenURL, r.IDComida));
 
     let productos = Array.from($(".producto")); //los hago array para trabajar con todos ellos
     productos.forEach((producto) => {
       producto.addEventListener("click", function () {
         let idcomida = $(producto).attr("data-idComida");
+        console.log('hola');
         fetch("../persistencia/listarComidas.php")
           .then((r) => r.json())
           .then((r) => {
+            console.log(r);
             r.forEach((r) => {
-              if (idcomida == r.IDComida) {
+              if (idcomida == r.IDComida){
                 mostrarModal(r.Nombre, r.Descripcion, r.ImagenURL, r.TiempoCocinado, r.IDComida);
               }
             });
@@ -78,7 +81,12 @@ $(document).on("click", "#eliminar input[type='submit']", function (e) {
       body: datos,
     })
       .then((r) => r.text())
-      .then((r) => location.reload());
+      .then((r) => {
+        console.log(r);
+        if(r == 1) {
+          location.reload();
+        }
+      });
   }
 });
 
