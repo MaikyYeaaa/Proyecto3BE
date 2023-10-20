@@ -15,6 +15,7 @@ body {
   width: 90vw;
   height: 80vh;
   background-color: #b9cfba;
+  
   justify-content: center;
   display: flex;
   padding-inline: 120px;
