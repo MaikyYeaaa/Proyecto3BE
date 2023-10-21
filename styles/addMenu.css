@@ -20,3 +20,8 @@
 .producto #fondo:hover {
   transform: none;
 }
+
+#textosOp {
+  display: flex;
+  gap: 10px;
+}
