@@ -1,3 +1,29 @@
+/* WebKit Scrollbar */
+.scroll-container::-webkit-scrollbar {
+    width: 0; /* Ancho cero para ocultar la barra vertical */
+    height: 0; /* Altura cero para ocultar la barra horizontal */
+  }
+  
+  /* WebKit Scrollbar Track */
+  .scroll-container::-webkit-scrollbar-track {
+    background: transparent; /* Fondo transparente */
+  }
+  
+  /* WebKit Scrollbar Thumb (opcional) */
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: transparent; /* Color transparente o el que desees */
+  }
+/* Firefox Scrollbar */
+* {
+    scrollbar-width: thin; /* Adjust the width as needed */
+}
+
+/* Firefox Scrollbar Thumb */
+* {
+    scrollbar-color: #888 #f1f1f1; /* Adjust the thumb and track colors as needed */
+}
+
+
 body{
     padding: 20px;
     height: 100%;
@@ -349,6 +375,7 @@ body{
     flex-wrap: wrap; /* Allow items to wrap to the next line */
     justify-content: center; /* Center items horizontally */
     align-content: flex-start; /* Start stacking from the top */
+    overflow: scroll;
 }
 #MenuSelect{
     width: 150px;
@@ -363,27 +390,84 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.2s;
 }
 
 #imgMenu{
     width: 149px;
     position: absolute;
+    z-index: -1;
 }
-#menuTitleOP{
-    z-index: 2;
-    font-weight:900;
-    color: white;
-    font-family: roboto;
-    width: 100%;
-}
-.menuAddBtn{
+
+#menuAddBtn{
     position: absolute;
     width: 100%;
     height: 100%;
+    background-color: black;
+    border: none;
+    opacity: 0.1;
+}
+#MenuSelect:hover{
+    transform: scale(1.02,1.02) translate(0,-6px);
+    background-color: brown;
+
+}
+#MenuSelect:hover #menuAddBtn{
+    transform: scale(1.02,1.02) translate(0,-6px);
+    background-color: brown;
+    opacity: 0.1;
+}
+#MenuSelect:hover .content{
+    opacity: 1;
+    transform: translate(0,-1px);
+}
+
+#addSvg{
+    position: absolute;
+    width: 20%;
+    right: 0;
+    filter: drop-shadow(2px 2px 1px black);
     opacity: 0;
+    top: 0;
+    transform: rotate(-5deg) translate(0,-20px);
+    transition: 0.2s;
 }
-.menuAddBtn:hover + #MenuSelect {
-    transform: scale(1.1);
-    color: red; /* Change to the desired color */
-    font-weight: 700; /* Change to the desired font-weight */
+
+#menuTitleGradinet{
+    background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 37%);
+opacity: 0;
+transition: 0.2s;
+position: absolute;
+width: 100%;
+height: 100%;
 }
+
+#MenuSelect:hover #menuTitleGradinet{
+    opacity: 0.6;
+    z-index: -1;
+}
+
+#MenuSelect:hover #addSvg{
+    opacity: 0.7;
+    transform: rotate(15deg) translate(0,0);
+    
+}
+
+.scroll-container {
+transform: translate(0px, 35px);
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  
+  .content {
+    margin: 10px;
+    width: fit-content; /* Establece el ancho de tu contenido */
+    font-weight:600;
+    color: rgba(255, 255, 255, 0.96);
+    font-family: roboto;
+    bottom: 0;
+    opacity: 0;
+    transform: translate(0,9px);
+    transition: 0.2s;
+  }
