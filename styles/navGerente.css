@@ -8,7 +8,6 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: black;
 }
 #settings{
   position: absolute;
@@ -96,6 +95,7 @@ body {
   border-right: solid  3px rgb(255, 255, 255);
   opacity: 1;
   display: block;
+  z-index: 3;
 }
 
 #MenuButtons {
@@ -157,7 +157,7 @@ body {
   width: 100vw;
   background-color: #8e8e8e00;
   padding: 20px;
-  z-index: 2;
+  z-index: 4;
   filter: drop-shadow(0 2px 5px rgb(82, 82, 82));
 }
 
