@@ -1,14 +1,12 @@
 <?php
-require "helperFunctions.php";
+require_once "../logica/Clases/Comida.php";
 
-$con = conectarBDD();
+$listarComidas = Comida::listarAll();
+$comidasArray = [];
 
-$sql = "SELECT * FROM `comida`";
+foreach ($listarComidas as $comida) {
+    $comidasArray[] = $comida->toArray();
+}
 
-$data = getFromBDD($sql, $con);
-
-echo json_encode($data);
-
-$con->close();
-
+echo json_encode($comidasArray);
 ?>

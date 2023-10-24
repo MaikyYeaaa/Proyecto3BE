@@ -1,17 +1,9 @@
 <?php
-require "helperFunctions.php";
 
-$con = conectarBDD();
+require "../logica/Clases/Cliente.php";
 
-$mail = mysqli_real_escape_string($con, $_POST["mail"]);
+$clienteObj = new Cliente();
+$clientes = $clienteObj->listarAll("");
+echo $clientes;
 
-$sql = "SELECT `Mail` FROM `cliente` WHERE `Mail` = '${mail}'";
-
-$resp = getFromBDD($sql, $con);
-
-echo json_encode($resp);
-
-
-
-$con->close();
 ?>

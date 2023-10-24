@@ -10,6 +10,7 @@ async function listarCarrito() {
     const precio = carrito[i].precio;
     const cantidad = carrito[i].cant;
     const comidasID = carrito[i].comidas;
+    const tipo = carrito[i].tipo;
     const comidasNombre = await getComidasNombre(comidasID);
 
     let comidasNombres = "";
@@ -148,7 +149,20 @@ function getDateOp() {
   let horaActual = fechaActual.getHours();
   let minutosActual = fechaActual.getMinutes();
   let segundosActual = fechaActual.getSeconds();
-  return `${diaActual}/${mesActual}/${anoActual} ${horaActual}/${minutosActual}/${segundosActual}`;
+  console.log(typeof minutosActual);
+  if (horaActual <= 9) {
+    horaActual = "0" + horaActual.toString();
+    console.log(horaActual);
+  }
+  if (minutosActual <= 9) {
+    minutosActual = "0" + minutosActual.toString();
+    console.log(minutosActual);
+  }
+  if (segundosActual <= 9) {
+    segundosActual = "0" + segundosActual.toString();
+    console.log(segundosActual);
+  }
+  return `${diaActual}/${mesActual}/${anoActual} ${horaActual}:${minutosActual}:${segundosActual}`;
 }
 
 async function obtenerDatos(url) {
@@ -246,36 +260,17 @@ async function crearPedido() {
       .then((r) => {
         console.log(r);
         if (r == "Good") {
-          let confirmar = confirm("pedido registrado!");
-          if (confirmar) {
-            window.open("pedidos.html");
-          }
+          $("#modal-listo").css({ display: "flex" });
+          $("#modal-pedido").css({ display: "none" });
         }
       });
   });
-
-  // let mostrar = "";
-
-  // for (let i = 0; i < carrito.length; i++) {
-  //   mostrar += `
-  //     -${carrito[i].nombre}: (x${carrito[i].cant}) <br>
-  //     `;
-  //   precioTotal += parseInt(carrito[i].precio * carrito[i].cant);
-
-  //   const comidasID = carrito[i].comidas;
-  //   const comidasNombre = await getComidasNombre(comidasID);
-
-  //   let comidasNombres = "";
-  //   comidasNombre.forEach((nombre) => {
-  //     comidasNombres += `<li>${nombre.Nombre} </li>`;
-  //   });
-  //   mostrar += `${comidasNombres} <br>`;
-  // }
-
-  // $("#modal-pedido #content #pMostrar").html(mostrar);
-  // $("#modal-pedido #content #precio").html(`TOTAL: $${precioTotal}`);
 }
 
 $("#modal-pedido #content #cerrar-img").click(() => {
   $("#modal-pedido").css({ display: "none" });
 });
+
+function cerrarCoso() {
+  $("#modal-listo").css({ display: "none" });
+}

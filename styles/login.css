@@ -12,10 +12,9 @@ body {
 }
 
 #login {
-  margin-top: 80px;
   width: 90vw;
   height: 80vh;
-  background-color: rgb(105, 105, 105);
+  background-color: #b9cfba;
   justify-content: center;
   display: flex;
   padding-inline: 120px;
@@ -62,20 +61,20 @@ body {
   width: 100%;
 }
 
-#inputPass {
-  width: 60%;
-}
-
 #botones {
   gap: 6px;
   font-size: small;
-  color: white;
+  color: black;
   display: flex;
   align-items: end;
 }
 
 #botones a {
-  color: white;
+  color: #e086d3;
+  transition: 0.1s;
+}
+#botones a:hover {
+  transform: scale(1.2) translateY(-2px);
 }
 #mail-section {
   display: flex;
@@ -89,13 +88,28 @@ body {
 #pass-section .error {
   right: 148px;
 }
+#pass-section img {
+  width: 10%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  background-color: white;
+  z-index: 1;
+}
 #inputMail {
   z-index: 1;
 }
 
 #inputPass {
+  width: 60%;
   z-index: 1;
+  border-radius: 6px 0 0 6px;
+  border-right: none;
 }
+input:focus-visible {
+  outline: none;
+}
+
 .error {
   display: flex;
   justify-content: center;
@@ -112,4 +126,16 @@ body {
   background-position: center;
   background-size: contain;
   border-radius: 0 6px 6px 0;
+}
+
+@media screen and (max-width: 768px) {
+  #login-image {
+    display: none;
+  }
+  #login {
+    justify-content: center;
+  }
+  #form-login {
+    width: 80%;
+  }
 }

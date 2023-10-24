@@ -1,11 +1,102 @@
-// fetch("../persistencia/userInstance.json")
-//   .then((r) => r.json())
-//   .then((r) => {
-//     r.forEach((pedido) => {
-//         user = r.Nombre;
-//     })
-//   });
 
+let pedidosCache = [];
+let pedidos = [];
+
+
+
+
+function Pedido(_pedidos, _fecha, _estado, _id) {
+  this.pedidos = _pedidos;
+  this.fecha = _fecha;
+  this.estado = _estado;
+  this.id = _id;
+  this.obtenerInfo = function () {
+    return this.nombre + ' ' + this.edad + ' ' + this.nacionalidad;
+  };
+}
+
+
+var userid=localStorage.getItem("id");
+console.log(userid);
+
+var data = new FormData();
+data.append("userId",userid);
+fetch("../persistencia/getComprasFromUser.php",{
+  method: "POST",
+  body: data
+})
+.then((r)=> r.json())
+.then((response)=> {
+
+  response.forEach((pedidoOP) => {
+    const foundPedido = pedidos.find((pedido) => pedido.id == pedidoOP.ID);
+    if (foundPedido) {
+      foundPedido.pedidos = `${foundPedido.pedidos}, ${pedidoOP.MenuNombre}`;
+    } else {
+      pedidosCache.push(pedidoOP.ID);
+      let _p1 = new Pedido(
+        `${pedidoOP.MenuNombre}`,
+        `${pedidoOP.Fecha}`,
+        `${pedidoOP.NombreEstado}`,
+        `${pedidoOP.ID}`
+      );
+      pedidos.push(_p1);
+    }
+  });
+  pedidos.forEach((pedido =>{
+    let disabled = "";
+    if(pedido.estado === "Cancelado"){
+      disabled = "disabled";
+    }
+
+    $("#mostrar").append(`     
+    
+      <br>
+      <article id="pedido">
+        <section id="info">
+          <article id="listName">Pedido: ${pedido.pedidos} 
+            </article>
+            <article id="listContent">Estado: ${pedido.estado} Fecha: ${pedido.fecha}</article>
+            <article id="listExtraContent">Numero de seguimiento #${pedido.id} </article>
+            <p class="Feedback${pedido.id}" id="feedback"></p>
+          </section>
+        <button id="cancelarcompra" class="cancelarcompra" value="${pedido.id}" ${disabled} >Cancelar compra</button>
+        
+      </article>`
+    
+    );
+    
+  }))
+});
+
+
+$("#mostrar").on("click", ".cancelarcompra", function() {
+  if (confirm('¿Estás seguro que quieres cancelar el pedido?')) {
+    const pedidoId = $(this).val();
+    let data = new FormData();
+    data.append("ID", pedidoId);
+    fetch("../persistencia/cancelarCompra.php", {
+      method: "POST",
+      body: data
+    })
+    .then((r) => r.text())
+    .then((respuesta) => {
+      const feedbackSelector = `.Feedback${pedidoId}`; // Construct the correct selector
+      console.log(`${respuesta} === "Si"`);
+      if (respuesta === `"Si"`) {
+        location.reload();
+        console.log("SSSSSSSIIIIIIIIIIII");
+      } else {
+        $(feedbackSelector).text("No es posible cancelar el pedido ya que fue realizado hace más de 24 horas");
+      }
+    });
+  } 
+ 
+});
+
+
+
+/*
 fetch("../persistencia/userInstance.json")
   .then((r) => r.json())
   .then((r) => {
@@ -53,3 +144,4 @@ function getDateOp() {
   let añoActual = fechaActual.getFullYear();
   return diaActual + "/" + mesActual + "/" + añoActual;
 }
+*/

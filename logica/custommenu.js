@@ -171,10 +171,6 @@ function ABMMenu(){
               $("h1").html("Menu agregada exitosamente!");
             });
 
-
-
-
-
     } else {
        $("#feedback").html("Rellena todos los campos antes de mandar el menú");
     }

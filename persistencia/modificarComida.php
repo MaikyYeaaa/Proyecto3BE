@@ -1,32 +1,14 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Comida.php";
 
-$con = conectarBDD();
 
-$nombre = mysqli_real_escape_string($con, $_POST["nombreNuevo"]);
-$desc = mysqli_real_escape_string($con, $_POST["descNuevo"]);
-$tiempo = mysqli_real_escape_string($con, $_POST["tiempoNuevo"]);
-$id = mysqli_real_escape_string($con, $_POST["id"]);
+$nombre = $_POST["nombreNuevo"];
+$desc = $_POST["descNuevo"];
+$tiempo = $_POST["tiempoNuevo"];
+$id = $_POST["id"];
 
-$camposActualizar = [];
+$actualizacion = Comida::modComida($nombre, $desc, $tiempo, $id);
 
-if(!empty($nombre)) {
-    $camposActualizar[] = "Nombre = '{$nombre}'";
-}
-if(!empty($desc)) {
-    $camposActualizar[] = "Descripcion = '{$desc}'";
-}
-if (!empty($tiempo)) {
-    $camposActualizar[] = "TiempoCocinado = '{$tiempo}'";
-}
+echo $actualizacion;
 
-if(!empty($camposActualizar)) {
-    $sql = "UPDATE `comida` SET " . implode(", ", $camposActualizar) . " WHERE IDComida = {$id}";
-    sendToBDD($sql, $con);
-    echo true;
-} else {
-    echo "debe ingresar datos";
-}
-
-$con->close();
 ?>
