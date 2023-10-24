@@ -3,16 +3,16 @@
 require_once "../persistencia/helperFunctions.php";
 
 class Menu {
-    public $IDMenu;
-    public $Nombre;
-    public $Precio; 
-    public $StockMaximo;
-    public $StockColchon;
-    public $StockReal;
-    public $FechaVencimiento;
-    public $MenuIMG;
-    public $Descuento;  
-    // public $comidas;
+    private $IDMenu;
+    private $Nombre;
+    private $Precio; 
+    private $StockMaximo;
+    private $StockColchon;
+    private $StockReal;
+    private $FechaVencimiento;
+    private $MenuIMG;
+    private $Descuento;  
+    private $comidas = [];
 
     public function __construct($IDMenu, $Nombre, $Precio, $StockMaximo, $StockColchon, $StockReal, $FechaVencimiento, $MenuIMG, $Descuento) {
         $this->IDMenu = $IDMenu;
@@ -101,20 +101,50 @@ class Menu {
     
     public static function listarAll($param) {
         $con = conectarBDD();
-        
-            $sql = "SELECT * FROM `menu` " . $param;
-        
+        $sql = "SELECT * FROM `menu` " . $param;
         $data = getFromBDD($sql, $con);
         $con->close();
-    
+        
         $menus = array();
         
         foreach ($data as $row) {
-            $menu = new Menu($row['IDMenu'], $row['Nombre'], $row['Precio'], $row['StockMaximo'], $row['StockColchon'], $row['StockReal'], $row['FechaVencimiento'], $row['MenuIMG'], $row['Descuento']);
-            $menus[] = $menu;
+            $menuData = array(
+                'IDMenu' => $row['IDMenu'],
+                'Nombre' => $row['Nombre'],
+                'Precio' => $row['Precio'],
+                'StockMaximo' => $row['StockMaximo'],
+                'StockColchon' => $row['StockColchon'],
+                'StockReal' => $row['StockReal'],
+                'FechaVencimiento' => $row['FechaVencimiento'],
+                'MenuIMG' => $row['MenuIMG'],
+                'Descuento' => $row['Descuento'],
+            );
+            $menus[] = $menuData;
         }
     
         return json_encode($menus);
+    }
+
+    public static function addNewMenu($Nombre, $Precio, $StockReal, $MenuIMG,$comidas){
+        $con = conectarBDD();
+        $sqlMenu = "INSERT INTO `menu` (`Nombre`, `Precio`, `StockReal`, `MenuIMG`) VALUES ('${Nombre}','${Precio}','${StockReal}','${MenuIMG}')";
+    if (sendToBDD($sqlMenu, $con)) {
+    $id = mysqli_insert_id($con);
+    $comidas = mysqli_real_escape_string($con, $comidas);
+    $comidasArray = explode(',', $comidas);
+    foreach($comidasArray as $comida) {
+        $sqlIntegra = "INSERT INTO `integra` (`IDComida`, `IDMenu`) VALUES ('${comida}','${id}')";
+        if (!sendToBDD($sqlIntegra, $con)) {
+            echo "Error en integra query: " . mysqli_error($con);
+            break;
+        }
+    }
+} else {
+    echo "Error en menu query: " . mysqli_error($con);
+}
+
+
+$con->close();
     }
     
     public function Update($sql) {
@@ -129,6 +159,21 @@ class Menu {
         $con->close();
     }
     
+    public function __toString() {
+        return "IDMenu: " . $this->IDMenu . "\n" .
+               "Nombre: " . $this->Nombre . "\n" .
+               "Precio: " . $this->Precio . "\n" .
+               "StockMaximo: " . $this->StockMaximo . "\n" .
+               "StockColchon: " . $this->StockColchon . "\n" .
+               "StockReal: " . $this->StockReal . "\n" .
+               "FechaVencimiento: " . $this->FechaVencimiento . "\n" .
+               "MenuIMG: " . $this->MenuIMG . "\n" .
+               "Descuento: " . $this->Descuento . "\n" .
+               "Comidas: " . implode(', ', $this->comidas);
+    }
+    
+
+
     public static function updateFromId($sql, $id) {
         $con = conectarBDD();
         $sql = $sql . " WHERE IDMenu = '{$id}'";

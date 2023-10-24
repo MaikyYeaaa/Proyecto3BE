@@ -11,7 +11,6 @@ Class pedido{
     private $coste = -1;
     private $fechaInicio = "---";
     private $fechaFin = "---";
-    private $comidas = [];
 
 
     //Getters
