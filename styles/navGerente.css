@@ -119,6 +119,24 @@ body {
   transition: 0.2s ease-in-out;
 }
 
+#NotificationOP{
+  
+    position: absolute;
+    right: 66px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-size: 19px;
+    color: white;
+    font-weight: 900;
+    border-radius: 100%;
+    background-color: #cd0000;
+    border: 3px white solid;
+    transform: rotate(20deg);
+    filter: drop-shadow(2px 2px 3px black);
+    animation: notifIdle 0.7s ease-out infinite;
+}
+
 #MenuButtons button:hover {
   transform: scale(1.2);
   color: rgb(255, 255, 255);
@@ -176,6 +194,7 @@ body {
 @media screen and (max-width: 775px) {
   #MenuButtons{
     text-align: right;
+    margin-right: 40px;
   }
 
   #adminMenu {
@@ -187,9 +206,24 @@ body {
   #parametrizar{
     margin-top: 94px;
   }
+  #NotificationOP{
+    right: 21px;
+  }
 }
 
 
 
 
 
+@keyframes notifIdle {
+  0% {
+    transform: scale(1,1) rotate(10deg);
+  }
+  50% {
+    transform: scale(1.2,1.2) rotate(10deg);
+  }
+
+  100%{
+    transform: scale(1,1) rotate(10deg);
+  }
+}

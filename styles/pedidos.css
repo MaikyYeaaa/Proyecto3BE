@@ -4,9 +4,10 @@
     border-radius: 8px;
     filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
     display: flex;
-    height: 100px;
+    height: 120px;
     transition: 0.4s;
     margin: 14px;
+    overflow: hidden;
 }
 #imgico{
 width: 130%;
@@ -27,10 +28,16 @@ height: 100%;
     margin: 5px;
     border: 2px white solid;
     overflow: hidden;
+    flex: 0 0 auto; /* La imagen no se estirará ni encogerá */
+
 }
 #nroPedido{
     font-size: 25px;
     font-weight: 700;
+}
+#pedidoInfo{
+    flex: 1 1 auto; /* El espacio restante se distribuirá entre el texto */
+    padding: 0 10px; /* Añade relleno para separar el texto de la imagen */
 }
 
 #pedidoInputs{
@@ -40,6 +47,7 @@ height: 100%;
     opacity: 0;
     transition: 0.4s;
 }
+
 
 #aceptar{
     background-color: rgba(240, 248, 255, 0);
@@ -72,3 +80,45 @@ height: 100%;
 #pedidoBody:hover #pedidoInputs{
     opacity: 1;
 }
+
+
+@media screen and (max-width:690px){
+    #pedidoBody {
+        width: 100%;
+        background-color: rgb(210, 209, 209);
+        border-radius: 8px;
+        filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+        display: flex;
+        height: 120px;
+        transition: 0.4s;
+        margin: 2px;
+        margin-block: 18px;
+        overflow: hidden;
+    }
+
+    #stock{
+        width: 100%;
+    }
+    #pedidoInfo {
+        flex: 1 0 auto;
+        padding: 0 8px;
+        transform: translate(-29px, 0);
+        width: 40%;
+        font-size: 10px;
+    }
+
+    #pedidoImg {
+        background-color: rgb(66, 66, 66);
+        width: 80px;
+        height: 80px;
+        border-radius: 0;
+        margin: 5px;
+        border: 1px white solid;
+        filter: drop-shadow(1px 2px 3px white);
+        overflow: hidden;
+        flex: 0 0 auto;
+        transform: translate(-51px, 16px) scale(1.8);
+    }
+}
+
+
