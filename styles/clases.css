@@ -4,18 +4,11 @@
   box-sizing: border-box;
   font-family: Roboto;
 }
-main {
-  width: 100%;
-  margin-left: 350px;
-  display: flex;
-  justify-content: center;
-}
+
 body {
   margin: 0;
   padding: 0;
 }
-
-
 
 .bar {
   position: fixed;
@@ -169,8 +162,7 @@ body {
   background: #000;
 }
 
-.menu,
-.producto {
+.menu {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,6 +178,9 @@ body {
 
   margin: 10px;
   transition: 0.2s;
+}
+.menu:hover {
+  transform: scale(1.02);
 }
 .menu #imgContainer {
   width: 100%;
@@ -208,7 +203,6 @@ body {
   gap: 4px;
   padding: 5px;
 }
-
 .callToAction {
   height: 50px;
   border: none;
@@ -230,18 +224,4 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 0 50px;
-}
-
-
-@media screen and(max-width: 600px) {
-  .btnPrimario {
-    padding: 0.25rem 0.5rem;
-    background-color: red;
-    border: solid red 3px;
-  }
-  .btnSecundario {
-    padding: 0.25rem 0.5rem;
-    background-color: red;
-    border: solid red 3px;
-  }
 }
