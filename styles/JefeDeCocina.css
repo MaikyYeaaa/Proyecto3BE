@@ -39,7 +39,7 @@
 body {
   display: flex;
   flex-direction: row;
-  background-color: #e6e6e6;
+  background-color: rgba(45, 147, 45, 0.558);
 }
 #adminMenu h1 {
   margin-top: 20px;
@@ -56,10 +56,17 @@ body {
 
 #stockTitle h1 {
   background-color: white;
+  border-radius: 10px;
   text-align: center;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
+}
+
+#stockInputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .stockInputs {
@@ -69,10 +76,10 @@ body {
 #stock {
   padding: 10px;
   margin-top: 80px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: top;
-  width: 70%;
+  width: 50%;
   height: 160%;
   background-color: rgb(211, 211, 211);
 }
@@ -81,12 +88,13 @@ body {
 }
 
 .Menuclass {
+  margin: 5px;
   margin-top: 20px;
   display: flex;
   background-color: rgb(192, 192, 192);
-  width: 430px;
+  width: 330px;
   height: 100px;
-  border-radius: 10px;
+  border-radius: 8.007px;
   transition: 0.2s;
 }
 
@@ -266,4 +274,11 @@ body {
 #imgTremenda {
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 884px) {
+  #stock {
+    width: 90%;
+    margin-left: 80px;
+  }
 }

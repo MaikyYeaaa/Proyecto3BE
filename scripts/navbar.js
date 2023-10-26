@@ -1,12 +1,11 @@
-
 const userID = localStorage.getItem("id");
 
 function showNav() {
   if (!navClickeada) {
-    $("#navbarAuth").css({ height: "100vh" });
+    $("#navbar").css({ height: "100vh" });
     navClickeada = true;
   } else {
-    $("#navbarAuth").css({ height: "90px" });
+    $("#navbar").css({ height: "90px" });
     navClickeada = false;
   }
 }
