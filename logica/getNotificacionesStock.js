@@ -5,13 +5,20 @@ function getNotif(){
     .then((data) => {
       console.log("Holanda");
       data.forEach((notif) => {
-        notifN ++;
+        if(notifN != NaN && notifN >= 9){
+          notifN = "+9";
+        }else{
+          notifN ++;
+        }
+       
 
       });
-      $("#stockbtn").prepend(`
+      if(notifN > 0){
+        $("#stockbtn").prepend(`
         <section id="NotificationOP">${notifN}</section>
         `);
         console.log(notifN);
+    }
     })
 }
 
