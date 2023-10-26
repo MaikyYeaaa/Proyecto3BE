@@ -14,15 +14,24 @@ function getPedidos(){
                 console.log(idAux+"=="+pedido.ID_Pedido);
                 idAux = pedido.ID_Pedido;
                 if(pedido.Estado_Pedido === "Solicitado"){
-                    numPedidos++;
+                    if(numPedidos != NaN && numPedidos >= 9){
+                        numPedidos = "+9";
+                        console.log("holanda");
+                      }else{
+                        numPedidos ++;
+                        console.log("nope");
+                      }
                 }
             }
            
         })
-        console.log(numPedidos);
-        $("#pedidosbtn").prepend(`
-        <section id="NotificationOP">${numPedidos}</section>
-        `);
+        if(numPedidos > 0){
+            console.log(numPedidos);
+            $("#pedidosbtn").prepend(`
+            <section id="NotificationOP">${numPedidos}</section>
+            `);
+        }
+       
     })
 }
 
