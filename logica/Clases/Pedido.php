@@ -25,7 +25,7 @@ class Pedido{
     public static function GetAllPedidos(){
         $con = conectarBDD();
         $sql = "SELECT * FROM vistapedidos";
-        $result = getFromBDD($con,$sql);
+        $result = getFromBDD($sql,$con);
         echo json_encode($result);
     }
 }
