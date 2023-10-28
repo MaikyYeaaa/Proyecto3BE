@@ -1,102 +1,32 @@
 <?php
 
-ini_set('display_errors', 0);
-ini_set('log_errors', 1);
+require_once "../persistencia/helperfunctions.php";
 
-Class pedido{
-    private $id = -1;
-    private $nombre = "DESCONOCIDO";
-    private $creador = "DESCONOCIDO";
-    private $estado = "DESCONOCIDO";
-    private $coste = -1;
-    private $fechaInicio = "---";
-    private $fechaFin = "---";
-    private $comidas = [];
-
+class Pedido{
+    private $id;
+    
+    public function __constructor($newID){
+        $this-> id = $newID;
+    }
 
     //Getters
-
-    function getId(){
-        return $this -> id;
-    }
-    function getNombre(){
-        return $this -> nombre;
-    }
-    function getCreador(){
-        return $this-> creador;
-    }
-
-    function getEstado(){
-        return $this -> estado;
-    }
-
-    function getCoste(){
-        return $this -> coste;
-    }
-
-    function getFechaInicio(){
-        return $this -> fechaInicio;
-    }
-
-    function getFechaFin(){
-        return $this -> fechaFin;
-    }
-
-    function getComidas(){
-        return $this-> comidas;
+     
+    public function getId(){
+        return $this-> id;
     }
 
     //Setters
 
-    function setId($nuevaID){
-        $this -> id = $nuevaID;
+    public function setId(){
+        return $this-> id;
     }
 
-    function setNombre($nuevoNombre){
-        $this -> nombre = $nuevoNombre;
+
+    public static function GetAllPedidos(){
+        $con = conectarBDD();
+        $sql = "SELECT * FROM vistapedidos";
+        $result = getFromBDD($con,$sql);
+        echo json_encode($result);
     }
-
-    function setCreador($nuevoCreador){
-        $this -> creador = $nuevoCreador;
-    }
-
-    function setEstado($nuevoEstado){
-        $this -> estado = $nuevoEstado;
-    }
-
-    function setCoste($nuevoCoste){
-        $this -> coste = $nuevoCoste;
-    }
-
-    function setFechaInicio($nuevafechaInicio){
-        $this -> fechaInicio = $nuevafechaInicio;
-    }
-
-    function setFechaFin($nuevaFechaFin){
-        $this -> fechaFin = $nuevaFechaFin;
-    }
-
-    function setComidas($comidas){
-        $this -> comidas = $comidas;
-    }
-
-    //Constructor
-
-    public function __construct($Id,$nombre,$creador,$estado,$coste,$fechaInicio,$fechaFin,$comidas){
-        $this -> Id=$Id;
-        $this -> Nombre = $nombre;
-        $this -> Creador = $creador;
-        $this -> Estado = $estado;
-        $this -> Coste = $coste;
-        $this -> FechaInicio = $fechaInicio;
-        $this -> FechaFin = $fechaFin;
-        $this -> Comidas = $comidas;
-    }
-
-    public function mostrarInfo(){
-        return "El pedido(".$this->id.") pedido por ".$this->creador." está en estado ".$this->estado." aplicado el ".$this -> fechaInicio. " y con un fin en ". $this-> fechaFin;
-    }
-
 }
-
 ?>
