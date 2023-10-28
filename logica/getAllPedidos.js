@@ -1,7 +1,7 @@
 function getPedidos(){
     var idAux = -2;
     var iterations = 0;
-    fetch("../../persistencia/getAllPedidos.php")
+    fetch("../persistencia/getAllPedidos.php")
     .then((r)=> r.json())
     .then((r)=> {
         console.log(r);
