@@ -28,5 +28,19 @@ class Pedido{
         $result = getFromBDD($sql,$con);
         echo json_encode($result);
     }
+
+    public static function updatePedido($state,$id){
+        $con = conectarBDD();
+        $sql = "UPDATE `tiene` SET `NombreEstado`='$state' WHERE `ID` = $id";
+        $resultos = sendToBDD($sql,$con);
+        echo json_encode($resultos);
+    }
+
+    public static function getPedidoFromUser($userID){
+        $con = conectarBDD();
+        $sql = "SELECT * FROM vistapedidos where ID_Cliente = $userID";
+        $result = getFromBDD($sql,$con);
+        echo json_encode($result);
+    }
 }
 ?>
