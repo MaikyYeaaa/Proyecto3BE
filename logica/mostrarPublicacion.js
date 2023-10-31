@@ -32,7 +32,7 @@ fetch("../persistencia/getPublicaciones.php")
         </section>
         </article>
         `;
-      $("#publicaciones #listado").append(mostrar);
+      $("#real-list").append(mostrar);
     }
   });
 

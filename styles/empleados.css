@@ -37,21 +37,21 @@ body{
 
 #listado-platos,
 #listado-menus {
-  background-color: rgba(255, 0, 0, 0.477);
-  /* width: 100px; */
+  background-color: rgba(148, 148, 148, 0.477);
+  width: 100px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 3px solid #8b8686;
+  margin-top: 7px;
   display: flex;
   flex-wrap: wrap;
-  border-top: 1px solid black;
-  width: 220px;
-    height: 100%;
-    overflow-y: scroll;
-    position: absolute;
-    right: 0;
+  width: 224px;
+  height: 100%;
+  overflow-y: scroll;
+  position: absolute;
+  right: 0;
 }
-#listado-platos h1,
-#listado-menus h1 {
-  font-size: large;
-}
+
 .menu {
   background-color: whitesmoke;
 }
@@ -173,7 +173,7 @@ body{
 }
 
 
-@media screen and (max-width:667px){
+@media screen and (max-width:827px){
   #listado-menus{
     background-color: #000;
     width: 100%;
