@@ -41,13 +41,14 @@ body{
   width: 100px;
   padding: 10px;
   border-radius: 15px;
-  border: 3px solid #8b8686;
+  border: 3px solid #ffffff;
   margin-top: 7px;
   display: flex;
   flex-wrap: wrap;
   width: 224px;
   height: 100%;
   overflow-y: scroll;
+  overflow-x:hidden;
   position: absolute;
   right: 0;
 }
@@ -175,7 +176,7 @@ body{
 
 @media screen and (max-width:827px){
   #listado-menus{
-    background-color: #000;
+    background-color: #ebebeb;
     width: 100%;
     margin: 0;
 

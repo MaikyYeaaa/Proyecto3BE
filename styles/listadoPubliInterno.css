@@ -31,6 +31,7 @@ font-weight: 900;
   background-color: grey;
   border-radius: 20px;
   padding: 10px;
+  border:3px solid white;
   height: 100vh;
   overflow-y: scroll;
 }
@@ -117,7 +118,7 @@ font-weight: 900;
 }
 .publicacion #img-cont{
   width:99%;
-  filter: drop-shadow(2px 2px 3px rgb(47, 47, 47));
+  //filter: drop-shadow(2px 2px 3px rgb(47, 47, 47));
   margin-bottom: 20px;
 }
 
