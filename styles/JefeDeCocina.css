@@ -79,8 +79,8 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 160%;
+  width: fit-content;
+  height: fit-content;
   background-color: rgb(211, 211, 211);
 }
 #btn {

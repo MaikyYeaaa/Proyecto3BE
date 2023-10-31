@@ -27,7 +27,7 @@ function getPedidos(){
                     <section id="menuFecha">${pedido.Fecha_Inicio_Estado}</section>
                 </article>
                 <article id="Pedidooptions">
-                  <p>${pedido.Estado_Pedido}.</p>
+                  <p>${pedido.Estado_Pedido}</p>
                 </article>
               </section>
                 
