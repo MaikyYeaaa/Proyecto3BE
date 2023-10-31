@@ -12,6 +12,8 @@
 }
 body{
   display: flex;
+  background-color: RGBA(45, 147, 45, 0.558);
+}
 }
 
 #productos {
