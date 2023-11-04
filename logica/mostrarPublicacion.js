@@ -37,10 +37,12 @@ fetch("../persistencia/getPublicaciones.php")
   });
 
 async function getMenu(id) {
+  console.log(id);
   let datos = new FormData();
   datos.append("id", id);
   const respuesta = await fetch("../persistencia/getMenuFromID.php", { method: "post", body: datos });
   const json = await respuesta.json();
+
   return json;
 }
 

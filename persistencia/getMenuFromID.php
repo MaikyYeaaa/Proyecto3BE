@@ -4,7 +4,7 @@ $con = conectarBDD();
 
 $id = mysqli_real_escape_string($con, $_POST["id"]);
 
-$sql = "SELECT * FROM `menu` WHERE `IDMenu` = {$id}";
+$sql = "SELECT * FROM `menu` WHERE `IDMenu` = $id";
 
 $menus = getFromBDD($sql, $con);
 
