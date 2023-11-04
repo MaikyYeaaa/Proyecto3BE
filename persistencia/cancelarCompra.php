@@ -14,7 +14,6 @@ WHERE ID = $ID;";
 
 
 $respuesta = getFromBDD($sql, $con);
-
 if ($respuesta[0]['passed_24_hours'] === "Yes") {
     echo json_encode("No");
 } else {

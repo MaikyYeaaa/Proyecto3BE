@@ -24,6 +24,9 @@
 }
 
 
+
+
+
 body{
     padding: 20px;
     height: 100%;
@@ -45,7 +48,7 @@ body{
 
 #menuBody{
     width: 35vw;
-    height: 20vh;
+    height: 90px;
     background-color: rgb(138, 138, 138);
     position: relative;
     display: flex;
@@ -142,7 +145,7 @@ body{
 
 #menuEmptyBody{
     width: 35vw;
-    height: 20vh;
+    height: 90px;
     background-color: rgba(39, 39, 39, 0.5);
     position: relative;
     display: flex;
@@ -151,13 +154,16 @@ body{
     border: 4px dashed rgb(255, 255, 255);
     margin: 10px;
     transition: 0.4s;
+    overflow: hidden;
 }
 
 #menuEmptyImg{
     margin: 10px;
-    width: 80px;
+    width: 100%;
     background-color: rgba(77, 77, 77,0.5);
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
 }
 
 #sectionContainer{
@@ -180,6 +186,12 @@ body{
     left: 0;
     
     
+}
+#addImg{
+    width: 63px;
+    transition: 0.5s;
+    opacity: 0.2;
+    pointer-events: none;
 }
 
 #titleText{
@@ -259,7 +271,7 @@ body{
     #menuBody{
         
     width: 95vw;
-    height: 58vh;
+    height: 15vh;
     background-color: rgb(138, 138, 138);
     position: relative;
     display: flex;
@@ -309,12 +321,12 @@ body{
 
     #menuEmptyBody{
         width: 95vw;
-        height: 58vh;
+        height: 15vh;
     }
 
     #menuBody {
         width: 95vw;
-        height: 58vh;
+        height: 15vh;
         background-color: rgb(138, 138, 138);
         position: relative;
         display: flex;
@@ -470,4 +482,12 @@ transform: translate(0px, 35px);
     opacity: 0;
     transform: translate(0,9px);
     transition: 0.2s;
+  }
+
+
+
+
+  #menuEmptyBody:hover #addImg{
+    transform: scale(1.5);
+    opacity: 0.7;
   }
