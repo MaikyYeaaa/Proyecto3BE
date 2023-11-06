@@ -24,7 +24,7 @@ class Menu {
         $this->FechaVencimiento = $FechaVencimiento;
         $this->MenuIMG = $MenuIMG;
         $this->Descuento = $Descuento;   
-        // $this->comidas = $comidas;
+        $this->comidas = $comidas;
     }
 
     public function getIDMenu() {
@@ -106,7 +106,6 @@ class Menu {
         $con->close();
         
         $menus = array();
-        
         foreach ($data as $row) {
             $menuData = array(
                 'IDMenu' => $row['IDMenu'],

@@ -8,20 +8,25 @@
     <title>añadir comida</title>
   </head>
   <body>
-    <form id="agregarComida">
-      <input type="text" class="textfield" name="nombre" placeholder="nombre" required />
-      <br />
-      <input type="text" class="textfield" name="desc" placeholder="descripcion" required />
-      <br />
-      <input type="text" class="textfield" name="imgURL" placeholder="imgagen URL" required />
-      <br />
-      <select name="dieta" id="dietaSelect" required></select>
-      <br />
-      <input type="number" class="textfield" name="tiempoCocinado" placeholder="tiempo de cocinado" />
-      <br />
-      <input type="submit" value="Agregar" class="callToAction" />
-    </form>
-    <h1></h1>
-    <script src="../logica/agregarComida.js" type="module"></script>
+    <!-- A meterle css ejes -->
+    <script src="../scripts/navInterno.js" type="module"></script>
+
+    <main>
+      <form id="agregarComida">
+        <input type="text" class="textfield" name="nombre" placeholder="nombre" required />
+        <br />
+        <input type="text" class="textfield" name="desc" placeholder="descripcion" required />
+        <br />
+        <input type="text" class="textfield" name="imgURL" placeholder="imgagen URL" required />
+        <br />
+        <select name="dieta" id="dietaSelect" required></select>
+        <br />
+        <input type="number" class="textfield" name="tiempoCocinado" placeholder="tiempo de cocinado" />
+        <br />
+        <input type="submit" value="Agregar" class="callToAction" />
+      </form>
+      <h1></h1>
+      <script src="../logica/agregarComida.js" type="module"></script>
+    </main>
   </body>
 </html>

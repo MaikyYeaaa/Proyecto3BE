@@ -279,7 +279,11 @@ body {
 
 @media screen and (max-width: 884px) {
   #stock {
-    width: 90%;
-    margin-left: 80px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #NotifBody {
+    width: 90vw;
   }
 }

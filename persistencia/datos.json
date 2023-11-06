@@ -671,5 +671,25 @@
         "datosZonas": "asdasdasdasd",
         "datosCostoMenus": "123",
         "datosFechaVencimiento": "hola"
+    },
+    {
+        "datosCocina": "5",
+        "datosTiempo": "24",
+        "datosStockcolchon": "10",
+        "datosStockmaximo": "12",
+        "datosTiempoturno": "6",
+        "datosZonas": "asdasdasdasd",
+        "datosCostoMenus": "123",
+        "datosFechaVencimiento": "hola"
+    },
+    {
+        "datosCocina": "5",
+        "datosTiempo": "24",
+        "datosStockcolchon": "21",
+        "datosStockmaximo": "12",
+        "datosTiempoturno": "6",
+        "datosZonas": "asdasdasdasd",
+        "datosCostoMenus": "123",
+        "datosFechaVencimiento": "hola"
     }
 ]

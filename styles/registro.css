@@ -33,7 +33,7 @@
   background: #00467f;
   background: linear-gradient(to right, #00467f, #a5cc82);
   box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.2);
-  
+
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -114,4 +114,21 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: end;
+}
+
+@media screen and (max-width: 450px) {
+  #textop input {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 7px;
+    width: 148px;
+  }
+
+  #registro-form {
+    min-width: 90vw;
+  }
+  #botonContinue {
+    width: 90%;
+    gap: 30px;
+  }
 }

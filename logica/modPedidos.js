@@ -123,88 +123,25 @@ function getBoxValues(value, pedido) {
         <option value="Desechado">Desechado</option>
       </select>`;
   }
-
-  /*switch(value){
- 
-    case "DESCONOCIDO":
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="Solicitado">Solicitado</option>
-        <option value="En-Stock">En Stock</option>
-        <option value="En-Producción">En producción</option>
-        <option value="Envasado">Envasado</option>
-        <option value="Entregado">Entregado</option>
-        <option value="Devuelto">Devuelto</option>
-        <option value="Desechado">Desechado</option>
-      </select>`;
-      break;
-
-      case "Solicitado":
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="Solicitado">Solicitado</option>
-        <option value="Envasado">Envasado</option>
-      </select>`;
-      break;
-
-      case "En-Stock":
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="En-Stock">En stock</option>
-        <option value="Envasado">Envasado</option>
-      </select>`;
-      break;
-
-    case "En-Producción":
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="En-Producción">En Producción</option>
-        <option value="En-Stock">En Stock</option>
-        <option value="Envasado">Envasado</option>
-      </select>`;
-      break;
-
-      case "Envasado":
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="Envasado">Envasado</option>
-        <option value="Entregado">Entregado</option>
-      </select>`;
-      break;
-
-      case "Entregado":
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="Entregado">Entregado</option>
-        <option value="Devuelto">Devuelto</option>
-      </select>`;
-      break;
-
-      case "Devuelto":
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="Devuelto">Devuelto</option>
-        <option value="Desechado">Desechado</option>
-        <option value="En-Stock">En Stock</option>
-      </select>`;
-      break;
-
-      case "Desechado":
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="Desechado">Desechado</option>
-      </select>`;
-    default:
-        return `<select name="${pedido.Id}" id="pedido">
-        <option value="Solicitado">Solicitado</option>
-        <option value="En-Stock">En Stock</option>
-        <option value="En-Producción">En producción</option>
-        <option value="Envasado">Envasado</option>
-        <option value="Entregado">Entregado</option>
-        <option value="Devuelto">Devuelto</option>
-        <option value="Desechado">Desechado</option>
-      </select>`;
-
-
-}*/
 }
 
+function modificarEstado() {
+  fetch("../persistencia/getStock.php")
+    .then((r) => r.text())
+    .then((r) => {
+      console.log(r);
+    });
+}
+
+/*
 function modificarEstado(estado, pos) {
   var data = new FormData();
   data.append("posicion", pos);
   data.append("accion", estado);
+
+  le
+  fetch("../persistencia/getStockById.php")
+
 
   fetch("../persistencia/ModPedidos.php", {
     method: "POST",
@@ -223,7 +160,7 @@ function modificarEstado(estado, pos) {
         .then((r) => r.text())
         .then((data) => {
           console.log(data);
-          mostrarTabla();
+          //mostrarTabla();
         });
     });
-}
+}*/

@@ -15,7 +15,7 @@ body {
   width: 90vw;
   height: 80vh;
   background-color: #b9cfba;
-  
+
   justify-content: center;
   display: flex;
   padding-inline: 120px;
@@ -135,8 +135,15 @@ input:focus-visible {
   }
   #login {
     justify-content: center;
+    min-width: 634px;
+  }
+  #pass-section {
+    width: 366px;
   }
   #form-login {
     width: 80%;
+  }
+  #login-contenido {
+    width: fit-content;
   }
 }
