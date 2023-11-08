@@ -52,9 +52,9 @@ function conectarBDD() {
     // $UsuarioBDD = "root";
     // $ContraBDD = "12345";
     // $bdd = "tukotech";
-    $host = "mysql";
+    $host = "localhost";
     $UsuarioBDD = "root";
-    $ContraBDD = "proyecto123";
+    $ContraBDD = "";
     $bdd = "tukotech";
 
     $con = new mysqli($host, $UsuarioBDD, $ContraBDD, $bdd);

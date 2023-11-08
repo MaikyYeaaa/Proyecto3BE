@@ -1,6 +1,6 @@
 async function listarCarrito() {
   let carrito = obtenerCarrito();
-
+  console.log(carrito);
   let menus = await getMenus();
 
   for (let i = 0; i < carrito.length; i++) {

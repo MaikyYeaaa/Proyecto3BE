@@ -1,5 +1,16 @@
 var comidasId = [];
-var comidasTope = 0;
+var comidasTope = 5;
+
+loadMenuSlots(5); //Cargar slots en valor Semanal
+var returnaso = tremendaFunction();
+console.log(returnaso);
+
+$("#noseloco").click(reload);
+
+function reload(){
+    console.log("Reloading...");
+    loadMenuSlots(comidasTope);
+}
 
 
 $("#tipoMenu").on("change", function() {
@@ -89,22 +100,29 @@ function loadComidas(slot){
         $("#menuList").html("");
         console.log(r);
         r.forEach((comida,val)=> {
-            $("#menuList").append(`  
-            
-            <section id="MenuSelect">
-            <img src="${comida.ImagenURL}" alt="" srcset="" id="imgMenu">
-            <div class="scroll-container">
 
-                  
-                  <article  class="content" style="overflow-x: scroll;">${comida.Nombre}</article>
-                
-              </div>
+            if(tremendaFunction(comida.IDComida)){
+                console.log("NO AGREGAMO NADAAAAAAAAAAA");
+            }else{
+                console.log("Vamo a agregaaaaaaaaaaaa " + comida.IDComida + tremendaFunction(comida.IDComida));
+                $("#menuList").append(`  
             
-            <button id="menuAddBtn" onClick="AddComida('${comida.IDComida}',${slot})"></button>
-            <article id="menuTitleGradinet"></article>
-            <img src="../src/CMAdd.svg.svg"id="addSvg" alt="">
-        </section>
-`);
+                <section id="MenuSelect">
+                <img src="${comida.ImagenURL}" alt="" srcset="" id="imgMenu">
+                <div class="scroll-container">
+    
+                      
+                      <article  class="content" style="overflow-x: scroll;">${comida.Nombre}</article>
+                    
+                  </div>
+                
+                <button id="menuAddBtn" onClick="AddComida('${comida.IDComida}',${slot})"></button>
+                <article id="menuTitleGradinet"></article>
+                <img src="../src/CMAdd.svg.svg"id="addSvg" alt="">
+            </section>
+    `);
+            }
+           
         })
     })
 }
@@ -147,14 +165,14 @@ function closeModal(){
     document.getElementById('menuModal').style.display = 'none';
 }
 
-loadMenuSlots(20);
 
 function loadMenuSlots(slotsN){
+console.log("Holanda");
 comidasId.splice(0,comidasTope);
 $("#btnCompra").prop("disabled", true);
 console.log("holandaa");
 $("#menuSlots").html("");
-for(let i = 0; i < slotsN;i++){ 
+for(let i = 0; i < slotsN;i++){
     console.log(i);
     $("#menuSlots").append(`
     <section id="SlotContainer${i}" class="slot">
@@ -206,5 +224,135 @@ function updateSlot(id,comidaId){
     })
 
 
+
+
+
    
 }
+
+
+$("#btnCompra").click(add);
+
+function add() {
+    if (confirm("¿Quieres agregar este menu al carrito de compras?")) {
+        CrearMenuParaComprar(2, comidasId); // Use "2" directly
+    console.log("hola no se");
+      } else {
+      }
+    
+}
+
+function CrearMenuParaComprar(idComprador, comidas) {
+    var data = new FormData();
+    data.append("idComprador", idComprador);
+    data.append("comidas", comidas);
+    console.log("llegamo hasta aca");
+    fetch("../persistencia/crearMenuCustom.php", {
+        method: "POST",
+        body: data
+    })
+    .then((r) => r.text())
+    .then((r) => {
+        console.log(r);
+        agregarAlCarrito();
+    });
+}
+
+async function agregarAlCarrito() {
+    let idOp;
+    fetch("../persistencia/getLastMenuID.php")
+    .then((r)=> r.json())
+    .then(async(r)=> {
+        console.log(r);
+        idOp = r[0].ID;
+        console.log(idOp);
+        console.log(r);
+
+        const id = idOp;
+    const nombre = "MenuCustom";
+    const img = "../src/CMico.png";
+    const precio = 4000;
+    const descuento = 0;
+  
+    let tipo = "custom";
+    if (descuento) {
+      tipo = "descuento";
+    }
+    console.log(id);
+    let platosMenu = [];
+    const integra = await obtenerDatos("../persistencia/getIntegra.php");
+  
+    integra.forEach((comida) => {
+      if (id == comida.IDMenu) {
+        platosMenu.push(comida.IDComida);
+      }
+    });
+  
+    console.log(platosMenu);
+  
+    let carritoPrevio = obtenerCarrito();
+    console.log(carritoPrevio);
+  
+    if (!revisarRepeticion(id, carritoPrevio)) {
+      let item = { id: id, nombre: nombre, img: img, precio: precio, cant: 1, comidas: platosMenu, tipo: tipo };
+      carritoPrevio.push(item);
+    } else {
+      let itemExistente = carritoPrevio.find((item) => item.id == id);
+      if (itemExistente) {
+        itemExistente.cant++;
+      }
+    }
+    localStorage.setItem("carrito", JSON.stringify(carritoPrevio));
+          
+    })
+  
+    
+
+  }
+
+  function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+  }
+  
+  function revisarRepeticion(id, carritoPrevio) {
+    let repete = false;
+    carritoPrevio.forEach((item) => {
+      let itemID = item.id;
+      console.log(`itemID: ${itemID}`);
+      console.log(`id: ${id}`);
+  
+      if (itemID == id) {
+        repete = true;
+      }
+    });
+    return repete;
+  }
+  
+  async function obtenerDatos(url) {
+    const respuesta = await fetch(url);
+    const json = await respuesta.json();
+    return json;
+  }
+
+  function tremendaFunction(comidaToFind){
+    let encontro = false;
+    comidasId.forEach((comida)=> {
+        
+        let index = comidasId.indexOf(comidaToFind);
+
+        if (index !== -1) {
+             console.log(`valor ${comidaToFind} encontrado en slot ${index}`);
+             encontro = true;
+             
+        } else {
+            console.log(`valor ${comidaToFind} no encontrado`);
+            encontro = false;
+           
+        }
+
+
+    });
+    return encontro;
+    
+    
+  }

@@ -145,6 +145,32 @@ class Menu {
 
 $con->close();
     }
+
+    public static function createCustomMenu($idComprador, $Precio,$comidas){
+        $con = conectarBDD();
+        $sqlMenu = "INSERT INTO `menu` (`Nombre`, `Precio`, `MenuIMG`) VALUES ('Menu custom de ${idComprador}','${Precio}','../src/CMico.img')";
+    if (sendToBDD($sqlMenu, $con)) {
+    $id = mysqli_insert_id($con);
+    $comidas = mysqli_real_escape_string($con, $comidas);
+    $comidasArray = explode(',', $comidas);
+
+$sqlAddTipoMenu = "INSERT INTO `asocia`(`ID_menu`, `NombreTipoMenu`) VALUES ('${id}','Custom')";
+$sqlResult = sendtoBDD($sqlAddTipoMenu,$con);
+
+    foreach($comidasArray as $comida) {
+        $sqlIntegra = "INSERT INTO `integra` (`IDComida`, `IDMenu`) VALUES ('${comida}','${id}')";
+        if (!sendToBDD($sqlIntegra, $con)) {
+            echo "Error en integra query: " . mysqli_error($con);
+            break;
+        }
+    }
+} else {
+    echo "Error en menu query: " . mysqli_error($con);
+}
+
+
+$con->close();
+    }
     
     public function Update($sql) {
         $con = conectarBDD();
