@@ -92,6 +92,21 @@ class Usuario {
         $con->close();
     }
 
+    public static function actualizarRolConId($nuevoRol, $id) {
+        $con = conectarBDD();
+        $sql = "UPDATE `usuario` SET `Rol`='$nuevoRol' WHERE IDUser = '${id}'";
+
+        $send = sendToBDD($sql, $con);
+    
+        if ($con->error) {
+            die($con->error);
+        }
+    
+        $con->close();
+
+        return $send;
+    }
+
     public static function getByMail($mail) {
         $con = conectarBDD();
         $mailEscapado = mysqli_real_escape_string($con, $mail);

@@ -25,26 +25,27 @@ const navbarAuth = `
 <link rel="stylesheet" href="../styles/nav.css" />
 <nav id="navbar">
 <article id="logo">
-  <a href="index.html">
-    <img src="../src/logo.png" alt="" width="200px" />
-  </a>
+<a href="index.html">
+<img src="../src/logo.png" alt="" width="200px" />
+</a>
 </article>
 <article id="nav">
-  <a href="index.html">Home</a>
-  <a href="listado-menus.html">Menus</a>
-  ${perfil}
-  ${carrito}
-  <article class="textfield">
-    <input id="filtro" type="text" placeholder="Buscar" />
-    <img src="../src/ic-search.svg" alt="" />
-  </article>
+<a href="index.html">Home</a>
+<a href="listado-menus.html">Menus</a>
+${perfil}
+${carrito}
+<article class="textfield">
+<input id="filtro" type="text" placeholder="Buscar" />
+<img src="../src/ic-search.svg" alt="" />
+</article>
 </article>
 </nav>
 <nav id="smallbar">
-  <article id="buttonWrapper" onclick="showNav()">
-    <img src="../src/ep_menu.svg">
-  </article>
+<article id="buttonWrapper" onclick="showNav()">
+<img src="../src/ep_menu.svg">
+</article>
 </nav>
+<script src="../scripts/getRol.js" type="module"></script>
 `;
 $("body").append(navbarAuth);
 

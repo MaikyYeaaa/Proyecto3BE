@@ -2,12 +2,6 @@ html {
   min-height: 100vh;
 }
 
-main {
-  background-image: url(../src/interno-bg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* padding: 50px; */
-}
 #main > article {
   margin: 0 auto;
   width: 100%;
@@ -40,14 +34,14 @@ main {
   height: 70vh;
   background-color: #8bc34a;
   padding: 10px;
-  border-radius: 30px;
+  border-radius: 8px;
 }
 #listado {
   margin: 0 auto;
   width: fit-content;
   height: 100%;
   background-color: #0c1c02;
-  border-radius: 30px;
+  border-radius: 8px;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -59,7 +53,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding-inline: 10px;
-  border-radius: 30px;
+  border-radius: 8px;
   width: 530px;
   height: 104px;
   background: linear-gradient(70deg, #d9d9d9 33.95%, rgba(217, 217, 217, 0) 100.09%);

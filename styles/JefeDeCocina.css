@@ -29,6 +29,18 @@
   font-weight: 700;
 }
 
+#tabla th,
+#tabla td {
+  border: 1px solid black;
+}
+#tabla th,
+#tabla td {
+  padding: 8px;
+  text-align: left;
+}
+#tabla th {
+  background-color: rgba(0, 0, 0, 0.424);
+}
 #containerArticle {
   height: 100%;
   display: flex;

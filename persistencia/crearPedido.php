@@ -122,7 +122,6 @@ $pago = sendToBDD($sqlPago, $con);
 $sqlIDPago = "SELECT MAX(IdPago) AS ID FROM `pago`";
 $IDPago = getFromBDD($sqlIDPago, $con);
 $IDPago = $IDPago[0]["ID"];
-var_dump($IDPago);
 
 
 if (sendToBDD($sqlPedido, $con)) {

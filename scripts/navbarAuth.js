@@ -9,8 +9,6 @@ if (!userID) {
   perfil = `<a href="perfil.html">Perfil</a>`;
 }
 
-
-
 const navbarAuth = `
 <link rel="stylesheet" href="../styles/nav.css" />
 <nav id="navbar">
@@ -36,27 +34,25 @@ const navbarAuth = `
     <img src="../src/ep_menu.svg">
   </article>
 </nav>
+<script src="../scripts/getRol.js" type="module"></script>
+
 `;
 $("body").append(navbarAuth);
 
-
-
 $("#filtro").on("input", function (e) {
-    let texto = $("#filtro").val();
-    console.log(texto);
+  let texto = $("#filtro").val();
+  console.log(texto);
 });
 
 var navClickeada = false;
 
 function showNav() {
   console.log("a");
-        if (!navClickeada) {
-            $("#navbar").css({ height: "100vh" });
-            navClickeada = true;
-        } else {
-            $("#navbar").css({ height: "90px" });
-            navClickeada = false;
-        }
-
-       
+  if (!navClickeada) {
+    $("#navbar").css({ height: "100vh" });
+    navClickeada = true;
+  } else {
+    $("#navbar").css({ height: "90px" });
+    navClickeada = false;
+  }
 }

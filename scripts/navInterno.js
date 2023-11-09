@@ -87,6 +87,9 @@ async function mostrarSegunRol() {
               <a href="ABLclientes.html" class="MenuButton">
               <button>ALTA/BAJA CLIENTES</button>
               </a>
+              <a href="mod-roles.html" class="MenuButton">
+              <button>ASIGNAR ROLES</button>
+              </a>
               <a href="productos.html" class="MenuButton">
                 <button>PRODUCTOS</button>
               </a>

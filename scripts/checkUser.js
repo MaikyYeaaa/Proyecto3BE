@@ -1,7 +1,6 @@
 import { modalBlock } from "../scripts/functionsVarias.js";
 
 const ID_user = localStorage.getItem("id");
-console.log(ID_user);
 if (ID_user) {
   verifAuth();
 } else {
