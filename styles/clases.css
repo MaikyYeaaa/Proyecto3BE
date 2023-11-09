@@ -220,6 +220,22 @@ body {
 
   transition: 0.1s ease-out;
 }
+
+.customAction{
+  height: 50px;
+  border: none;
+  background-image: linear-gradient(11deg, rgba(34, 193, 195, 1) 0%, rgb(45, 253, 62) 100%);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+
+  transition: 0.1s ease-out;
+}
+
+
 .btnCancelar {
   height: 50px;
   border: none;

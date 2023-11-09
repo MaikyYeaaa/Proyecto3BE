@@ -7,15 +7,16 @@ $(document).ready(function() {
     var span = $(".btnSecundario");
     console.log("first");
 
-     $("#stockInputs").on("click", ".MenuStock", function() {
+     /*$("#stockInputs").on("click", ".MenuStock", function() {
         NombreOP = $(this).attr("value");
         var Stock = $(this).text().replace("Stock: ", "");
         modal.css("display", "block");
         $("#ModalTitle").html("Ajustar el Stock de " + NombreOP);
         
         $("#stocknumber").val(Stock);
+        
     });
-
+*/
 
     span.click(function() {
         modal.css("display", "none");

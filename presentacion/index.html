@@ -63,8 +63,9 @@
     </section>
 
     <section id="customMenuContainer" class="container">
+    
       <article id="sectionContainer">
-        <section id="sectionTitle"> <article id="titleText">CREA TU PROPIO MENÚ </article> </section>
+        <section id="sectionTitle" > <article id="titleText">CREA TU PROPIO MENÚ </article> <h2>¡Diseña el menu a tu medida!</h2> </section>
          <section id="menuEditor">
              <section id="editorInputs"> 
                  <select id="tipoMenu">
@@ -72,7 +73,7 @@
                      <option value="Quincenal">Quincenal</option>
                      <option value="Mensual">Mensual</option>
                    </select>
-  
+ 
                    <input type="number" id="multiplicador" min="1" max="10" value="1">
              </section>
              <section id="menuSlots">
@@ -90,6 +91,8 @@
                      </article>
                      <article id="menuType">Vegano</article>
                  </section>
+ 
+                
      
                  <section id="menuBody">
                      <button id="menuButton"></button>
@@ -131,47 +134,73 @@
                          </ection>
                      </article>
                      <article id="menuInputs">
-                         <button id="MenuModify"><img src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
+                         <button id="MenuModify"><img  src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
                      </article>
                      <article id="menuType">Vacio</article>
                  </section>
      
                  <section id="menuEmptyBody">
                      <button id="menuButton"></button>
-                     <article id="menuEmptyImg"></article>
-                     <article id="menuInfo">
-                         <section id="menuName">Agrega una comida
-                         </section>
-                         <ection id="menuDesc">
-                         </ection>
+                     <article id="menuEmptyImg">
+                         
                      </article>
                      <article id="menuInputs">
-                         <button id="MenuModify"><img src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
+                         <button id="MenuModify"></button>
                      </article>
                      <article id="menuType">Vacio</article>
                  </section>
      
-                 <section id="menuEmptyBody">
-                     <button id="menuButton"></button>
-                     <article id="menuEmptyImg"></article>
-                     <article id="menuInfo">
-                         <section id="menuName">Agrega una comida
-                         </section>
-                         <ection id="menuDesc">
-                         </ection>
-                     </article>
-                     <article id="menuInputs">
-                         <button id="MenuModify"><img src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
-                     </article>
-                     <article id="menuType">Vacio</article>
-                 </section>
-  
+                
+ 
              </section>
              <section id="buttonConfirm">
-                 <button class="callToAction">¡Lo quiero!</button>
-                 <button class="btnCancelar">Cancelar</button>
+                 <button class="customAction" id="btnCompra"  disabled>¡Lo quiero!</button>
+                 <button class="btnCancelar" id="noseloco">Cancelar</button>
              </section>
-
+             
+ 
+ 
+         </section>
+     </article>
+ 
+     <!-- Modal para seleccionar la comida -->
+     <div id="menuModal" class="modal">
+         <div class="modal-content">
+             <span class="close-modal">&times;</span>
+             <!-- Modal content goes here -->
+             <h2>¡Elige una comida!</h2>
+             <article id="menuList">
+                 
+                 
+                 <section id="MenuSelect">
+                     <img src="https://images.pexels.com/photos/1197132/pexels-photo-1197132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" id="imgMenu">
+                     <div class="scroll-container">
+ 
+                           <!-- Tu contenido va aquí -->
+                           <article  class="content" style="overflow-x: scroll;">AltoMenuAmeooooooooooooooooooo</article>
+                         
+                       </div>
+                     
+                     <button id="menuAddBtn"></button>
+                     <article id="menuTitleGradinet"></article>
+                     <img src="../src/CMAdd.svg.svg"id="addSvg" alt="">
+                 </section>
+ 
+                 
+             
+             
+ 
+         </div>
+     </div>
+     
+     
+ 
+     
+ 
+ 
+     <script src="../jquery-3.6.4.min.js"></script>
+     <script  src="../testcustommenu.js"></script> 
+     <script src="../logica/addToCarrito.js"></script>
     </section>
 
     
