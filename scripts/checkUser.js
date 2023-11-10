@@ -18,7 +18,7 @@ async function verifAuth() {
       console.log(user);
       console.log(user.Autorizado);
       if (user.Autorizado == "NULL") {
-        modalBlock("Usuario no autorizado", "Espere a que se autorize o contacte con soporte", "Pagina Principal", "Intentar Nuevamente");
+        modalBlock("Usuario no autorizado", "Espere a que se autorize o contacte con soporte", "Pagina Principal", "Cerrar Sesion");
       }
     });
 }

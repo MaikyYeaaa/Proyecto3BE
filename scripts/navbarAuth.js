@@ -29,6 +29,11 @@ const navbarAuth = `
 </article>
 </nav>
 <nav id="smallbar">
+<article id="logo-small">
+<a href="index.html">
+<img src="../src/logo-small.png" alt="" width="100px" />
+</a>
+</article>
     <article id="buttonWrapper" onclick="showNav()">
 
     <img src="../src/ep_menu.svg">

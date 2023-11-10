@@ -221,7 +221,7 @@ body {
   transition: 0.1s ease-out;
 }
 
-.customAction{
+.customAction {
   height: 50px;
   border: none;
   background-image: linear-gradient(11deg, rgba(34, 193, 195, 1) 0%, rgb(45, 253, 62) 100%);
@@ -234,7 +234,6 @@ body {
 
   transition: 0.1s ease-out;
 }
-
 
 .btnCancelar {
   height: 50px;
@@ -275,4 +274,8 @@ body {
     background-color: red;
     border: solid red 3px;
   }
+}
+
+.IMG.fallback {
+  background-image: url("../src/NoImg.png");
 }

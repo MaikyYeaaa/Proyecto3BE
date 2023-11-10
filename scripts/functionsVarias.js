@@ -34,7 +34,7 @@ export function modalBlock(titulo, texto, opt1, opt2) {
       break;
 
     case "Cerrar Sesion":
-      boton2 += 'onclick="localStorage.clear(); location.reload()"';
+      boton2 += 'onclick="localStorage.clear();" href="./login.html"';
       break;
 
     case "Intentar Nuevamente":

@@ -129,13 +129,23 @@ input:focus-visible {
   border-radius: 0 6px 6px 0;
 }
 
+#second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+#second input {
+  margin: 5px;
+}
+
 @media screen and (max-width: 768px) {
   #login-image {
     display: none;
   }
   #login {
     justify-content: center;
-    min-width: 634px;
+    /* min-width: 634px; */
   }
   #pass-section {
     width: 366px;
@@ -145,5 +155,6 @@ input:focus-visible {
   }
   #login-contenido {
     width: fit-content;
+    margin-left: 33px;
   }
 }

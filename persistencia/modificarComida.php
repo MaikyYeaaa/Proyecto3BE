@@ -7,26 +7,15 @@ $nombre = mysqli_real_escape_string($con, $_POST["nombreNuevo"]);
 $desc = mysqli_real_escape_string($con, $_POST["descNuevo"]);
 $tiempo = mysqli_real_escape_string($con, $_POST["tiempoNuevo"]);
 $id = mysqli_real_escape_string($con, $_POST["id"]);
+$dieta = mysqli_real_escape_string($con, $_POST["dieta"]);
 
-$camposActualizar = [];
 
-if(!empty($nombre)) {
-    $camposActualizar[] = "Nombre = '{$nombre}'";
-}
-if(!empty($desc)) {
-    $camposActualizar[] = "Descripcion = '{$desc}'";
-}
-if (!empty($tiempo)) {
-    $camposActualizar[] = "TiempoCocinado = '{$tiempo}'";
-}
+    $sqlComida = "UPDATE `comida` SET `Nombre`='$nombre',`Descripcion`='$desc',`TiempoCocinado`='$tiempo' WHERE IDComida = {$id}";
+    $sqlDieta = "UPDATE `pertenece` SET `IDDieta`='$dieta' WHERE IDComida = $id";
 
-if(!empty($camposActualizar)) {
-    $sql = "UPDATE `comida` SET " . implode(", ", $camposActualizar) . " WHERE IDComida = {$id}";
-    sendToBDD($sql, $con);
-    echo true;
-} else {
-    echo "debe ingresar datos";
-}
+    $responseComida = sendToBDD($sqlComida, $con);
+    $responseDieta = sendToBDD($sqlDieta, $con);
+
 
 $con->close();
 ?>
