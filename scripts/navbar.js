@@ -13,10 +13,10 @@ function showNav() {
 let perfil = "";
 let carrito = "";
 if (!userID) {
-  perfil = `<a href="login.html">Iniciar Sesion</a>`;
+  perfil = `<a id="txtLogin" href="login.html">Iniciar Sesion</a>`;
 } else {
-  carrito = `<a href="carrito.html">Carrito</a>`;
-  perfil = `<a href="perfil.html">Perfil</a>`;
+  carrito = `<a id="txtCarrito" href="carrito.html">Carrito</a>`;
+  perfil = `<a id="txtPerfil" href="perfil.html">Perfil</a>`;
 }
 
 const navbarAuth = `
@@ -30,8 +30,8 @@ const navbarAuth = `
 </a>
 </article>
 <article id="nav">
-<a href="index.html">Home</a>
-<a href="listado-menus.html">Menus</a>
+<a id="txtIndex" href="index.html">Home</a>
+<a id="txtListado" href="listado-menus.html">Menus</a>
 ${perfil}
 ${carrito}
 <article class="textfield">
@@ -60,3 +60,37 @@ $("#filtro").on("input", function (e) {
 });
 
 var navClickeada = false;
+
+const url = window.location.href;
+const pagina = cortarUrl(url);
+
+function cortarUrl(url) {
+  const corte = url.split("/");
+  const parteFinal = corte[corte.length - 1];
+  return parteFinal;
+}
+
+console.log(pagina);
+let txt = "";
+switch (pagina) {
+  case "login.html":
+    txt = $("#txtLogin");
+    break;
+  case "carrito.html":
+    txt = $("#txtCarrito");
+   break;
+  case "perfil.html":
+    txt = $("#txtPerfil");
+   break;
+  case "index.html":
+    txt = $("#txtIndex");
+    break;
+  case "listado-menus.html":
+    txt = $("#txtListado");
+    break;
+}
+console.log(txt);
+if (txt) {
+  //$(txt).css("text-shadow", "0 0 30px #49e600, 0 0 40px #77e600, 0 0 50px #00e67b");
+  $(txt).css({background: "#dcf798ab", padding: "10px","border-radius": "8px", "padding-inline":"20px" });
+}
