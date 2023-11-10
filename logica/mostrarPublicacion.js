@@ -28,7 +28,7 @@ fetch("../persistencia/getPublicaciones.php")
         <h1 id="nombre">${nombre}</h1>
         <h2 id="descripcion">${descripcion}</h2>
         <p id="precio">$${precioDescuento}</p>
-        <button onClick="eliminarPublicacion(${idPubli})" class="cancelButton">Eliminar</button>
+        <button onClick="eliminarPublicacion(${idPubli})" class="callToAction">Eliminar</button>
         </section>
         </article>
         `;
