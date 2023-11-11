@@ -1,3 +1,5 @@
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
 const formulario = document.getElementById("cambiarMail-form");
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -10,19 +12,19 @@ formulario.addEventListener("submit", async (e) => {
       method: "post",
       body: datos,
     })
-      .then((r) => r.text())
+      .then((r) => r.json())
       .then((r) => {
         console.log(r);
-        if (r == "true") {
-          alert("Mail actualizado correctamente");
-          window.open("perfil.html");
-          window.close();
+        if (r == true) {
+          mostrarNotif("correcto", "Mail actualizado correctamente", 500);
+          setTimeout(() => {
+            window.open("perfil.html");
+            window.close();
+          }, 500);
         } else {
-          alert(`error!! -> ${r}`);
+          mostrarNotif("error", r);
         }
       });
-  } else {
-    alert(`to mal`);
   }
 });
 
@@ -32,6 +34,7 @@ async function noExiste(datos) {
   let retorno = true;
   json.forEach((user) => {
     if (user.Mail == datos.get("mail")) {
+      mostrarNotif("error", "El mail ingresado ya esta registrado en nuestro sistema.");
       retorno = false;
     }
   });
@@ -43,5 +46,8 @@ function esValido(datos) {
 
   const mailV = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const mailVerif = mailV.test(mail);
+  if (!mailVerif) {
+    mostrarNotif("error", "El mail ingresado no es valido.");
+  }
   return mailVerif;
 }

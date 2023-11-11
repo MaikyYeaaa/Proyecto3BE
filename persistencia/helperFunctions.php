@@ -1,5 +1,4 @@
 <?php
-
 function writeToJSON($jsonURL, $arrayData) {
     if (!file_exists($jsonURL)) {
         // si no existe, hace un array vacio
@@ -13,11 +12,8 @@ function writeToJSON($jsonURL, $arrayData) {
             $array = array();
         }
     }
-    
     $array[] = $arrayData;
-    
     $jsonData = json_encode($array, JSON_PRETTY_PRINT);
-    
     // Manda el contenido previo + el nuevo al json
     return file_put_contents($jsonURL, $jsonData);
 }
@@ -37,7 +33,6 @@ function removeFromJSON($jsonURL, $index) {
     
     // saca el elemento q le pedi
     unset($array[$index]);
-    
     $jsonData = json_encode($array, JSON_PRETTY_PRINT);
     
     // devuelve el json
@@ -56,45 +51,36 @@ function getArrayFromJSON($jsonURL) {
 }
 
 function conectarBDD() {
-    
     // $host = "mysql";
     // $UsuarioBDD = "root";
     // $ContraBDD = "12345";
     // $bdd = "tukotech";
-    
     $host = "localhost";
     $UsuarioBDD = "root";
     $ContraBDD = "";
     $bdd = "tukotech";
 
     $con = new mysqli($host, $UsuarioBDD, $ContraBDD, $bdd);
-if($con->connect_error) {
-    die ("la conexion ha fallado: " . $con->connect_error);
+    if($con->connect_error) {
+        die ("la conexion ha fallado: " . $con->connect_error);
+    }
+    return $con;
 }
-return $con;
-}
-
 function sendToBDD($sql, $con) {
     if (!$con->query($sql)) {
-        echo "Error executing query: (" . $con->errno . ") " . $con->error;
+        echo "Error executing query: (" . $con->error . ") " . $con->error;
     }
     return $con->affected_rows;
 }
-
-
 function getFromBDD($sql, $con) {
-$resultado = $con->query($sql);
-
-if(!$resultado) {
-    die ("error al ejecutar la consulta: " . $con->error);
+    $resultado = $con->query($sql);
+    if(!$resultado) {
+        die ("error al ejecutar la consulta: " . $con->error);
+    }
+    $data = array();
+    while ($fila = $resultado->fetch_assoc()) {
+        $data[] = $fila;
+    }
+    return $data;
 }
-
-$data = array();
-while ($fila = $resultado->fetch_assoc()) {
-    $data[] = $fila;
-}
-
-return $data;
-}
-
 ?>

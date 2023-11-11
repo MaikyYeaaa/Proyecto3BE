@@ -92,6 +92,9 @@
 .actions {
   margin: 0.75rem 1rem;
 }
+.actions a {
+  text-decoration: none;
+}
 
 .history {
   display: inline-flex;

@@ -5,14 +5,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+}
+html {
+  overflow-x: hidden;
 }
 
 #navbar {
   background-color: white;
-  position: absolute;
+  position: fixed;
+  z-index: 3;
   top: 0;
   display: flex;
-  width: 90vw;
+  width: 100vw;
+  padding-inline: 10vw;
   height: 80px;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +26,8 @@ body {
   row-gap: 20px;
   flex-wrap: wrap;
   box-sizing: border-box;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12));
+  overflow: hidden;
 }
 
 #nav {
@@ -33,6 +41,14 @@ body {
   padding-inline: 5px;
   text-decoration: none;
   color: black;
+  transition: .1s;
+}
+#txtInterno {
+  text-decoration: underline;
+  color: red;
+}
+#nav a:hover {
+  transform: scale(1.2);
 }
 
 #logo {
@@ -42,11 +58,59 @@ body {
   gap: 20px;
 }
 
+#smallbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 80px;
+  width: 100vw;
+  background-color: white;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12));
+}
+#smallbar #buttonWrapper {
+  height: 100%;
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+#smallbar #buttonWrapper:hover {
+  transform: scale(1.2);
+}
+#smallbar #buttonWrapper img {
+  height: 100%;
+  width: 100%;
+}
+
 @media screen and (max-width: 805px) {
   #logo {
     display: none;
   }
   #navbar {
     justify-content: center;
+  }
+}
+@media screen and (max-width: 1005px) {
+  #navbar {
+    /* display: none; */
+    justify-content: center;
+  }
+  #navbar #logo {
+    display: none;
+  }
+  #nav {
+    flex-direction: column;
+  }
+  #smallbar {
+    display: flex;
+  }
+  body {
+    /* margin-top: 0; */
   }
 }

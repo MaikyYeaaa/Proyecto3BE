@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
       * {
@@ -15,11 +16,12 @@
     <link rel="stylesheet" href="../styles/clases.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/promo.css" />
+    <link rel="stylesheet" href="../styles/menucustom.css">
 
-    <title>Sysviansa - Pagina Principal</title>
+    <title>Sisviansa - Pagina Principal</title>
   </head>
   <body>
-    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/navbarAuth.js"></script>
 
     <section class="container-fluid" id="main-bienvenido">
       <article class="container">
@@ -28,14 +30,9 @@
             <h1 class="text-white">Bienvenido a Sisviansa</h1>
             <h2 class="text-white">Ordena su menu favorito desde casa!</h2>
             <section class="d-flex align-items-start gap-3" id="botones">
-              <button class="btnPrimario">Ver Mas</button>
               <a href="listado-menus.html" class="btnSecundario">Buscar menus</a>
             </section>
-            <section class="d-flex align-items-start gap-3" id="botonesExtra">
-              <button class="btnTerciario">Populares</button>
-              <button class="btnTerciario">Vegetarianos</button>
-              <button class="btnTerciario">Celiacos</button>
-            </section>
+
           </article>
           <section class="col-lg-4 d-none d-lg-block" id="imagen">
             <img src="../src/salad.svg" alt="" />
@@ -45,21 +42,189 @@
     </section>
 
     <section class="container d-flex flex-column align-items-center" id="main-promos">
-      <div class="col-8 d-flex flex-column align-items-center" id="promos-listado"></div>
+      <article class="col-8 d-flex flex-column align-items-center" id="promos-listado"></article>
     </section>
-    <section class="container d-flex justify-content-around align-items-center" id="main-zonas">
+    <section class="animIzq container d-flex justify-content-around align-items-center flex-column-reverse flex-sm-row" id="main-zonas">
       <article id="zonas-container"></article>
       <article id="texto">
         <h1>ZONAS</h1>
         <h2>Aquí estan todas nuestras ubicaciones</h2>
       </article>
     </section>
-    <!-- <section></section>
-    <section></section>
+    <section id="main-favs" class="container">
+      <article id="titulo">
+        <h1>Nuestros Favoritos</h1>
+        <h2>¡Estos son los menus recomendados por nosotros!</h2>
+        <a href="listado-menus.html">
+          <button class="btnPrimario">Ver Mas</button>
+        </a>
+      </article>
+      <article id="listado-favs"></article>
+    </section>
+
+    <section id="customMenuContainer" class="container">
+    
+      <article id="sectionContainer">
+        <section id="sectionTitle" > <article id="titleText">CREA TU PROPIO MENÚ </article> <h2>¡Diseña el menu a tu medida!</h2> </section>
+         <section id="menuEditor">
+             <section id="editorInputs"> 
+                 <select id="tipoMenu">
+                     <option value="Semanal">Semanal</option>
+                     <option value="Quincenal">Quincenal</option>
+                     <option value="Mensual">Mensual</option>
+                   </select>
+ 
+                   <input type="number" id="multiplicador" min="1" max="10" value="1">
+             </section>
+             <section id="menuSlots">
+                 <section id="menuBody">
+                     <button id="menuButton"></button>
+                     <article id="menuImg"><img id="menuimage" src="https://assets.unileversolutions.com/recipes-v2/165292.jpg" alt="img" srcset=""></article>
+                     <article id="menuInfo">
+                         <section id="menuName">ENSALADA
+                         </section>
+                         <ection id="menuDesc">TA SALADA!
+                         </ection>
+                     </article>
+                     <article id="menuInputs">
+                         <button id="MenuModify"><img src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
+                     </article>
+                     <article id="menuType">Vegano</article>
+                 </section>
+ 
+                
+     
+                 <section id="menuBody">
+                     <button id="menuButton"></button>
+                     <article id="menuImg"><img id="menuimage" src="https://assets.unileversolutions.com/recipes-v2/165292.jpg" alt="img" srcset=""></article>
+                     <article id="menuInfo">
+                         <section id="menuName">ENSALADA
+                         </section>
+                         <ection id="menuDesc">TA SALADA!
+                         </ection>
+                     </article>
+                     <article id="menuInputs">
+                         <button id="MenuModify"><img src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
+                     </article>
+                     <article id="menuType">Vegano</article>
+                 </section>
+     
+                 <section id="menuBody">
+                     <button id="menuButton"></button>
+                     <article id="menuImg"><img id="menuimage" src="https://assets.unileversolutions.com/recipes-v2/165292.jpg" alt="img" srcset=""></article>
+                     <article id="menuInfo">
+                         <section id="menuName">ENSALADA
+                         </section>
+                         <ection id="menuDesc">TA SALADA!
+                         </ection>
+                     </article>
+                     <article id="menuInputs">
+                         <button id="MenuModify"><img src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
+                     </article>
+                     <article id="menuType">Vegano</article>
+                 </section>
+     
+                 <section id="menuEmptyBody">
+                     <button id="menuButton"></button>
+                     <article id="menuEmptyImg"></article>
+                     <article id="menuInfo">
+                         <section id="menuName">Agrega una comida
+                         </section>
+                         <ection id="menuDesc">
+                         </ection>
+                     </article>
+                     <article id="menuInputs">
+                         <button id="MenuModify"><img  src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
+                     </article>
+                     <article id="menuType">Vacio</article>
+                 </section>
+     
+                 <section id="menuEmptyBody">
+                     <button id="menuButton"></button>
+                     <article id="menuEmptyImg">
+                         
+                     </article>
+                     <article id="menuInputs">
+                         <button id="MenuModify"></button>
+                     </article>
+                     <article id="menuType">Vacio</article>
+                 </section>
+     
+                
+ 
+             </section>
+             <section id="buttonConfirm">
+                 <button class="customAction" id="btnCompra"  disabled>¡Lo quiero!</button>
+                 <button class="btnCancelar" id="noseloco">Cancelar</button>
+             </section>
+             
+ 
+ 
+         </section>
+     </article>
+ 
+     <!-- Modal para seleccionar la comida -->
+     <div id="menuModal" class="modal">
+         <div class="modal-content">
+             <span class="close-modal">&times;</span>
+             <!-- Modal content goes here -->
+             <h2>¡Elige una comida!</h2>
+             <article id="menuList">
+                 
+                 
+                 <section id="MenuSelect">
+                     <img src="https://images.pexels.com/photos/1197132/pexels-photo-1197132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" id="imgMenu">
+                     <div class="scroll-container">
+ 
+                           <!-- Tu contenido va aquí -->
+                           <article  class="content" style="overflow-x: scroll;">AltoMenuAmeooooooooooooooooooo</article>
+                         
+                       </div>
+                     
+                     <button id="menuAddBtn"></button>
+                     <article id="menuTitleGradinet"></article>
+                     <img src="../src/CMAdd.svg.svg"id="addSvg" alt="">
+                 </section>
+ 
+                 
+             
+             
+ 
+         </div>
+     </div>
+     
+     
+ 
+     
+ 
+ 
+     <script src="../jquery-3.6.4.min.js"></script>
+     <script  src="../testcustommenu.js"></script> 
+     <script src="../logica/addToCarrito.js"></script>
+    </section>
+
+    
+           
+
+
+       </section>
+   </article>
+   
+
+   
+
+
+   <script src="../jquery-3.6.4.min.js"></script>
+   <script src="../testcustommenu.js"></script>
+
+
+    <!--  <section></section>
     <section></section> -->
 
     <script src="../logica/Promo.js"></script>
     <script src="../logica/addToCarrito.js"></script>
     <script src="../logica/mostrarZonas.js"></script>
+    <script src="../logica/listadoFavs.js"></script>
+    <script src="../scripts/scroll.js"></script>
   </body>
 </html>

@@ -69,7 +69,7 @@ function mostrarMenus() {
         let mostrar = `
         <article class="menu" id="#menu" data-id="${id}" data-nombre="${nombre}" data-platos="${comidasNombres}" data-precio="${precio}" data-stock="${stock}" onclick="modalMenu(this)">
         <section id="fondo">
-        <img src="${img}" />
+        <img src="${img}" class="IMG" alt="../../src/noimgico.png" onerror="this.onerror=null;this.src='../src/noimg.png';"/>
         </section>
         <h1>${nombre.toUpperCase()}</h1>
         </article>

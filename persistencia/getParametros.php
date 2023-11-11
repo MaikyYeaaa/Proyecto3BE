@@ -14,7 +14,7 @@ $sqlGetTiempoCocinado = getFromBDD($sqlTiempococinado, $con);
 $sqlStockMaximo = "SELECT `StockMaximo` FROM `menu` LIMIT 1;";
 $sqlGetStockMaximo = getFromBDD($sqlStockMaximo, $con);
 
-$sqlStockMinimo = "SELECT `StockColchón` FROM `menu` LIMIT 1;";
+$sqlStockMinimo = "SELECT `StockColchon` FROM `menu` LIMIT 1;";
 $sqlGetStockMinimo = getFromBDD($sqlStockMinimo, $con);
 
 $resultado = [
@@ -22,7 +22,7 @@ $resultado = [
     'TiempoTurno' => $sqlGetTiempoTurno[0]['TiempoTurno'],
     'TiempoCocinado' => $sqlGetTiempoCocinado[0]['TiempoCocinado'],
     'StockMaximo' => $sqlGetStockMaximo[0]['StockMaximo'],
-    'StockColchón' => $sqlGetStockMinimo[0]['StockColchón']
+    'StockColchon' => $sqlGetStockMinimo[0]['StockColchon']
 ];
 
 echo json_encode($resultado);

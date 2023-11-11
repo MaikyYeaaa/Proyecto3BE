@@ -1,12 +1,14 @@
 <?php
-require "helperFunctions.php";
+require "../logica/Clases/Menu.php";
 
-$con = conectarBDD();
+if (!empty($_POST["param"])) {
+    $param = $_POST["param"];
+} else {
+    $param = "";
+}
 
-$sqlMenu = "SELECT * FROM `menu`";
-$menus = getFromBDD($sqlMenu, $con);
+$menus = Menu::listarAll($param);
+echo $menus;
 
-echo json_encode($menus);
 
-$con->close();
 ?>

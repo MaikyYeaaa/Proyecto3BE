@@ -1,10 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 * {
   box-sizing: border-box;
   font-family: Roboto;
 }
-
-
-
+main {
+  width: 100%;
+  margin-left: 265px;
+  display: flex;
+  justify-content: center;
+}
 body {
   margin: 0;
   padding: 0;
@@ -34,12 +39,10 @@ body {
 
 .empleado-main-section {
   display: flex;
-  padding: 0 50px;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
-  /* align-self: stretch; */
-  background: #acacac;
+  /* background: #acacac; */
+  margin-right: 50px;
 }
 
 .textfield {
@@ -164,7 +167,8 @@ body {
   background: #000;
 }
 
-.menu {
+.menu,
+.producto {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,12 +177,13 @@ body {
   width: 335px;
 
   background-color: white;
-  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25));
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   border-radius: 6px;
   overflow: hidden;
 
   margin: 10px;
+  transition: 0.2s;
 }
 .menu #imgContainer {
   width: 100%;
@@ -201,11 +206,13 @@ body {
   gap: 4px;
   padding: 5px;
 }
+
 .callToAction {
   height: 50px;
   border: none;
   background-image: linear-gradient(11deg, rgba(34, 193, 195, 1) 0%, rgb(45, 253, 62) 100%);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
   border-radius: 6px;
   font-size: 1.2rem;
   font-style: normal;
@@ -213,6 +220,38 @@ body {
 
   transition: 0.1s ease-out;
 }
+
+.customAction {
+  height: 50px;
+  border: none;
+  background-image: linear-gradient(11deg, rgba(34, 193, 195, 1) 0%, rgb(45, 253, 62) 100%);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+
+  transition: 0.1s ease-out;
+}
+
+.btnCancelar {
+  height: 50px;
+  border: none;
+  background-image: linear-gradient(11deg, rgb(158, 158, 158) 0%, rgb(198, 198, 198) 100%);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+
+  transition: 0.1s ease-out;
+}
+.btnCancelar:hover {
+  box-shadow: 0px 9px 9px 0px rgba(0, 0, 0, 0.25);
+}
+
 .callToAction:hover {
   box-shadow: 0px 9px 9px 0px rgba(0, 0, 0, 0.25);
 }
@@ -220,13 +259,32 @@ body {
 #mostrar {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 50px;
+  align-content: flex-start;
 }
 
-.cancelButton{
-  background: rgb(181,64,64);
-  background: linear-gradient(0deg, rgba(181,64,64,1) 0%, rgba(252,64,75,1) 100%);
+@media screen and(max-width: 600px) {
+  .btnPrimario {
+    padding: 0.25rem 0.5rem;
+    background-color: red;
+    border: solid red 3px;
+  }
+  .btnSecundario {
+    padding: 0.25rem 0.5rem;
+    background-color: red;
+    border: solid red 3px;
+  }
+}
+
+.IMG.fallback {
+  background-image: url("../src/NoImg.png");
+}
+
+.cancelButton {
+  background: rgb(181, 64, 64);
+  background: linear-gradient(0deg, rgba(181, 64, 64, 1) 0%, rgba(252, 64, 75, 1) 100%);
   outline: hidden;
-  border: 0px ;
+  border: 0px;
   font-weight: 900;
   border-radius: 6px;
   filter: drop-shadow(2px 1px 1px rgb(49, 49, 49));
@@ -237,14 +295,12 @@ body {
   right: 8px;
   bottom: 8px;
 }
-.cancelButton:disabled{
+.cancelButton:disabled {
   opacity: 0;
-  pointer-events: none
+  pointer-events: none;
 }
 
-.cancelButton:hover{
+.cancelButton:hover {
   filter: drop-shadow(2px 2px 1px rgb(49, 49, 49));
   transform: scale(1.1);
-
-
 }

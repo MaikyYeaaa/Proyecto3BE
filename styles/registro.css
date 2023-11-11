@@ -1,6 +1,3 @@
-#registro-form section {
-  display: flex;
-}
 #registro-contenido {
   display: flex;
   width: 50%;
@@ -24,4 +21,114 @@
 }
 .row {
   margin-bottom: 1rem;
+}
+
+#registro-form {
+  width: 60%;
+  min-width: 400px;
+  height: 300px;
+  margin: 20px;
+  padding: 30px;
+  padding-top: 100px;
+  background: #00467f;
+  background: linear-gradient(to right, #00467f, #a5cc82);
+  box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.2);
+
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#first,
+#second,
+#third,
+#forth {
+  display: none;
+  gap: 10px;
+}
+
+#first {
+  display: flex;
+}
+#second {
+  flex-direction: column;
+}
+#third input {
+  width: 50%;
+}
+
+#nombre-apellido-art {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nombre,
+#apellido {
+  width: calc(50% - 5px);
+}
+
+#textop {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#textop input {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+#textop input:focus {
+  outline: none;
+}
+#follower {
+  position: absolute;
+  top: 0;
+  margin-top: 50px;
+  width: 70%;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.511);
+  filter: drop-shadow(0 0 0.75rem rgb(35, 82, 32));
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#follower section {
+  width: 25px;
+  height: 25px;
+  background: rgb(0, 0, 0);
+  border-radius: 100%;
+}
+
+#atras {
+  display: none;
+}
+
+#botonContinue {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+}
+
+@media screen and (max-width: 450px) {
+  #textop input {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 7px;
+    width: 148px;
+  }
+
+  #registro-form {
+    min-width: 90vw;
+  }
+  #botonContinue {
+    width: 90%;
+    gap: 30px;
+  }
 }

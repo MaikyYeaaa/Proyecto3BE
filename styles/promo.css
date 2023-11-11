@@ -1,25 +1,48 @@
 .Promo {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   background-color: rgb(206, 201, 201);
-  height: 250px;
-  border-radius: 20px;
+  height: 200px;
+  min-height: 10px;
+  border-radius: 16px;
   overflow: hidden;
-  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25));
+  /* filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25)); */
   margin: 10px;
+  width: 100%;
   transition: 0.4s;
   padding: 15px;
   padding-right: 0;
+  position: relative;
+  filter: drop-shadow(6px 6px 2px rgba(0,0,0,0.4));
 }
 
 .Promo:hover {
   /* transform: scale(1.005); */
 }
+.Promo button {
+  height: max-content;
+  padding: 15px;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 15px;
+}
 
 #Info {
-  padding: 8px;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 15px;
+}
+#Info article {
+  width: fit-content;
+}
+#texto-info {
   display: flex;
   flex-direction: column;
 }
@@ -39,13 +62,13 @@
   right: 0;
   /* transform: translate(10px, -100px); */
   height: 400px;
-  width: 500px;
+  width: 300px;
   border-radius: 100% 0 0 100%;
   background-color: rgb(166, 154, 154);
   transition: 0.5s;
   /* border: 5px solid; */
-  outline: 5px solid aliceblue;
-  box-shadow: -2px 0 10px black;
+  outline: 5px solid rgb(41, 255, 91);
+  box-shadow: -2px 0 20px rgb(0, 0, 0);
 
   display: flex;
   justify-content: center;
@@ -68,6 +91,9 @@
 .promo-container .promo-green-cont h1 {
   font-size: 3rem;
   cursor: default;
+  font-weight: 900;
+  color: white;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.6));
 }
 .promo-container .img-cont {
   position: absolute;
@@ -104,24 +130,54 @@
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1085px) {
   .Promo {
-    height: 200px;
+    height: 20vh;
+    width: 120%;
+    margin: 10px;
   }
+  .promo-container .promo-green-cont h1 {
+    font-weight: 900;
+    font-size: 30px;
+  }
+
+  .promo-container {
+    width: 30vw;
+    height: 30vw;
+    transform: translate(-2vw);
+    border-radius: 100%;
+  }
+  #main-promos{
+    margin: 0;
+  }
+  .Promo button {
+    width: 30vw;
+    height: 6vh;
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  #Descripcion{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 375px){
+  
+  .Promo {
+    height: 26vh;
+    width: 120%;
+    margin: 10px;
+  }
+
 }
 
 .Promo #precios #precioOrig {
   margin-right: 10px;
   text-decoration: line-through;
+  color: red;
 }
 .Promo #precios {
   display: flex;
 }
 
-.Promo button {
-  height: max-content;
-  transition: 0.3s;
-}
-.Promo button:hover {
-  background-color: green;
-}

@@ -18,3 +18,11 @@ fetch("../persistencia/getCuentaFromId.php", { method: "post", body: data })
         $("#txtDir").append(` ${dir}`);
       });
   });
+
+function cerrarSesion() {
+  const confirmar = confirm("Seguro quiere cerrar sesion?");
+  if (confirmar) {
+    localStorage.clear();
+    window.open("index.html");
+  }
+}

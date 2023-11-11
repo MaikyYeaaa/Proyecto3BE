@@ -9,6 +9,14 @@
   font-weight: 700;
   line-height: 48px; /* 100% */
 }
+
+h1{
+  font-weight: 900;
+  filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.381));
+}
+p{
+  filter: drop-shadow(2px 1px 1px rgba(61, 61, 61,0.5));
+}
 #fondo {
   display: flex;
   padding: 85px 170px;
@@ -17,8 +25,9 @@
   gap: 85px;
   flex: 1 0 0;
   align-self: stretch;
-  background: #666;
-  margin-top: 160px;
+  background: rgb(133,130,189);
+  background: linear-gradient(40deg, rgb(105, 103, 147) 0%, rgba(61,186,166,1) 100%);
+  margin-top: 10px;
   margin-block-end: 160px;
   margin-right: 85px;
   margin-left: 85px;
@@ -30,8 +39,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  border: 1px solid #000;
-  background: #fff;
+ 
   height: 50px;
   color: #000;
   text-align: center;
@@ -48,8 +56,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  border: 1px solid #000;
-  background: #fff;
+ 
   height: 50px;
   color: #000;
   text-align: center;
@@ -66,8 +73,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  border: 1px solid #000;
-  background: #fff;
+
   height: 50px;
   color: #000;
   text-align: center;
@@ -92,4 +98,34 @@
 }
 #Cuenta section a {
   text-decoration: none;
+}
+
+.btnPrimario{
+  background-color:rgb(187, 74, 74);
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 923px) {
+  #Cuenta {
+    font-size: 32px;
+  }
+
+  #Cuenta Section{
+    width: 90vw;
+  }
+
+  #fondo {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  #btnCambiarNombre,
+  #btnCambiarContra,
+  #btnCambiarDireccion {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

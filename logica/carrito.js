@@ -1,6 +1,6 @@
 async function listarCarrito() {
   let carrito = obtenerCarrito();
-
+  console.log(carrito);
   let menus = await getMenus();
 
   for (let i = 0; i < carrito.length; i++) {
@@ -39,7 +39,7 @@ async function listarCarrito() {
               <img src="../src/trash.svg" class="icono" id="trash" onclick="eliminarItem(${id}, '${nombre}')"/>
               <article id="contador">
                 <img src="../src/menos.svg" class="icono" onclick="restarItem(${id}, ${cantidad})"/>
-                <p>${cantidad}</p>
+                <p id="${id}">${cantidad}</p>
                 <img src="../src/mas.svg" class="icono" onclick="sumarItem(${id}, ${cantidad})"/>
               </article>
             </section>
@@ -83,7 +83,6 @@ function sumarItem(id, cant) {
   let newCant = cant + 1;
   let carrito = obtenerCarrito();
   let item = carrito.find((item) => item.id == id);
-
   if (item) {
     item.cant = newCant;
     localStorage.setItem("carrito", JSON.stringify(carrito));

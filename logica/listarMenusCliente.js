@@ -1,6 +1,7 @@
 fetch("../persistencia/listarMenus.php")
   .then((r) => r.json())
   .then((r) => {
+    console.log(r);
     r.forEach((r) => {
       let estrellas = Math.floor(Math.random() * 5) + 1;
 
@@ -50,5 +51,6 @@ fetch("../persistencia/listarMenus.php")
     );
     $(".callToAction").click(function () {
       $(this).css({ transform: "", "box-shadow": "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" });
+      alert("Menu añadido correctamente");
     });
   });

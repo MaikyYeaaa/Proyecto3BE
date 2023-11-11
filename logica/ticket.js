@@ -1,34 +1,31 @@
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
 let formulario = document.getElementById("ticket");
 
 formulario.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   let datos = new FormData(formulario);
+  const id = localStorage.getItem("id");
+  datos.append("id", id);
 
-  verificarMail(datos).then((resultado) => {
-    if (resultado) {
-      fetch("../persistencia/ticket.php", {
-        method: "POST",
-        body: datos,
-      })
-        .then((r) => r.text())
-        .then((r) => alert("Ticket creado correctamente"));
-    } else {
-      alert("Mail incorrecto");
-    }
-  });
-});
-function verificarMail(datos) {
-  return fetch("../persistencia/verifMail.php", {
-    method: "post",
+  fetch("../persistencia/ticket.php", {
+    method: "POST",
     body: datos,
   })
-    .then((r) => r.json())
+    .then((r) => r.text())
     .then((r) => {
       console.log(r);
-      return r.length > 0;
+      if (r) {
+        mostrarNotif("correcto", "Ticket creado correctamente");
+        setTimeout(() => {
+          location.reload();
+        }, 3000);
+      } else {
+        mostrarNotif("error", `${r}`);
+      }
     });
-}
+});
 
 async function agarrarOPT() {
   const respuesta = await fetch("../persistencia/getTicketOPT.php");

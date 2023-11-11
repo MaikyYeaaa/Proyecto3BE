@@ -1,4 +1,6 @@
-fetch("../../persistencia/getDietas.php")
+import { mostrarNotif } from "../scripts/functionsVarias.js";
+
+fetch("../persistencia/getDietas.php")
   .then((r) => r.json())
   .then((r) => {
     let mostrar = "";
@@ -18,15 +20,21 @@ formulario.addEventListener("submit", function (e) {
   e.preventDefault();
 
   let datos = new FormData(formulario);
-  fetch("../../persistencia/addComida.php", {
+  fetch("../persistencia/addComida.php", {
     method: "POST",
     body: datos,
   })
     .then((r) => r.text())
     .then((r) => {
       console.log(r);
-      alert("comida agregada exitosamente!");
-      location.reload();
+      if (r == "true") {
+        mostrarNotif("correcto", `comida agregada exitosamente!`);
+        setInterval(() => {
+          location.reload();
+        }, 1500);
+      } else {
+        mostrarNotif("error", `${r}`);
+      }
       // const comidas = Object.values(r);
       // $("h1").html("comida agregada exitosamente!");
     });

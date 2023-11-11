@@ -1,89 +1,221 @@
 <?php
-require "Comida.php";
+// require "Comida.php";
+require_once "../persistencia/helperFunctions.php";
 
 class Menu {
+    private $IDMenu;
+    private $Nombre;
+    private $Precio; 
+    private $StockMaximo;
+    private $StockColchon;
+    private $StockReal;
+    private $FechaVencimiento;
+    private $MenuIMG;
+    private $Descuento;  
+    private $comidas = [];
 
-    private $ID_menu;
-    private $nombre_menu;
-    private $stockMaximo;
-    private $stockColchon;
-    private $stockReal;
-    private $fechaVencimiento;
-    private $comidas;
-    private $descripción;
-    private $img;
-
-    public function __construct($ID_menu, $nombre_menu, $stockMaximo, $stockColchon, $stockReal, $fechaVencimiento, $comidas,$descripción,$img) {
-        $this->ID_menu = $ID_menu;
-        $this->nombre_menu = $nombre_menu;
-        $this->stockMaximo = $stockMaximo;
-        $this->stockColchon = $stockColchon;
-        $this->stockReal = $stockReal;
-        $this->fechaVencimiento = $fechaVencimiento;
+    public function __construct($IDMenu, $Nombre, $Precio, $StockMaximo, $StockColchon, $StockReal, $FechaVencimiento, $MenuIMG, $Descuento) {
+        $this->IDMenu = $IDMenu;
+        $this->Nombre = $Nombre;
+        $this->Precio = $Precio;         
+        $this->StockMaximo = $StockMaximo;
+        $this->StockColchon = $StockColchon;
+        $this->StockReal = $StockReal;
+        $this->FechaVencimiento = $FechaVencimiento;
+        $this->MenuIMG = $MenuIMG;
+        $this->Descuento = $Descuento;   
         $this->comidas = $comidas;
-        $this-> descripción = $descripción;
-        $this-> img = $img;
     }
 
     public function getIDMenu() {
-        return $this->ID_menu;
+        return $this->IDMenu;
     }
+    public function setIDMenu($IDMenu) {
+        $this->IDMenu = $IDMenu;
+    }
+    
     public function getNombreMenu() {
-        return $this->nombre_menu;
+        return $this->Nombre;
     }
-    public function getStockMaximo() {
-        return $this->stockMaximo;
-    }
-    public function getStockColchon() {
-        return $this->stockColchon;
-    }
-    public function getStockReal() {
-        return $this->stockReal;
-    }
-    public function getFechaVencimiento() {
-        return $this->fechaVencimiento;
-    }
-    public function getDescripcion(){
-    return $this->descripción;
+    public function setNombreMenu($Nombre) {
+        $this->Nombre = $Nombre;
     }
 
+    public function getStockMaximo() {
+        return $this->StockMaximo;
+    }
+    public function setStockMaximo($StockMaximo) {
+        $this->StockMaximo = $StockMaximo;
+    }
+    
+    public function getStockColchon() {
+        return $this->StockColchon;
+    }
+    public function setStockColchon($StockColchon) {
+        $this->StockColchon = $StockColchon;
+    }
+    
+    public function getStockReal() {
+        return $this->StockReal;
+    }
+    public function setStockReal($StockReal) {
+        $this->StockReal = $StockReal;
+    }
+    
+    public function getFechaVencimiento() {
+        return $this->FechaVencimiento;
+    }
+    public function setFechaVencimiento($FechaVencimiento) {
+        $this->FechaVencimiento = $FechaVencimiento;
+    }
+    
     public function getImg(){
-        return $this->img;
+        return $this->MenuIMG;
+    }
+    public function setImg($MenuIMG){
+        $this->MenuIMG = $MenuIMG;
     }
 
     public function getComidas() {
         return $this->comidas;
     }
-
-    public function setIDMenu($ID_menu) {
-        $this->ID_menu = $ID_menu;
-    }
-    public function setNombreMenu($nombre_menu) {
-        $this->nombre_menu = $nombre_menu;
-    }
-    public function setStockMaximo($stockMaximo) {
-        $this->stockMaximo = $stockMaximo;
-    }
-    public function setStockColchon($stockColchon) {
-        $this->stockColchon = $stockColchon;
-    }
-    public function setStockReal($stockReal) {
-        $this->stockReal = $stockReal;
-    }
-    public function setFechaVencimiento($fechaVencimiento) {
-        $this->fechaVencimiento = $fechaVencimiento;
-    }
     public function setComidas($comidas) {
         $this->comidas = $comidas;
     }
 
-    public function setDescripcion($Descripcion){
-        $this->descripción = $descripcion;
+    public function getPrecio() {
+        return $this->Precio;
     }
 
-    public function setImg($img){
-        $this->img = $img;
+    public function setPrecio($Precio) {
+        $this->Precio = $Precio;
     }
+
+    public function getDescuento() {
+        return $this->Descuento;
+    }
+
+    public function setDescuento($Descuento) {
+        $this->Descuento = $Descuento;
+    }
+    
+    public static function listarAll($param) {
+        $con = conectarBDD();
+        $sql = "SELECT * FROM `menu` " . $param;
+        $data = getFromBDD($sql, $con);
+        $con->close();
+        
+        $menus = array();
+        foreach ($data as $row) {
+            $menuData = array(
+                'IDMenu' => $row['IDMenu'],
+                'Nombre' => $row['Nombre'],
+                'Precio' => $row['Precio'],
+                'StockMaximo' => $row['StockMaximo'],
+                'StockColchon' => $row['StockColchon'],
+                'StockReal' => $row['StockReal'],
+                'FechaVencimiento' => $row['FechaVencimiento'],
+                'MenuIMG' => $row['MenuIMG'],
+                'Descuento' => $row['Descuento'],
+            );
+            $menus[] = $menuData;
+        }
+    
+        return json_encode($menus);
+    }
+
+    public static function addNewMenu($Nombre, $Precio, $StockReal, $MenuIMG,$comidas){
+        $con = conectarBDD();
+        $sqlMenu = "INSERT INTO `menu` (`Nombre`, `Precio`, `StockReal`, `MenuIMG`) VALUES ('${Nombre}','${Precio}','${StockReal}','${MenuIMG}')";
+    if (sendToBDD($sqlMenu, $con)) {
+    $id = mysqli_insert_id($con);
+    $comidas = mysqli_real_escape_string($con, $comidas);
+    $comidasArray = explode(',', $comidas);
+    foreach($comidasArray as $comida) {
+        $sqlIntegra = "INSERT INTO `integra` (`IDComida`, `IDMenu`) VALUES ('${comida}','${id}')";
+        if (!sendToBDD($sqlIntegra, $con)) {
+            echo "Error en integra query: " . mysqli_error($con);
+            break;
+        }
+    }
+} else {
+    echo "Error en menu query: " . mysqli_error($con);
+}
+
+
+$con->close();
+    }
+
+    public static function createCustomMenu($idComprador, $Precio,$comidas){
+        $con = conectarBDD();
+        $sqlMenu = "INSERT INTO `menu` (`Nombre`, `Precio`, `MenuIMG`) VALUES ('Menu custom de ${idComprador}','${Precio}','../src/CMico.img')";
+    if (sendToBDD($sqlMenu, $con)) {
+    $id = mysqli_insert_id($con);
+    $comidas = mysqli_real_escape_string($con, $comidas);
+    $comidasArray = explode(',', $comidas);
+
+$sqlAddTipoMenu = "INSERT INTO `asocia`(`ID_menu`, `NombreTipoMenu`) VALUES ('${id}','Custom')";
+$sqlResult = sendtoBDD($sqlAddTipoMenu,$con);
+
+    foreach($comidasArray as $comida) {
+        $sqlIntegra = "INSERT INTO `integra` (`IDComida`, `IDMenu`) VALUES ('${comida}','${id}')";
+        if (!sendToBDD($sqlIntegra, $con)) {
+            echo "Error en integra query: " . mysqli_error($con);
+            break;
+        }
+    }
+} else {
+    echo "Error en menu query: " . mysqli_error($con);
+}
+
+
+$con->close();
+    }
+    
+    public function Update($sql) {
+        $con = conectarBDD();
+        $sql = $sql . " WHERE IDMenu = '{$this->getIDMenu()}'";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
+        if($con->error) {
+            die($con->error);
+        }
+        $con->close();
+    }
+    
+    public function __toString() {
+        return "IDMenu: " . $this->IDMenu . "\n" .
+               "Nombre: " . $this->Nombre . "\n" .
+               "Precio: " . $this->Precio . "\n" .
+               "StockMaximo: " . $this->StockMaximo . "\n" .
+               "StockColchon: " . $this->StockColchon . "\n" .
+               "StockReal: " . $this->StockReal . "\n" .
+               "FechaVencimiento: " . $this->FechaVencimiento . "\n" .
+               "MenuIMG: " . $this->MenuIMG . "\n" .
+               "Descuento: " . $this->Descuento . "\n" .
+               "Comidas: " . implode(', ', $this->comidas);
+    }
+    
+
+
+    public static function updateFromId($sql, $id) {
+        $con = conectarBDD();
+        $sql = $sql . " WHERE IDMenu = '{$id}'";
+        if(sendToBDD($sql, $con)) {
+            return true;
+        }
+        if($con->error) {
+            die($con->error);
+        }
+        $con->close();
+    }
+    
+    
+
+    
+
+    
 }
 
 
