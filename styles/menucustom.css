@@ -76,6 +76,7 @@ body{
     color: rgb(238, 237, 237);
     font-weight: 700;
     width: 100%;
+    OVERFLOW: HIDDEN;
 }
 
 #menuImg{
@@ -196,9 +197,7 @@ body{
     pointer-events: none;
 }
 
-#titleText{
 
-}
 
 #menuEditor{
     opacity: 1;
@@ -212,7 +211,7 @@ body{
     border-radius: 10px;
     right: 10px;
     position: absolute;
-    height: 79vh;
+    height: 70%;
 }
 
 #buttonConfirm{
@@ -247,7 +246,7 @@ body{
     display: flex;
     flex-direction: row;
     margin: 54px;
-    height: 600px;
+    height: 60vh;
 }
 
 
@@ -256,6 +255,7 @@ body{
     #customMenuContainer{
         display:flex;
         flex-direction: column;
+        height: 75vh;
     }
 
 
@@ -276,7 +276,7 @@ body{
     #menuBody{
         
     width: 95vw;
-    height: 15vh;
+    height: 11vh;
     background-color: rgb(138, 138, 138);
     position: relative;
     display: flex;
@@ -317,21 +317,22 @@ body{
     }
 
     #menuImg {
-        margin: 10px;
-        width: 80px;
-        height: 51px;
+        margin: 6px;
+        width: 79px;
+        height: 55px;
         background-color: rgb(77, 77, 77);
         border-radius: 8px;
+    }
     }
 
     #menuEmptyBody{
         width: 95vw;
-        height: 15vh;
+        height: 11vh;
     }
 
     #menuBody {
         width: 95vw;
-        height: 15vh;
+        height: 11vh;
         background-color: rgb(138, 138, 138);
         position: relative;
         display: flex;
@@ -372,6 +373,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translate(0,90px);
 }
 
 .close-modal {
@@ -496,3 +498,25 @@ transform: translate(0px, 35px);
     transform: scale(1.5);
     opacity: 0.7;
   }
+
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin-top: 30px;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 

@@ -218,7 +218,6 @@ function updateSlot(id,comidaId){
         <article id="menuInputs">
             <button id="MenuModify"><img src = "../src/edit.svg" alt="Editar" id="modifsvg"/></button>
         </article>
-        <article id="menuType">A ARREGLAR CON VIEW</article>
     </section>
         `);
     })
