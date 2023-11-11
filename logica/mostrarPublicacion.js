@@ -28,19 +28,21 @@ fetch("../persistencia/getPublicaciones.php")
         <h1 id="nombre">${nombre}</h1>
         <h2 id="descripcion">${descripcion}</h2>
         <p id="precio">$${precioDescuento}</p>
-        <button onClick="eliminarPublicacion(${idPubli})">Eliminar</button>
+        <button onClick="eliminarPublicacion(${idPubli})" class="callToAction">Eliminar</button>
         </section>
         </article>
         `;
-      $("#publicaciones #listado").append(mostrar);
+      $("#real-list").append(mostrar);
     }
   });
 
 async function getMenu(id) {
+  console.log(id);
   let datos = new FormData();
   datos.append("id", id);
   const respuesta = await fetch("../persistencia/getMenuFromID.php", { method: "post", body: datos });
   const json = await respuesta.json();
+
   return json;
 }
 

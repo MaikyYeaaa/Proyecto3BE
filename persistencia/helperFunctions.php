@@ -30,9 +30,11 @@ function removeFromJSON($jsonURL, $index) {
             return false;
         }
     }
+    
     // saca el elemento q le pedi
     unset($array[$index]);
     $jsonData = json_encode($array, JSON_PRETTY_PRINT);
+    
     // devuelve el json
     return file_put_contents($jsonURL, $jsonData);
 }
@@ -47,6 +49,7 @@ function getArrayFromJSON($jsonURL) {
         return $array;
     }
 }
+
 function conectarBDD() {
     // $host = "mysql";
     // $UsuarioBDD = "root";

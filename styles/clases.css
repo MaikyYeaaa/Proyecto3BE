@@ -279,3 +279,28 @@ body {
 .IMG.fallback {
   background-image: url("../src/NoImg.png");
 }
+
+.cancelButton {
+  background: rgb(181, 64, 64);
+  background: linear-gradient(0deg, rgba(181, 64, 64, 1) 0%, rgba(252, 64, 75, 1) 100%);
+  outline: hidden;
+  border: 0px;
+  font-weight: 900;
+  border-radius: 6px;
+  filter: drop-shadow(2px 1px 1px rgb(49, 49, 49));
+  transition: 0.2s;
+  padding: 10px;
+  padding-inline: 20px;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+.cancelButton:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cancelButton:hover {
+  filter: drop-shadow(2px 2px 1px rgb(49, 49, 49));
+  transform: scale(1.1);
+}
