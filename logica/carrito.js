@@ -1,7 +1,7 @@
 async function listarCarrito() {
   let carrito = obtenerCarrito();
   console.log(carrito);
-  let menus = await getMenus();
+  let menus = await getMenus(carrito);
 
   for (let i = 0; i < carrito.length; i++) {
     const id = carrito[i].id;
@@ -157,9 +157,9 @@ async function obtenerDatos(url) {
   return json;
 }
 
-async function getMenus() {
+async function getMenus(menus) {
   let comidas = [];
-  const menus = obtenerCarrito();
+  console.log(menus);
   const integra = await obtenerDatos("../persistencia/getIntegra.php");
 
   const promises = menus.map(async (menu) => {
