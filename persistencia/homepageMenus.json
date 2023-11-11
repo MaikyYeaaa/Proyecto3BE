@@ -1,0 +1,336 @@
+[
+    {
+        "index": 2,
+        "nombre": "Comida tipica OP",
+        "comidas": [
+            "ensalada",
+            "milanesa",
+            "ensalada",
+            "ensalada",
+            "milanesa"
+        ],
+        "descripcion": "Una descripci\u00f3n OP aca",
+        "imagen": null
+    },
+    {
+        "index": 3,
+        "nombre": "",
+        "comidas": [
+            "Ensalada",
+            "Arroz con churrasco",
+            "Fideos con tuco",
+            "Pure de papa con pollo",
+            "Ensalada"
+        ],
+        "descripcion": "",
+        "imagen": ""
+    },
+    {
+        "index": 4,
+        "nombre": "345235",
+        "comidas": [
+            "Ensalada",
+            "Arroz con churrasco",
+            "Ensalada",
+            "Pure de papa con pollo",
+            "ese te erre ogonoff"
+        ],
+        "descripcion": "235erter",
+        "imagen": "tretrewtrey",
+        "type": null
+    },
+    {
+        "index": 5,
+        "nombre": "345235",
+        "comidas": [
+            "Ensalada",
+            "Arroz con churrasco",
+            "Ensalada",
+            "Pure de papa con pollo",
+            "ese te erre ogonoff"
+        ],
+        "descripcion": "235erter",
+        "imagen": "tretrewtrey",
+        "type": null
+    },
+    {
+        "index": 6,
+        "nombre": "345235",
+        "comidas": [
+            "Ensalada",
+            "Arroz con churrasco",
+            "Ensalada",
+            "Pure de papa con pollo",
+            "ese te erre ogonoff"
+        ],
+        "descripcion": "235erter",
+        "imagen": "tretrewtrey",
+        "type": null
+    },
+    {
+        "index": 7,
+        "nombre": "hhjkhjk",
+        "comidas": [
+            "Ensalada",
+            "Pure de papa con pollo",
+            "Ensalada",
+            "Ensalada",
+            "Ensalada"
+        ],
+        "descripcion": "gh",
+        "imagen": "ghkghkghk",
+        "type": null
+    },
+    {
+        "index": 8,
+        "nombre": "gfjghfkj",
+        "comidas": [
+            "Ensalada",
+            "Fideos con tuco",
+            "ese te erre ogonoff",
+            "Fideos con tuco",
+            "Ensalada"
+        ],
+        "descripcion": "ghfkgk",
+        "imagen": "gkjghkghk",
+        "type": "Quincenal"
+    },
+    {
+        "index": 9,
+        "nombre": "gfjghfkj",
+        "comidas": [
+            "Ensalada",
+            "Fideos con tuco",
+            "ese te erre ogonoff",
+            "Fideos con tuco",
+            "Ensalada"
+        ],
+        "descripcion": "ghfkgk",
+        "imagen": "gkjghkghk",
+        "type": "Quincenal"
+    },
+    {
+        "index": 10,
+        "nombre": "gfjghfkj",
+        "comidas": [
+            "Ensalada",
+            "Fideos con tuco",
+            "ese te erre ogonoff",
+            "Fideos con tuco",
+            "Ensalada"
+        ],
+        "descripcion": "ghfkgk",
+        "imagen": "gkjghkghk",
+        "type": "Quincenal"
+    },
+    {
+        "index": 11,
+        "nombre": "gfjghfkj",
+        "comidas": [
+            "Ensalada",
+            "Fideos con tuco",
+            "ese te erre ogonoff",
+            "Fideos con tuco",
+            "Ensalada"
+        ],
+        "descripcion": "ghfkgk",
+        "imagen": "gkjghkghk",
+        "type": "Quincenal"
+    },
+    {
+        "index": 12,
+        "nombre": "gfjghfkj",
+        "comidas": [
+            "Ensalada",
+            "Fideos con tuco",
+            "ese te erre ogonoff",
+            "Fideos con tuco",
+            "Ensalada"
+        ],
+        "descripcion": "ghfkgk",
+        "imagen": "gkjghkghk",
+        "type": "Quincenal"
+    },
+    {
+        "index": 13,
+        "nombre": "gfjghfkj",
+        "comidas": [
+            "Ensalada",
+            "Fideos con tuco",
+            "ese te erre ogonoff",
+            "Fideos con tuco",
+            "Ensalada"
+        ],
+        "descripcion": "ghfkgk",
+        "imagen": "gkjghkghk",
+        "type": "Quincenal"
+    },
+    {
+        "index": 14,
+        "nombre": "gfjghfkj",
+        "comidas": [
+            "Ensalada",
+            "Fideos con tuco",
+            "ese te erre ogonoff",
+            "Fideos con tuco",
+            "Ensalada"
+        ],
+        "descripcion": "ghfkgk",
+        "imagen": "gkjghkghk",
+        "type": "Quincenal"
+    },
+    {
+        "index": 15,
+        "nombre": "dfgdfgdfg",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Papas al horno con milanesa",
+            "Pure de papa con pollo",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "dagdfsgdsfg",
+        "imagen": "sdfgdfsgdsfg",
+        "type": "Vegano"
+    },
+    {
+        "index": 16,
+        "nombre": "dfgdfgdfg",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Papas al horno con milanesa",
+            "Pure de papa con pollo",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "dagdfsgdsfg",
+        "imagen": "sdfgdfsgdsfg",
+        "type": "Vegano"
+    },
+    {
+        "index": 17,
+        "nombre": "dfgdfgdfg",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Papas al horno con milanesa",
+            "Pure de papa con pollo",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "dagdfsgdsfg",
+        "imagen": "sdfgdfsgdsfg",
+        "type": "Vegano"
+    },
+    {
+        "index": 18,
+        "nombre": "dfgdfgdfg",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Papas al horno con milanesa",
+            "Pure de papa con pollo",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "dagdfsgdsfg",
+        "imagen": "sdfgdfsgdsfg",
+        "type": "Vegano"
+    },
+    {
+        "index": 19,
+        "nombre": "dfgdfgdfg",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Papas al horno con milanesa",
+            "Pure de papa con pollo",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "dagdfsgdsfg",
+        "imagen": "sdfgdfsgdsfg",
+        "type": "Vegano"
+    },
+    {
+        "index": 20,
+        "nombre": "dfgdfgdfg",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Papas al horno con milanesa",
+            "Pure de papa con pollo",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "dagdfsgdsfg",
+        "imagen": "sdfgdfsgdsfg",
+        "type": "Vegano"
+    },
+    {
+        "index": 21,
+        "nombre": "dfgdfgdfg",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Papas al horno con milanesa",
+            "Pure de papa con pollo",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "dagdfsgdsfg",
+        "imagen": "sdfgdfsgdsfg",
+        "type": "Vegano"
+    },
+    {
+        "index": 22,
+        "nombre": "dfgdfgdfg",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Papas al horno con milanesa",
+            "Pure de papa con pollo",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "dagdfsgdsfg",
+        "imagen": "sdfgdfsgdsfg",
+        "type": "Default"
+    },
+    {
+        "index": 21,
+        "nombre": "Robertito",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Arroz con churrasco",
+            "Ensalada",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "123123123",
+        "imagen": "sdfsdf",
+        "type": "Normal"
+    },
+    {
+        "index": 22,
+        "nombre": "Robertito",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Arroz con churrasco",
+            "Ensalada",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "123123123",
+        "imagen": "sdfsdf",
+        "type": "Normal"
+    },
+    {
+        "index": 23,
+        "nombre": "Robertito",
+        "comidas": [
+            "Ensalada",
+            "Ensalada",
+            "Arroz con churrasco",
+            "Ensalada",
+            "Pure de papa con pollo"
+        ],
+        "descripcion": "123123123",
+        "imagen": "sdfsdf",
+        "type": "Normal"
+    }
+]

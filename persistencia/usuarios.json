@@ -1,0 +1,9 @@
+[
+    {
+        "nombre": "Pedro",
+        "mail": "pedro@gmail.com",
+        "contrasena": "Pedrocontra123",
+        "tipo de cuenta": "empresa",
+        "admin-verificado": false
+    }
+]

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../jquery-3.6.4.min.js"></script>
+    <title>Sisviansa - Login</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../styles/clases.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+  </head>
+  <body>
+
+    <script src="../scripts/navbarAuth.js"></script>
+
+    <section id="login">
+      <article id="login-contenido">
+        <form id="form-login">
+          <h2 id="Login-Title">Iniciar Sesión</h2>
+          <section id="mail-section">
+            <input name="mail" type="text" placeholder="Ingrese su E-mail" id="inputMail" class="textfield" />
+            <article class="error" id="mailError"></article>
+          </section>
+
+          <section id="pass-section">
+            <input name="cont" type="password" placeholder="Ingrese su contraseña" id="inputPass" class="textfield" />
+            <img id="togglePassword" src="../src/eye-slash.svg"></img>
+
+            <article class="error" id="psswrdError"></article>
+          </section>
+
+          <section id="botones">
+            <input type="submit" value="Iniciar sesión" class="btnSecundario" id="btnIngresar" />
+            <label>¿Aún no tienes cuenta?</label>
+            <a href="registro.html"> Registrate</a>
+          </section>
+
+          <p id="resp"></p>
+        </form>
+      </article>
+
+      <article id="login-image">
+        <img src="../src/salad.svg" alt="" />
+      </article>
+    </section>
+    <script src="../logica/login.js" type="module"></script>
+  </body>
+</html>

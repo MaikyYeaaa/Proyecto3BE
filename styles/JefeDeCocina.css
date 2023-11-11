@@ -1,0 +1,305 @@
+#adminMenu {
+  background: rgb(112, 112, 112);
+  background: linear-gradient(180deg, rgb(77, 76, 76) 0%, rgba(178, 180, 180, 1) 100%);
+  width: 20%;
+  height: fit;
+  display: flex;
+  margin-right: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#MenuButtons {
+  height: 50%;
+  display: flex;
+  margin: 20px;
+  text-align: center;
+  flex-direction: column;
+}
+
+#MenuButtons button {
+  height: 10%;
+  background-color: rgb(0, 0, 0, 0);
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+#tabla th,
+#tabla td {
+  border: 1px solid black;
+}
+#tabla th,
+#tabla td {
+  padding: 8px;
+  text-align: left;
+}
+#tabla th {
+  background-color: rgba(0, 0, 0, 0.424);
+}
+#containerArticle {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(45, 147, 45, 0.558);
+}
+#adminMenu h1 {
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+#stockTitle h1 {
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+#stockInputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stockInputs {
+  background-color: #ffffff;
+  padding: 20px;
+}
+#stock {
+  padding: 10px;
+  margin-top: 80px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(211, 211, 211);
+}
+#btn {
+  margin-top: 35px;
+}
+
+.Menuclass {
+  margin: 5px;
+  margin-top: 20px;
+  display: flex;
+  background-color: rgb(192, 192, 192);
+  width: 330px;
+  height: 100px;
+  border-radius: 8.007px;
+  transition: 0.2s;
+}
+
+.Menuclass:hover {
+  transform: scale(1.04);
+  background-color: rgb(240, 240, 240);
+}
+
+.MenuFoto {
+  display: flex;
+  background-color: rgb(110, 110, 110);
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px 0 0 6px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.MenuFoto img {
+  width: 150%;
+}
+
+.MenuStock {
+  height: 20px;
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: 700;
+  transition: 0.3s;
+  background-color: rgba(178, 180, 180, 0);
+}
+.MenuStock:hover {
+  filter: drop-shadow(rgb(0, 255, 17) 0 0 5px);
+}
+.MenuFeedback {
+  color: black;
+  line-height: 6px;
+}
+
+.MenuName {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+}
+
+.MenuStock:hover {
+  transform: scale(1.02, 1.02);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Style for the modal content */
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 2px solid #888;
+  width: 40%;
+  min-width: 300px;
+  height: 50%;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#ModalOP {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+#close-modal {
+  margin-top: 20px;
+  display: flex;
+}
+
+.stockInfo {
+  height: 100%;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40%;
+}
+
+.modal-bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-img {
+  background-color: black;
+  width: 200px;
+  height: 200px;
+}
+
+#stocknumber {
+  width: 200px;
+}
+
+.btnPrimario {
+  color: black;
+}
+
+#NotifBody {
+  display: flex;
+  background-color: white;
+  width: 500px;
+  height: 90px;
+  border-radius: 10px;
+  margin: 10px;
+  transition: 0.4s;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  position: relative; /* Add this */
+}
+
+#NotifBody:hover {
+  transform: scale(1.03, 1.03);
+}
+
+#notifimg {
+  overflow: hidden;
+  margin-right: 10px;
+  width: 18%;
+  height: 100%;
+  background-color: black;
+  border-radius: 10px 0 0 10px;
+}
+
+#notifTitle {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+#Info {
+  color: red;
+  font-style: normal;
+  font-weight: 800;
+}
+
+#Update {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0px;
+  outline: hidden;
+  transform: rotate(230deg);
+  background-color: #88888800;
+  position: absolute;
+  top: 25%;
+  right: 10px;
+  transition: 0.3s;
+}
+#svg {
+  pointer-events: none;
+}
+#Update:hover {
+  transform: scale(1.3, 1.3) rotate(-60deg);
+}
+
+#imgTremenda {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 884px) {
+  #stock {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #NotifBody {
+    width: 90vw;
+  }
+}

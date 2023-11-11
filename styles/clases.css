@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+main {
+  width: 100%;
+  margin-left: 265px;
+  display: flex;
+  justify-content: center;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bar {
+  position: fixed;
+  display: flex;
+  width: 15vw;
+  height: 100%;
+  padding: 0 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 38px;
+  flex-shrink: 0;
+  align-self: stretch;
+  background: #666;
+  margin-right: 15vw;
+}
+.bar a {
+  color: #fff;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.empleado-main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #acacac; */
+  margin-right: 50px;
+}
+
+.textfield {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 8px;
+  gap: 4px;
+  background-color: white;
+}
+.textfield input {
+  border: none;
+}
+.textfield input:focus-visible {
+  outline: none;
+}
+
+.btnPrimario {
+  display: flex;
+  width: 24px;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  background: white;
+  color: black;
+}
+.btnSecundario {
+  display: flex;
+  width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+}
+.btnTerciario {
+  display: flex;
+  width: 7.5rem;
+  padding: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+
+  border: none;
+  border-radius: 6px;
+  background: rgba(217, 217, 217, 0.5);
+}
+.btnPrimario,
+.btnSecundario,
+.btnTerciario {
+  text-decoration: none;
+
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+}
+
+.listado {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.listado #head {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  padding: 0 100px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.comida-list {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: calc(100% / 4);
+  height: fit-content;
+  overflow: hidden;
+}
+.comida-list p,
+.comida-list img {
+  width: 100%;
+}
+.comida-list h1 {
+  margin: 0;
+  font-size: large;
+}
+.comida-list p {
+  font-size: small;
+}
+.btnPrimario {
+  display: flex;
+  width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  background: none;
+}
+.btnSecundario {
+  display: flex;
+  width: 10rem;
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+}
+
+.menu,
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: fit-content;
+  width: 335px;
+
+  background-color: white;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  border-radius: 6px;
+  overflow: hidden;
+
+  margin: 10px;
+  transition: 0.2s;
+}
+.menu #imgContainer {
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu #imgContainer img {
+  min-width: 100%;
+  min-height: 100%;
+}
+.menu #footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 4px;
+  padding: 5px;
+}
+
+.callToAction {
+  height: 50px;
+  border: none;
+  background-image: linear-gradient(11deg, rgba(34, 193, 195, 1) 0%, rgb(45, 253, 62) 100%);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+
+  transition: 0.1s ease-out;
+}
+
+.customAction {
+  height: 50px;
+  border: none;
+  background-image: linear-gradient(11deg, rgba(34, 193, 195, 1) 0%, rgb(45, 253, 62) 100%);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+
+  transition: 0.1s ease-out;
+}
+
+.btnCancelar {
+  height: 50px;
+  border: none;
+  background-image: linear-gradient(11deg, rgb(158, 158, 158) 0%, rgb(198, 198, 198) 100%);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+
+  transition: 0.1s ease-out;
+}
+.btnCancelar:hover {
+  box-shadow: 0px 9px 9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.callToAction:hover {
+  box-shadow: 0px 9px 9px 0px rgba(0, 0, 0, 0.25);
+}
+
+#mostrar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 50px;
+  align-content: flex-start;
+}
+
+@media screen and(max-width: 600px) {
+  .btnPrimario {
+    padding: 0.25rem 0.5rem;
+    background-color: red;
+    border: solid red 3px;
+  }
+  .btnSecundario {
+    padding: 0.25rem 0.5rem;
+    background-color: red;
+    border: solid red 3px;
+  }
+}
+
+.IMG.fallback {
+  background-image: url("../src/NoImg.png");
+}
+
+.cancelButton {
+  background: rgb(181, 64, 64);
+  background: linear-gradient(0deg, rgba(181, 64, 64, 1) 0%, rgba(252, 64, 75, 1) 100%);
+  outline: hidden;
+  border: 0px;
+  font-weight: 900;
+  border-radius: 6px;
+  filter: drop-shadow(2px 1px 1px rgb(49, 49, 49));
+  transition: 0.2s;
+  padding: 10px;
+  padding-inline: 20px;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+.cancelButton:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cancelButton:hover {
+  filter: drop-shadow(2px 2px 1px rgb(49, 49, 49));
+  transform: scale(1.1);
+}

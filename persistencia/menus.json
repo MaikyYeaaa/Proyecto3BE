@@ -1,0 +1,58 @@
+[
+    {
+        "id_menu": 596645,
+        "nombre_menu": "saludable",
+        "descripcion": "un menu saludable para vos",
+        "stock": "3",
+        "comidas": [
+            "ensalada",
+            "milanesa",
+            "papas",
+            "perro",
+            "leche"
+        ],
+        "imgURL": "https:\/\/img-global.cpcdn.com\/recipes\/4ceea74e946533eb\/400x400cq70\/photo.jpg"
+    },
+    {
+        "id_menu": 23423454,
+        "nombre_menu": "canina",
+        "descripcion": "tremendo menuu",
+        "stock": "3",
+        "comidas": [
+            "perro",
+            "jamon",
+            "pizza",
+            "sandwich",
+            "papitas"
+        ],
+        "imgURL": "https:\/\/images.pexels.com\/photos\/2607544\/pexels-photo-2607544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "id_menu": 234252,
+        "nombre_menu": "no se",
+        "descripcion": "ni idea loco",
+        "stock": "3",
+        "comidas": [
+            "asado",
+            "milanesa",
+            "hamburguesa",
+            "sandwich",
+            "leche"
+        ],
+        "imgURL": "https:\/\/images.pexels.com\/photos\/3958872\/pexels-photo-3958872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "id_menu": 1528383,
+        "nombre_menu": "nosenoseayuda",
+        "descripcion": "no puedo dormir ayuda",
+        "stock": "2",
+        "comidas": [
+            "Ensalada",
+            "papas",
+            "perro",
+            "papitas",
+            "pizza"
+        ],
+        "imgURl": "https:\/\/images.pexels.com\/photos\/64385\/pexels-photo-64385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+]

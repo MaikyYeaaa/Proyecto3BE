@@ -1,0 +1,224 @@
+#mostrar{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    flex-direction: column;
+}
+h1{
+    padding:20px;
+    background-color: rgb(241, 241, 241);
+    margin: 0;
+    border-radius: 20px;
+}
+
+#pedido{
+    width: 80%;
+    height: 50px;
+    background-color: rgb(168, 168, 168);
+    font-weight: 800;
+    transition: 0.3s;
+    user-select: none;
+    margin: 5px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0,0.2));
+    
+}
+#pedido:hover{
+    height: 170px;
+}
+#cancelarcompra {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s;
+    transform: translate(0, 100%); /* Move it off-screen initially */
+    color: rgb(210, 14, 14);
+    background-color: rgba(0, 0, 255, 0);
+    font-weight: 900;
+    border-radius: 10px;
+    border: 2px solid rgb(179, 17, 17);
+
+}
+
+
+
+
+#listName{
+    z-index: 3;
+    padding: 5px;
+    font-size: 20px;
+    background-color: rgb(202, 202, 202);
+}
+
+#listContent{
+    padding: 5px;
+    opacity: 0;
+    transition: 0.2s;
+    user-select: none;
+    z-index: 2;
+    transform: translate(0,-50px);
+}
+
+#listExtraContent{
+    transform: translate(0,-40px);
+    opacity: 0;
+    padding: 5px;
+    transition: 0.2s;
+    user-select: none;
+    z-index: 2;
+}
+#pedido:hover #listExtraContent {
+    /* Add your styles for #listExtraContent here */
+    /* For example, change the background color */
+    opacity: 1;
+    z-index: 1;
+    transform: translate(0,0);
+  }
+
+  #pedido:hover #listContent {
+    /* Add your styles for #listExtraContent here */
+    /* For example, change the background color */
+    opacity: 1;
+    z-index: 1;
+    transform: translate(0,0);
+  }
+
+  #pedido:hover #cancelarcompra {
+    /* Add your styles for #listExtraContent here */
+    /* For example, change the background color */
+    opacity: 1;
+    z-index: 9;
+    transform: translate(0,0);
+  }
+
+  #pedido:hover #cancelarcompra:disabled {
+    /* Add your styles for #listExtraContent here */
+    /* For example, change the background color */
+    opacity: 0.1;
+    z-index: 0;
+    transform: translate(0,0);
+  }
+ 
+
+  #feedback{
+    padding: 5px;
+    opacity: 0;
+    transition: 0.2s;
+    user-select: none;
+    z-index: -2;
+    transform: translate(0,-90px);
+    color: red;
+  }
+
+  #pedido:hover #feedback {
+    /* Add your styles for #listExtraContent here */
+    /* For example, change the background color */
+    opacity: 1;
+    z-index: 3;
+    color: red;
+    transform: translate(0,0);
+  }
+
+
+
+
+
+
+
+
+
+#pimg{
+  width: 150px;
+}
+
+
+  #PedidoBody{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, #5c8f5e 0%, #667548 100%);
+    border-radius: 10px;
+    display: flex;
+    filter: drop-shadow(2px 1px 3px rgb(87, 87, 87));
+    margin: 10px;
+    width: 580px;
+    padding: 5px;
+    transition: 0.2s;
+    font-weight: 900;
+  }
+
+  #PedidoBody:hover{
+    transform: scale(1.04);
+  }
+
+  #PedidoStateVar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+  }
+
+  #PedidoSvg{
+    margin-left: 10px;
+    border-radius: 100%;
+    background-color: white;
+    padding: 5px;
+  }
+  #svg{
+    width: 25px;
+    transform: rotate(-10deg);
+  }
+
+  #PedidoIMG{
+    overflow: hidden;
+    width: 79px;
+    height: 79px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+   
+  
+  }
+
+  #PedidoState{
+    font-size: 26px;
+    font-weight: 900;
+    color: white;
+  }
+
+  #col3{
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+  }
+
+.cancelButton{
+  background: rgb(181,64,64);
+  background: linear-gradient(0deg, rgba(181,64,64,1) 0%, rgba(252,64,75,1) 100%);
+  outline: hidden;
+  border: 0px ;
+  font-weight: 900;
+  border-radius: 6px;
+  filter: drop-shadow(2px 1px 1px rgb(49, 49, 49));
+  transition: 0.2s;
+}
+.cancelButton:disabled{
+  opacity: 0;
+  pointer-events: none
+}
+
+.cancelButton:hover{
+  filter: drop-shadow(2px 2px 1px rgb(49, 49, 49));
+  transform:rotate(2deg);
+
+
+}
+
+
+@media screen and (max-width: 693px){
+  #PedidoBody{
+    width: 337px;
+  }
+}

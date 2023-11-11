@@ -1,0 +1,110 @@
+#pedidoBody {
+  width: 450px;
+  background-color: rgb(210, 209, 209);
+  border-radius: 8px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+  display: flex;
+  height: 120px;
+  transition: 0.4s;
+  margin: 14px;
+  overflow: hidden;
+}
+#imgico {
+  width: 130%;
+  height: 100%;
+}
+
+#pedidoBody:hover {
+  transform: scale(1.1, 1.1);
+  background-color: rgb(233, 233, 233);
+}
+
+#pedidoImg {
+  background-color: rgb(66, 66, 66);
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  height: fit;
+  margin: 5px;
+  border: 2px white solid;
+  overflow: hidden;
+  flex: 0 0 auto; /* La imagen no se estirará ni encogerá */
+}
+#nroPedido {
+  font-size: 25px;
+  font-weight: 700;
+}
+#pedidoInfo {
+  flex: 1 1 auto; /* El espacio restante se distribuirá entre el texto */
+  padding: 0 10px; /* Añade relleno para separar el texto de la imagen */
+}
+
+#pedidoInputs {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+#Pedidooptions {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  transition: 0.4s;
+}
+
+#aceptar {
+  background-color: rgba(240, 248, 255, 0);
+  outline: none;
+  border: 0;
+  transition: 0.4s;
+}
+
+#rechazar {
+  background-color: rgba(240, 248, 255, 0);
+  outline: none;
+  border: 0;
+  transition: 0.4s;
+}
+
+#rechazar:hover {
+  transform: scale(1.3, 1.3) rotate(10deg);
+}
+
+#aceptar:hover {
+  transform: scale(1.3, 1.3) rotate(10deg);
+}
+
+.svgbutton {
+  width: 50px;
+  height: 50px;
+}
+
+#pedidoBody:hover #pedidoInputs {
+  opacity: 1;
+}
+
+@media screen and (max-width: 693px) {
+  #pedidoBody:hover {
+    transform: scale(1, 1);
+    background-color: rgb(233, 233, 233);
+  }
+
+  #pedidoBody {
+    margin: 0;
+    width: 100%;
+  }
+  #pedidoImg {
+    width: 55px;
+    height: 55px;
+  }
+
+  #pedidoInfo {
+    font-size: 14px;
+  }
+
+  #stock {
+    width: 100%;
+  }
+}

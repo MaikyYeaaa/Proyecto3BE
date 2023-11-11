@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../jquery-3.6.4.min.js"></script>
+        <title>Sisviansa - Registro</title>
+    
+        <style>
+          @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+        </style>
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+        <link rel="stylesheet" href="../styles/clases.css" />
+        <link rel="stylesheet" href="../styles/login.css" />
+        <link rel="stylesheet" href="../styles/registro.css">
+      </head>
+      <body>
+  </head>
+  <body>
+
+    <script src="../scripts/navbarAuth.js"></script>
+
+
+
+    <section id="login" class="container align-items-center justify-content-center">
+      <form id="registro-form">
+          <article id="follower">
+            <section id="1"></section>
+            <section id="2"></section>
+            <section id="3"></section>
+            <section id="4"></section>
+          </article>
+          <article id="textop">
+
+          <section id="first">
+            <select name="tipo" id="tipo">
+              <option value="web">Persona</option>
+              <option value="empresa">Empresa</option>
+          </select>
+          <input type="number" name="ci-rut" id="ident" placeholder="CI" min="0" minlength="8" maxlenminlength="8"/>
+          </section>
+            <section id="second">
+              <article id="nombre-apellido-art">
+
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
+              </article>
+                <input type="text" name="mail" id="mail" maxlength="30" placeholder="Mail" />
+  
+            </section>
+            <section id="third">
+                  <input class="col-12" type="password" name="contra" id="contra" placeholder="Contraseña" />
+                  <input class="col-12" type="password" name="contra2" id="contra2" placeholder="Repetir Contraseña" />
+          </section>
+          <section id="forth">
+            <input type="text" name="direccion" maxlength="30" id="direccion" placeholder="Dirección"  />
+            <input type="text" name="tel" maxlength="30" id="telefono" placeholder="Telefono"  />
+
+          </section>
+  
+
+        </article>
+        <section id="botonContinue">
+          <!-- <input type="submit" value="Registrarse" /> -->
+          <button class="btnSecundario" id="continuar">Continuar</button>
+          <button class="btnSecundario" id="atras">Atras</button>
+  </section>
+      </form>
+  </section>
+  
+  
+  
+
+
+
+    <script src="../jquery-3.6.4.min.js"></script>
+    <script src="../logica/registroReal.js" type="module"></script>
+  </body>
+</html>

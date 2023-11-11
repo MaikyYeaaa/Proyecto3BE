@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+      * {
+        font-family: Roboto;
+      }
+    </style>
+
+    <script src="../jquery-3.6.4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styles/listadoPubliInterno.css" />
+    <link rel="stylesheet" href="../styles/clases.css" />
+    <link rel="stylesheet" href="../styles/empleados.css" />
+
+    <script src="../jquery-3.6.4.min.js"></script>
+    <title>Sisviansa - Parametrizar Index</title>
+  </head>
+  <body>
+    <script src="../scripts/navInterno.js" type="module"></script>
+
+    <section id="modal-promos" class="modal">
+      <article id="content">
+        <img src="../src/cross.svg" width="10%" onclick="modModalPromos('none')" alt="" />
+        <form id="formulario">
+          <select name="id" id="nombre-select"></select>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" required />
+          <input type="text" name="desc" id="desc" placeholder="Descripcion" required />
+          <input type="url" name="imgURL" id="imgURL" placeholder="Imagen URL" required />
+          <input type="number" name="precioDescuento" id="precio" data-precioViejo="" placeholder="100%" id="precio" required />
+          <input type="submit" value="enviar" class="callToAction" />
+        </form>
+      </article>
+    </section>
+    <main>
+      <article id="publicaciones">
+        <label for="publicaciones">Promos:</label>
+        <section id="listado">
+          <article id="addPubli">
+            <img src="../src/Add.svg" alt="" onclick="modModalPromos('flex')" />
+          </article>
+        </section>
+      </article>
+
+    <article id="publicaciones">
+      <label for="publicaciones"></label>
+      <section id="listado">
+        
+        <articile id="top">
+          <h1 id="top-title">Promociones activas:</h1>
+          
+          <article id="addPubli">
+            <img id="addsvg" src="../src/Add.svg" alt="" onclick="modModalPromos('flex')" />
+          </article>
+        </articile>
+        <section id="real-list"></section>
+        
+      </section>
+    </article>
+
+    <article id="menus">
+      <label for="menus"></label>
+      <section id="listado-menus">
+        <h1 id="top-title">Menus disponibles:</h1>
+      </section>
+    </article>
+
+    <script src="../logica/Menus.js"></script>
+    <script src="../logica/addMenuIndex.js"></script>
+    <script src="../logica/addPublicacion.js"></script>
+    <script src="../logica/mostrarPublicacion.js"></script>
+  </body>
+</html>

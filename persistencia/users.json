@@ -1,0 +1,26 @@
+[
+    {
+        "Id": 0,
+        "Nombre": "Manolito",
+        "Correo": "Manolitoop@gmail.com",
+        "Contraseña": "manolo123",
+        "UltimoLogin": "",
+        "index": 0
+    },
+    {
+        "Id": 1,
+        "Nombre": "Robertito",
+        "Correo": "roberto@gmail.com",
+        "Contraseña": "robert",
+        "UltimoLogin": "",
+        "index": 1
+    },
+    {
+        "Id": 1,
+        "Nombre": "Nombre",
+        "Correo": "Correo@gmail.com",
+        "Contraseña": "contraseña",
+        "UltimoLogin": "",
+        "index": 1
+    }
+]

@@ -1,0 +1,160 @@
+.textfield input {
+  border: none;
+}
+.textfield input:focus-visible {
+  outline: none;
+}
+
+body {
+  align-items: center; /*Centrar verticalmente */
+  justify-content: center; /*Centrar horizontalmente */
+  display: flex;
+}
+
+#login {
+  width: 90vw;
+  height: 80vh;
+  background-color: #b9cfba;
+
+  justify-content: center;
+  display: flex;
+  padding-inline: 120px;
+  gap: 70px;
+}
+
+#Login-Title {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+#login-contenido {
+  display: flex;
+  width: 370px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+#form-login {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#btnIngresar {
+  height: 45px;
+  padding: 0;
+}
+
+#inputMail {
+  width: 100%;
+}
+
+#login-image {
+  width: 35%;
+  align-items: center;
+  display: flex;
+}
+#login-image img {
+  width: 100%;
+}
+
+#botones {
+  gap: 6px;
+  font-size: small;
+  color: black;
+  display: flex;
+  align-items: end;
+}
+
+#botones a {
+  color: #e086d3;
+  transition: 0.1s;
+}
+#botones a:hover {
+  transform: scale(1.2) translateY(-2px);
+}
+#mail-section {
+  display: flex;
+  position: relative;
+}
+
+#pass-section {
+  display: flex;
+  position: relative;
+}
+#pass-section .error {
+  right: 148px;
+}
+#pass-section img {
+  width: 10%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  background-color: white;
+  z-index: 1;
+}
+#inputMail {
+  z-index: 1;
+}
+
+#inputPass {
+  width: 60%;
+  z-index: 1;
+  border-radius: 6px 0 0 6px;
+  border-right: none;
+}
+input:focus-visible {
+  outline: none;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #ff7777;
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  /* transform: translate(45px); */
+  transition: 0.3s cubic-bezier(0.44, 0.5, 0.55, 1.22);
+  right: 0;
+  align-items: center;
+  background-image: url(../src/cross.svg);
+  background-position: center;
+  background-size: contain;
+  border-radius: 0 6px 6px 0;
+}
+
+#second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+#second input {
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  #login-image {
+    display: none;
+  }
+  #login {
+    justify-content: center;
+    /* min-width: 634px; */
+  }
+  #pass-section {
+    width: 366px;
+  }
+  #form-login {
+    width: 80%;
+  }
+  #login-contenido {
+    width: fit-content;
+    margin-left: 33px;
+  }
+}

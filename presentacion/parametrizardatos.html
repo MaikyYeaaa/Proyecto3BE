@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+
+    <script src="../jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="../styles/parametrizar.css" />
+    <link rel="stylesheet" href="../styles/clases.css" />
+    <link rel="stylesheet" href="../styles/navGerente.css" />
+    <title>Sisviansa - Parametrizar</title>
+  </head>
+  <body>
+    <script src="../scripts/navInterno.js" type="module"></script>
+    <main>
+      <section id="parametrizar">
+        <article id="paracontainer">
+          <article id="parametrizarTitle">
+            <h1>PARAMETRIZAR DATOS</h1>
+          </article>
+          <article id="parametrizarInputs">
+            <form id="parametrizarForm">
+              <label>Cocinas: </label>
+              <input id="cocinasinput" type="text" name="datosCocina" placeholder="Ingrese datos" class="textfield" />
+
+              <br />
+              <br />
+              <label>Tiempo de cocinado: </label>
+              <input id="tiempoinput" type="text" name="datosTiempo" placeholder="Ingrese datos" class="textfield" />
+
+              <br />
+              <br />
+              <label>Stock colchon: </label>
+              <input id="stockminimoinput" type="text" name="datosStockcolchon" placeholder="Ingrese datos" class="textfield" />
+
+              <br />
+              <br />
+              <label>Stock maximo: </label>
+              <input id="stockmaximoinput" type="text" name="datosStockmaximo" placeholder="Ingrese datos" class="textfield" />
+
+              <br />
+              <br />
+              <label>Tiempo de turno: </label>
+              <input id="tiempoturnoinput" type="text" name="datosTiempoturno" placeholder="Ingrese datos" class="textfield" />
+              <br />
+              <input type="submit" value="Agregar" class="btnSecundario" id="btn" />
+            </form>
+          </article>
+        </article>
+        <br />
+        <article id="paracontainer">
+          <article id="parametrizarTitle">
+            <h1>PARAMETRIZAR ZONAS</h1>
+          </article>
+          <article id="parametrizarInputs">
+            <form id="zonas-form">
+              <p>Agregar zona:</p>
+              <input type="text" name="barrioZona" placeholder="Barrio" class="textfield" />
+
+              <br />
+              <input type="text" name="dirZona" placeholder="Direccion" class="textfield" />
+
+              <br />
+
+              <input type="submit" value="Agregar" class="btnSecundario" />
+            </form>
+            <br />
+            <section id="listado-zonas"></section>
+          </article>
+        </article>
+      </section>
+    </main>
+
+    <script src="../logica/getParametros.js"></script>
+    <script src="../logica/parametrizarZonas.js"></script>
+  </body>
+</html>

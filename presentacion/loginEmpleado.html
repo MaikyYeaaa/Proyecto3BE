@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../jquery-3.6.4.min.js"></script>
+    <title>Sisviansa -</title>
+  </head>
+  <body>
+    <section id="login">
+      <form id="form-login">
+        <label>Correo:</label>
+        <input name="mail" type="text" />
+        <label>Contraseña</label>
+        <input name="cont" type="text" />
+        <input type="submit" value="Ingresar" />
+        <select name="empelado">
+          <option value="jefe-de-cocina">jefe de cocina</option>
+          <option value="gerente">gerente</option>
+          <option value="atencion-al-publico">atencion al publico</option>
+          <option value="administracion">Administracion</option>
+          <option value="encargado-de-transporte">Encargado de transporte</option>
+        </select>
+        <p id="resp"></p>
+      </form>
+    </section>
+    <script src="../logica/loginEmpleado.js"></script>
+  </body>
+</html>
