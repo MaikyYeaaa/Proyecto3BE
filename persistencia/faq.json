@@ -3,5 +3,17 @@
         "preguntaID": "3",
         "titulo": "Cuanto sale un menu custom?",
         "descripcion": "Viste que podes fijarte vos en la secci\u00f3n de men\u00fa custom no capo?"
+    },
+
+    {
+        "preguntaID": "4",
+        "titulo": "Como puedo ver el seguimiento de mi pedido?",
+        "descripcion": "En la sección de usuario, puedes ir a historial de compras, donde se listrarán todas las compras que hiciste y las que están en curso"
+    },
+
+    {
+        "preguntaID": "5",
+        "titulo": "Puedo cancelar mi pedido?",
+        "descripcion": "Puedes cancelar el pedido en un plazo de 24 horas desde el apartado de historial de compras"
     }
 ]

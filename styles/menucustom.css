@@ -247,6 +247,7 @@ body{
     display: flex;
     flex-direction: row;
     margin: 54px;
+    height: 600px;
 }
 
 

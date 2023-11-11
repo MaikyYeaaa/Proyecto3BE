@@ -154,3 +154,10 @@ body > section:nth-child(even) {
 a {
   text-decoration: none;
 }
+
+
+#ContainerFaq{
+  display: flex;
+  flex-direction: row;
+  margin: 54px;
+}
