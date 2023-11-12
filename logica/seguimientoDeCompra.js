@@ -1,70 +1,93 @@
-var userid=localStorage.getItem("id");
+var userid = localStorage.getItem("id");
 console.log(userid);
 
+$("#filtroCancelados").change(function () {
+  if ($(this).prop("checked")) {
+    getAllPedidosFromUser(userid, true);
+  } else {
+    getAllPedidosFromUser(userid, false);
+  }
+});
 
-
-function getAllPedidosFromUser(userID){
+function getAllPedidosFromUser(userID, checkbox) {
+  $("#mostrar").html("");
+  if (checkbox === undefined) {
+    checkbox = false;
+  }
   var idAux = -2;
   var iterations = 0;
-let data = new FormData();
-data.append("userID",userID)
-fetch("../persistencia/getPedidosFromUserID.php", {
-  method: "POST",
-  body: data
-})
-        .then((r)=> r.json())
-        .then((r)=> {
-          r.forEach((pedido)=>{
+  let data = new FormData();
+  data.append("userID", userID);
+  fetch("../persistencia/getPedidosFromUserID.php", {
+    method: "POST",
+    body: data,
+  })
+    .then((r) => r.json())
+    .then((r) => {
+      r.forEach((pedido) => {
+        let disabled = "";
+        if (pedido.Estado_Pedido === "Cancelado") {
+          disabled = "disabled";
+        }
 
-            let disabled = "";
-            if(pedido.Estado_Pedido === "Cancelado"){
-              disabled = "disabled";
-            }
-        
-            if(idAux == pedido.ID_Pedido ){
-              if(iterations <=2){
-                  iterations ++;
-                  $(`#PedidoPedidosList${idAux}`).append(`, ${pedido.Nombre_Menu}`);
-                  console.log("repetidoop on " + `#PedidoPedidosList${idAux} adding ${pedido.Nombre_Menu} to the list`);
-              }
-             
-          }else{
-              iterations = 0;
-              idAux = pedido.ID_Pedido;
-              $("#mostrar").append(`
-              <section id="PedidoBody">
-              <article id="col1">
-                <section id="PedidoIMG"><img src="${pedido.Imagen_Menu}" alt="" srcset="" id="pimg"></section>
-                <article id="pedidoInfo">Pedido#${pedido.ID_Pedido}</article>
-                <article id="pedidoDate">${pedido.Fecha_Inicio_Estado}</article>
-              </article>
-              <article id="col2">
-                <section id="PedidoStateVar">
-                  <artcile id="PedidoState">${pedido.Estado_Pedido}</artcile>
-                  <article id="PedidoSvg"><img src="${getIcon(pedido.Estado_Pedido)}" alt="icon" srcset="" id="svg"></article>
-                </section>
-                <section id="PedidoPedidosList${pedido.ID_Pedido}">${pedido.Nombre_Menu}</section>
-              </article>
-              <artcile id="col3"><button class="cancelButton" onClick="cancelCompra(${pedido.ID_Pedido},'holanda')"${disabled}>cancelar pedido</button></artcile>
-             
-            </section>
-    
-              
-              `);
+        if (idAux == pedido.ID_Pedido) {
+          if (iterations <= 2) {
+            iterations++;
+            $(`#PedidoPedidosList${idAux}`).append(`, ${pedido.Nombre_Menu}`);
+            console.log("repetidoop on " + `#PedidoPedidosList${idAux} adding ${pedido.Nombre_Menu} to the list`);
           }
-          })
-        })
-
-
+        } else {
+          iterations = 0;
+          idAux = pedido.ID_Pedido;
+          console.log(pedido.Estado_Pedido);
+          console.log(checkbox);
+          if (pedido.Estado_Pedido !== "Cancelado") {
+            $("#mostrar").append(`
+            <section id="PedidoBody">
+            <article id="col1">
+            <section id="PedidoIMG"><img src="${pedido.Imagen_Menu}" alt="" srcset="" id="pimg"></section>
+            <article id="pedidoInfo">Pedido#${pedido.ID_Pedido}</article>
+            <article id="pedidoDate">${pedido.Fecha_Inicio_Estado}</article>
+            </article>
+            <article id="col2">
+            <section id="PedidoStateVar">
+            <artcile id="PedidoState">${pedido.Estado_Pedido}</artcile>
+            <article id="PedidoSvg"><img src="${getIcon(pedido.Estado_Pedido)}" alt="icon" srcset="" id="svg"></article>
+            </section>
+            <section id="PedidoPedidosList${pedido.ID_Pedido}">${pedido.Nombre_Menu}</section>
+            </article>
+            <artcile id="col3"><button class="cancelButton" onClick="cancelCompra(${pedido.ID_Pedido},'holanda')"${disabled}>cancelar pedido</button></artcile>
+            </section> 
+            `);
+          }
+          if (pedido.Estado_Pedido == "Cancelado" && checkbox) {
+            $("#mostrar").append(`
+            <section id="PedidoBody">
+            <article id="col1">
+            <section id="PedidoIMG"><img src="${pedido.Imagen_Menu}" alt="" srcset="" id="pimg"></section>
+            <article id="pedidoInfo">Pedido#${pedido.ID_Pedido}</article>
+            <article id="pedidoDate">${pedido.Fecha_Inicio_Estado}</article>
+            </article>
+            <article id="col2">
+            <section id="PedidoStateVar">
+            <artcile id="PedidoState">${pedido.Estado_Pedido}</artcile>
+            <article id="PedidoSvg"><img src="${getIcon(pedido.Estado_Pedido)}" alt="icon" srcset="" id="svg"></article>
+            </section>
+            <section id="PedidoPedidosList${pedido.ID_Pedido}">${pedido.Nombre_Menu}</section>
+            </article>
+            <artcile id="col3"><button class="cancelButton" onClick="cancelCompra(${pedido.ID_Pedido},'holanda')"${disabled}>cancelar pedido</button></artcile>
+            </section> 
+            `);
+          }
+        }
+      });
+    });
 }
-
 
 getAllPedidosFromUser(userid);
 
-
-
-function getIcon(state){
-  switch (state){
+function getIcon(state) {
+  switch (state) {
     case "Solicitado":
       return `../src/Clock.svg`;
       break;
@@ -80,31 +103,11 @@ function getIcon(state){
     case "Rechazado":
       return `../src/cross.svg`;
       break;
-      case "Cancelado":
-        return `../src/cross.svg`;
-        break;
+    case "Cancelado":
+      return `../src/cross.svg`;
+      break;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* CODIGO SEGUNDA ENTREGA!
 
@@ -188,8 +191,8 @@ fetch("../persistencia/getComprasFromUser.php",{
 
 */
 
-function cancelCompra(pedidoId,currentState){
-  if (confirm('¿Estás seguro que quieres cancelar el pedido?')) {
+function cancelCompra(pedidoId, currentState) {
+  if (confirm("¿Estás seguro que quieres cancelar el pedido?")) {
     console.log("holanda " + currentState);
     let data = new FormData();
     data.append("ID", pedidoId);
@@ -197,25 +200,21 @@ function cancelCompra(pedidoId,currentState){
     console.log(pedidoId);
     fetch("../persistencia/cancelarCompra.php", {
       method: "POST",
-      body: data
+      body: data,
     })
-    .then((r) => r.text())
-    .then((respuesta) => {
-      const feedbackSelector = `.Feedback${pedidoId}`; // Construct the correct selector
-      console.log(`${respuesta} === "Si"`);
-      if (respuesta === `"Si"`) {
-        location.reload();
-        console.log("SSSSSSSIIIIIIIIIIII");
-      } else {
-        $(feedbackSelector).text("No es posible cancelar el pedido ya que fue realizado hace más de 24 horas");
-      }
-    });
-  } 
+      .then((r) => r.text())
+      .then((respuesta) => {
+        const feedbackSelector = `.Feedback${pedidoId}`; // Construct the correct selector
+        console.log(`${respuesta} === "Si"`);
+        if (respuesta === `"Si"`) {
+          location.reload();
+          console.log("SSSSSSSIIIIIIIIIIII");
+        } else {
+          $(feedbackSelector).text("No es posible cancelar el pedido ya que fue realizado hace más de 24 horas");
+        }
+      });
+  }
 }
-
-
-
-
 
 /*
 fetch("../persistencia/userInstance.json")

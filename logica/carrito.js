@@ -130,6 +130,10 @@ async function ticket() {
 
   $("#ticket #pMostrar").html(mostrar);
   $("#ticket #precio").html(`TOTAL: $${precioTotal}`);
+
+  if (precioTotal == 0) {
+    $("#btnComprar").attr("disabled", "disabled");
+  }
 }
 
 function getVencimientoOp() {

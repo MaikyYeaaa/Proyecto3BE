@@ -1,4 +1,3 @@
-console.log("holanda");
 function mostrarTabla() {
   $("#pedidos").html("");
 
@@ -125,23 +124,12 @@ function getBoxValues(value, pedido) {
   }
 }
 
-function modificarEstado() {
-  fetch("../persistencia/getStock.php")
-    .then((r) => r.text())
-    .then((r) => {
-      console.log(r);
-    });
-}
-
-/*
 function modificarEstado(estado, pos) {
   var data = new FormData();
   data.append("posicion", pos);
   data.append("accion", estado);
 
-  le
-  fetch("../persistencia/getStockById.php")
-
+  fetch("../persistencia/getStockById.php");
 
   fetch("../persistencia/ModPedidos.php", {
     method: "POST",
@@ -163,4 +151,4 @@ function modificarEstado(estado, pos) {
           //mostrarTabla();
         });
     });
-}*/
+}

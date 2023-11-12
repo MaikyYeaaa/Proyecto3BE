@@ -40,9 +40,6 @@ async function mostrarSegunRol() {
               <a href="stock.html" class="MenuButton">
                 <button>VER STOCK</button>
               </a>
-              <a href="mod-pedidos.html" class="MenuButton" id="pedidosbtn">
-                <button>PEDIDOS</button>
-              </a>
               <a href="ver-pedidos.html" class="MenuButton">
               <button>VER PEDIDOS</button>
             </a>
