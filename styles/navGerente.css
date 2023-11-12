@@ -74,6 +74,7 @@ body {
 #containerArticle {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 #adminMenu {
   transition: 0.4s;
@@ -220,4 +221,21 @@ body {
   100% {
     transform: scale(1, 1) rotate(10deg);
   }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(154, 154, 154, 0.394);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.669);
 }

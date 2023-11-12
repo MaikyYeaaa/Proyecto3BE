@@ -126,12 +126,10 @@ function getPedidoOptions(state,id){
       default:
           return `<select name="${id}" id="pedido"  class="pedido">
           <option value="Solicitado">Solicitado</option>
-          <option value="En Stock">En Stock</option>
-          <option value="En Producción">En producción</option>
-          <option value="Envasado">Envasado</option>
+          <option value="Confirmado">Confirmado</option>
+          <option value="Enviado">Enviado</option>
           <option value="Entregado">Entregado</option>
-          <option value="Devuelto">Devuelto</option>
-          <option value="Desechado">Desechado</option>
+          <option value="Rechazado">Rechazado</option>
         </select>`;
 
 }
@@ -139,7 +137,7 @@ function getPedidoOptions(state,id){
 
 
 
-function getSelectOptions(state,id){
+/*function getSelectOptions(state,id){
     console.log(id);
     switch(state){
      
@@ -197,4 +195,4 @@ function getSelectOptions(state,id){
         </select>`;
   
     }
-  }
+  }*/

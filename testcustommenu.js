@@ -253,11 +253,11 @@ function CrearMenuParaComprar(idComprador, comidas) {
     .then((r) => r.text())
     .then((r) => {
         console.log(r);
-        agregarAlCarrito();
+        agregarAlCarritoCM();
     });
 }
 
-async function agregarAlCarrito() {
+async function agregarAlCarritoCM() {
     let idOp;
     fetch("../persistencia/getLastMenuID.php")
     .then((r)=> r.json())
