@@ -24,6 +24,10 @@
 }
 
 
+#editorInputs{
+    font-size: 23px;
+    font-weight: 900;
+}
 
 
 
@@ -34,7 +38,7 @@ body{
 #menuSlots{
     overflow-y: scroll;
     overflow-x: visible;
-    height: 610px;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +51,7 @@ body{
 
 
 #menuBody{
-    width: 35vw;
+    width: 34vw;
     height: 90px;
     background-color: rgb(138, 138, 138);
     position: relative;
@@ -145,7 +149,7 @@ body{
 
 
 #menuEmptyBody{
-    width: 35vw;
+    width: 34vw;
     height: 90px;
     background-color: rgba(39, 39, 39, 0.5);
     position: relative;
@@ -246,12 +250,31 @@ body{
     display: flex;
     flex-direction: row;
     margin: 54px;
-    height: 60vh;
+    height: 70vh;
 }
 
 
 
-@media screen and (max-width: 737px){
+@media screen and (max-width: 537px){
+    #menuBody {
+        width: 95vw;
+        height: 11vh;
+        background-color: rgb(138, 138, 138);
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        border-radius: 8px;
+        border: 2px solid rgb(255, 255, 255);
+        filter: drop-shadow(4px 4px 4px rgb(0,0,0,0.5));
+        margin: 5px;
+        transition: 0.4s;
+    }
+
+    #menuEmptyBody{
+        width: 90vw;
+        height: 11vh;
+    }
+
     #customMenuContainer{
         display:flex;
         flex-direction: column;
@@ -274,8 +297,7 @@ body{
     height: 79vh;
     }
     #menuBody{
-        
-    width: 95vw;
+    width: 90vw;
     height: 11vh;
     background-color: rgb(138, 138, 138);
     position: relative;
@@ -325,30 +347,15 @@ body{
     }
     }
 
-    #menuEmptyBody{
-        width: 95vw;
-        height: 11vh;
-    }
+  
 
-    #menuBody {
-        width: 95vw;
-        height: 11vh;
-        background-color: rgb(138, 138, 138);
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        border-radius: 8px;
-        border: 2px solid rgb(255, 255, 255);
-        filter: drop-shadow(4px 4px 4px rgb(0,0,0,0.5));
-        margin: 5px;
-        transition: 0.4s;
-    }
+
 
 
     .customAction{
-        width: 65%;
+        width: 200px;
     }
-}
+
 /* Modal Styles */
 .modal {
     display: none;
