@@ -18,9 +18,11 @@ var_dump($condicion);
 foreach ($vianda as $value) {
     $sql = "UPDATE `Posee` SET `IDCondicion`='$condicion' WHERE NroVianda = $value";
     $data = sendToBDD($sql, $con);
-    $sqlRemoverStock = "UPDATE menu
+    $sqlRemoverStock = "
+    UPDATE menu
     SET StockReal = StockReal - 1
-    WHERE IDMenu IN (
+    WHERE StockReal > 0
+    AND IDMenu IN (
         SELECT menu.IDMenu
         FROM conforma
         JOIN pedido ON conforma.ID = pedido.ID
@@ -28,8 +30,7 @@ foreach ($vianda as $value) {
         JOIN Implica ON Vianda.NroVianda = Implica.NroVianda
         JOIN menu ON Implica.IDMenu = menu.IDMenu
         WHERE pedido.ID = $pos
-    );
-    ";
+    );";
     $removerStock = sendToBDD($sqlRemoverStock,$con);
 }
 
