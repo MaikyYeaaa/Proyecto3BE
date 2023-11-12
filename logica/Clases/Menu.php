@@ -101,7 +101,10 @@ class Menu {
     
     public static function listarAll($param) {
         $con = conectarBDD();
-        $sql = "SELECT * FROM `menu` " . $param;
+        $sql = "SELECT *
+        FROM menu
+        WHERE IDMenu NOT IN (SELECT ID_menu FROM Asocia WHERE NombreTipoMenu = 'Custom');
+        " . $param;
         $data = getFromBDD($sql, $con);
         $con->close();
         
