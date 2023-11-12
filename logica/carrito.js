@@ -248,6 +248,7 @@ async function crearPedido() {
         if (r == "Good") {
           $("#modal-listo").css({ display: "flex" });
           $("#modal-pedido").css({ display: "none" });
+          localStorage.removeItem("carrito");
         }
       });
   });

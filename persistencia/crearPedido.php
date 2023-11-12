@@ -139,12 +139,12 @@ $idSucursal = getFromBDD($sqlIDsucursal, $con);
 $idSucursal = $idSucursal[0]["IDSucursal"];
 
 // traer NombreEstado (para tiene)
-$sqlNombreEstado = "SELECT MAX(`NombreEstado`) FROM `estado` WHERE `NombreEstado` = 'Solicitado'";
-$nombreEstado = getFromBDD($sqlNombreEstado, $con);
-$nombreEstado = $nombreEstado[0]["NombreEstado"];
+
+$nombreEstado = "Solicitado";
+
 
 // traer IDCondicion (para posee)
-$sqlIDcondicion = "SELECT MAX(`IDCondicion`) FROM `condicion` WHERE `NombreCondicion` = 'Solicitada'";
+$sqlIDcondicion = "SELECT `IDCondicion` FROM `condicion` WHERE `NombreCondicion` = 'Solicitada'";
 $idCondicion = getFromBDD($sqlIDcondicion, $con);
 $idCondicion = $idCondicion[0]["IDCondicion"];
 
