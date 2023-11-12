@@ -141,6 +141,9 @@ async function mostrarSegunRol() {
               <a href="productos.html" class="MenuButton">
                 <button>PRODUCTOS</button>
               </a>
+              <a href="act-pedidos.html" class="MenuButton">
+              <button>ACTUALIZAR PEDIDOS</button>
+            </a>
               <a href="index.html">
               <img src="../src/arrow-reverse.svg" />
               </a>
