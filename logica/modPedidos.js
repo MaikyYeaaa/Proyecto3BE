@@ -40,13 +40,13 @@ function mostrarTabla() {
 $("#stockcontainer").on("click", ".aceptar", function () {
   const pedidoId = $(this).val();
   console.log("Aceptar el pedido #" + pedidoId);
-  modificarEstado("Confirmado", pedidoId);
+  modificarEstado("Confirmado", pedidoId,12);
 });
 
 $("#stockcontainer").on("click", ".rechazar", function () {
   const pedidoId = $(this).val();
   console.log("Rechazar el pedido #" + pedidoId);
-  modificarEstado("Rechazado", pedidoId);
+  modificarEstado("Rechazado", pedidoId,16);
 });
 
 mostrarTabla();
@@ -57,10 +57,10 @@ $(document).on("change", "#pedido", function () {
   let condicionID;
   switch (accion) {
     case "Confirmado":
-      condicionID = 2;
+      condicionID = 12;
       break;
     case "Rechazado":
-      condicionID = 6;
+      condicionID = 16;
       break;
   }
 
@@ -124,7 +124,7 @@ function getBoxValues(value, pedido) {
       </select>`;
   }
 }
-
+/*
 function modificarEstado() {
   fetch("../persistencia/getStock.php")
     .then((r) => r.text())
@@ -133,13 +133,12 @@ function modificarEstado() {
     });
 }
 
-/*
-function modificarEstado(estado, pos) {
+*/
+function modificarEstado(estado, pos,idEstadoVianda) {
   var data = new FormData();
   data.append("posicion", pos);
   data.append("accion", estado);
 
-  le
   fetch("../persistencia/getStockById.php")
 
 
@@ -152,7 +151,7 @@ function modificarEstado(estado, pos) {
       console.log(data);
       var dataVianda = new FormData();
       dataVianda.append("posicion", pos);
-      dataVianda.append("conID", estado);
+      dataVianda.append("conID", idEstadoVianda);
       fetch("../persistencia/ModVianda.php", {
         method: "POST",
         body: dataVianda,
@@ -160,7 +159,7 @@ function modificarEstado(estado, pos) {
         .then((r) => r.text())
         .then((data) => {
           console.log(data);
-          //mostrarTabla();
+          mostrarTabla();
         });
     });
-}*/
+}

@@ -122,9 +122,9 @@
   height: 80px;
   border-radius: 0;
   margin: 5px;
-  border: 1px white solid;
+  border: 0px white solid;
   filter: drop-shadow(1px 2px 3px white);
   overflow: hidden;
   flex: 0 0 auto;
-  transform: translate(-51px, 0) scale(1.8);
+  transform: translate(-51px, 5px) scale(1.8);
 }

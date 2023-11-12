@@ -53,6 +53,7 @@ async function listarCarrito() {
 }
 
 function obtenerCarrito() {
+  
   return JSON.parse(localStorage.getItem("carrito")) || [];
   // returnea un array del carrito que esta guardado en localstorage
 }
