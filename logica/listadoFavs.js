@@ -61,7 +61,6 @@ fetch("../persistencia/listarFavs.php")
       );
       $(".callToAction").click(function () {
         $(this).css({ transform: "", "box-shadow": "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" });
-        alert("Menu añadido correctamente");
       });
     });
   });

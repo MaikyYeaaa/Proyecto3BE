@@ -26,34 +26,16 @@ fetch("../persistencia/getMenus.php")
       let img = menu.MenuIMG;
       let datos = { nombre: nombre, precio: precio, img: img, id: id };
       menus.push(datos);
-
-      let option = `
-      <option value="${id}">${nombre}</option>
-      `;
+      console.log(menu);
+      let option = "";
+      if (menu.Descuento == "0") {
+        option = `
+        <option value="${id}">${nombre}</option>
+        `;
+      }
       $("#nombre-select").append(option);
     });
   });
-
-let formulario = document.getElementById("formulario");
-formulario.addEventListener("submit", (e) => {
-  e.preventDefault();
-  console.log("agarra form");
-  let datos = new FormData(formulario);
-  let precioViejo = Number($("#precio").attr("precioViejo"));
-  console.log(precioViejo);
-  datos.append("precioViejo", precioViejo);
-  fetch("../persistencia/addPublicacion.php", {
-    method: "post",
-    body: datos,
-  })
-    .then((r) => r.text())
-    .then((r) => {
-      console.log(`respuesta form: ${r}`);
-      if (r == "true") {
-        location.reload();
-      }
-    });
-});
 
 function eliminarPublicacion(id) {
   let datos = new FormData();
@@ -61,5 +43,41 @@ function eliminarPublicacion(id) {
   fetch("../persistencia/eliminarPublicacion.php", {
     method: "post",
     body: datos,
-  }).then(location.reload());
+  })
+    .then((r) => r.text())
+    .then((r) => {
+      console.log(r);
+      if (r == "1") {
+        location.reload();
+      } else {
+        alert(`error: ${r}`);
+      }
+    });
 }
+
+let formulario = document.getElementById("formulario");
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const datos = new FormData(formulario);
+  let precioViejo = Number($("#precio").attr("precioViejo"));
+  datos.append("precioViejo", precioViejo);
+  console.log(`id: ${datos.get("id")}`);
+  console.log(`nombre: ${datos.get("nombre")}`);
+  console.log(`desc: ${datos.get("desc")}`);
+  console.log(`imgURL: ${datos.get("imgURL")}`);
+  console.log(`precioDescuento: ${datos.get("precioDescuento")}`);
+  console.log(`precioViejo: ${datos.get("precioViejo")}`);
+
+  fetch("../persistencia/addPublicacion.php", {
+    method: "post",
+    body: datos,
+  })
+    .then((r) => r.text())
+    .then((r) => {
+      if (r == "1") {
+        location.reload();
+      } else {
+        alert(r);
+      }
+    });
+});
