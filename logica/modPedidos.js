@@ -1,4 +1,3 @@
-console.log("holanda");
 function mostrarTabla() {
   $("#pedidos").html("");
 
@@ -40,13 +39,13 @@ function mostrarTabla() {
 $("#stockcontainer").on("click", ".aceptar", function () {
   const pedidoId = $(this).val();
   console.log("Aceptar el pedido #" + pedidoId);
-  modificarEstado("Confirmado", pedidoId,12);
+  modificarEstado("Confirmado", pedidoId, 12);
 });
 
 $("#stockcontainer").on("click", ".rechazar", function () {
   const pedidoId = $(this).val();
   console.log("Rechazar el pedido #" + pedidoId);
-  modificarEstado("Rechazado", pedidoId,16);
+  modificarEstado("Rechazado", pedidoId, 16);
 });
 
 mostrarTabla();
@@ -124,7 +123,9 @@ function getBoxValues(value, pedido) {
       </select>`;
   }
 }
+
 /*
+function modificarEstado(estado, pos) {
 function modificarEstado() {
   fetch("../persistencia/getStock.php")
     .then((r) => r.text())
@@ -134,7 +135,7 @@ function modificarEstado() {
 }
 
 */
-function modificarEstado(estado, pos,idEstadoVianda) {
+function modificarEstado(estado, pos, idEstadoVianda) {
   var data = new FormData();
   data.append("posicion", pos);
   data.append("accion", estado);
