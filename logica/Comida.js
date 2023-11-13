@@ -1,8 +1,9 @@
 import { mostrarNotif } from "../scripts/functionsVarias.js";
-
+console.log("Que dice loco");
 fetch("../persistencia/listarComidas.php")
   .then((r) => r.json())
   .then((r) => {
+    console.log("Holandaaaa");
     r.forEach((r) => mostrarProducto(r.Nombre, r.ImagenURL, r.IDComida));
 
     let productos = Array.from($(".producto")); //los hago array para trabajar con todos ellos

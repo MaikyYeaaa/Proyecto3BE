@@ -139,7 +139,6 @@ function modificarEstado(estado, pos,idEstadoVianda) {
   data.append("posicion", pos);
   data.append("accion", estado);
 
-  fetch("../persistencia/getStockById.php")
 
 
   fetch("../persistencia/ModPedidos.php", {
