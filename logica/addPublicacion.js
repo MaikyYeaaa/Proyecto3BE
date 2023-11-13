@@ -40,6 +40,7 @@ formulario.addEventListener("submit", (e) => {
   console.log("agarra form");
   let datos = new FormData(formulario);
   let precioViejo = Number($("#precio").attr("precioViejo"));
+  console.log(precioViejo);
   datos.append("precioViejo", precioViejo);
   fetch("../persistencia/addPublicacion.php", {
     method: "post",

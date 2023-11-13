@@ -74,7 +74,6 @@ body {
 #containerArticle {
   display: flex;
   flex-direction: column;
- 
 }
 #adminMenu {
   transition: 0.4s;
@@ -91,7 +90,7 @@ body {
   opacity: 1;
   display: block;
   z-index: 3;
-
+  overflow-y: scroll;
 }
 
 #MenuButtons {

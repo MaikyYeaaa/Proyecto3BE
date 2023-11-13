@@ -23,6 +23,6 @@ function cerrarSesion() {
   const confirmar = confirm("Seguro quiere cerrar sesion?");
   if (confirmar) {
     localStorage.clear();
-    window.open("index.html");
+    window.location.href = "index.html";
   }
 }
