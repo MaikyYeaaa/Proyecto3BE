@@ -35,7 +35,7 @@
             </article>
             <article id="parametrizarInputs">
                 <section id="paraeditor">
-                    <button id="Add"> <img src="../src/Add.svg" alt="" id="svgimage"></button>
+                    <button id="Add" onclick="addFAQ()"> <img src="../src/Add.svg" alt="" id="svgimage"></button>
                 </section>
             </article>
         </article>
@@ -64,21 +64,20 @@
 
 
 
-    <section id="add" class="modal">
+    <section id="addModal" class="modal">
         <article class="modal-content">
           <span class="close">&times;</span>
           <section id="modalBody">
             <article id="modalTitle">
-                <label>Modificar FAQ</label>
+                <label>Añadir FAQ</label>
             </article>
-            <article id="modalForm">
+            <form id="addForm">
                 <label>Pregunta:</label>
-                <input type="text" id="preguntaP"><br>
+                <input type="text" name="pregunta" class="textfield"><br>
                 <label>Respuesta:</label>
-                <input type="text" id="respuestaP"><br>
-                <button id="addFAQ">Modificar</button>
-                </form>
-            </article>
+                <input type="text" name="respuesta" class="textfield"><br>
+                <input type="submit" value="Añadir"></input>
+            </form>
           </section>
           
         </article>

@@ -109,7 +109,7 @@ body {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
@@ -223,7 +223,7 @@ body {
     filter: drop-shadow(0 4px 2px black);
   }
 
-  #parametrizar{
+  #parametrizar {
     margin-top: 101px;
   }
 
@@ -254,8 +254,6 @@ body {
   }
 }
 
-
-
 .zona {
   display: flex;
   flex-direction: column;
@@ -266,64 +264,65 @@ body {
   border-radius: 8px;
 }
 
-
-
-#listado-zonas{
+#listado-zonas {
   background-color: #888;
-    padding: 20px;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
 }
 
 .zona {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 100%;
-    height: fit-content;
-    padding: 5px;
-    border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 8px;
 }
 
-#modalTitle{
+#modalTitle {
   font-size: 60;
   font-weight: 900;
-  filter: drop-shadow(0 4px  1px rgb(139, 139, 139));
+  filter: drop-shadow(0 4px 1px rgb(139, 139, 139));
   color: rgb(0, 0, 0);
 }
-.close{
+.close {
   color: rgb(255, 0, 0);
   font-size: 70px;
   margin: 0;
-  filter: drop-shadow(0 4px  2px black);
+  filter: drop-shadow(0 4px 2px black);
 }
 
 /*ARREGLAR PARA CUANDO SE HAGA EL CSS DEL ADMIN MENU!!!!*/
 
-
-
-.modal-content button, input, optgroup, select, label {
-
+.modal-content button,
+input,
+optgroup,
+select,
+label {
   margin: 5px;
   text-align: center;
   justify-content: center;
   font-weight: 900;
   width: 10;
 }
-#parametrizar{
+#parametrizar {
   width: 95%;
 }
 
-#modalForm{
+#modalForm {
   padding: 0;
-  margin-top:0;
+  margin-top: 0;
 }
 
-.callToAction{
+.callToAction {
   width: 30vw;
 }
 
-
+#addModal {
+  display: none;
+}
