@@ -2,6 +2,9 @@
 .container {
   padding: 60px 0;
 }
+#backgroundimg img{
+  transition: 0.5s;
+}
 
 #main-bienvenido {
   background: rgb(100, 231, 103);
@@ -172,4 +175,20 @@ a {
   position: absolute;
   z-index: 2;
   transform: translate(0, -110px);
+}
+
+@media screen and (max-width: 600px){
+  #main-bienvenido #contenido h1 {
+    font-size: 3rem;
+  }
+  #backgroundimg{
+    position: absolute;
+    z-index: 2;
+    transform: translate(0, 56px);
+    bottom: 0;
+  }
+
+  #backgroundimg img{
+    width: 559px;
+  }
 }
