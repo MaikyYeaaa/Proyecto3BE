@@ -57,7 +57,6 @@
         $this -> tiempoTurno = $newTiempoTurno;
         $this-> cocinas = $newCocinas;
     } 
-    // Esta función es indispensable para poder usar el console.log de la clase
     public function __toString() {
         return "Sucursal ID: {$this->IDSucursal}, Nombre: {$this->Nombre}, Direccion: {$this->Direccion}, Tiempo de Turno: {$this->tiempoTurno}, Cocinas: {$this->cocinas}";
     }

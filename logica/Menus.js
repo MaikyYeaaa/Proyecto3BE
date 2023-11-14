@@ -8,7 +8,6 @@ let datos = [];
 async function inicio() {
   const menus = await obtenerDatos("../persistencia/listarMenus.php");
   const integra = await obtenerDatos("../persistencia/getIntegra.php");
-  //   console.log(menus, integra);
   menus.forEach((menu) => {
     let id = menu.IDMenu;
     let nombreMenu = menu.Nombre;

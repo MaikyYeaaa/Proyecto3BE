@@ -1,5 +1,4 @@
 function modModalPromos(display) {
-  console.log(display);
   $("#modal-promos").css("display", display);
 }
 
@@ -26,7 +25,6 @@ fetch("../persistencia/getMenus.php")
       let img = menu.MenuIMG;
       let datos = { nombre: nombre, precio: precio, img: img, id: id };
       menus.push(datos);
-      console.log(menu);
       let option = "";
       if (menu.Descuento == "0") {
         option = `
@@ -46,7 +44,6 @@ function eliminarPublicacion(id) {
   })
     .then((r) => r.text())
     .then((r) => {
-      console.log(r);
       if (r == "1") {
         location.reload();
       } else {
@@ -61,12 +58,6 @@ formulario.addEventListener("submit", function (e) {
   const datos = new FormData(formulario);
   let precioViejo = Number($("#precio").attr("precioViejo"));
   datos.append("precioViejo", precioViejo);
-  console.log(`id: ${datos.get("id")}`);
-  console.log(`nombre: ${datos.get("nombre")}`);
-  console.log(`desc: ${datos.get("desc")}`);
-  console.log(`imgURL: ${datos.get("imgURL")}`);
-  console.log(`precioDescuento: ${datos.get("precioDescuento")}`);
-  console.log(`precioViejo: ${datos.get("precioViejo")}`);
 
   fetch("../persistencia/addPublicacion.php", {
     method: "post",

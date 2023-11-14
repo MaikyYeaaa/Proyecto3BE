@@ -1,9 +1,7 @@
 import { mostrarNotif } from "../scripts/functionsVarias.js";
-console.log("Que dice loco");
 fetch("../persistencia/listarComidas.php")
   .then((r) => r.json())
   .then((r) => {
-    console.log("Holandaaaa");
     r.forEach((r) => mostrarProducto(r.Nombre, r.ImagenURL, r.IDComida));
 
     let productos = Array.from($(".producto")); //los hago array para trabajar con todos ellos
@@ -15,7 +13,6 @@ fetch("../persistencia/listarComidas.php")
           .then((r) => {
             r.forEach((r) => {
               if (idcomida == r.IDComida) {
-                console.log(r);
                 mostrarModal(r.Nombre, r.Descripcion, r.ImagenURL, r.TiempoCocinado, r.IDComida, r.Dieta.Tipodieta, r.Dieta.IDDieta);
               }
             });
@@ -57,7 +54,6 @@ function filtrar() {
               .then((r) => {
                 r.forEach((r) => {
                   if (idcomida == r.IDComida) {
-                    console.log(r);
                     mostrarModal(r.Nombre, r.Descripcion, r.ImagenURL, r.TiempoCocinado, r.IDComida, r.Dieta.Tipodieta, r.Dieta.IDDieta);
                   }
                 });
@@ -78,7 +74,6 @@ $(document).on("click", "#eliminar input[type='submit']", function (e) {
     var id = $(this).attr("name");
     var datos = new FormData();
     datos.append("id", id);
-    console.log(id);
 
     //eliminar de BDD;
     fetch("../persistencia/eliminarComida.php", {
@@ -98,7 +93,6 @@ $(document).on("click", "#modificar input[type='submit']", function (e) {
   let img = $("#modificar input").attr("data-img");
   let dieta = $("#modificar input").attr("data-dieta");
   let idDieta = $("#modificar input").attr("data-idDieta");
-  console.log(`data-dieta: ${dieta}`);
   let id = $("#modificar input").attr("data-id");
 
   let mostrar = `
@@ -177,7 +171,6 @@ function mostrarProducto(nombre, img, id) {
 }
 
 function mostrarModal(nombre, desc, img, tiempo, id, dieta, idDieta) {
-  console.log(`dieta: ${idDieta}`);
   let mostrar = `
   <img id="cerrar" src="../src/cross.svg" alt="" onerror="this.onerror=null;this.src='../src/noimg.png';" />
   <h1>${nombre} </h1>

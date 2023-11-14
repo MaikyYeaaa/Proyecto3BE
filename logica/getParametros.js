@@ -1,7 +1,6 @@
 fetch("../persistencia/getParametros.php")
   .then((r) => r.json())
   .then((response) => {
-    console.log(response);
 
     $("#cocinasinput").attr("placeholder", response.cocinas);
     $("#tiempoinput").attr("placeholder", response.TiempoCocinado);
@@ -19,6 +18,5 @@ formularioDatos.addEventListener("submit", (e) => {
   })
     .then((r) => r.text())
     .then((r) => {
-      console.log(r);
     });
 });

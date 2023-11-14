@@ -32,6 +32,5 @@ function eliminarMenu(button) {
   })
     .then((r) => r.text())
     .then((r) => {
-      console.log(r);
     });
 }

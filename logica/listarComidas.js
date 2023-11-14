@@ -1,7 +1,6 @@
 fetch("../../persistencia/listarComidas.php")
   .then((r) => r.json())
   .then((r) => {
-    console.log(r);
     for (let i = 0; i < r.length; i++) {
       let id_comida = r[i].IDComida;
       let nombre_comida = r[i].Nombre;

@@ -1,11 +1,9 @@
 var NombreOP;
 var Stock;
-console.log(localStorage.getItem("id"));
 $(document).ready(function () {
   var modal = $("#myModal");
   var btn = $(".MenuStock"); // Select elements with class MenuStock
   var span = $(".btnSecundario");
-  console.log("first");
 
   /*$("#stockInputs").on("click", ".MenuStock", function() {
         NombreOP = $(this).attr("value");
@@ -34,7 +32,6 @@ $(document).ready(function () {
   });
 });
 
-$("#enviarStock").click(console.log("holanda"));
 
 getMenus();
 function clearMenu() {
@@ -44,15 +41,12 @@ function getMenus() {
   fetch("../persistencia/getMenus.php")
     .then((r) => r.json())
     .then((response) => {
-      console.log(response);
       const MenuArray = Object.values(response);
       let stockcolchon = MenuArray[0].StockColchón;
       let stockmaximo = MenuArray[0].StockMaximo;
       $("#stocknumber").attr("min", stockcolchon);
       $("#stocknumber").attr("max", stockmaximo);
 
-      console.log(stockcolchon);
-      console.log(stockmaximo);
 
       MenuArray.forEach((menu, pos) => {
         let nombre = menu.Nombre;
@@ -75,7 +69,6 @@ function getMenus() {
 
 function GetStockValues() {
   Stock = $("#stocknumber").val();
-  console.log(Stock);
   setStock(NombreOP, Stock);
   clearMenu();
 }
@@ -96,13 +89,10 @@ modiForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   let data = new FormData(modiForm);
-  console.log(data.get("stockNew"));
-  console.log("aca se manda a la base de datos q lo cambie :D");
 });
 
 function setStock(nombre, stock) {
   var data = new FormData();
-  console.log("ejecutando");
   data.append("menuName", nombre);
   data.append("stock", stock);
   fetch("../persistencia/SetMenusStock.php", {
@@ -111,6 +101,5 @@ function setStock(nombre, stock) {
   })
     .then((r) => r.text())
     .then((response) => {
-      console.log(response);
     });
 }

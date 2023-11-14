@@ -4,7 +4,6 @@ var type;
 
 $("#btnCompra").prop("disabled", "disabled");
 $("#btnAbm").click(ABMMenu);
-console.log("hola");
 $("#pedido").on('change', function() {
     var valor = $(this).val();
     dibujarTabla(getNumero(valor));
@@ -53,7 +52,6 @@ $(document).on("click", ".confirmado-button", function() {
     $("#comida_" + rowIndex).text(comidaNombre);
     comidas[rowIndex] = comidaNombre;
     $("#comida-editor").html("");
-    console.log(comidas);
 });
 
 function dibujarTablaComidas(rowIndex) {
@@ -107,7 +105,6 @@ function getPagoDatos(){
         $("#compra-feedback").html("Compra realizada!");
         let multiplicador = $("#multi").val();
         var data = new FormData();
-        console.log(comidas);
         data.append("platos",comidas); 
         data.append("multi",multiplicador); 
         data.append("fecha",fecha);
@@ -148,14 +145,11 @@ function getDateOp(){
 
 
 function ABMMenu(){
-    console.log(type);
     if (esPosibleABM()) {
-        console.log("EsPosibleWachooooo");
         var nombre = $("#nombre").val();
         var descripción = $("#descripción").val();
         var img = $("#img").val();
         var data = new FormData();
-        console.log(comidas);
         data.append("comidasop",JSON.stringify(comidas)); 
         data.append("titulo",nombre); 
         data.append("desc",descripción); 

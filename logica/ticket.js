@@ -15,7 +15,6 @@ formulario.addEventListener("submit", async function (e) {
   })
     .then((r) => r.text())
     .then((r) => {
-      console.log(r);
       if (r) {
         mostrarNotif("correcto", "Ticket creado correctamente");
         setTimeout(() => {
@@ -30,7 +29,6 @@ formulario.addEventListener("submit", async function (e) {
 async function agarrarOPT() {
   const respuesta = await fetch("../persistencia/getTicketOPT.php");
   const r = await respuesta.json();
-  console.log(r);
   let retorno = "";
   r.forEach((r) => {
     retorno += `<option value="${r.NombreRazon}">${r.NombreRazon}</option>`;

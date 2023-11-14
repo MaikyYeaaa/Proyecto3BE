@@ -1,7 +1,6 @@
 fetch("../persistencia/getUsers.php")
   .then((r) => r.json())
   .then(async (users) => {
-    console.log(users);
     let tabla = "<table> <tr> <th>Id</th> <th>Nombre</th> <th>Mail</th> <th>Rol</th> </tr>";
     for (const user of users) {
       tabla += `<tr><td>#${user.IDUser}</td><td>${user.Nombre}</td><td>${user.Mail}</td><td>${await rolesSelect(user)}</td></tr>`;
@@ -39,6 +38,5 @@ function changeRol() {
   })
     .then((r) => r.text())
     .then((r) => {
-      console.log(r);
     });
 }

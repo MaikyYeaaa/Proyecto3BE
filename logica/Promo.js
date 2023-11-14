@@ -3,16 +3,12 @@
 // fetch("../persistencia/getPublicaciones.php")
 //   .then((r) => r.json())
 //   .then(async (r) => {
-//     console.log(r);
 
 //     for (let i = 0; i < r.length; i++) {
 //       let idPubli = r[i].IDPublicacion;
 //       let idMenuArray = await getIdMenu(idPubli);
-//       console.log(idMenuArray);
 //       let idMenu = idMenuArray[0].IDMenu;
-//       console.log(`idMenu: ${idMenu}`);
 //       let menu = await getMenu(idMenu);
-//       console.log(menu);
 //       let precioOrig = menu[0].Precio;
 //       let descuento = menu[0].Descuento;
 
@@ -85,7 +81,6 @@ function getPublicaciones() {
 getPublicaciones();
 
 function listarPublicacion(publi) {
-  console.log(publi);
   const mostrar = `
       <article class="Promo ">
       <section id="Info">

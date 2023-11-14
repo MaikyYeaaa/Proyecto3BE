@@ -4,19 +4,16 @@ function getPedidos(){
     fetch("../persistencia/getPedidosToUpdate.php")
     .then((r)=> r.json())
     .then((r)=> {
-        console.log(r);
         r.forEach((pedido)=>{
 
             if(idAux == pedido.ID_Pedido ){
                 if(iterations <=2){
                     iterations ++;
                     $(`#menusPedido${idAux}`).append(`, ${pedido.Nombre_Menu}`);
-                    console.log("Holanda");
                 }
                
             }else{
                 iterations = 0;
-                console.log(idAux+"=="+pedido.ID_Pedido);
                 idAux = pedido.ID_Pedido;
                 $("#pedidos").append(`
                 <section id="pedidoBody">
@@ -39,7 +36,6 @@ function getPedidos(){
         $("#pedidos").on("change", "select.pedido", function (event) {
             const selectedPedidoID = event.target.getAttribute("name");
             const selectedValue = event.target.value;
-            console.log("Selected Pedido ID: " + selectedPedidoID + "and value:" + selectedValue);
             updateValue(selectedValue,selectedPedidoID);
         });
 
@@ -60,7 +56,6 @@ function updateValue(state,id){
     })
     .then((r)=> r.text())
     .then((r)=> {
-        console.log(r);
     })
 }
 
@@ -77,7 +72,6 @@ function updateValue(state,id){
 
 
 function getPedidoOptions(state,id){
-    console.log(id);
     switch(state){
      
       case "DESCONOCIDO":
@@ -138,7 +132,6 @@ function getPedidoOptions(state,id){
 
 
 /*function getSelectOptions(state,id){
-    console.log(id);
     switch(state){
      
       case "DESCONOCIDO":

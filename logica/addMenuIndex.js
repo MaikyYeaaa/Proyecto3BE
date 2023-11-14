@@ -1,5 +1,4 @@
 function modalMenu(menu) {
-  console.log(menu);
   const nombre = $(menu).attr("data-nombre");
   const id = $(menu).attr("data-id");
   const confirmar = confirm(`Estas seguro que quieres añadir ${nombre}?`);
@@ -12,6 +11,8 @@ function modalMenu(menu) {
       },
     })
       .then((respuesta) => respuesta.json())
-      .then((r) => console.log(r));
+      .then((r) => {
+        
+      });
   }
 }

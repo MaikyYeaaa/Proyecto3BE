@@ -3,7 +3,6 @@ function getNotif(){
     fetch("../persistencia/getMenusAReponer.php")
     .then((response) => response.json())
     .then((data) => {
-      console.log("Holanda");
       data.forEach((notif) => {
         if(notifN != NaN && notifN >= 9){
           notifN = "+9";
@@ -17,7 +16,6 @@ function getNotif(){
         $("#stockbtn").prepend(`
         <section id="NotificationOP">${notifN}</section>
         `);
-        console.log(notifN);
     }
     })
 }

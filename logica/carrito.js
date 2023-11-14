@@ -1,6 +1,5 @@
 async function listarCarrito() {
   let carrito = obtenerCarrito();
-  console.log(carrito);
   let menus = await getMenus(carrito);
 
   for (let i = 0; i < carrito.length; i++) {
@@ -164,7 +163,6 @@ async function obtenerDatos(url) {
 
 async function getMenus(menus) {
   let comidas = [];
-  console.log(menus);
   const integra = await obtenerDatos("../persistencia/getIntegra.php");
 
   const promises = menus.map(async (menu) => {
@@ -211,7 +209,6 @@ async function getComidasNombre(arrayIDs) {
 }
 
 async function crearPedido() {
-  console.log("pedidos");
   const carrito = await obtenerCarrito();
   let pedidoIDs = [];
 
@@ -224,7 +221,6 @@ async function crearPedido() {
     }
   });
 
-  console.log(pedidoIDs);
 
   $("#modal-pedido").css({ display: "flex" });
 
@@ -250,7 +246,6 @@ async function crearPedido() {
     })
       .then((r) => r.text())
       .then((r) => {
-        console.log(r);
         if (r == "Good") {
           $("#modal-listo").css({ display: "flex" });
           $("#modal-pedido").css({ display: "none" });

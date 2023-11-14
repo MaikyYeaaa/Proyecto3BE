@@ -1,7 +1,6 @@
 let datos = new FormData();
 let id = localStorage.getItem("id");
 datos.append("id", id);
-console.log(id);
 
 fetch("../persistencia/getPedidosHistorial.php", {
   method: "post",

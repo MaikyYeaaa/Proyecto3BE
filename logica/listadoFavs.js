@@ -4,7 +4,6 @@ fetch("../persistencia/listarFavs.php")
     idArray.forEach((id) => {
       let data = new FormData();
       data.append("id", id);
-      console.log(`id q se manda: ${id}`);
       fetch("../persistencia/getMenuFromID.php", {
         method: "post",
         body: data,
@@ -27,7 +26,6 @@ fetch("../persistencia/listarFavs.php")
           let titulo = Menu[0].Nombre;
           let precio = Menu[0].Precio;
           let id = Menu[0].IDMenu;
-          console.log(Menu);
 
           let mostrar = `
       <article class="menu">
@@ -52,7 +50,6 @@ fetch("../persistencia/listarFavs.php")
       $(".callToAction").hover(
         function () {
           var numRandom = Math.random() * 10 - 5;
-          console.log(numRandom);
           $(this).css({ transform: `translateY(-5px) rotate(${numRandom}deg) scale(1.05)` });
         },
         function () {
