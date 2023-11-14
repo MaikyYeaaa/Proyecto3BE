@@ -5,9 +5,10 @@ $con = conectarBDD();
 
 $id = mysqli_real_escape_string($con, $_POST["id"]);
 
-$sqlElmiminarRelacion = "DELETE FROM pertenece WHERE IDComida = ".$id;
+$sqlPertenece = "DELETE FROM pertenece WHERE IDComida = ".$id;
+$sqlInterga = "DELETE FROM integra WHERE IDComida = ".$id;
 
-if(sendToBDD($sqlElmiminarRelacion, $con)) {
+if(sendToBDD($sqlInterga, $con) && sendToBDD($sqlPertenece, $con)) {
 
     
     $sqlEliminarComida = "DELETE FROM comida WHERE IDComida = ".$id;

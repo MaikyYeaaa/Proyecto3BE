@@ -81,7 +81,11 @@ $(document).on("click", "#eliminar input[type='submit']", function (e) {
       body: datos,
     })
       .then((r) => r.text())
-      .then((r) => location.reload());
+      .then((r) => {
+        if (r == "eliminado correctamente") {
+          location.reload();
+        }
+      });
   }
 });
 
