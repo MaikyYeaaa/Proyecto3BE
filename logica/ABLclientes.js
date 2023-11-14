@@ -10,7 +10,6 @@ function confirmarCliente(mail) {
   })
     .then((r) => r.text())
     .then((r) => {
-      console.log(r);
       if (r == "success") {
         location.reload();
       } else {

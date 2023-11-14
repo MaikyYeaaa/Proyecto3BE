@@ -41,24 +41,24 @@
               <option value="web">Persona</option>
               <option value="empresa">Empresa</option>
           </select>
-          <input type="number" name="ci-rut" id="ident" placeholder="CI" min="0" minlength="8" maxlenminlength="8"/>
+          <input type="number" name="ci-rut" id="ident" placeholder="CI" min="0" maxlength="8" minlength="8" required/>
           </section>
             <section id="second">
               <article id="nombre-apellido-art">
 
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
-                <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido" required/>
               </article>
-                <input type="text" name="mail" id="mail" maxlength="30" placeholder="Mail" />
+                <input type="text" name="mail" id="mail" maxlength="30" placeholder="Mail" required/>
   
             </section>
             <section id="third">
-                  <input class="col-12" type="password" name="contra" id="contra" placeholder="Contraseña" />
-                  <input class="col-12" type="password" name="contra2" id="contra2" placeholder="Repetir Contraseña" />
+                  <input class="col-12" type="password" name="contra" id="contra" placeholder="Contraseña" required/>
+                  <input class="col-12" type="password" name="contra2" id="contra2" placeholder="Repetir Contraseña" required/>
           </section>
           <section id="forth">
-            <input type="text" name="direccion" maxlength="30" id="direccion" placeholder="Dirección"  />
-            <input type="text" name="tel" maxlength="30" id="telefono" placeholder="Telefono"  />
+            <input type="text" name="direccion" maxlength="30" id="direccion" placeholder="Dirección"  required/>
+            <input type="text" name="tel" maxlength="30" id="telefono" placeholder="Telefono" required />
 
           </section>
   

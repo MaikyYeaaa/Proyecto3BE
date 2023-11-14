@@ -32,9 +32,12 @@ tipo.addEventListener("change", (e) => {
 async function valida(datos) {
   let response = await fetch("../persistencia/Lclientes.php");
   let r = await response.json();
+  let ci = datos.get("ci-rut");
   let mail = datos.get("mail");
   let contra = datos.get("contra");
   let contraRepit = datos.get("contra2");
+
+  let ciVerif = ci.length === 8;
 
   let mailRepetido = r.some((record) => record.Mail === mail); //NO ANDA
 
@@ -45,7 +48,8 @@ async function valida(datos) {
   let mailV = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   let mailVerif = mailV.test(mail);
 
-  if (!contrasenaVerif || !contrasenaSecure || !mailVerif || mailRepetido) {
+  if (!contrasenaVerif || !contrasenaSecure || !mailVerif || mailRepetido || !ciVerif) {
+    if (!ciVerif) mostrarNotif("error", "Cedula incorrecta (sin puntos ni guiones)");
     if (!contrasenaVerif) mostrarNotif("error", "Contraseñas no coinciden");
     if (!contrasenaSecure) mostrarNotif("error", "La contraseña no es segura (debe tener al menos 1 Mayuscula y 1 numero)", 1000);
     if (!mailVerif) mostrarNotif("error", "El mail es incorrecto");
