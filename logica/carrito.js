@@ -231,7 +231,7 @@ async function crearPedido() {
   let formulario = document.getElementById("pedido-form");
   formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    zona = localStorage.getItem("zona");
     let datos = new FormData(formulario);
     let fecha = getDateOp();
     let vencimiento = getVencimientoOp();
@@ -239,6 +239,7 @@ async function crearPedido() {
     datos.append("fecha", fecha);
     datos.append("monto", precioTotal);
     datos.append("menuIDs", pedidoIDs);
+    datos.append("zona",zona);
 
     let idUser = localStorage.getItem("id");
     datos.append("idUser", idUser);

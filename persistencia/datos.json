@@ -711,5 +711,15 @@
         "datosZonas": "asdasdasdasd",
         "datosCostoMenus": "123",
         "datosFechaVencimiento": "hola"
+    },
+    {
+        "datosCocina": "4",
+        "datosTiempo": "123",
+        "datosStockcolchon": "4",
+        "datosStockmaximo": "10",
+        "datosTiempoturno": "480",
+        "datosZonas": "asdasdasdasd",
+        "datosCostoMenus": "123",
+        "datosFechaVencimiento": "hola"
     }
 ]

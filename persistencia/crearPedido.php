@@ -109,6 +109,7 @@ $con = conectarBDD();
 $fecha = mysqli_real_escape_string($con, $_POST["fecha"]);
 $monto = mysqli_real_escape_string($con, $_POST["monto"]);
 $vencimiento = mysqli_real_escape_string($con, $_POST["vencimiento"]);
+$zonaID= $_POST["zona"];
 
 
 // crear pedido (done)
@@ -136,7 +137,7 @@ $ID = $ID[0]["ID"];
 // traer ID de Sucursal (para llega) 
 $sqlIDsucursal = "SELECT `IDSucursal` FROM `sucursal` WHERE `IDSucursal` = 1";
 $idSucursal = getFromBDD($sqlIDsucursal, $con);
-$idSucursal = $idSucursal[0]["IDSucursal"];
+$idSucursal = $zonaID;
 
 // traer NombreEstado (para tiene)
 

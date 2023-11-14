@@ -213,8 +213,9 @@ body {
 #modal-pedido #content #pedido-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
   padding: 10px;
+  font-weight: 900;
 }
 #modal-pedido #content #cerrar-img {
   position: relative;

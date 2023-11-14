@@ -119,7 +119,7 @@ function eliminarMenu(boton) {
         if (r == 1) {
           location.reload();
         } else {
-          alarm("ocurrio un error eliminando el menu");
+          alert("ocurrio un error eliminando el menu");
         }
       });
   }
