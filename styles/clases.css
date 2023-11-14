@@ -167,10 +167,10 @@ body {
   justify-content: center;
   align-items: center;
   color: black;
-
+  background-color: rgb(255, 255, 255);
+  text-decoration: none;
   border-radius: 0.5rem;
   border: 1px solid #000;
-  background: none;
 }
 .btnSecundario {
   display: flex;
@@ -280,7 +280,7 @@ body {
   align-content: flex-start;
 }
 
-@media screen and(max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .btnPrimario {
     padding: 0.25rem 0.5rem;
     background-color: red;
@@ -291,8 +291,10 @@ body {
     background-color: red;
     border: solid red 3px;
   }
+} */
+a {
+  text-decoration: none;
 }
-
 .IMG.fallback {
   background-image: url("../src/NoImg.png");
 }

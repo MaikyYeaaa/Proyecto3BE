@@ -67,7 +67,7 @@ function mostrarMenus() {
         });
 
         let mostrar = `
-        <article class="menu" id="#menu" data-id="${id}" data-nombre="${nombre}" data-platos="${comidasNombres}" data-precio="${precio}" data-stock="${stock}" onclick="modalMenu(this)">
+        <article class="menu" id="#menu" data-img="${img}" data-id="${id}" data-nombre="${nombre}" data-platos="${comidasNombres}" data-precio="${precio}" data-stock="${stock}" onclick="modalMenu(this)">
         <section id="fondo">
         <img src="${img}" class="IMG" alt="../../src/noimgico.png" onerror="this.onerror=null;this.src='../src/noimg.png';"/>
         </section>
@@ -80,22 +80,26 @@ function mostrarMenus() {
 }
 
 function modalMenu(menu) {
-  let id = $(menu).attr("data-id");
-  let platos = $(menu).attr("data-platos");
-  let nombre = $(menu).attr("data-nombre");
-  let stock = $(menu).attr("data-stock");
-  let precio = $(menu).attr("data-precio");
+  const img = $(menu).attr("data-img");
+  const id = $(menu).attr("data-id");
+  const platos = $(menu).attr("data-platos");
+  const nombre = $(menu).attr("data-nombre");
+  const stock = $(menu).attr("data-stock");
+  const precio = $(menu).attr("data-precio");
 
   mostrar = `
   <img id="cerrar" src="../src/cross.svg" alt="" />
   <h1>${nombre} </h1>
-  
+  <img
+  id="productoImg"
+  src="${img}" alt="Girl in a jacket"
+  />
   <p> Platos: ${platos} </p>
   <p> Stock: ${stock} </p>
   <p> $${precio}</p>
   <section id="btnContenedor">
   <input class="btnSecundario" type="submit" value="Eliminar" data-nombre="${nombre}" data-id="${id}" onclick="eliminarMenu(this)"/>
-  <input class="btnSecundario" type="submit" value="Modificar" data-precio="${precio}" data-stock="${stock}" data-platos="${platos}" data-nombre="${nombre}" data-id="${id}" onclick="modificarMenu(this)"/>
+  <input class="btnSecundario" type="submit" value="Modificar" data-img="${img}" data-precio="${precio}" data-stock="${stock}" data-platos="${platos}" data-nombre="${nombre}" data-id="${id}" onclick="modificarMenu(this)"/>
   </section>
   `;
   $("#modal #modal-content").html(mostrar);
@@ -126,18 +130,23 @@ function eliminarMenu(boton) {
 }
 
 function modificarMenu(boton) {
-  let id = $(boton).attr("data-id");
-  let nombre = $(boton).attr("data-nombre");
-  let platos = $(boton).attr("data-platos");
-  let precio = $(boton).attr("data-precio");
-  let stock = $(boton).attr("data-stock");
+  const img = $(boton).attr("data-img");
+  const id = $(boton).attr("data-id");
+  const nombre = $(boton).attr("data-nombre");
+  const platos = $(boton).attr("data-platos");
+  const precio = $(boton).attr("data-precio");
+  const stock = $(boton).attr("data-stock");
 
   mostrar = `
   <img id="cerrar" src="../src/cross.svg" alt="" />
   <form id="modificarMenuForm" data-id="${id}">
   <h1> <input type="text" value="${nombre}" name="nombreNuevo" /> </h1>
+  <img
+  id="productoImg"
+  src="${img}" alt="Girl in a jacket"
+  />
   <p> Platos: ${platos} </p>
-  <p> Stock: <input type="number" value="${stock}" name="stockNuevo" /> </p>
+  <p> Stock: ${stock} </p>
   <p> $<input type="number" value="${precio}" name="precioNuevo" /></p>
   <section id="btnContenedor">
   <input type="submit" class="btnSecundario" value="Modificar" />

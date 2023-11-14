@@ -26,6 +26,7 @@ async function agregarAlCarrito(button) {
   if (!revisarRepeticion(id, carritoPrevio)) {
     let item = { id: id, nombre: nombre, img: img, precio: precio, cant: 1, comidas: platosMenu, tipo: tipo };
     carritoPrevio.push(item);
+    alert("agregado correctamente!");
   } else {
     let itemExistente = carritoPrevio.find((item) => item.id == id);
     if (itemExistente) {
@@ -43,8 +44,6 @@ function revisarRepeticion(id, carritoPrevio) {
   let repete = false;
   carritoPrevio.forEach((item) => {
     let itemID = item.id;
-    console.log(`itemID: ${itemID}`);
-    console.log(`id: ${id}`);
 
     if (itemID == id) {
       repete = true;

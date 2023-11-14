@@ -1,27 +1,26 @@
 body {
   margin: 0;
 }
-#top{
+#top {
   display: flex;
   align-items: center;
 }
-#top-title{
+#top-title {
   font-size: 35px;
   font-weight: bold;
 }
 .publicacion #textop {
-font-weight: 900;
+  font-weight: 900;
 }
 
-
-#addsvg{
+#addsvg {
   filter: drop-shadow(2px 2px 1px rgb(41, 41, 41));
   transition: 0.5s;
   width: 19px;
 }
 
-#addsvg:hover{
-  transform: scale(1.1) translate(0,-9px);
+#addsvg:hover {
+  transform: scale(1.1) translate(0, -9px);
   filter: drop-shadow(2px 7px 4px rgb(83, 83, 83));
 }
 
@@ -31,7 +30,7 @@ font-weight: 900;
   background-color: grey;
   border-radius: 20px;
   padding: 10px;
-  border:3px solid white;
+  border: 3px solid white;
   height: 100vh;
   overflow-y: scroll;
 }
@@ -55,13 +54,23 @@ font-weight: 900;
   justify-content: center;
   align-items: center;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0.224);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal #content {
-  width: 300px;
-  height: 322px;
-  background-color: white;
+  padding: 50px;
+  width: 350px;
+  /* height: 322px; */
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.modal #content img {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .modal #content form {
   margin-top: 30px;
@@ -73,18 +82,17 @@ font-weight: 900;
 
 .publicacion {
   display: flex;
-    padding: 10px;
-    background: darkgrey;
-    margin: 10px;
-    border-radius: 10px;
-    border: 3px solid white;
-    filter: drop-shadow(2px 4px 4px );
+  padding: 10px;
+  background: darkgrey;
+  margin: 10px;
+  border-radius: 10px;
+  border: 3px solid white;
+  filter: drop-shadow(2px 4px 4px);
 }
 .publicacion #img-cont {
   object-fit: scale-down;
   width: 188px;
   margin-right: 5px;
- 
 }
 .publicacion #img-cont img {
   width: 100%;
@@ -102,24 +110,21 @@ font-weight: 900;
   margin: 20px;
 }
 
-
-@media screen and (max-width:827px){
-  .publicacion{
+@media screen and (max-width: 827px) {
+  .publicacion {
     flex-direction: column;
-
   }
-#listado{
-  width: 100%;
-  margin: 0;
-}
-#publicaciones{
+  #listado {
     width: 100%;
     margin: 0;
-}
-.publicacion #img-cont{
-  width:99%;
-  //filter: drop-shadow(2px 2px 3px rgb(47, 47, 47));
-  margin-bottom: 20px;
-}
-
+  }
+  #publicaciones {
+    width: 100%;
+    margin: 0;
+  }
+  .publicacion #img-cont {
+    width: 99%;
+    //filter: drop-shadow(2px 2px 3px rgb(47, 47, 47));
+    margin-bottom: 20px;
+  }
 }

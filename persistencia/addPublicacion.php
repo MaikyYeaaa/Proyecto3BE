@@ -3,28 +3,31 @@ require "../logica/Clases/Publicacion.php";
 require "../logica/Clases/Incluye.php";
 require "../logica/Clases/Menu.php";
 
-
-$id = $_POST["id"];
+$idMenu = $_POST["id"];
 $nombre = $_POST["nombre"];
 $desc = $_POST["desc"];
 $img = $_POST["imgURL"];
-$precioNew = $_POST["precioDescuento"];
+$descuento = $_POST["precioDescuento"];
+// $precioNew = $_POST["precioDescuento"];
 $precioViejo = $_POST["precioViejo"];
- 
-$publicacion = new Publicacion($id, $nombre, $img, $desc);
 
-$ultimaID = $publicacion->getLastId()+1;
+$publicacion = new Publicacion($nombre, $img, $desc);
 
-$incluye = new Incluye($ultimaID, $id);
+$publiSend = $publicacion->sendBDD();
 
-if($publicacion->sendBDD() && $incluye->sendBDD()) {
-    $descuento = ($precioNew*100)/$precioViejo;
+$publicacionID = $publicacion->getLastId();
 
-    $sqlUpdate = "UPDATE `menu` SET `Descuento`='{$descuento}'";
-if(Menu::updateFromId($sqlUpdate, $id)) {
-        echo json_encode(true);
-    }
+$incluye = new Incluye($publicacionID, $idMenu);
 
+$incluyeSend = $incluye->sendBDD();
+
+$sqlUpdate = "UPDATE `menu` SET `Descuento`='{$descuento}'";
+$menuSend = Menu::updateFromId($sqlUpdate, $idMenu);
+
+if($publiSend == 1 && $incluyeSend == 1 && $menuSend == 1) {
+    echo "1";
+} else {
+    echo "error";
 }
 
 ?>

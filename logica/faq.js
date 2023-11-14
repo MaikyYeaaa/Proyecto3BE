@@ -1,19 +1,16 @@
-var buttonValues;//Creo una variable en el inicio para poder obtener el valor del botón que tiene el ID de la serie mas tarde
+var buttonValues; //Creo una variable en el inicio para poder obtener el valor del botón que tiene el ID de la serie mas tarde
 function isEmpty(value) {
   return value.length === 0;
 }
 
-
-
-
 function mostrarPreguntas() {
   fetch("../logica/getFAQ.php")
-      .then((r) => r.json())
-      .then((response) => {
-        console.log(response)
-          const preguntaArray = Object.values(response);
-          preguntaArray.forEach((pregunta, index) => {
-             $("#parametrizarInputs").append(` <section class="preguntaBody">
+    .then((r) => r.json())
+    .then((response) => {
+      console.log(response);
+      const preguntaArray = Object.values(response);
+      preguntaArray.forEach((pregunta, index) => {
+        $("#parametrizarInputs").append(` <section class="preguntaBody">
              <article id="preguntaContainer">
                  <section id="Pregunta">${pregunta.titulo}</section>
                  <section id="Respuesta">${pregunta.descripcion}</section>
@@ -25,47 +22,39 @@ function mostrarPreguntas() {
              </section>
 
          </section>`);
-          
-            
-
-          });
-           
-          $(".modify").click(function() { 
-            buttonValues = $(this).val(); 
-            showModal();
-            console.log(buttonValues);
-        });
-
-
-
-        
-        $(".remove").click(function() {
-            buttonValues = $(this).val();
-            console.log("Button clicked!" + buttonValues); 
-            console.log(buttonValues);
-            removerJson();
-        });
-
       });
+
+      $(".modify").click(function () {
+        buttonValues = $(this).val();
+        showModal();
+        console.log(buttonValues);
+      });
+
+      $(".remove").click(function () {
+        buttonValues = $(this).val();
+        console.log("Button clicked!" + buttonValues);
+        console.log(buttonValues);
+        removerJson();
+      });
+    });
 }
 
 mostrarPreguntas();
-function removerJson(){
-  var data = new FormData(); 
-  data.append("id",buttonValues); 
+function removerJson() {
+  var data = new FormData();
+  data.append("id", buttonValues);
   fetch("../logica/removeFAQFromJson.php", {
     method: "POST",
-    body:data,
+    body: data,
   })
-  .then((r) => r.text())
-        .then((response) => {
-          console.log(response);
-            location.reload();
-        });
-
+    .then((r) => r.text())
+    .then((response) => {
+      console.log(response);
+      location.reload();
+    });
 }
 
-function editModal(){
+function editModal() {
   $("#add").append(` <article class="modal-content">
   <span class="close">&times;</span>
   <section id="modalBody">
@@ -89,70 +78,83 @@ function showModal() {
   getValuesFromDBB();
   editModal();
   var modal = document.getElementById("myModal");
-  var span = document.querySelector("#myModal .close"); 
+  var span = document.querySelector("#myModal .close");
   modal.style.display = "block";
   console.log("holanda");
-  if (span) { 
-      span.onclick = function() {
-          modal.style.display = "none";
-      };
+  if (span) {
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
   }
 
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
   };
 
   var modalInput = document.getElementById("modificarFAQ");
   modalInput.value = buttonValues;
 }
 
-
-
-$("#modificarFAQ").click(function() {
+$("#modificarFAQ").click(function () {
   buttonValues = $(this).val();
   console.log("edit");
-
 
   let nuevoTitulo = $("#preguntaP").val();
   let nuevaDescripcion = $("#respuestaP").val();
 
-if(!isEmpty(nuevoTitulo) && !isEmpty(nuevaDescripcion)){
-  modificarJson(nuevoTitulo, nuevaDescripcion);
-}
-console.log("TeFaltaRellenarCampos");
-
+  if (!isEmpty(nuevoTitulo) && !isEmpty(nuevaDescripcion)) {
+    modificarJson(nuevoTitulo, nuevaDescripcion);
+  }
+  console.log("TeFaltaRellenarCampos");
 });
 
-
-function getValuesFromDBB(){
+function getValuesFromDBB() {
   fetch("../logica/getFAQ.php")
-  .then((r) => r.json())
-  .then((response) => {
-    console.log(response);
+    .then((r) => r.json())
+    .then((response) => {
+      console.log(response);
       const preguntaArray = Object.values(response);
-      ;
       $("#preguntaP").val(preguntaArray[buttonValues].titulo);
       $("#respuestaP").val(preguntaArray[buttonValues].descripcion);
-      
-  })
+    });
 }
 
-
-
 function modificarJson(nuevoTitulo, nuevaDescripcion) {
-  var data = new FormData(); 
+  var data = new FormData();
   data.append("id", buttonValues);
   data.append("titulo", nuevoTitulo);
   data.append("descripcion", nuevaDescripcion);
-  
+
   fetch("../persistencia/modifyFAQFromJson.php", {
     method: "POST",
     body: data,
   })
-  .then((r) => r.json())
-  .then((response) => {
-   location.reload();
-  });
+    .then((r) => r.json())
+    .then((response) => {
+      location.reload();
+    });
 }
+
+function addFAQ() {
+  $("#addModal").css("display", "flex");
+}
+
+const formu = document.getElementById("addForm");
+formu.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const datos = new FormData(formu);
+  fetch("../persistencia/addFAQ.php", {
+    method: "post",
+    body: datos,
+  })
+    .then((r) => r.text())
+    .then((r) => {
+      location.reload();
+    });
+});
+
+$(".modal-content span").click(() => {
+  $("#addModal").css("display", "none");
+});
