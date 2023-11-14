@@ -73,10 +73,27 @@
             <section id="listado-zonas"></section>
           </article>
         </article>
+        <br />
+        <article id="paracontainer">
+          <article id="parametrizarTitle">
+            <h1>PARAMETRIZAR DIETAS</h1>
+          </article>
+          <article id="parametrizarInputs">
+            <form id="dietas-form">
+              <p>Agregar Dieta:</p>
+              <input type="text" name="dieta" placeholder="Vegana" class="textfield" required />
+              <br />
+              <input type="submit" value="Agregar" class="btnSecundario" />
+            </form>
+            <br />
+            <section id="listado-dietas"></section>
+          </article>
+        </article>
       </section>
     </main>
 
     <script src="../logica/getParametros.js"></script>
     <script src="../logica/parametrizarZonas.js"></script>
+    <script src="../logica/parametrizarDietas.js"></script>
   </body>
 </html>

@@ -15,7 +15,6 @@ body {
 #parametrizarInputs {
   background-color: #ffffff;
   padding: 20px;
-  height: 100%;
 }
 #parametrizar {
   padding: 10px;
@@ -184,13 +183,15 @@ body {
   gap: 10px;
   width: fit-content;
 }
-.zona #botones {
+.zona #botones,
+.dieta #botones {
   display: flex;
   width: 20%;
   height: 20%;
   gap: 10px;
 }
-.zona {
+.zona,
+.dieta {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -264,7 +265,8 @@ body {
   border-radius: 8px;
 }
 
-#listado-zonas {
+#listado-zonas,
+#listado-dietas {
   background-color: #888;
   padding: 20px;
   border-radius: 6px;
@@ -274,7 +276,8 @@ body {
   width: 100%;
 }
 
-.zona {
+.zona,
+.dieta {
   display: flex;
   flex-direction: column;
   background-color: white;

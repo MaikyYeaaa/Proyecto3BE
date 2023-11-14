@@ -146,7 +146,7 @@ function modificarMenu(boton) {
   src="${img}" alt="Girl in a jacket"
   />
   <p> Platos: ${platos} </p>
-  <p> Stock: <input type="number" value="${stock}" name="stockNuevo" /> </p>
+  <p> Stock: ${stock} </p>
   <p> $<input type="number" value="${precio}" name="precioNuevo" /></p>
   <section id="btnContenedor">
   <input type="submit" class="btnSecundario" value="Modificar" />
