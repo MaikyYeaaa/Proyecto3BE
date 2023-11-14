@@ -4,9 +4,9 @@
 }
 
 #main-bienvenido {
-  background: rgb(100,231,103);
-  background: linear-gradient(354deg, rgba(100,231,103,1) 0%, rgba(79,222,135,1) 38%, rgba(167,251,103,1) 100%);
-  z-index: -2;
+  background: rgb(100, 231, 103);
+  background: linear-gradient(354deg, rgba(100, 231, 103, 1) 0%, rgba(79, 222, 135, 1) 38%, rgba(167, 251, 103, 1) 100%);
+  /* z-index: -2; */
   display: flex;
   position: relative;
   justify-content: center;
@@ -162,15 +162,14 @@ a {
   text-decoration: none;
 }
 
-
-#ContainerFaq{
+#ContainerFaq {
   display: flex;
   flex-direction: row;
   margin: 54px;
 }
 
-#backgroundimg{
+#backgroundimg {
   position: absolute;
-  z-index: -1;
-  transform: translate(0,-110px);
+  z-index: 2;
+  transform: translate(0, -110px);
 }

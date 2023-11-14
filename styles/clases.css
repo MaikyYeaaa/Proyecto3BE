@@ -323,3 +323,7 @@ a {
   filter: drop-shadow(2px 2px 1px rgb(49, 49, 49));
   transform: scale(1.1);
 }
+
+a {
+  text-decoration: none;
+}
