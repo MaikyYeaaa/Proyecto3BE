@@ -57,7 +57,7 @@ function showNav() {
     $("#navbar").css({ height: "100vh" });
     navClickeada = true;
   } else {
-    $("#navbar").css({ height: "90px" });
+    $("#navbar").css({ height: "0" });
     navClickeada = false;
   }
 }
@@ -79,10 +79,10 @@ switch (pagina) {
     break;
   case "carrito.html":
     txt = $("#txtCarrito");
-   break;
+    break;
   case "perfil.html":
     txt = $("#txtPerfil");
-   break;
+    break;
   case "index.html":
     txt = $("#txtIndex");
     break;
@@ -92,5 +92,5 @@ switch (pagina) {
 }
 console.log(txt);
 if (txt) {
-  $(txt).css({background: "#dcf798ab", padding: "10px","border-radius": "8px", "padding-inline":"20px" });
+  $(txt).css({ background: "#dcf798ab", padding: "10px", "border-radius": "8px", "padding-inline": "20px" });
 }
