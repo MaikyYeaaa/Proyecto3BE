@@ -57,15 +57,16 @@
           <br />
 
           <label for="numero">Número de la tarjeta:</label>
-          <input type="number" id="numero" name="numero" placeholder="1111 2222 3333 4444" required />
+          <input type="number" id="numero" name="numero" placeholder="1111222233334444" maxlength="16" minlength="16" required />
           <br />
 
           <label for="fecha">Fecha de expiración (MM/AA):</label>
-          <input type="text" id="fecha" name="fecha" placeholder="01/34" required />
+          <input type="text" id="fecha" name="fecha" placeholder="07/26" max="5" required />
           <br />
 
           <label for="cvv">CVV:</label>
           <input type="number" id="cvv" name="cvv" placeholder="123" required />
+          <br />
 
           <label for="cvv">¿En donde lo retirarás?:</label>
           <select name="lugar" id="lugares"></select>
@@ -96,14 +97,14 @@
             <p id="precio">TOTAL: $3999</p>
           </article>
           <section id="boton">
-            <button id="btnComprar" class="callToAction" style="width: 50%" onclick="crearPedido()">COMPRAR</button>
+            <button id="btnComprar" class="callToAction" style="width: 50%">COMPRAR</button>
           </section>
         </article>
       </section>
       <section id="platos"></section>
     </article>
 
-    <script src="../logica/carrito.js"></script>
+    <script src="../logica/carrito.js" type="module"></script>
     <script src="../logica/getSucursales.js"></script>
   </body>
 </html>

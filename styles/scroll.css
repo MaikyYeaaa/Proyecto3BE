@@ -1,0 +1,14 @@
+.animar {
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: opacity 800ms, transform 400ms;
+}
+
+.animar.even {
+  transform: translateX(200px);
+}
+
+.animar.visible {
+  opacity: 1;
+  transform: translateX(0);
+}

@@ -206,7 +206,7 @@ body {
 }
 #modal-pedido #content {
   width: 350px;
-  height: 600px;
+  height: fit-content;
   background-color: white;
   border-radius: 8px;
 }

@@ -1,3 +1,4 @@
+import { mostrarNotif } from "../scripts/functionsVarias.js";
 async function listarCarrito() {
   let carrito = obtenerCarrito();
   let menus = await getMenus(carrito);
@@ -206,7 +207,7 @@ async function getComidasNombre(arrayIDs) {
     });
   return comidasNombres;
 }
-
+$("#btnComprar").click(crearPedido);
 async function crearPedido() {
   const carrito = await obtenerCarrito();
   let pedidoIDs = [];
@@ -225,33 +226,66 @@ async function crearPedido() {
   let formulario = document.getElementById("pedido-form");
   formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-    zona = localStorage.getItem("zona");
-    let datos = new FormData(formulario);
-    let fecha = getDateOp();
-    let vencimiento = getVencimientoOp();
-    datos.append("vencimiento", vencimiento);
-    datos.append("fecha", fecha);
-    datos.append("monto", precioTotal);
-    datos.append("menuIDs", pedidoIDs);
-    datos.append("zona", zona);
+    if (verificanDatos()) {
+      const zona = localStorage.getItem("zona");
+      let datos = new FormData(formulario);
+      let fecha = getDateOp();
+      let vencimiento = getVencimientoOp();
+      datos.append("vencimiento", vencimiento);
+      datos.append("fecha", fecha);
+      datos.append("monto", precioTotal);
+      datos.append("menuIDs", pedidoIDs);
+      datos.append("zona", zona);
 
-    let idUser = localStorage.getItem("id");
-    datos.append("idUser", idUser);
-
-    fetch("../persistencia/crearPedido.php", {
-      method: "post",
-      body: datos,
-    })
-      .then((r) => r.text())
-      .then((r) => {
-        console.log(r);
-        if (r == "Good") {
-          $("#modal-listo").css({ display: "flex" });
-          $("#modal-pedido").css({ display: "none" });
-          localStorage.removeItem("carrito");
-        }
-      });
+      let idUser = localStorage.getItem("id");
+      datos.append("idUser", idUser);
+      fetch("../persistencia/crearPedido.php", {
+        method: "post",
+        body: datos,
+      })
+        .then((r) => r.text())
+        .then((r) => {
+          console.log(r);
+          if (r == "Good") {
+            $("#modal-listo").css({ display: "flex" });
+            $("#modal-pedido").css({ display: "none" });
+            localStorage.removeItem("carrito");
+          }
+        });
+    }
   });
+}
+
+function verificanDatos() {
+  const numero = $("#numero").val();
+  const fecha = $("#fecha").val();
+
+  let numeroVer,
+    fechaVer = false;
+
+  // Verificar si numero no tiene espacios en blanco
+  if (/^\S+$/.test(numero)) {
+    numeroVer = true;
+  } else {
+    mostrarNotif("error", "Tarjeta sin espacios en blanco", 1000);
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
+  }
+
+  // Verificar si fecha tiene "/" en la tercera letra
+  if (fecha.charAt(2) === "/") {
+    fechaVer = true;
+  } else {
+    mostrarNotif("error", "Ingrese bien la fecha. Ej: 12/23", 1000);
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
+  }
+
+  if (numeroVer && fechaVer) {
+    return true;
+  }
 }
 
 $("#modal-pedido #content #cerrar-img").click(() => {
