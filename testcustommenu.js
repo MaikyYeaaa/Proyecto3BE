@@ -3,12 +3,10 @@ var comidasTope = 5;
 
 loadMenuSlots(5); //Cargar slots en valor Semanal
 var returnaso = tremendaFunction();
-console.log(returnaso);
 
 $("#noseloco").click(reload);
 
 function reload(){
-    console.log("Reloading...");
     loadMenuSlots(comidasTope);
 }
 
@@ -98,13 +96,10 @@ function loadComidas(slot){
     .then((r)=> r.json())
     .then((r)=> {
         $("#menuList").html("");
-        console.log(r);
         r.forEach((comida,val)=> {
 
             if(tremendaFunction(comida.IDComida)){
-                console.log("NO AGREGAMO NADAAAAAAAAAAA");
             }else{
-                console.log("Vamo a agregaaaaaaaaaaaa " + comida.IDComida + tremendaFunction(comida.IDComida));
                 $("#menuList").append(`  
             
                 <section id="MenuSelect">
@@ -128,18 +123,13 @@ function loadComidas(slot){
 }
 
 function AddComida(comida,id){
-    console.log(id);
-    console.log(`Comida = ${comida} IdSlot = ${id}`);
     updateSlot(id,comida);
     comidasId[id] = comida;
     closeModal();
-    console.log(comidasId);
     if (esPosible()) {
         $("#btnCompra").prop("disabled", false);
-        console.log("Ya ta maestro");
 
     } else {
-        console.log("Faltaaan");
         $("#btnCompra").prop("disabled", true);
     }
 }
@@ -167,13 +157,10 @@ function closeModal(){
 
 
 function loadMenuSlots(slotsN){
-console.log("Holanda");
 comidasId.splice(0,comidasTope);
 $("#btnCompra").prop("disabled", true);
-console.log("holandaa");
 $("#menuSlots").html("");
 for(let i = 0; i < slotsN;i++){
-    console.log(i);
     $("#menuSlots").append(`
     <section id="SlotContainer${i}" class="slot">
     
@@ -202,8 +189,6 @@ function updateSlot(id,comidaId){
     })
     .then((r) => r.json())
     .then((r)=> {
-        console.log(r);
-        console.log(r[0].ImagenURL);
         $(`#SlotContainer${id}`).html("");
         $(`#SlotContainer${id}`).append(`
         <section id="menuBody">
@@ -235,7 +220,6 @@ $("#btnCompra").click(add);
 function add() {
     if (confirm("¿Quieres agregar este menu al carrito de compras?")) {
         CrearMenuParaComprar(2, comidasId); // Use "2" directly
-    console.log("hola no se");
       } else {
       }
     
@@ -245,14 +229,12 @@ function CrearMenuParaComprar(idComprador, comidas) {
     var data = new FormData();
     data.append("idComprador", idComprador);
     data.append("comidas", comidas);
-    console.log("llegamo hasta aca");
     fetch("../persistencia/crearMenuCustom.php", {
         method: "POST",
         body: data
     })
     .then((r) => r.text())
     .then((r) => {
-        console.log(r);
         agregarAlCarritoCM();
     });
 }
@@ -262,10 +244,7 @@ async function agregarAlCarritoCM() {
     fetch("../persistencia/getLastMenuID.php")
     .then((r)=> r.json())
     .then(async(r)=> {
-        console.log(r);
         idOp = r[0].ID;
-        console.log(idOp);
-        console.log(r);
 
         const id = idOp;
     const nombre = "MenuCustom";
@@ -277,7 +256,6 @@ async function agregarAlCarritoCM() {
     if (descuento) {
       tipo = "descuento";
     }
-    console.log(id);
     let platosMenu = [];
     const integra = await obtenerDatos("../persistencia/getIntegra.php");
   
@@ -287,10 +265,8 @@ async function agregarAlCarritoCM() {
       }
     });
   
-    console.log(platosMenu);
   
     let carritoPrevio = obtenerCarrito();
-    console.log(carritoPrevio);
   
     if (!revisarRepeticion(id, carritoPrevio)) {
       let item = { id: id, nombre: nombre, img: img, precio: precio, cant: 1, comidas: platosMenu, tipo: tipo };
@@ -317,8 +293,6 @@ async function agregarAlCarritoCM() {
     let repete = false;
     carritoPrevio.forEach((item) => {
       let itemID = item.id;
-      console.log(`itemID: ${itemID}`);
-      console.log(`id: ${id}`);
   
       if (itemID == id) {
         repete = true;
@@ -340,11 +314,9 @@ async function agregarAlCarritoCM() {
         let index = comidasId.indexOf(comidaToFind);
 
         if (index !== -1) {
-             console.log(`valor ${comidaToFind} encontrado en slot ${index}`);
              encontro = true;
              
         } else {
-            console.log(`valor ${comidaToFind} no encontrado`);
             encontro = false;
            
         }

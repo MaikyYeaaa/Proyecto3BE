@@ -27,7 +27,6 @@ $("body").append(navJefeCocina);
 //   const idUser = localStorage.getItem("id");
 //   let rol = await getRol(idUser);
 //   if (rol == "gerente") {
-//     console.log("soy gerente pa");
 //   }
 // }
 

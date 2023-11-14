@@ -4,7 +4,6 @@ function mostrarTabla() {
   fetch("../persistencia/getPedidos.php")
     .then((r) => r.json())
     .then((r) => {
-      console.log(r);
       const pedidos = Object.values(r);
       pedidos.forEach((pedido, index) => {
         let pedidoData = new FormData();
@@ -15,7 +14,6 @@ function mostrarTabla() {
         })
           .then((q) => q.json())
           .then((q) => {
-            console.log(q);
             $("#pedidos").append(`
             
                 <section id="pedidoBody">
@@ -38,13 +36,11 @@ function mostrarTabla() {
 
 $("#stockcontainer").on("click", ".aceptar", function () {
   const pedidoId = $(this).val();
-  console.log("Aceptar el pedido #" + pedidoId);
   modificarEstado("Confirmado", pedidoId, 12);
 });
 
 $("#stockcontainer").on("click", ".rechazar", function () {
   const pedidoId = $(this).val();
-  console.log("Rechazar el pedido #" + pedidoId);
   modificarEstado("Rechazado", pedidoId, 16);
 });
 
@@ -63,11 +59,9 @@ $(document).on("change", "#pedido", function () {
       break;
   }
 
-  console.log(condicionID);
 });
 
 function getBoxValues(value, pedido) {
-  console.log(value);
   switch (value) {
     case "DESCONOCIDO":
       return `<select name="${pedido.ID}" id="pedido">
@@ -130,7 +124,6 @@ function modificarEstado() {
   fetch("../persistencia/getStock.php")
     .then((r) => r.text())
     .then((r) => {
-      console.log(r);
     });
 }
 
@@ -148,7 +141,6 @@ function modificarEstado(estado, pos, idEstadoVianda) {
   })
     .then((r) => r.text())
     .then((data) => {
-      console.log(data);
       var dataVianda = new FormData();
       dataVianda.append("posicion", pos);
       dataVianda.append("conID", idEstadoVianda);
@@ -158,7 +150,6 @@ function modificarEstado(estado, pos, idEstadoVianda) {
       })
         .then((r) => r.text())
         .then((data) => {
-          console.log(data);
           mostrarTabla();
         });
     });

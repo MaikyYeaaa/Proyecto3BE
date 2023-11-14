@@ -1,7 +1,6 @@
 fetch("../persistencia/verTickets.php")
   .then((r) => r.json())
   .then((r) => {
-    console.log(r);
     r.forEach((r) => {
       let id = r.Reclamo.NReclamo;
       let razon = r.Incorpora.NombreRazon;
@@ -43,7 +42,6 @@ function finalizarTicket(id) {
     })
       .then((r) => r.text())
       .then((r) => {
-        console.log(r);
         if (r) {
           location.reload();
         }

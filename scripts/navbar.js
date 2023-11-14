@@ -56,7 +56,6 @@ $("body").append(navbarAuth);
 
 $("#filtro").on("input", function (e) {
   let texto = $("#filtro").val();
-  console.log(texto);
 });
 
 var navClickeada = false;
@@ -70,7 +69,6 @@ function cortarUrl(url) {
   return parteFinal;
 }
 
-console.log(pagina);
 let txt = "";
 switch (pagina) {
   case "login.html":
@@ -89,7 +87,6 @@ switch (pagina) {
     txt = $("#txtListado");
     break;
 }
-console.log(txt);
 if (txt) {
   //$(txt).css("text-shadow", "0 0 30px #49e600, 0 0 40px #77e600, 0 0 50px #00e67b");
   $(txt).css({background: "#dcf798ab", padding: "10px","border-radius": "8px", "padding-inline":"20px" });

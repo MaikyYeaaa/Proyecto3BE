@@ -23,7 +23,6 @@ function mostrarTabla() {
   fetch("../persistencia/getMenusAReponer.php")
     .then((response) => response.json())
     .then((data) => {
-      console.log("Holanda");
       data.forEach((notif) => {
         $("#Notif").append(`  <section id="NotifBody">
           <article id="notifimg">

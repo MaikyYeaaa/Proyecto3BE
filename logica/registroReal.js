@@ -20,21 +20,18 @@ let formulario = document.getElementById("registro-form");
 let tipo = document.getElementById("tipo");
 tipo.addEventListener("change", (e) => {
   let queEs = e.target.value;
-  console.log(queEs);
   let mostrar = "";
   if (queEs == "persona") {
     mostrar = "CI";
   } else {
     mostrar = "RUT";
   }
-  console.log(mostrar);
   $("#ident").attr("placeholder", `${mostrar}`);
 });
 
 async function valida(datos) {
   let response = await fetch("../persistencia/Lclientes.php");
   let r = await response.json();
-  console.log(r);
   let mail = datos.get("mail");
   let contra = datos.get("contra");
   let contraRepit = datos.get("contra2");
@@ -131,7 +128,6 @@ async function registrarUsuario() {
     })
       .then((r) => r.text())
       .then((r) => {
-        console.log(r);
         if (r == "correcto") {
           window.open("login.html");
           window.close();

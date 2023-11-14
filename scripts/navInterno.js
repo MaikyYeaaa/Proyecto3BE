@@ -14,7 +14,6 @@ async function navbarEmpleado() {
 //   const idUser = localStorage.getItem("id");
 //   let rol = await getRol(idUser);
 //   if (rol == "gerente") {
-//     console.log("soy gerente pa");
 //   }
 // }
 
@@ -22,7 +21,6 @@ async function navbarEmpleado() {
 
 async function mostrarSegunRol() {
   let rol = await getRol();
-  console.log(rol);
   switch (rol) {
     case "gerente":
       return `

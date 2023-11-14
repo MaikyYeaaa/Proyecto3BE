@@ -7,7 +7,6 @@ function mostrarPreguntas() {
   fetch("../logica/getFAQ.php")
     .then((r) => r.json())
     .then((response) => {
-      console.log(response);
       const preguntaArray = Object.values(response);
       preguntaArray.forEach((pregunta, index) => {
         $("#parametrizarInputs").append(` <section class="preguntaBody">
@@ -27,13 +26,10 @@ function mostrarPreguntas() {
       $(".modify").click(function () {
         buttonValues = $(this).val();
         showModal();
-        console.log(buttonValues);
       });
 
       $(".remove").click(function () {
         buttonValues = $(this).val();
-        console.log("Button clicked!" + buttonValues);
-        console.log(buttonValues);
         removerJson();
       });
     });
@@ -49,7 +45,6 @@ function removerJson() {
   })
     .then((r) => r.text())
     .then((response) => {
-      console.log(response);
       location.reload();
     });
 }
@@ -80,7 +75,6 @@ function showModal() {
   var modal = document.getElementById("myModal");
   var span = document.querySelector("#myModal .close");
   modal.style.display = "block";
-  console.log("holanda");
   if (span) {
     span.onclick = function () {
       modal.style.display = "none";
@@ -99,7 +93,6 @@ function showModal() {
 
 $("#modificarFAQ").click(function () {
   buttonValues = $(this).val();
-  console.log("edit");
 
   let nuevoTitulo = $("#preguntaP").val();
   let nuevaDescripcion = $("#respuestaP").val();
@@ -107,14 +100,12 @@ $("#modificarFAQ").click(function () {
   if (!isEmpty(nuevoTitulo) && !isEmpty(nuevaDescripcion)) {
     modificarJson(nuevoTitulo, nuevaDescripcion);
   }
-  console.log("TeFaltaRellenarCampos");
 });
 
 function getValuesFromDBB() {
   fetch("../logica/getFAQ.php")
     .then((r) => r.json())
     .then((response) => {
-      console.log(response);
       const preguntaArray = Object.values(response);
       $("#preguntaP").val(preguntaArray[buttonValues].titulo);
       $("#respuestaP").val(preguntaArray[buttonValues].descripcion);

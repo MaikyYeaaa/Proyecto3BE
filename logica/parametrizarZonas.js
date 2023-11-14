@@ -18,7 +18,6 @@ fetch("../persistencia/getZonas.php")
   .then((r) => r.json())
   .then((r) => {
     r.forEach((zona) => {
-      console.log(zona);
       const nombre = zona.Nombre;
       const direccion = zona.Direccion;
       const idSucursal = zona.IDSucursal;
@@ -48,7 +47,6 @@ function eliminarZona(id) {
     })
       .then((r) => r.text())
       .then((r) => {
-        console.log(r);
         if (r == 1) {
           location.reload();
         }
@@ -111,7 +109,6 @@ function modificarZona(boton) {
         })
           .then((r) => r.text())
           .then((r) => {
-            console.log(r);
             if (r == 1) {
               location.reload();
             }

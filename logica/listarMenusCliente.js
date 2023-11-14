@@ -1,7 +1,6 @@
 fetch("../persistencia/listarMenus.php")
   .then((r) => r.json())
   .then((r) => {
-    console.log(r);
     r.forEach((r) => {
       let estrellas = Math.floor(Math.random() * 5) + 1;
 
@@ -42,7 +41,6 @@ fetch("../persistencia/listarMenus.php")
     $(".callToAction").hover(
       function () {
         var numRandom = Math.random() * 10 - 5;
-        console.log(numRandom);
         $(this).css({ transform: `translateY(-5px) rotate(${numRandom}deg) scale(1.05)` });
       },
       function () {

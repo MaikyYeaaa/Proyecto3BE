@@ -14,7 +14,6 @@ formulario.addEventListener("submit", async (e) => {
     })
       .then((r) => r.json())
       .then((r) => {
-        console.log(r);
         if (r == true) {
           mostrarNotif("correcto", "Mail actualizado correctamente", 500);
           setTimeout(() => {

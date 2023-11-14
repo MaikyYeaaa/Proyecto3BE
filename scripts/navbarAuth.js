@@ -46,13 +46,11 @@ $("body").append(navbarAuth);
 
 $("#filtro").on("input", function (e) {
   let texto = $("#filtro").val();
-  console.log(texto);
 });
 
 var navClickeada = false;
 
 function showNav() {
-  console.log("a");
   if (!navClickeada) {
     $("#navbar").css({ height: "100vh" });
     navClickeada = true;
@@ -71,7 +69,6 @@ function cortarUrl(url) {
   return parteFinal;
 }
 
-console.log(pagina);
 let txt = "";
 switch (pagina) {
   case "login.html":
@@ -90,7 +87,6 @@ switch (pagina) {
     txt = $("#txtListado");
     break;
 }
-console.log(txt);
 if (txt) {
   $(txt).css({background: "#dcf798ab", padding: "10px","border-radius": "8px", "padding-inline":"20px" });
 }

@@ -4,19 +4,16 @@ function getPedidos(){
     fetch("../persistencia/getAllPedidos.php")
     .then((r)=> r.json())
     .then((r)=> {
-        console.log(r);
         r.forEach((pedido)=>{
 
             if(idAux == pedido.ID_Pedido ){
                 if(iterations <=2){
                     iterations ++;
                     $(`#menusPedido${idAux}`).append(`, ${pedido.Nombre_Menu}`);
-                    console.log("Holanda");
                 }
                
             }else{
                 iterations = 0;
-                console.log(idAux+"=="+pedido.ID_Pedido);
                 idAux = pedido.ID_Pedido;
                 $("#pedidos").append(`
                 <section id="pedidoBody">

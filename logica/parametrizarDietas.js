@@ -11,7 +11,6 @@ formuDieta.addEventListener("submit", function (e) {
 fetch("../persistencia/getDietas.php")
   .then((r) => r.json())
   .then((r) => {
-    console.log(r);
     r.forEach((dieta) => {
       const nombre = dieta.Tipodieta;
       const id = dieta.IDDieta;
@@ -38,7 +37,6 @@ function eliminarDieta(id) {
   })
     .then((r) => r.text())
     .then((r) => {
-      console.log(r);
       if (r == "1") {
         location.reload(r);
       } else {

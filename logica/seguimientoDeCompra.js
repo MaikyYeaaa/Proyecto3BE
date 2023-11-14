@@ -1,5 +1,4 @@
 var userid = localStorage.getItem("id");
-console.log(userid);
 
 $("#filtroCancelados").change(function () {
   if ($(this).prop("checked")) {
@@ -34,13 +33,10 @@ function getAllPedidosFromUser(userID, checkbox) {
           if (iterations <= 2) {
             iterations++;
             $(`#PedidoPedidosList${idAux}`).append(`, ${pedido.Nombre_Menu}`);
-            console.log("repetidoop on " + `#PedidoPedidosList${idAux} adding ${pedido.Nombre_Menu} to the list`);
           }
         } else {
           iterations = 0;
           idAux = pedido.ID_Pedido;
-          console.log(pedido.Estado_Pedido);
-          console.log(checkbox);
           if (pedido.Estado_Pedido !== "Cancelado") {
             $("#mostrar").append(`
             <section id="PedidoBody">
@@ -193,11 +189,9 @@ fetch("../persistencia/getComprasFromUser.php",{
 
 function cancelCompra(pedidoId, currentState) {
   if (confirm("¿Estás seguro que quieres cancelar el pedido?")) {
-    console.log("holanda " + currentState);
     let data = new FormData();
     data.append("ID", pedidoId);
     data.append("currentState", currentState);
-    console.log(pedidoId);
     fetch("../persistencia/cancelarCompra.php", {
       method: "POST",
       body: data,
@@ -205,10 +199,8 @@ function cancelCompra(pedidoId, currentState) {
       .then((r) => r.text())
       .then((respuesta) => {
         const feedbackSelector = `.Feedback${pedidoId}`; // Construct the correct selector
-        console.log(`${respuesta} === "Si"`);
         if (respuesta === `"Si"`) {
           location.reload();
-          console.log("SSSSSSSIIIIIIIIIIII");
         } else {
           $(feedbackSelector).text("No es posible cancelar el pedido ya que fue realizado hace más de 24 horas");
         }
@@ -246,11 +238,8 @@ fetch("../persistencia/userInstance.json")
 function cancelarCompra(boton) {
   let fechaInicio = $(boton).attr("data-fecha");
   let fechaActual = getDateOp();
-  console.log(fechaInicio, fechaActual);
   if (fechaInicio == fechaActual) {
-    console.log("aca se puede");
   } else {
-    console.log("aca no pq se paso de las 24horas");
   }
 }
 

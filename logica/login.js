@@ -29,10 +29,8 @@ formulario.addEventListener("submit", function (e) {
     .then((r) => {
       if (r == "mailError") {
         FeedBack("mailError", "45px");
-        console.log("mail");
       } else if (r == "contraError") {
         FeedBack("psswrdError", "80px");
-        console.log("contra");
       } else {
         FeedBack("mailError #psswrdError", "0");
         getID(datos);
@@ -52,7 +50,6 @@ function getID(datos) {
     .then((r) => r.json())
     .then(async (r) => {
       r = r[0].Nro; // hago q r sea solo el numero
-      console.log(r);
       localStorage.setItem("id", r);
       const rol = await getRol(r);
       switch (rol) {
@@ -62,7 +59,6 @@ function getID(datos) {
 
         default:
           window.location.href = "index.html";
-          console.log(rol);
           break;
       }
       // localStorage.getItem("id"); TE MUESTRA LA ID DEL LOCO
@@ -71,7 +67,6 @@ function getID(datos) {
 
 // localStorage.clear();
 // sessionStorage.clear();
-console.log(localStorage.getItem("id"));
 
 $("#togglePassword").click(function () {
   let inputType = $("#inputPass").attr("type");
@@ -88,6 +83,4 @@ let numeroInicial = 7;
 let calculo = numeroInicial;
 for (let i = numeroInicial - 1; i > 0; i--) {
   calculo = calculo * i;
-  console.log(i);
 }
-console.log(calculo);

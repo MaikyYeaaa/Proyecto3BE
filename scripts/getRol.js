@@ -2,7 +2,6 @@ import { getRol } from "../scripts/functionsVarias.js";
 
 const userID = localStorage.getItem("id");
 const rol = await getRol(userID);
-console.log(`rol: ${rol}`);
 switch (rol) {
   case "gerente":
     $("#nav").prepend(`<a id="txtInterno" href="ver-pedidos.html">Interno</a>`);

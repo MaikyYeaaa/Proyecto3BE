@@ -9,7 +9,6 @@ fetch("../persistencia/getCuentaFromId.php", { method: "post", body: data })
     $("#txtMail").append(` ${mail}`);
 
     data.append("mail", mail);
-    console.log(data.get("mail"));
     fetch("../persistencia/getClientFromMail.php", { method: "post", body: data })
       .then((r) => r.json())
       .then((r) => {
