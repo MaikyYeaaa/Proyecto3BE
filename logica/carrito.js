@@ -52,7 +52,6 @@ async function listarCarrito() {
 }
 
 function obtenerCarrito() {
-  
   return JSON.parse(localStorage.getItem("carrito")) || [];
   // returnea un array del carrito que esta guardado en localstorage
 }
@@ -221,7 +220,6 @@ async function crearPedido() {
     }
   });
 
-
   $("#modal-pedido").css({ display: "flex" });
 
   let formulario = document.getElementById("pedido-form");
@@ -235,7 +233,7 @@ async function crearPedido() {
     datos.append("fecha", fecha);
     datos.append("monto", precioTotal);
     datos.append("menuIDs", pedidoIDs);
-    datos.append("zona",zona);
+    datos.append("zona", zona);
 
     let idUser = localStorage.getItem("id");
     datos.append("idUser", idUser);
@@ -246,6 +244,7 @@ async function crearPedido() {
     })
       .then((r) => r.text())
       .then((r) => {
+        console.log(r);
         if (r == "Good") {
           $("#modal-listo").css({ display: "flex" });
           $("#modal-pedido").css({ display: "none" });

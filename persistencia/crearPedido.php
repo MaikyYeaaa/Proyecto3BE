@@ -135,8 +135,6 @@ $ID = getFromBDD($sqlIDpedido, $con);
 $ID = $ID[0]["ID"];
 
 // traer ID de Sucursal (para llega) 
-$sqlIDsucursal = "SELECT `IDSucursal` FROM `sucursal` WHERE `IDSucursal` = 1";
-$idSucursal = getFromBDD($sqlIDsucursal, $con);
 $idSucursal = $zonaID;
 
 // traer NombreEstado (para tiene)
