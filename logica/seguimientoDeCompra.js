@@ -202,6 +202,7 @@ function cancelCompra(pedidoId, currentState) {
         if (respuesta === `"Si"`) {
           location.reload();
         } else {
+          alert("¡No se puede cancelar la compra!");
           $(feedbackSelector).text("No es posible cancelar el pedido ya que fue realizado hace más de 24 horas");
         }
       });

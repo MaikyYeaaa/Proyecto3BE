@@ -1,18 +1,45 @@
 #cambiarContra-form, #cambiarDir-form, #cambiarMail-form{
-    display: flex;
-    padding: 85px 170px;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1 0 0;
-    align-self: stretch;
-    background: #666;
-    margin-top: 160px;
-    margin-block-end: 160px;
-    margin-right: 85px;
-    margin-left: 85px;
-    flex-direction: column;
+  display: flex;
+padding: 85px 170px;
+flex-direction: column;
+align-items: flex-start;
+flex: 1 0 0;
+align-self: stretch;
+background: rgb(133,130,189);
+background: linear-gradient(40deg, rgb(105, 103, 147) 0%, rgba(61,186,166,1) 100%);
+margin-top: 10px;
+margin-block-end: 160px;
+margin-right: 85px;
+margin-left: 85px;
 }
-.btnPrimario{
-background-color: white;
-margin-left: 10px;
+
+
+h1{
+  color: white;
+  font-weight: 900;
+  filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.381));
 }
+
+@media screen and (max-width: 923px) {
+
+  #cambiarContra-form, #cambiarDir-form, #cambiarMail-form{
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  #btnCambiarNombre,
+  #btnCambiarContra,
+  #btnCambiarDireccion {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+
+  
+
+  
+    
