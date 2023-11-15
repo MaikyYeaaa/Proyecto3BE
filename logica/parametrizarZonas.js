@@ -28,7 +28,6 @@ fetch("../persistencia/getZonas.php")
           <br />
         <section id="botones">
         <button class="btnPrimario" data-id="${idSucursal}" onclick="modificarZona(this)">Modificar</button>
-        <button class="btnPrimario" onclick="eliminarZona(${idSucursal})">Eliminar</button>
         </section>
       </article>
       `;
@@ -47,6 +46,7 @@ function eliminarZona(id) {
     })
       .then((r) => r.text())
       .then((r) => {
+        console.log(r);
         if (r == 1) {
           location.reload();
         }
