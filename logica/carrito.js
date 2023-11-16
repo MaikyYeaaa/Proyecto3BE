@@ -57,6 +57,53 @@ function obtenerCarrito() {
   // returnea un array del carrito que esta guardado en localstorage
 }
 
+function eliminarItem(id, nombre) {
+  let confirmar = confirm(`seguro que quiere eliminar ${nombre}?`);
+  if (confirmar) {
+    let carrito = obtenerCarrito();
+    let index = carrito.findIndex((item) => item.id == id);
+    if (index !== -1) {
+      carrito.splice(index, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+    location.reload();
+  }
+}
+function eliminarItemNoConfirm(id) {
+  let carrito = obtenerCarrito();
+  let index = carrito.findIndex((item) => item.id == id);
+  if (index !== -1) {
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+  location.reload();
+}
+
+function sumarItem(id, cant) {
+  let newCant = cant + 1;
+  let carrito = obtenerCarrito();
+  let item = carrito.find((item) => item.id == id);
+  if (item) {
+    item.cant = newCant;
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+  location.reload();
+}
+
+function restarItem(id, cant) {
+  let newCant = cant - 1;
+  let carrito = obtenerCarrito();
+  let item = carrito.find((item) => item.id == id);
+
+  if (newCant == 0) {
+    eliminarItemNoConfirm(id);
+  } else if (item) {
+    item.cant = newCant;
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+  location.reload();
+}
+
 let precioTotal = 0;
 async function ticket() {
   let numRand = Math.floor(Math.random() * 500);
@@ -198,7 +245,6 @@ async function crearPedido() {
       })
         .then((r) => r.text())
         .then((r) => {
-          console.log(r);
           if (r == "Good") {
             $("#modal-listo").css({ display: "flex" });
             $("#modal-pedido").css({ display: "none" });
@@ -217,10 +263,10 @@ function verificanDatos() {
     fechaVer = false;
 
   // Verificar si numero no tiene espacios en blanco
-  if (/^\S+$/.test(numero)) {
+  if (/^\S+$/.test(numero) && numero.toString().length == 16) {
     numeroVer = true;
   } else {
-    mostrarNotif("error", "Tarjeta sin espacios en blanco", 1000);
+    mostrarNotif("error", "Numero de tarjeta erroneo", 1000);
     setTimeout(() => {
       location.reload();
     }, 1000);
