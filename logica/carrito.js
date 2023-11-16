@@ -245,6 +245,7 @@ $("#modal-pedido #content #cerrar-img").click(() => {
   $("#modal-pedido").css({ display: "none" });
 });
 
-function cerrarCoso() {
-  $("#modal-listo").css({ display: "none" });
-}
+$("#cerrarCoso").click(function () {
+  // $("#modal-listo").css({ display: "none" });
+  location.reload();
+});

@@ -3537,6 +3537,1993 @@
                     "filename": "testcustommenu.js"
                 }
             ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2023-11-14 21:45:43",
+            "filesum": 317,
+            "codesum": 13789,
+            "commentsum": 681,
+            "blanksum": 2218,
+            "statistics": {
+                ".js": {
+                    "code": 3632,
+                    "comment": 344,
+                    "blank": 508
+                },
+                ".css": {
+                    "code": 3762,
+                    "comment": 85,
+                    "blank": 428
+                },
+                ".php": {
+                    "code": 2309,
+                    "comment": 205,
+                    "blank": 784
+                },
+                ".html": {
+                    "code": 1858,
+                    "comment": 44,
+                    "blank": 374
+                },
+                ".txt": {
+                    "code": 155,
+                    "comment": 1,
+                    "blank": 29
+                },
+                ".svg": {
+                    "code": 227,
+                    "comment": 2,
+                    "blank": 4
+                },
+                ".sql": {
+                    "code": 195,
+                    "comment": 0,
+                    "blank": 35
+                },
+                ".json": {
+                    "code": 1643,
+                    "comment": 0,
+                    "blank": 56
+                },
+                "": {
+                    "code": 0,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".code-workspace": {
+                    "code": 8,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 35,
+                    "code": 195,
+                    "comment": 0,
+                    "filename": "codigop.sql"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "index.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 2,
+                    "filename": "jquery-3.6.4.min.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 67,
+                    "comment": 0,
+                    "filename": "logica\\ABLclientes.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "logica\\addCarrito.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 33,
+                    "comment": 6,
+                    "filename": "logica\\addMenu.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "logica\\addMenuIndex.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 68,
+                    "comment": 1,
+                    "filename": "logica\\addPublicacion.js"
+                },
+                {
+                    "blank": 10,
+                    "code": 49,
+                    "comment": 0,
+                    "filename": "logica\\addToCarrito.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 35,
+                    "comment": 2,
+                    "filename": "logica\\agregarComida.js"
+                },
+                {
+                    "blank": 12,
+                    "code": 93,
+                    "comment": 2,
+                    "filename": "logica\\agregarMenu.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "logica\\agregarMenuHomepage.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "logica\\agregarZonas.php"
+                },
+                {
+                    "blank": 9,
+                    "code": 62,
+                    "comment": 1,
+                    "filename": "logica\\cambiarContra.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "logica\\cambiarDir.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "logica\\cambiarMail.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "logica\\cambioContra.php"
+                },
+                {
+                    "blank": 32,
+                    "code": 215,
+                    "comment": 5,
+                    "filename": "logica\\carrito.js"
+                },
+                {
+                    "blank": 30,
+                    "code": 114,
+                    "comment": 0,
+                    "filename": "logica\\Clases\\Cliente.php"
+                },
+                {
+                    "blank": 13,
+                    "code": 85,
+                    "comment": 1,
+                    "filename": "logica\\Clases\\Comida.php"
+                },
+                {
+                    "blank": 9,
+                    "code": 31,
+                    "comment": 2,
+                    "filename": "logica\\Clases\\Empresa.php"
+                },
+                {
+                    "blank": 16,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "logica\\Clases\\Incluye.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "logica\\Clases\\Incorpora.php"
+                },
+                {
+                    "blank": 35,
+                    "code": 183,
+                    "comment": 1,
+                    "filename": "logica\\Clases\\Menu.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 33,
+                    "comment": 2,
+                    "filename": "logica\\Clases\\Pedido.php"
+                },
+                {
+                    "blank": 25,
+                    "code": 87,
+                    "comment": 0,
+                    "filename": "logica\\Clases\\Publicacion.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "logica\\Clases\\Realiza.php"
+                },
+                {
+                    "blank": 22,
+                    "code": 76,
+                    "comment": 0,
+                    "filename": "logica\\Clases\\Reclamo.php"
+                },
+                {
+                    "blank": 16,
+                    "code": 49,
+                    "comment": 2,
+                    "filename": "logica\\Clases\\Sucursal.php"
+                },
+                {
+                    "blank": 36,
+                    "code": 135,
+                    "comment": 0,
+                    "filename": "logica\\Clases\\Usuario.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 27,
+                    "comment": 5,
+                    "filename": "logica\\Clases\\Vianda.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 39,
+                    "comment": 3,
+                    "filename": "logica\\Clases\\Web.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 186,
+                    "comment": 2,
+                    "filename": "logica\\Comida.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "logica\\compilarMenus.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 84,
+                    "comment": 0,
+                    "filename": "logica\\consultarPedidos.js"
+                },
+                {
+                    "blank": 33,
+                    "code": 153,
+                    "comment": 1,
+                    "filename": "logica\\custommenu.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "logica\\eliminarCarrito.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 3,
+                    "comment": 1,
+                    "filename": "logica\\eliminarZonas.php"
+                },
+                {
+                    "blank": 20,
+                    "code": 131,
+                    "comment": 1,
+                    "filename": "logica\\faq.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "logica\\faq.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "logica\\getAllPedidos.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "logica\\getComidas.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "logica\\getFAQ.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "logica\\getFaqMain"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "logica\\getFaqMain.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "logica\\getMenusParaListado.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "logica\\getNotificacionesStock.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "logica\\getParametros.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "logica\\getSucursales.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "logica\\getSucursales.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "logica\\getUserData.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "logica\\historialPedidos.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "logica\\listadoCompras.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "logica\\listadoCompras.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "logica\\listadoFavs.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "logica\\listarComidas.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "logica\\listarMenus.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "logica\\listarMenusCliente.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 74,
+                    "comment": 4,
+                    "filename": "logica\\login.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "logica\\loginEmpleado.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "logica\\loginEmpleado.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "logica\\logout.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 163,
+                    "comment": 4,
+                    "filename": "logica\\Menus.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "logica\\ModificarPedidos.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "logica\\modificarZonas.js"
+                },
+                {
+                    "blank": 18,
+                    "code": 128,
+                    "comment": 10,
+                    "filename": "logica\\modPedidos.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "logica\\modRoles.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 38,
+                    "comment": 30,
+                    "filename": "logica\\mostrarPublicacion.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "logica\\mostrarZonas.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "logica\\obtenerNotif.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "logica\\ObtenerPedidos.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "logica\\obtenerPedidosNuevos.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 68,
+                    "comment": 6,
+                    "filename": "logica\\parametrizarDietas.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 111,
+                    "comment": 0,
+                    "filename": "logica\\parametrizarZonas.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "logica\\perfil.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 33,
+                    "comment": 65,
+                    "filename": "logica\\Promo.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "logica\\Proyecto3BE.code-workspace"
+                },
+                {
+                    "blank": 3,
+                    "code": 7,
+                    "comment": 1,
+                    "filename": "logica\\prueba.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 38,
+                    "comment": 1,
+                    "filename": "logica\\registroReal.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 3,
+                    "filename": "logica\\removeFAQFromJson.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "logica\\removeMenu.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "logica\\responderNotif.php"
+                },
+                {
+                    "blank": 9,
+                    "code": 136,
+                    "comment": 110,
+                    "filename": "logica\\seguimientoDeCompra.js"
+                },
+                {
+                    "blank": 16,
+                    "code": 79,
+                    "comment": 11,
+                    "filename": "logica\\stock.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 35,
+                    "comment": 4,
+                    "filename": "logica\\ticket.js"
+                },
+                {
+                    "blank": 34,
+                    "code": 99,
+                    "comment": 58,
+                    "filename": "logica\\updatePedidos.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "logica\\verNotificaciones.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 34,
+                    "comment": 1,
+                    "filename": "logica\\verPedidos.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "navbar.txt"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "persistencia\\actualizarContra.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "persistencia\\actualizarDir.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "persistencia\\actualizarMail.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 14,
+                    "comment": 16,
+                    "filename": "persistencia\\addComida.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\addDieta.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 3,
+                    "filename": "persistencia\\addFAQ.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 16,
+                    "filename": "persistencia\\addMenu.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "persistencia\\addMenuIndex.php"
+                },
+                {
+                    "blank": 9,
+                    "code": 23,
+                    "comment": 1,
+                    "filename": "persistencia\\addPublicacion.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "persistencia\\addZona.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 3,
+                    "filename": "persistencia\\cancelarCompra.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 59,
+                    "comment": 0,
+                    "filename": "persistencia\\carrito.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 64,
+                    "comment": 0,
+                    "filename": "persistencia\\comidas.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "persistencia\\compras.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "persistencia\\crearMenuCustom.php"
+                },
+                {
+                    "blank": 50,
+                    "code": 61,
+                    "comment": 97,
+                    "filename": "persistencia\\crearPedido.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 725,
+                    "comment": 0,
+                    "filename": "persistencia\\datos.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "persistencia\\deleteTicketFromId.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "persistencia\\eliminarComida.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\eliminarDieta.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "persistencia\\eliminarMenu.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 6,
+                    "comment": 9,
+                    "filename": "persistencia\\eliminarPublicacion.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\eliminarZona.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "persistencia\\faq.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "persistencia\\getAllPedidos.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "persistencia\\getClientFromId.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\getClientFromMail.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\getcomidafromId.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\getComidasFromID.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "persistencia\\getComidasNombreFromIDs.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\getComprasFromUser.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\getComprasInfoFromUser.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\getCuentaFromId.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "persistencia\\getCuentas.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "persistencia\\getDietas.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "persistencia\\getIntegra.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "persistencia\\getLastMenuID.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\getMenuFromID.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "persistencia\\getMenuFromIncluye.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "persistencia\\getMenus.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "persistencia\\getMenusAReponer.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "persistencia\\getNombrePedidos.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "persistencia\\getParametros.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "persistencia\\getPedidos.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "persistencia\\getPedidosFromUserID.php"
+                },
+                {
+                    "blank": 12,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "persistencia\\getPedidosHistorial.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "persistencia\\getPedidosToUpdate.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "persistencia\\getPublicaciones.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "persistencia\\getRol.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "persistencia\\getStock.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "persistencia\\getTicketOPT.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "persistencia\\getTipoMenu.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\getUserID.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "persistencia\\getUsers.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 28,
+                    "comment": 5,
+                    "filename": "persistencia\\getZonas.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 67,
+                    "comment": 15,
+                    "filename": "persistencia\\helperFunctions.php"
+                },
+                {
+                    "blank": 24,
+                    "code": 312,
+                    "comment": 0,
+                    "filename": "persistencia\\homepageMenus.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "persistencia\\JefeCocinaNotif.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "persistencia\\Lclientes.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "persistencia\\listarComidas.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "persistencia\\listarFavs.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "persistencia\\listarMenus.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 17,
+                    "comment": 2,
+                    "filename": "persistencia\\login.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "persistencia\\menuIndex.json"
+                },
+                {
+                    "blank": 4,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "persistencia\\menus.json"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "persistencia\\modCliente.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "persistencia\\modDieta.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "persistencia\\modificarComida.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 2,
+                    "comment": 1,
+                    "filename": "persistencia\\modificarMenusInicio.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "persistencia\\modificarZonas.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "persistencia\\modifyFAQFromJson.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "persistencia\\ModPedidos.php"
+                },
+                {
+                    "blank": 11,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "persistencia\\ModVianda.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "persistencia\\modZona.php"
+                },
+                {
+                    "blank": 20,
+                    "code": 37,
+                    "comment": 2,
+                    "filename": "persistencia\\parametrizardatos.php"
+                },
+                {
+                    "blank": 26,
+                    "code": 309,
+                    "comment": 0,
+                    "filename": "persistencia\\pedidos.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "persistencia\\RecuperarStockColchon.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "persistencia\\registrarUsuario.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 39,
+                    "comment": 1,
+                    "filename": "persistencia\\registro.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\SetMenusStock.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "persistencia\\ticket.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 46,
+                    "comment": 1,
+                    "filename": "persistencia\\tickets.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "persistencia\\tickets.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "persistencia\\updateMenu.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "persistencia\\updatePedido.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "persistencia\\updateRol.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "persistencia\\userInstance.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "persistencia\\users.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "persistencia\\usuarios.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "persistencia\\verificarContra.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "persistencia\\verifMail.php"
+                },
+                {
+                    "blank": 10,
+                    "code": 35,
+                    "comment": 4,
+                    "filename": "persistencia\\verTickets.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "presentacion\\ABLclientes.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "presentacion\\ABLmenus\\listadoMenus.html"
+                },
+                {
+                    "blank": 16,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "presentacion\\ABLMenusHomepage\\ABLMenuHomepage.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "presentacion\\ABLproductos\\listadoComidas.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "presentacion\\ABLproductos\\removeComida.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 40,
+                    "comment": 19,
+                    "filename": "presentacion\\act-pedidos.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 30,
+                    "comment": 1,
+                    "filename": "presentacion\\addComida.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "presentacion\\addMenu.html"
+                },
+                {
+                    "blank": 8,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "presentacion\\cambiarContra.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "presentacion\\cambiarDir.html"
+                },
+                {
+                    "blank": 3,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "presentacion\\cambiarMail.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 98,
+                    "comment": 2,
+                    "filename": "presentacion\\carrito.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "presentacion\\clearCarrito.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "presentacion\\compraOverlay.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "presentacion\\consultarPedidos.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "presentacion\\CustomMenu\\custommenu.html"
+                },
+                {
+                    "blank": 32,
+                    "code": 119,
+                    "comment": 3,
+                    "filename": "presentacion\\custommenubuttontest.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "presentacion\\FAQ.html"
+                },
+                {
+                    "blank": 64,
+                    "code": 191,
+                    "comment": 6,
+                    "filename": "presentacion\\index.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "presentacion\\Jcocina\\menuJC.html"
+                },
+                {
+                    "blank": 19,
+                    "code": 37,
+                    "comment": 1,
+                    "filename": "presentacion\\Jcocina\\notificaciones.html"
+                },
+                {
+                    "blank": 3,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "presentacion\\listado-menus.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "presentacion\\listadoCompras.html"
+                },
+                {
+                    "blank": 10,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "presentacion\\login.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "presentacion\\loginEmpleado.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "presentacion\\logout.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "presentacion\\mod-pedidos.html"
+                },
+                {
+                    "blank": 3,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "presentacion\\mod-roles.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "presentacion\\modificarMenuInicio.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "presentacion\\notificaciones.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 62,
+                    "comment": 0,
+                    "filename": "presentacion\\parametrizar-index.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 88,
+                    "comment": 0,
+                    "filename": "presentacion\\parametrizardatos.html"
+                },
+                {
+                    "blank": 20,
+                    "code": 73,
+                    "comment": 1,
+                    "filename": "presentacion\\ParametrizarFAQ.html"
+                },
+                {
+                    "blank": 9,
+                    "code": 52,
+                    "comment": 1,
+                    "filename": "presentacion\\perfil.html"
+                },
+                {
+                    "blank": 8,
+                    "code": 63,
+                    "comment": 5,
+                    "filename": "presentacion\\productos.html"
+                },
+                {
+                    "blank": 18,
+                    "code": 64,
+                    "comment": 1,
+                    "filename": "presentacion\\registro.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "presentacion\\seguimientoDeCompra.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 50,
+                    "comment": 1,
+                    "filename": "presentacion\\stock.html"
+                },
+                {
+                    "blank": 21,
+                    "code": 102,
+                    "comment": 0,
+                    "filename": "presentacion\\test\\internalmenu.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "presentacion\\test\\testfaq.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "presentacion\\test\\verfaq.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "presentacion\\testeop.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "presentacion\\ticket.html"
+                },
+                {
+                    "blank": 34,
+                    "code": 42,
+                    "comment": 1,
+                    "filename": "presentacion\\Ver-Pedidos.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 22,
+                    "comment": 1,
+                    "filename": "presentacion\\verTickets.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "presentacion\\zonas\\modificarZonas.html"
+                },
+                {
+                    "blank": 3,
+                    "code": 46,
+                    "comment": 1,
+                    "filename": "scripts\\carroCosas.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "scripts\\checkGerente.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "scripts\\checkUser.js"
+                },
+                {
+                    "blank": 20,
+                    "code": 107,
+                    "comment": 0,
+                    "filename": "scripts\\functionsVarias.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "scripts\\getRol.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 83,
+                    "comment": 1,
+                    "filename": "scripts\\navbar.js"
+                },
+                {
+                    "blank": 10,
+                    "code": 82,
+                    "comment": 0,
+                    "filename": "scripts\\navbarAuth.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "scripts\\navIntBtn.js"
+                },
+                {
+                    "blank": 10,
+                    "code": 171,
+                    "comment": 7,
+                    "filename": "scripts\\navInterno.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 23,
+                    "comment": 7,
+                    "filename": "scripts\\navJefeCocina.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 1,
+                    "filename": "scripts\\scroll.js"
+                },
+                {
+                    "filename": "src\\3dvianda0.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\3dvianda1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\3dvianda2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src\\Add.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\arrow-reverse.svg"
+                },
+                {
+                    "filename": "src\\BKsalad.png.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\blackStar_.svg"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\checkmark.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\Clock.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\CMAdd.svg.svg"
+                },
+                {
+                    "filename": "src\\CMico.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src\\cross-circle.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\cross.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\DeliveryTruck.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "src\\edit.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\ep_menu.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\eye-slash.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\eye.svg"
+                },
+                {
+                    "filename": "src\\fondo_frutal.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\ic-search.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\icon _Times_.svg"
+                },
+                {
+                    "filename": "src\\img-test.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\int_menu.svg"
+                },
+                {
+                    "filename": "src\\interno-bg.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\logo-small.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\logo.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\mas.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\mdi_cancel-outline.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\menos.svg"
+                },
+                {
+                    "filename": "src\\NoImg.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\ojo-oculto.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\Package.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\reload.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 2,
+                    "filename": "src\\remove.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\salad.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\star_.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\ticket_holes.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\trash.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\typcn_tick-outline.svg"
+                },
+                {
+                    "blank": 1,
+                    "code": 88,
+                    "comment": 1,
+                    "filename": "styles\\ABLclientes.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 26,
+                    "comment": 2,
+                    "filename": "styles\\addMenu.css"
+                },
+                {
+                    "blank": 11,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "styles\\cambiarContra.css"
+                },
+                {
+                    "blank": 14,
+                    "code": 124,
+                    "comment": 0,
+                    "filename": "styles\\card.css"
+                },
+                {
+                    "blank": 15,
+                    "code": 134,
+                    "comment": 0,
+                    "filename": "styles\\cardBad.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 231,
+                    "comment": 2,
+                    "filename": "styles\\carrito.css"
+                },
+                {
+                    "blank": 31,
+                    "code": 283,
+                    "comment": 15,
+                    "filename": "styles\\clases.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 119,
+                    "comment": 1,
+                    "filename": "styles\\cuenta.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 150,
+                    "comment": 3,
+                    "filename": "styles\\empleados.css"
+                },
+                {
+                    "blank": 33,
+                    "code": 271,
+                    "comment": 1,
+                    "filename": "styles\\JefeDeCocina.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 117,
+                    "comment": 3,
+                    "filename": "styles\\listadoPubliInterno.css"
+                },
+                {
+                    "blank": 40,
+                    "code": 174,
+                    "comment": 10,
+                    "filename": "styles\\lists.css"
+                },
+                {
+                    "blank": 16,
+                    "code": 142,
+                    "comment": 2,
+                    "filename": "styles\\login.css"
+                },
+                {
+                    "blank": 13,
+                    "code": 181,
+                    "comment": 16,
+                    "filename": "styles\\main.css"
+                },
+                {
+                    "blank": 74,
+                    "code": 449,
+                    "comment": 6,
+                    "filename": "styles\\menucustom.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "styles\\mis-pedidos.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 107,
+                    "comment": 2,
+                    "filename": "styles\\nav.css"
+                },
+                {
+                    "blank": 21,
+                    "code": 218,
+                    "comment": 2,
+                    "filename": "styles\\navGerente.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 21,
+                    "comment": 10,
+                    "filename": "styles\\notifs.css"
+                },
+                {
+                    "blank": 36,
+                    "code": 293,
+                    "comment": 2,
+                    "filename": "styles\\parametrizar.css"
+                },
+                {
+                    "blank": 15,
+                    "code": 115,
+                    "comment": 0,
+                    "filename": "styles\\pedidos.css"
+                },
+                {
+                    "blank": 12,
+                    "code": 164,
+                    "comment": 5,
+                    "filename": "styles\\promo.css"
+                },
+                {
+                    "blank": 11,
+                    "code": 123,
+                    "comment": 0,
+                    "filename": "styles\\registro.css"
+                },
+                {
+                    "blank": 29,
+                    "code": 154,
+                    "comment": 1,
+                    "filename": "styles\\Roboto\\LICENSE.txt"
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-Black.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-BlackItalic.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-Bold.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-BoldItalic.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-Italic.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-Light.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-LightItalic.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-Medium.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-MediumItalic.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-Regular.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-Thin.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "styles\\Roboto\\Roboto-ThinItalic.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "styles\\scroll.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "styles\\stockJefeDeCocina.css"
+                },
+                {
+                    "blank": 23,
+                    "code": 115,
+                    "comment": 2,
+                    "filename": "styles\\tickets.css"
+                },
+                {
+                    "blank": 84,
+                    "code": 244,
+                    "comment": 5,
+                    "filename": "testcustommenu.js"
+                }
+            ]
         }
     ]
 }
